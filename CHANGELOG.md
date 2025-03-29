@@ -14,9 +14,14 @@ et ce projet adhère au [Semantic Versioning](https://semver.org/spec/v2.0.0.htm
 - Structure de base du site avec les pages principales:
   - Page d'accueil avec hero section, section services, à propos, portfolio, témoignages et CTA
   - Layout global avec navbar et footer
+- Nouveau composant StatCard pour mettre en valeur les chiffres clés
+- Améliorations visuelles des cartes de service avec icônes et animations
 
 ### Changed
-- N/A
+- Refonte de la section Hero avec animations et meilleure mise en page
+- Amélioration des sections Portfolio, Témoignages et À propos avec une mise en page plus attractive
+- Section CTA avec dégradé et boutons plus visibles
+- Layout principal optimisé
 
 ### Fixed
 - N/A

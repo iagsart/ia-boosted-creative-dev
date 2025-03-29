@@ -21,17 +21,17 @@ export function ServiceCard({
 }: ServiceCardProps) {
   return (
     <div className={cn(
-      "group relative bg-card rounded-lg border p-6 shadow-sm card-hover",
+      "group relative bg-card rounded-lg border p-6 shadow-sm transition-all duration-300 hover:shadow-md hover:-translate-y-1",
       className
     )}>
-      <div className="mb-4 text-accent">
+      <div className="mb-4 text-accent p-2 bg-accent/10 inline-block rounded-lg">
         {icon}
       </div>
-      <h3 className="font-semibold text-xl mb-2">{title}</h3>
+      <h3 className="font-semibold text-xl mb-3">{title}</h3>
       <p className="text-muted-foreground mb-4">{description}</p>
       <Link 
         to={link} 
-        className="inline-flex items-center text-accent hover:underline gap-1"
+        className="inline-flex items-center text-accent hover:underline gap-1 font-medium"
       >
         En savoir plus 
         <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />

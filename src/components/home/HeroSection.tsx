@@ -1,6 +1,8 @@
 
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
+import { StatCard } from "@/components/ui/stat-card";
+import { ArrowRight } from "lucide-react";
 
 const HeroSection = () => {
   return (
@@ -26,8 +28,11 @@ const HeroSection = () => {
           </p>
           
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-4 animate-fade-up [animation-delay:600ms]">
-            <Button size="lg" asChild>
-              <Link to="/contact">Obtenir un audit gratuit</Link>
+            <Button size="lg" asChild className="group">
+              <Link to="/contact" className="flex items-center gap-2">
+                Obtenir un audit gratuit
+                <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
+              </Link>
             </Button>
             <Button size="lg" variant="outline" asChild>
               <Link to="/services">Découvrir nos services</Link>
@@ -35,19 +40,10 @@ const HeroSection = () => {
           </div>
         </div>
         
-        <div className="mt-20 flex flex-wrap justify-center gap-6 text-center animate-fade-up [animation-delay:800ms]">
-          <div className="bg-background rounded-lg shadow-sm border p-6 w-full sm:w-[calc(33.33%-1rem)]">
-            <h3 className="text-xl font-semibold mb-1">+150%</h3>
-            <p className="text-sm text-muted-foreground">de performance sur les projets IA</p>
-          </div>
-          <div className="bg-background rounded-lg shadow-sm border p-6 w-full sm:w-[calc(33.33%-1rem)]">
-            <h3 className="text-xl font-semibold mb-1">99%</h3>
-            <p className="text-sm text-muted-foreground">de satisfaction client</p>
-          </div>
-          <div className="bg-background rounded-lg shadow-sm border p-6 w-full sm:w-[calc(33.33%-1rem)]">
-            <h3 className="text-xl font-semibold mb-1">50+</h3>
-            <p className="text-sm text-muted-foreground">projets livrés</p>
-          </div>
+        <div className="mt-16 grid grid-cols-1 sm:grid-cols-3 gap-6 animate-fade-up [animation-delay:800ms]">
+          <StatCard value="+150%" label="de performance sur les projets IA" />
+          <StatCard value="99%" label="de satisfaction client" />
+          <StatCard value="50+" label="projets livrés" />
         </div>
       </div>
     </section>

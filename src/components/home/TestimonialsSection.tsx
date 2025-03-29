@@ -1,5 +1,7 @@
 
 import { SectionTitle } from "@/components/ui/section-title";
+import { Quote } from "lucide-react";
+import { cn } from "@/lib/utils";
 
 const TestimonialsSection = () => {
   const testimonials = [
@@ -24,7 +26,7 @@ const TestimonialsSection = () => {
   ];
 
   return (
-    <section className="section-padding bg-secondary/50">
+    <section className="section-padding bg-gradient-to-br from-secondary/30 via-secondary/50 to-secondary/30">
       <div className="container">
         <SectionTitle 
           title="Ce que nos clients disent" 
@@ -34,7 +36,13 @@ const TestimonialsSection = () => {
         
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {testimonials.map((testimonial, index) => (
-            <div key={index} className="bg-background rounded-lg p-6 shadow-sm border relative">
+            <div 
+              key={index} 
+              className={cn(
+                "bg-background rounded-lg p-6 shadow-sm border relative",
+                "hover:shadow-md transition-all duration-300"
+              )}
+            >
               <div className="absolute -top-5 left-6">
                 <div className="h-10 w-10 rounded-full overflow-hidden border-4 border-background">
                   <img 
@@ -45,10 +53,13 @@ const TestimonialsSection = () => {
                 </div>
               </div>
               <div className="pt-6">
-                <blockquote className="text-muted-foreground italic mb-4">
+                <div className="text-accent/20 absolute top-4 right-4">
+                  <Quote size={40} />
+                </div>
+                <blockquote className="text-muted-foreground italic mb-4 relative z-10">
                   "{testimonial.quote}"
                 </blockquote>
-                <div>
+                <div className="border-t pt-4 mt-4">
                   <p className="font-semibold">{testimonial.name}</p>
                   <p className="text-sm text-muted-foreground">{testimonial.position}</p>
                 </div>
