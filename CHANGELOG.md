@@ -3,17 +3,14 @@
 
 Toutes les modifications notables apportées à ce projet seront documentées dans ce fichier.
 
-Le format est basé sur [Keep a Changelog](https://keepachangelog.com/fr/1.0.0/),
-et ce projet adhère au [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
-
 ## [Unreleased]
 
 ### Added
-- Création du README.md
-- Création du CHANGELOG.md
-- Structure de base du site avec les pages principales:
-  - Page d'accueil avec hero section, section services, à propos, portfolio, témoignages et CTA
-  - Layout global avec navbar et footer
+- Nouvelle page Portfolio complète avec filtrage par catégorie et affichage de projets détaillés
+- Pages détaillées pour les services "Développement Sur Mesure" et "Intelligence Artificielle"
+- Animations et transitions fluides sur tous les composants avec Framer Motion
+- Mise en place de routes pour les nouvelles pages
+- Layout global avec navbar et footer
 - Nouveau composant StatCard pour mettre en valeur les chiffres clés
 - Améliorations visuelles des cartes de service avec icônes et animations
 - Animations de transition avec Framer Motion pour une expérience utilisateur fluide
@@ -32,4 +29,3 @@ et ce projet adhère au [Semantic Versioning](https://semver.org/spec/v2.0.0.htm
 
 ## [0.1.0] - 2024-XX-XX
 - Version initiale du site
-
