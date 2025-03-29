@@ -1,69 +1,60 @@
-# Welcome to your Lovable project
 
-## Project info
+# AgenceDev - Agence d'Innovation Digitale
 
-**URL**: https://lovable.dev/projects/9c4501e5-2a31-4ebb-97b1-0c5c91b0bb0b
+## Présentation
 
-## How can I edit this code?
+AgenceDev est une agence digitale nouvelle génération qui associe l'expertise technique traditionnelle à la puissance de l'intelligence artificielle. Notre approche "Human-Centric AI" garantit que la technologie reste au service de l'humain, pas l'inverse.
 
-There are several ways of editing your application.
+Nous proposons des services de développement d'applications et sites web, d'analyse et traitement de données, de recherche de solutions et d'optimisations à base d'IA et d'automatisation, ainsi que de création de contenu graphique, rédactionnel, commercial, et musical assisté par IA.
 
-**Use Lovable**
+## Structure du site
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/9c4501e5-2a31-4ebb-97b1-0c5c91b0bb0b) and start prompting.
+- **Accueil**: Présentation de l'agence et de ses services
+- **Services**: Détail des services proposés
+  - Développement Sur Mesure
+  - Intelligence Artificielle
+  - Création Assistée par IA
+  - Conseil Tech
+- **Portfolio**: Présentation des projets réalisés
+- **À propos**: Présentation de l'équipe et de la philosophie de l'agence
+- **Blog**: Articles sur les technologies et l'IA
+- **Contact**: Formulaire de contact et demande de devis
 
-Changes made via Lovable will be committed automatically to this repo.
+## Technologies utilisées
 
-**Use your preferred IDE**
+- React
+- TypeScript
+- Vite
+- Tailwind CSS
+- shadcn/ui
+- Supabase (backend)
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+## Développement
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+Ce projet est développé par Geoffroy Streit (geoffroy.streit@gmail.com).
 
-Follow these steps:
+### Connexions
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+- Supabase: https://supabase.com/dashboard/project/lvqvbyrhpbdrbymhthup
+- GitHub: [Lien vers le repo GitHub]
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+## Installation et lancement
 
-# Step 3: Install the necessary dependencies.
-npm i
+```bash
+# Cloner le dépôt
+git clone [URL_DU_REPO]
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
+# Installer les dépendances
+npm install
+
+# Lancer le serveur de développement
 npm run dev
 ```
 
-**Edit a file directly in GitHub**
+## Déploiement
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+Le site est déployé sur [URL_DE_DEPLOIEMENT].
 
-**Use GitHub Codespaces**
+## Licence
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
-
-## What technologies are used for this project?
-
-This project is built with .
-
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
-
-## How can I deploy this project?
-
-Simply open [Lovable](https://lovable.dev/projects/9c4501e5-2a31-4ebb-97b1-0c5c91b0bb0b) and click on Share -> Publish.
-
-## I want to use a custom domain - is that possible?
-
-We don't support custom domains (yet). If you want to deploy your project under your own domain then we recommend using Netlify. Visit our docs for more details: [Custom domains](https://docs.lovable.dev/tips-tricks/custom-domain/)
+Tous droits réservés © AgenceDev 2023-2024
