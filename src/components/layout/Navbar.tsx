@@ -7,7 +7,7 @@ import { cn } from "@/lib/utils";
 
 const navItems = [
   { name: "Accueil", path: "/" },
-  { name: "Services", path: "/services" },
+  { name: "Services", path: "/services/development" },
   { name: "Portfolio", path: "/portfolio" },
   { name: "À propos", path: "/about" },
   { name: "Blog", path: "/blog" },
