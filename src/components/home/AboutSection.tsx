@@ -6,10 +6,10 @@ import { SectionTitle } from "@/components/ui/section-title";
 
 const AboutSection = () => {
   const values = [
-    { title: "Adaptabilité", description: "Capacité à apprendre et évoluer avec chaque projet" },
+    { title: "Pluridisciplinarité", description: "Optronique, informatique, gestion commerciale et développement" },
     { title: "Créativité", description: "Approche innovante des défis techniques et créatifs" },
     { title: "Humanité", description: "L'humain au centre de chaque solution technologique" },
-    { title: "Pluridisciplinarité", description: "Connaissances variées amplifiées par l'IA" }
+    { title: "Adaptabilité", description: "Capacité à apprendre et évoluer avec chaque projet" }
   ];
 
   return (
@@ -20,7 +20,7 @@ const AboutSection = () => {
             <div className="relative">
               <div className="aspect-square bg-accent/10 rounded-lg overflow-hidden">
                 <img 
-                  src="https://images.unsplash.com/photo-1580927752452-89d86da3fa0a?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80" 
+                  src="/lovable-uploads/2e3e631c-fa44-4ba0-bd05-1427dc962a15.png" 
                   alt="Portrait de Geoffroy Streit" 
                   className="w-full h-full object-cover"
                 />
@@ -35,12 +35,12 @@ const AboutSection = () => {
           <div>
             <SectionTitle 
               title="Qui suis-je" 
-              subtitle="Un consultant créatif qui s'appuie sur l'IA pour développer des solutions adaptées"
+              subtitle="Ingénieur en reconversion IT avec expertise en optronique"
             />
             
             <div className="space-y-6">
               <p className="text-muted-foreground">
-                Je suis un consultant indépendant basé à Strasbourg avec des connaissances pluridisciplinaires et une passion pour l'IA. Mon parcours diversifié inclut l'optique, l'électronique, le marketing, la rédaction et l'automatisation. J'utilise l'IA comme partenaire pour compenser mes limites techniques et m'adapter à vos besoins spécifiques.
+                Passionné de sciences et technologies, j'ai étudié l'optique, l'électronique et l'informatique pour intégrer des projets d'ingénierie pluritechnique. Avec plus de 15 ans d'expérience professionnelle incluant des postes de gestion commerciale et technique, je me forme désormais à la Data Science et au développement Python/Web pour élargir mon champ de compétences.
               </p>
               
               <div className="space-y-4">

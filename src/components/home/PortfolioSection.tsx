@@ -15,18 +15,18 @@ const PortfolioSection = () => {
       link: "/portfolio/neuro-diversity"
     },
     {
-      title: "IA Avenir",
-      category: "Intelligence Artificielle",
-      description: "Site éducatif sur l'histoire, les concepts et l'utilisation des IA avec illustrations et exercices interactifs",
-      image: "https://images.unsplash.com/photo-1555255707-c07966088b7b?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
-      link: "/portfolio/ia-avenir"
-    },
-    {
       title: "Assistant Coach Sportif",
       category: "Application",
       description: "Application de gestion pour coachs sportifs (clients, activités, planning, facturation, chronos spécialisés)",
       image: "https://images.unsplash.com/photo-1517836357463-d25dfeac3438?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
       link: "/portfolio/coach-sportif"
+    },
+    {
+      title: "ATARI Demoscene & FX",
+      category: "Rétro & Technique",
+      description: "Site sur la demoscene ATARI avec simulations d'effets, historique et informations techniques détaillées",
+      image: "https://images.unsplash.com/photo-1607016284318-d1384f74495a?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
+      link: "/portfolio/atari-demoscene"
     }
   ];
 
@@ -35,7 +35,7 @@ const PortfolioSection = () => {
       <div className="container">
         <SectionTitle 
           title="Mes Réalisations" 
-          subtitle="Quelques exemples de projets personnels et professionnels"
+          subtitle="Exemples de projets personnels dans différents domaines"
           centered
         />
         

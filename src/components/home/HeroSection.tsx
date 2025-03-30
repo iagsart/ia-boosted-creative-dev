@@ -21,10 +21,11 @@ const HeroSection = () => {
             <h1 className="font-display text-4xl md:text-5xl lg:text-6xl font-bold leading-tight">
               Geoffroy Streit<br /><span className="text-gradient">Consultant Créatif & IA</span>
             </h1>
+            <p className="text-sm text-muted-foreground mt-2">Ingénieur en reconversion (Python, Data Science, ML) - Passionné de sciences et technologies</p>
           </div>
           
           <p className="text-xl text-muted-foreground animate-fade-up [animation-delay:400ms]">
-            Je combine mes qualités humaines d'analyse, d'écoute et de créativité avec la puissance de l'IA pour transformer vos idées en solutions adaptées.
+            Je combine mes connaissances pluridisciplinaires en optronique, informatique et gestion avec la puissance de l'IA pour transformer vos idées en solutions adaptées.
           </p>
           
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-4 animate-fade-up [animation-delay:600ms]">
@@ -41,9 +42,9 @@ const HeroSection = () => {
         </div>
         
         <div className="mt-16 grid grid-cols-1 sm:grid-cols-3 gap-6 animate-fade-up [animation-delay:800ms]">
-          <StatCard value="100%" label="d'approche personnalisée" />
+          <StatCard value="15+" label="ans d'expérience professionnelle" />
           <StatCard value="IA+" label="amplification humaine" />
-          <StatCard value="15+" label="projets personnels réalisés" />
+          <StatCard value="Multi" label="compétences optronique & IT" />
         </div>
       </div>
     </section>

@@ -1,5 +1,5 @@
 
-import { Code, Brain, Palette, Lightbulb, Music, Database, BarChart3, Laptop } from "lucide-react";
+import { Code, Brain, Palette, Lightbulb, Music, Database, BarChart3, Laptop, Cpu } from "lucide-react";
 import { SectionTitle } from "@/components/ui/section-title";
 import { ServiceCard } from "@/components/ui/service-card";
 import { motion } from "framer-motion";
@@ -11,6 +11,12 @@ const ServicesSection = () => {
       title: "Conseil IA & Prompting",
       description: "Accompagnement dans l'utilisation des IA pour vos projets, optimisation de prompts et stratégies d'intégration pour maximiser le potentiel créatif et technique.",
       link: "/services/ai"
+    },
+    {
+      icon: <Cpu size={28} />,
+      title: "Expertise Optronique",
+      description: "Conseil en optique, électronique, systèmes embarqués et traitement du signal basé sur plus de 15 ans d'expérience dans l'industrie spécialisée.",
+      link: "/services/consulting"
     },
     {
       icon: <Palette size={28} />,
@@ -31,15 +37,9 @@ const ServicesSection = () => {
       link: "/services/data"
     },
     {
-      icon: <Music size={28} />,
-      title: "Création Multimédia",
-      description: "Production de contenu visuel, sonore et textuel assistée par IA, avec une sensibilité artistique et un souci de la qualité et de l'originalité.",
-      link: "/services/content"
-    },
-    {
       icon: <Laptop size={28} />,
       title: "Sites Web Éducatifs & Interactifs",
-      description: "Conception de sites web de formation et d'information dans divers domaines, avec une approche pédagogique et interactive.",
+      description: "Conception de sites web de formation et d'information dans divers domaines techniques avec une approche pédagogique et interactive.",
       link: "/services/development"
     }
   ];
@@ -64,7 +64,7 @@ const ServicesSection = () => {
       <div className="container">
         <SectionTitle 
           title="Mes Services" 
-          subtitle="L'humain au centre, l'IA comme partenaire pour vos projets"
+          subtitle="L'humain au centre, la technologie au service de vos projets"
           centered
         />
         
