@@ -9,7 +9,7 @@ const AboutSection = () => {
     { title: "Adaptabilité", description: "Capacité à apprendre et évoluer avec chaque projet" },
     { title: "Créativité", description: "Approche innovante des défis techniques et créatifs" },
     { title: "Humanité", description: "L'humain au centre de chaque solution technologique" },
-    { title: "Collaboration", description: "Partenariat étroit avec les IA et les clients" }
+    { title: "Pluridisciplinarité", description: "Connaissances variées amplifiées par l'IA" }
   ];
 
   return (
@@ -21,13 +21,13 @@ const AboutSection = () => {
               <div className="aspect-square bg-accent/10 rounded-lg overflow-hidden">
                 <img 
                   src="https://images.unsplash.com/photo-1580927752452-89d86da3fa0a?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80" 
-                  alt="Portrait du développeur" 
+                  alt="Portrait de Geoffroy Streit" 
                   className="w-full h-full object-cover"
                 />
               </div>
               <div className="absolute -bottom-6 -right-6 bg-background p-6 rounded-lg border shadow-lg">
-                <p className="font-semibold">Human-Centric AI</p>
-                <p className="text-sm text-muted-foreground">Ma philosophie</p>
+                <p className="font-semibold">Geoffroy Streit</p>
+                <p className="text-sm text-muted-foreground">alias Hylst</p>
               </div>
             </div>
           </div>
@@ -40,7 +40,7 @@ const AboutSection = () => {
             
             <div className="space-y-6">
               <p className="text-muted-foreground">
-                Je suis un consultant indépendant avec des connaissances pluridisciplinaires et une passion pour l'IA. Mon approche combine mes qualités humaines d'analyse, d'écoute active et de créativité avec les capacités des technologies d'intelligence artificielle pour compenser mes lacunes techniques et m'adapter à vos besoins.
+                Je suis un consultant indépendant basé à Strasbourg avec des connaissances pluridisciplinaires et une passion pour l'IA. Mon parcours diversifié inclut l'optique, l'électronique, le marketing, la rédaction et l'automatisation. J'utilise l'IA comme partenaire pour compenser mes limites techniques et m'adapter à vos besoins spécifiques.
               </p>
               
               <div className="space-y-4">

@@ -3,7 +3,7 @@ import React from 'react';
 import Layout from "@/components/layout/Layout";
 import { SectionTitle } from "@/components/ui/section-title";
 import { Card, CardContent } from "@/components/ui/card";
-import { Lightbulb, Code, Brain, Palette } from "lucide-react";
+import { Lightbulb, Code, Brain, Palette, Database, Cpu, PenTool, BarChart3 } from "lucide-react";
 import { motion } from "framer-motion";
 
 const About = () => {
@@ -20,8 +20,28 @@ const About = () => {
     },
     { 
       icon: <Code className="h-6 w-6 text-accent" />, 
-      title: "Notions Techniques",
-      description: "Connaissances de base en développement web, bases de données et architecture logicielle, complétées par l'IA."
+      title: "Développement",
+      description: "Connaissances intermédiaires en développement web (React, Node.js), no-code et low-code, complétées par l'IA."
+    },
+    { 
+      icon: <PenTool className="h-6 w-6 text-accent" />, 
+      title: "Création visuelle & textuelle",
+      description: "Expérience en rédaction, conception graphique et création de contenu multimédia assistée par IA."
+    },
+    { 
+      icon: <Cpu className="h-6 w-6 text-accent" />, 
+      title: "Électronique & Optique",
+      description: "Connaissances en électronique, informatique industrielle et optique appliquées aux projets techniques."
+    },
+    { 
+      icon: <Database className="h-6 w-6 text-accent" />, 
+      title: "Gestion de données",
+      description: "Expérience en bases de données, automatisation (n8n, make, python) et visualisation (Jupyter Notebook, Metabase)."
+    },
+    { 
+      icon: <BarChart3 className="h-6 w-6 text-accent" />, 
+      title: "Marketing & Stratégie",
+      description: "Notions en marketing digital et stratégie de contenu pour optimiser la visibilité des projets."
     },
     { 
       icon: <Lightbulb className="h-6 w-6 text-accent" />, 
@@ -39,9 +59,9 @@ const About = () => {
     },
     {
       period: "Parcours",
-      title: "Autodidacte en Développement et IA",
+      title: "Développeur autodidacte & créateur numérique",
       company: "",
-      description: "Apprentissage continu des technologies web et d'IA, exploration des possibilités du No-Code/Low-Code et développement d'une expertise en prompting et intégration d'IA."
+      description: "Création de nombreux projets web éducatifs, applications de gestion de données, sites personnels/portfolio et projets ludiques. Expérience en développement sur diverses plateformes, de l'ATARI ST aux applications web modernes."
     },
     {
       period: "Background",
@@ -94,23 +114,23 @@ const About = () => {
             <div>
               <h1 className="text-4xl md:text-5xl font-display font-bold mb-4">À propos de moi</h1>
               <p className="text-xl text-muted-foreground mb-6">
-                Consultant créatif et facilitateur IA, je combine la sensibilité humaine avec les possibilités de l'intelligence artificielle.
+                Consultant créatif et facilitateur IA basé à Strasbourg, je combine la sensibilité humaine avec les possibilités de l'intelligence artificielle.
               </p>
               <p className="text-muted-foreground">
-                Mon parcours pluridisciplinaire m'a doté d'une capacité à comprendre divers domaines sans nécessairement en être expert. C'est précisément cette polyvalence, combinée à ma maîtrise croissante des outils d'IA, qui me permet de m'adapter à vos besoins spécifiques et de trouver des solutions créatives à vos défis.
+                Mon parcours pluridisciplinaire m'a doté d'une capacité à comprendre divers domaines sans nécessairement en être expert. C'est précisément cette polyvalence, combinée à ma maîtrise croissante des outils d'IA, qui me permet de m'adapter à vos besoins spécifiques et de trouver des solutions créatives à vos défis. Artiste à mes heures sous le pseudonyme Hylst, j'apporte également une sensibilité créative à tous mes projets.
               </p>
             </div>
             <div className="relative">
               <div className="aspect-square bg-accent/10 rounded-lg overflow-hidden">
                 <img 
                   src="https://images.unsplash.com/photo-1580927752452-89d86da3fa0a?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80" 
-                  alt="Portrait du développeur" 
+                  alt="Portrait de Geoffroy Streit" 
                   className="w-full h-full object-cover"
                 />
               </div>
               <div className="absolute -bottom-6 -right-6 bg-background p-6 rounded-lg border shadow-lg">
-                <p className="font-semibold">Human-Centric AI</p>
-                <p className="text-sm text-muted-foreground">Ma philosophie</p>
+                <p className="font-semibold">Geoffroy Streit</p>
+                <p className="text-sm text-muted-foreground">alias Hylst</p>
               </div>
             </div>
           </div>
@@ -152,9 +172,9 @@ const About = () => {
             <div className="p-6 bg-secondary/20 rounded-lg text-center">
               <h3 className="text-xl font-semibold mb-4">Mon approche des compétences techniques</h3>
               <p className="text-muted-foreground">
-                Je possède des connaissances intermédiaires (2-3/5) dans plusieurs domaines techniques comme React, Node.js, PostgreSQL, et Docker, sans être expert dans aucun d'eux. 
+                Je possède des connaissances intermédiaires (2-3/5) dans plusieurs domaines techniques comme React, Node.js, Python, électronique et optique, sans être expert dans aucun d'eux. 
                 Ce qui me distingue est ma capacité à utiliser l'IA comme partenaire pour compléter ces connaissances, en apprenant rapidement ce dont j'ai besoin pour chaque projet spécifique.
-                Je continue d'apprendre chaque jour, me spécialisant progressivement dans les solutions No-Code et Low-Code qui me permettent de créer sans être limité par mes connaissances techniques.
+                J'ai créé de nombreuses applications web et desktop, des sites éducatifs et des outils personnels, tout en continuant d'apprendre et de me spécialiser progressivement dans les solutions No-Code et Low-Code.
               </p>
             </div>
           </div>
@@ -233,7 +253,7 @@ const About = () => {
               </ul>
               
               <div className="mt-12">
-                <h3 className="text-2xl font-semibold mb-6">Domaines d'intérêt</h3>
+                <h3 className="text-2xl font-semibold mb-6">Domaines d'intérêt et expertise</h3>
                 <ul className="space-y-4">
                   <li className="flex items-start gap-2">
                     <div className="w-2 h-2 bg-accent rounded-full mt-2.5"></div>
@@ -252,6 +272,20 @@ const About = () => {
                   <li className="flex items-start gap-2">
                     <div className="w-2 h-2 bg-accent rounded-full mt-2.5"></div>
                     <div>
+                      <p className="font-medium">Automatisation et gestion de données</p>
+                      <p className="text-sm text-muted-foreground">Expérience en n8n, make, python, bases de données et visualisation.</p>
+                    </div>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <div className="w-2 h-2 bg-accent rounded-full mt-2.5"></div>
+                    <div>
+                      <p className="font-medium">Création multimédia (musique, graphisme, vidéo)</p>
+                      <p className="text-sm text-muted-foreground">Projets artistiques variés sous le pseudonyme Hylst.</p>
+                    </div>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <div className="w-2 h-2 bg-accent rounded-full mt-2.5"></div>
+                    <div>
                       <p className="font-medium">Open Source et éthique technologique</p>
                       <p className="text-sm text-muted-foreground">Promotion de solutions respectueuses des utilisateurs et indépendantes.</p>
                     </div>
@@ -263,8 +297,69 @@ const About = () => {
         </div>
       </section>
 
-      {/* Philosophy Section */}
+      {/* Background Section */}
       <section className="py-20 bg-background">
+        <div className="container">
+          <SectionTitle 
+            title="Mon expérience de développeur" 
+            subtitle="Création d'applications web et desktop au fil des années"
+            centered
+          />
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-12">
+            <Card>
+              <CardContent className="pt-6">
+                <h3 className="text-xl font-semibold mb-4">Applications Web</h3>
+                <ul className="space-y-3">
+                  <li className="flex items-start gap-2">
+                    <div className="w-2 h-2 bg-accent rounded-full mt-2.5"></div>
+                    <p>Plateformes éducatives sur la neurodiversité, l'optique, l'IA, l'électronique et la musique</p>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <div className="w-2 h-2 bg-accent rounded-full mt-2.5"></div>
+                    <p>Outils de gestion et traitement de données pour coachs sportifs et projets créatifs</p>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <div className="w-2 h-2 bg-accent rounded-full mt-2.5"></div>
+                    <p>Sites portfolio, artistiques et de e-commerce pour présenter mes créations</p>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <div className="w-2 h-2 bg-accent rounded-full mt-2.5"></div>
+                    <p>Applications ludiques incluant mini-jeux et ressources sur le retrogaming</p>
+                  </li>
+                </ul>
+              </CardContent>
+            </Card>
+            
+            <Card>
+              <CardContent className="pt-6">
+                <h3 className="text-xl font-semibold mb-4">Applications Desktop</h3>
+                <ul className="space-y-3">
+                  <li className="flex items-start gap-2">
+                    <div className="w-2 h-2 bg-accent rounded-full mt-2.5"></div>
+                    <p>Démos artistiques et jeux sur ATARI ST/Falcon en GFA Basic</p>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <div className="w-2 h-2 bg-accent rounded-full mt-2.5"></div>
+                    <p>Utilitaires pour ATARI ST (affichage d'images, lecture de fichiers musicaux, gestion de disques)</p>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <div className="w-2 h-2 bg-accent rounded-full mt-2.5"></div>
+                    <p>Outils en Python et C/C++ (gestion de bases de données, traitement d'images, métadonnées MP3)</p>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <div className="w-2 h-2 bg-accent rounded-full mt-2.5"></div>
+                    <p>Mini-jeux et applications en mode texte (simulateurs, jeux d'aventure, utilitaires)</p>
+                  </li>
+                </ul>
+              </CardContent>
+            </Card>
+          </div>
+        </div>
+      </section>
+
+      {/* Philosophy Section */}
+      <section className="py-20 bg-secondary/20">
         <div className="container">
           <div className="max-w-3xl mx-auto text-center">
             <SectionTitle 
@@ -279,7 +374,7 @@ const About = () => {
             
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-12">
               {philosophie.map((item, index) => (
-                <div key={index} className="p-6 bg-secondary/20 rounded-lg text-left">
+                <div key={index} className="p-6 bg-card border rounded-lg text-left">
                   <h3 className="text-xl font-semibold mb-2">{item.title}</h3>
                   <p className="text-muted-foreground">
                     {item.description}

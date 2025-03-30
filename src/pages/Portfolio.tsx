@@ -10,73 +10,135 @@ import { ExternalLink } from "lucide-react";
 const Portfolio = () => {
   const projects = [
     {
-      title: "IA Prédictive pour Retail",
+      title: "Neuro Diversity Info",
+      category: "Éducatif",
+      description: "Plateforme d'information sur la neurodiversité, les troubles dys, TDAH, autisme et maladies neurodégénératives avec des explications théoriques et pratiques, des ressources et des conseils d'adaptation.",
+      image: "https://images.unsplash.com/photo-1580894742597-87bc8789db3d?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
+      technologies: ["React", "Node.js", "Tailwind CSS", "IA"],
+      client: "Projet personnel",
+      year: "2023",
+      link: "/portfolio/neuro-diversity"
+    },
+    {
+      title: "Opti Learn",
+      category: "Éducatif",
+      description: "Site web éducatif sur l'optique scientifique et industrielle, proposant un apprentissage progressif, des ressources, actualités, évaluations et schémas interactifs.",
+      image: "https://images.unsplash.com/photo-1585221340263-5b8e211158b5?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
+      technologies: ["React", "Interactive SVG", "CSS Animations"],
+      client: "Projet personnel",
+      year: "2022",
+      link: "/portfolio/opti-learn"
+    },
+    {
+      title: "IA Avenir",
       category: "Intelligence Artificielle",
-      description: "Système de prévision des ventes basé sur l'apprentissage automatique qui analyse les données historiques de vente et prédit les tendances futures avec une précision de 94%. Notre solution a permis à ce client du secteur retail de réduire ses stocks excédentaires de 27% et d'optimiser sa chaîne d'approvisionnement.",
-      image: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
-      technologies: ["Python", "TensorFlow", "React", "AWS"],
-      client: "Grand Distributeur National",
+      description: "Site éducatif sur l'histoire, les types, les niveaux et les concepts de l'intelligence artificielle, avec explications détaillées, illustrations par schémas, exercices interactifs et actualités.",
+      image: "https://images.unsplash.com/photo-1555255707-c07966088b7b?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
+      technologies: ["React", "Node.js", "Visualizations", "IA"],
+      client: "Projet personnel",
       year: "2023",
-      link: "/portfolio/retail-ai"
+      link: "/portfolio/ia-avenir"
     },
     {
-      title: "Plateforme E-commerce",
-      category: "Développement Web",
-      description: "Site de vente en ligne avec recommandations personnalisées utilisant des algorithmes d'IA pour analyser le comportement des utilisateurs et suggérer des produits pertinents. Cette plateforme a permis d'augmenter le panier moyen de 32% et d'améliorer le taux de conversion de 18% en seulement trois mois après le lancement.",
-      image: "https://images.unsplash.com/photo-1556742111-a301076d9d18?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
-      technologies: ["React", "Node.js", "MongoDB", "Docker"],
-      client: "Boutique Mode en Ligne",
+      title: "Elec Learn",
+      category: "Éducatif",
+      description: "Plateforme d'apprentissage sur l'électronique et l'électricité, proposant des cours structurés, exercices interactifs et ressources pour tous les niveaux.",
+      image: "https://images.unsplash.com/photo-1563770557287-3bdf3b5f40b7?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
+      technologies: ["HTML/CSS", "JavaScript", "SVG Animations"],
+      client: "Projet personnel",
+      year: "2022",
+      link: "/portfolio/elec-learn"
+    },
+    {
+      title: "Melody Dimensions",
+      category: "Éducatif",
+      description: "Site web dédié à la musique, couvrant la théorie, l'histoire, les genres musicaux, la physique du son, et les techniques d'arrangement et de production.",
+      image: "https://images.unsplash.com/photo-1511379938547-c1f69419868d?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
+      technologies: ["React", "Web Audio API", "CSS3"],
+      client: "Projet personnel",
+      year: "2022",
+      link: "/portfolio/melody-dimensions"
+    },
+    {
+      title: "ATARI Demoscene & FX",
+      category: "Rétro & Gaming",
+      description: "Site consacré à la demoscene ATARI, proposant des simulations d'effets de démo, l'histoire de l'ATARI ST, des informations sur les groupes de demoscene et des détails techniques.",
+      image: "https://images.unsplash.com/photo-1607016284318-d1384f74495a?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
+      technologies: ["JavaScript", "Canvas", "WebGL"],
+      client: "Projet personnel",
       year: "2023",
-      link: "/portfolio/ecommerce"
+      link: "/portfolio/atari-demoscene"
     },
     {
-      title: "Chatbot Service Client",
-      category: "Intelligence Artificielle",
-      description: "Assistant virtuel intelligent pour le support client 24/7 capable de traiter plus de 80% des demandes sans intervention humaine. Intégré aux systèmes CRM existants, ce chatbot a permis de réduire les coûts de support de 42% tout en améliorant la satisfaction client grâce à des temps de réponse instantanés.",
-      image: "https://images.unsplash.com/photo-1521790797524-b2497295b8a0?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
-      technologies: ["NLP", "Python", "React", "Google Cloud"],
-      client: "Entreprise SaaS B2B",
+      title: "DATA Science Explorer",
+      category: "Éducatif",
+      description: "Plateforme d'apprentissage de la data science avec cours interactifs, visualisations modernes, système d'évaluation, ressources et outils en ligne.",
+      image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
+      technologies: ["React", "D3.js", "Python", "Jupyter"],
+      client: "Projet personnel",
       year: "2022",
-      link: "/portfolio/chatbot"
+      link: "/portfolio/data-science-explorer"
     },
     {
-      title: "Application Mobile Santé",
-      category: "Développement Mobile",
-      description: "Application mobile de suivi de santé et fitness intégrant des algorithmes d'IA pour personnaliser les recommandations d'entraînement et nutrition. L'application analyse les données utilisateur et ajuste les plans en temps réel, résultant en un taux d'engagement 3x supérieur à la moyenne du secteur.",
-      image: "https://images.unsplash.com/photo-1594882645126-14020914d58d?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
-      technologies: ["React Native", "Firebase", "TensorFlow Lite"],
-      client: "Startup Fitness Tech",
+      title: "Assistant Coach Sportif",
+      category: "Application",
+      description: "Application complète pour coachs sportifs, permettant la gestion des clients, activités, séances, plannings, facturation, avec des outils spécifiques pour différents types d'activités.",
+      image: "https://images.unsplash.com/photo-1517836357463-d25dfeac3438?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
+      technologies: ["React", "Node.js", "MongoDB", "Calendar API"],
+      client: "Projet personnel",
       year: "2022",
-      link: "/portfolio/health-app"
+      link: "/portfolio/coach-sportif"
     },
     {
-      title: "Automatisation Processus RH",
-      category: "Automatisation",
-      description: "Système d'automatisation RH qui utilise l'IA pour présélectionner les CV, planifier les entretiens et suivre les candidatures. Cette solution a réduit le temps de recrutement de 65% et amélioré la qualité des embauches grâce à une évaluation plus objective des candidats.",
-      image: "https://images.unsplash.com/photo-1586281380349-632531db7ed4?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
-      technologies: ["Python", "Django", "React", "NLP"],
-      client: "Groupe Industriel Multinational",
+      title: "Creativity Booster",
+      category: "Application",
+      description: "Application d'aide à la créativité avec to-do liste évoluée, gestion de l'humeur, activités positives, aide à l'idéation avec IA, ressources et outils d'introspection.",
+      image: "https://images.unsplash.com/photo-1499951360447-b19be8fe80f5?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
+      technologies: ["React", "OpenAI API", "Local Storage", "PWA"],
+      client: "Projet personnel",
       year: "2023",
-      link: "/portfolio/hr-automation"
+      link: "/portfolio/creativity-booster"
     },
     {
-      title: "Plateforme Formation en Ligne",
-      category: "Développement Web",
-      description: "LMS (Learning Management System) personnalisé avec parcours d'apprentissage adaptatifs basés sur l'IA qui s'ajustent en fonction des performances de l'apprenant. Cette plateforme a augmenté les taux de complétion des formations de 47% et amélioré les résultats d'apprentissage.",
-      image: "https://images.unsplash.com/photo-1610484826967-09c5720778c7?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
-      technologies: ["React", "Node.js", "PostgreSQL", "AWS"],
-      client: "Institution Éducative",
-      year: "2022",
-      link: "/portfolio/e-learning"
+      title: "ATARI ST Tools",
+      category: "Développement",
+      description: "Suite d'outils pour développeurs de jeux et démos sur ATARI ST, incluant génération de courbes, conversion d'images, optimisation de palettes, éditeur de sprites et plus.",
+      image: "https://images.unsplash.com/photo-1551033406-611cf9a28f67?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
+      technologies: ["C++", "Python", "SDL"],
+      client: "Projet personnel",
+      year: "2021",
+      link: "/portfolio/atari-st-tools"
+    },
+    {
+      title: "Personal Mp3 Metadata Manager",
+      category: "Application",
+      description: "Application de gestion de métadonnées MP3 assistée par IA, avec reformatage de noms de fichiers, édition de métadonnées, extraction de couvertures et plus.",
+      image: "https://images.unsplash.com/photo-1470225620780-dba8ba36b745?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
+      technologies: ["Python", "Qt", "ID3", "OpenAI"],
+      client: "Projet personnel",
+      year: "2023",
+      link: "/portfolio/mp3-metadata-manager"
+    },
+    {
+      title: "Hylst Lair",
+      category: "Portfolio",
+      description: "Site personnel présentant l'ensemble de mes créations littéraires, graphiques, musicales, photographiques et vidéos, avec une navigation par catégorie.",
+      image: "https://images.unsplash.com/photo-1545239351-cefa43af60f3?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
+      technologies: ["React", "Tailwind CSS", "Animation", "Media"],
+      client: "Projet personnel",
+      year: "2023",
+      link: "/portfolio/hylst-lair"
     }
   ];
 
   const projectCategories = [
     "Tous",
+    "Éducatif",
     "Intelligence Artificielle",
-    "Développement Web",
-    "Développement Mobile",
-    "Automatisation"
+    "Application",
+    "Rétro & Gaming",
+    "Développement",
+    "Portfolio"
   ];
 
   const container = {
@@ -99,13 +161,13 @@ const Portfolio = () => {
       <section className="py-16 md:py-24 bg-secondary/30">
         <div className="container">
           <SectionTitle
-            title="Notre Portfolio"
-            subtitle="Découvrez nos projets réalisés avec passion et expertise"
+            title="Mon Portfolio"
+            subtitle="Découvrez mes projets personnels réalisés avec passion et créativité"
             centered
           />
 
           <Tabs defaultValue="Tous" className="w-full">
-            <div className="flex justify-center mb-12">
+            <div className="flex justify-center mb-12 overflow-x-auto">
               <TabsList className="bg-background/60 backdrop-blur-sm">
                 {projectCategories.map((category) => (
                   <TabsTrigger key={category} value={category} className="px-4 py-2">
@@ -162,7 +224,7 @@ const Portfolio = () => {
                               href={project.link} 
                               className="inline-flex items-center text-accent hover:underline gap-1 font-medium"
                             >
-                              Voir l'étude de cas
+                              Voir le projet
                               <ExternalLink size={16} className="ml-1" />
                             </a>
                           </div>

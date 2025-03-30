@@ -25,22 +25,22 @@ const ServicesSection = () => {
       link: "/services/consulting"
     },
     {
-      icon: <Code size={28} />,
-      title: "Intégration Technique",
-      description: "Mise en place de solutions techniques adaptées à vos besoins, en m'appuyant sur l'IA pour compléter mes connaissances et m'adapter à votre projet.",
-      link: "/services/development"
+      icon: <Database size={28} />,
+      title: "Gestion & Visualisation de Données",
+      description: "Organisation, traitement et visualisation de vos données avec des outils adaptés (Python, Jupyter, Metabase), automatisation de processus (n8n, make).",
+      link: "/services/data"
     },
     {
       icon: <Music size={28} />,
       title: "Création Multimédia",
-      description: "Production de contenu visuel et sonore assistée par IA, avec une sensibilité artistique et un souci de la qualité et de l'originalité.",
+      description: "Production de contenu visuel, sonore et textuel assistée par IA, avec une sensibilité artistique et un souci de la qualité et de l'originalité.",
       link: "/services/content"
     },
     {
-      icon: <Database size={28} />,
-      title: "Apprentissage Continu",
-      description: "Formation personnalisée aux outils IA et digitaux, partage de connaissances et accompagnement dans votre montée en compétences numériques.",
-      link: "/services/consulting"
+      icon: <Laptop size={28} />,
+      title: "Sites Web Éducatifs & Interactifs",
+      description: "Conception de sites web de formation et d'information dans divers domaines, avec une approche pédagogique et interactive.",
+      link: "/services/development"
     }
   ];
 

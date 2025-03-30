@@ -8,25 +8,25 @@ import { Badge } from "@/components/ui/badge";
 const PortfolioSection = () => {
   const projects = [
     {
-      title: "IA Prédictive pour Retail",
-      category: "Intelligence Artificielle",
-      description: "Système de prévision des ventes basé sur l'apprentissage automatique",
-      image: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
-      link: "/portfolio/retail-ai"
+      title: "Neuro Diversity Info",
+      category: "Éducatif",
+      description: "Plateforme d'information sur la neurodiversité, les troubles dys, TDAH, autisme et maladies neurodégénératives",
+      image: "https://images.unsplash.com/photo-1580894742597-87bc8789db3d?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
+      link: "/portfolio/neuro-diversity"
     },
     {
-      title: "Plateforme E-commerce",
-      category: "Développement Web",
-      description: "Site de vente en ligne avec recommandations personnalisées",
-      image: "https://images.unsplash.com/photo-1556742111-a301076d9d18?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
-      link: "/portfolio/ecommerce"
+      title: "IA Avenir",
+      category: "Intelligence Artificielle",
+      description: "Site éducatif sur l'histoire, les concepts et l'utilisation des IA avec illustrations et exercices interactifs",
+      image: "https://images.unsplash.com/photo-1555255707-c07966088b7b?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
+      link: "/portfolio/ia-avenir"
     },
     {
-      title: "Chatbot Service Client",
-      category: "Intelligence Artificielle",
-      description: "Assistant virtuel intelligent pour le support client 24/7",
-      image: "https://images.unsplash.com/photo-1521790797524-b2497295b8a0?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
-      link: "/portfolio/chatbot"
+      title: "Assistant Coach Sportif",
+      category: "Application",
+      description: "Application de gestion pour coachs sportifs (clients, activités, planning, facturation, chronos spécialisés)",
+      image: "https://images.unsplash.com/photo-1517836357463-d25dfeac3438?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
+      link: "/portfolio/coach-sportif"
     }
   ];
 
@@ -34,8 +34,8 @@ const PortfolioSection = () => {
     <section className="section-padding bg-background">
       <div className="container">
         <SectionTitle 
-          title="Nos Réalisations" 
-          subtitle="Découvrez comment nous avons aidé nos clients à atteindre leurs objectifs"
+          title="Mes Réalisations" 
+          subtitle="Quelques exemples de projets personnels et professionnels"
           centered
         />
         
@@ -65,7 +65,7 @@ const PortfolioSection = () => {
         <div className="text-center mt-12">
           <Button asChild>
             <Link to="/portfolio" className="inline-flex items-center gap-2">
-              Voir tous nos projets
+              Voir tous mes projets
               <ArrowRight size={16} />
             </Link>
           </Button>
@@ -73,6 +73,6 @@ const PortfolioSection = () => {
       </div>
     </section>
   );
-}
+};
 
 export default PortfolioSection;

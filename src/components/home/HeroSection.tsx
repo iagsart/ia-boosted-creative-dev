@@ -16,10 +16,10 @@ const HeroSection = () => {
         <div className="max-w-3xl mx-auto text-center space-y-8">
           <div className="animate-fade-up [animation-delay:200ms]">
             <div className="inline-block mb-4 px-4 py-2 bg-accent/10 rounded-full text-sm font-medium">
-              L'humain augmenté par l'IA
+              L'humain augmenté par l'IA - Strasbourg
             </div>
             <h1 className="font-display text-4xl md:text-5xl lg:text-6xl font-bold leading-tight">
-              Donnez vie à vos idées avec une approche <span className="text-gradient">créative et humaine</span>
+              Geoffroy Streit<br /><span className="text-gradient">Consultant Créatif & IA</span>
             </h1>
           </div>
           
@@ -43,7 +43,7 @@ const HeroSection = () => {
         <div className="mt-16 grid grid-cols-1 sm:grid-cols-3 gap-6 animate-fade-up [animation-delay:800ms]">
           <StatCard value="100%" label="d'approche personnalisée" />
           <StatCard value="IA+" label="amplification humaine" />
-          <StatCard value="∞" label="possibilités créatives" />
+          <StatCard value="15+" label="projets personnels réalisés" />
         </div>
       </div>
     </section>
