@@ -7,39 +7,39 @@ import { motion } from "framer-motion";
 const ServicesSection = () => {
   const services = [
     {
-      icon: <Code size={28} />,
-      title: "Développement Sur Mesure",
-      description: "Applications web/desktop, sites vitrines et e-commerce adaptés à vos besoins. Solutions de programmation en Python, React et C++.",
-      link: "/services/development"
-    },
-    {
       icon: <Brain size={28} />,
-      title: "Intelligence Artificielle",
-      description: "Intégration d'IA multimodales, automatisation de processus et développement de solutions prédictives pour optimiser votre activité.",
+      title: "Conseil IA & Prompting",
+      description: "Accompagnement dans l'utilisation des IA pour vos projets, optimisation de prompts et stratégies d'intégration pour maximiser le potentiel créatif et technique.",
       link: "/services/ai"
     },
     {
       icon: <Palette size={28} />,
-      title: "Création Graphique & Vidéo",
-      description: "Conception graphique, montage vidéo et création de contenu visuel assistés par IA pour un rendu professionnel et personnalisé.",
+      title: "Solutions No-Code & Low-Code",
+      description: "Création d'applications et sites web sans code complexe, privilégiant les outils open source et adaptables à vos besoins spécifiques.",
+      link: "/services/development"
+    },
+    {
+      icon: <Lightbulb size={28} />,
+      title: "Idéation & Stratégie Créative",
+      description: "Séances de brainstorming assistées par IA, génération de concepts innovants et élaboration de stratégies créatives pour votre entreprise ou projet.",
+      link: "/services/consulting"
+    },
+    {
+      icon: <Code size={28} />,
+      title: "Intégration Technique",
+      description: "Mise en place de solutions techniques adaptées à vos besoins, en m'appuyant sur l'IA pour compléter mes connaissances et m'adapter à votre projet.",
+      link: "/services/development"
+    },
+    {
+      icon: <Music size={28} />,
+      title: "Création Multimédia",
+      description: "Production de contenu visuel et sonore assistée par IA, avec une sensibilité artistique et un souci de la qualité et de l'originalité.",
       link: "/services/content"
     },
     {
       icon: <Database size={28} />,
-      title: "Data Science",
-      description: "Analyse de données, visualisation et insights pour prendre des décisions éclairées. Tableaux de bord et rapports automatisés.",
-      link: "/services/data"
-    },
-    {
-      icon: <Music size={28} />,
-      title: "Création Musicale",
-      description: "Composition musicale assistée par IA pour vos projets vidéo, podcasts, jeux ou applications. Ambiances sonores personnalisées.",
-      link: "/services/music"
-    },
-    {
-      icon: <Lightbulb size={28} />,
-      title: "Conseil Tech",
-      description: "Accompagnement personnel dans vos projets tech, formations sur les outils IA et recommandations adaptées à vos besoins.",
+      title: "Apprentissage Continu",
+      description: "Formation personnalisée aux outils IA et digitaux, partage de connaissances et accompagnement dans votre montée en compétences numériques.",
       link: "/services/consulting"
     }
   ];
@@ -64,7 +64,7 @@ const ServicesSection = () => {
       <div className="container">
         <SectionTitle 
           title="Mes Services" 
-          subtitle="Solutions innovantes et personnalisées adaptées à vos projets"
+          subtitle="L'humain au centre, l'IA comme partenaire pour vos projets"
           centered
         />
         

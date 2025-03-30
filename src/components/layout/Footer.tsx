@@ -10,12 +10,12 @@ const Footer = () => {
           <div className="space-y-4">
             <div className="flex items-center gap-2">
               <div className="h-8 w-8 rounded-md bg-accent flex items-center justify-center">
-                <span className="text-accent-foreground font-bold">AD</span>
+                <span className="text-accent-foreground font-bold">HA</span>
               </div>
-              <span className="font-display font-bold text-xl">AgenceDev</span>
+              <span className="font-display font-bold text-xl">HumanAI</span>
             </div>
             <p className="text-muted-foreground">
-              Transformez vos idées en solutions digitales intelligentes grâce à notre expertise technique et créative boostée par l'IA.
+              Consultant indépendant combinant qualités humaines et intelligence artificielle pour des solutions créatives et adaptées à vos besoins.
             </p>
             <div className="flex gap-4">
               <a href="#" className="text-foreground/70 hover:text-accent" aria-label="LinkedIn">
@@ -33,17 +33,17 @@ const Footer = () => {
           <div>
             <h3 className="font-semibold text-lg mb-4">Services</h3>
             <ul className="space-y-2">
-              <li><Link to="/services/development" className="text-muted-foreground hover:text-foreground transition-colors">Développement Sur Mesure</Link></li>
-              <li><Link to="/services/ai" className="text-muted-foreground hover:text-foreground transition-colors">Intelligence Artificielle</Link></li>
-              <li><Link to="/services/content" className="text-muted-foreground hover:text-foreground transition-colors">Création Assistée par IA</Link></li>
-              <li><Link to="/services/consulting" className="text-muted-foreground hover:text-foreground transition-colors">Conseil Tech</Link></li>
+              <li><Link to="/services/ai" className="text-muted-foreground hover:text-foreground transition-colors">Conseil IA & Prompting</Link></li>
+              <li><Link to="/services/development" className="text-muted-foreground hover:text-foreground transition-colors">Solutions No-Code & Low-Code</Link></li>
+              <li><Link to="/services/content" className="text-muted-foreground hover:text-foreground transition-colors">Création Multimédia</Link></li>
+              <li><Link to="/services/consulting" className="text-muted-foreground hover:text-foreground transition-colors">Idéation & Stratégie</Link></li>
             </ul>
           </div>
           
           <div>
             <h3 className="font-semibold text-lg mb-4">À propos</h3>
             <ul className="space-y-2">
-              <li><Link to="/about" className="text-muted-foreground hover:text-foreground transition-colors">Notre Équipe</Link></li>
+              <li><Link to="/about" className="text-muted-foreground hover:text-foreground transition-colors">Mon Parcours</Link></li>
               <li><Link to="/portfolio" className="text-muted-foreground hover:text-foreground transition-colors">Portfolio</Link></li>
               <li><Link to="/blog" className="text-muted-foreground hover:text-foreground transition-colors">Blog</Link></li>
               <li><Link to="/contact" className="text-muted-foreground hover:text-foreground transition-colors">Contact</Link></li>
@@ -53,15 +53,15 @@ const Footer = () => {
           <div>
             <h3 className="font-semibold text-lg mb-4">Contact</h3>
             <ul className="space-y-2">
-              <li className="text-muted-foreground">contact@agencedev.com</li>
-              <li className="text-muted-foreground">+33 1 23 45 67 89</li>
-              <li className="text-muted-foreground">10 Rue de l'Innovation, 75001 Paris</li>
+              <li className="text-muted-foreground">contact@humanai-conseil.com</li>
+              <li className="text-muted-foreground">+33 6 00 00 00 00</li>
+              <li className="text-muted-foreground">Paris, France</li>
             </ul>
           </div>
         </div>
         
         <div className="mt-10 pt-8 border-t border-border flex flex-col sm:flex-row justify-between items-center gap-4">
-          <p className="text-muted-foreground text-sm">© {new Date().getFullYear()} AgenceDev. Tous droits réservés.</p>
+          <p className="text-muted-foreground text-sm">© {new Date().getFullYear()} HumanAI Conseil. Tous droits réservés.</p>
           <div className="flex gap-6">
             <Link to="/terms" className="text-sm text-muted-foreground hover:text-foreground transition-colors">Mentions légales</Link>
             <Link to="/privacy" className="text-sm text-muted-foreground hover:text-foreground transition-colors">Politique de confidentialité</Link>

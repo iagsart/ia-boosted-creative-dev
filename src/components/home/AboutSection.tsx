@@ -6,10 +6,10 @@ import { SectionTitle } from "@/components/ui/section-title";
 
 const AboutSection = () => {
   const values = [
-    { title: "Innovation", description: "Toujours à la pointe des dernières technologies" },
-    { title: "Expertise", description: "Spécialiste dans plusieurs domaines techniques" },
-    { title: "Qualité", description: "Des solutions robustes et performantes" },
-    { title: "Adaptabilité", description: "Des solutions sur mesure pour chaque client" }
+    { title: "Adaptabilité", description: "Capacité à apprendre et évoluer avec chaque projet" },
+    { title: "Créativité", description: "Approche innovante des défis techniques et créatifs" },
+    { title: "Humanité", description: "L'humain au centre de chaque solution technologique" },
+    { title: "Collaboration", description: "Partenariat étroit avec les IA et les clients" }
   ];
 
   return (
@@ -35,12 +35,12 @@ const AboutSection = () => {
           <div>
             <SectionTitle 
               title="Qui suis-je" 
-              subtitle="Un développeur passionné par l'innovation technologique"
+              subtitle="Un consultant créatif qui s'appuie sur l'IA pour développer des solutions adaptées"
             />
             
             <div className="space-y-6">
               <p className="text-muted-foreground">
-                Je suis un développeur web indépendant spécialisé dans la création de solutions digitales innovantes. Mon approche "Human-Centric AI" garantit que la technologie reste au service de l'humain, pas l'inverse.
+                Je suis un consultant indépendant avec des connaissances pluridisciplinaires et une passion pour l'IA. Mon approche combine mes qualités humaines d'analyse, d'écoute active et de créativité avec les capacités des technologies d'intelligence artificielle pour compenser mes lacunes techniques et m'adapter à vos besoins.
               </p>
               
               <div className="space-y-4">
