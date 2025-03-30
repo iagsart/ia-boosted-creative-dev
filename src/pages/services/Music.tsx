@@ -6,13 +6,13 @@ import { Card, CardContent } from "@/components/ui/card";
 import { StatCard } from "@/components/ui/stat-card";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
-import { ArrowRight, Check, Music, Headphones, Play, Radio, Mic2, FileAudio } from "lucide-react";
+import { ArrowRight, Check, Music as MusicIcon, Headphones, Play, Radio, Mic2, FileAudio } from "lucide-react";
 import { motion } from "framer-motion";
 
-const Music = () => {
+const MusicService = () => {
   const features = [
     {
-      icon: <Music className="h-6 w-6" />,
+      icon: <MusicIcon className="h-6 w-6" />,
       title: "Composition Originale",
       description: "Création de musiques originales sur mesure pour vos projets, adaptées à votre univers et à vos besoins spécifiques."
     },
@@ -127,7 +127,7 @@ const Music = () => {
                   />
                 </div>
                 <div className="absolute -bottom-4 -right-4 bg-accent/10 backdrop-blur-sm border border-accent/20 p-4 rounded-lg shadow-lg">
-                  <Music className="h-12 w-12 text-accent" />
+                  <MusicIcon className="h-12 w-12 text-accent" />
                 </div>
               </div>
             </motion.div>
@@ -324,4 +324,4 @@ const Music = () => {
   );
 };
 
-export default Music;
+export default MusicService;
