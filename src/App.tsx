@@ -9,6 +9,10 @@ import NotFound from "./pages/NotFound";
 import Portfolio from "./pages/Portfolio";
 import Development from "./pages/services/Development";
 import AI from "./pages/services/AI";
+import Content from "./pages/services/Content";
+import Data from "./pages/services/Data";
+import Music from "./pages/services/Music";
+import Consulting from "./pages/services/Consulting";
 
 const queryClient = new QueryClient();
 
@@ -23,7 +27,10 @@ const App = () => (
           <Route path="/portfolio" element={<Portfolio />} />
           <Route path="/services/development" element={<Development />} />
           <Route path="/services/ai" element={<AI />} />
-          {/* Plus tard, nous ajouterons d'autres routes ici pour les pages Services, Contact, etc. */}
+          <Route path="/services/content" element={<Content />} />
+          <Route path="/services/data" element={<Data />} />
+          <Route path="/services/music" element={<Music />} />
+          <Route path="/services/consulting" element={<Consulting />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>

@@ -7,7 +7,9 @@ Toutes les modifications notables apportées à ce projet seront documentées da
 
 ### Added
 - Nouvelle page Portfolio complète avec filtrage par catégorie et affichage de projets détaillés
-- Pages détaillées pour les services "Développement Sur Mesure" et "Intelligence Artificielle"
+- Pages détaillées pour les services: Développement, Intelligence Artificielle, Création Graphique & Vidéo, Data Science, Création Musicale et Conseil Tech
+- Section Services personnalisée avec compétences spécifiques de Geoffroy Streit
+- Profil professionnel détaillé dans la section Conseil Tech
 - Animations et transitions fluides sur tous les composants avec Framer Motion
 - Mise en place de routes pour les nouvelles pages
 - Layout global avec navbar et footer
@@ -23,6 +25,7 @@ Toutes les modifications notables apportées à ce projet seront documentées da
 - Layout principal optimisé avec animations de transition
 - Composants ServiceCard et StatCard améliorés avec des animations subtiles
 - Expérience interactive enrichie sur les éléments cliquables
+- Contenu personnalisé reflétant l'expertise spécifique dans les domaines tech et créatifs
 
 ### Fixed
 - N/A
