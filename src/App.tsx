@@ -15,6 +15,8 @@ import Content from "./pages/services/Content";
 import Data from "./pages/services/Data";
 import MusicService from "./pages/services/Music";
 import Consulting from "./pages/services/Consulting";
+import Blog from "./pages/Blog";
+import BlogPost from "./pages/BlogPost";
 
 const queryClient = new QueryClient();
 
@@ -35,6 +37,8 @@ const App = () => (
           <Route path="/services/data" element={<Data />} />
           <Route path="/services/music" element={<MusicService />} />
           <Route path="/services/consulting" element={<Consulting />} />
+          <Route path="/blog" element={<Blog />} />
+          <Route path="/blog/:slug" element={<BlogPost />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>
