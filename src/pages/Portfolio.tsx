@@ -1,13 +1,19 @@
 
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import Layout from "@/components/layout/Layout";
 import { SectionTitle } from "@/components/ui/section-title";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Badge } from "@/components/ui/badge";
-import { motion } from "framer-motion";
-import { ExternalLink } from "lucide-react";
+import { motion, AnimatePresence } from "framer-motion";
+import { ExternalLink, ArrowRight, Search } from "lucide-react";
+import { Input } from "@/components/ui/input";
+import { Button } from "@/components/ui/button";
 
 const Portfolio = () => {
+  const [searchQuery, setSearchQuery] = useState("");
+  const [selectedCategory, setSelectedCategory] = useState("Tous");
+  const [filteredProjects, setFilteredProjects] = useState([]);
+
   const projects = [
     {
       title: "Neuro Diversity Info",
@@ -27,7 +33,8 @@ const Portfolio = () => {
       technologies: ["React", "Interactive SVG", "CSS Animations"],
       client: "Projet personnel",
       year: "2022",
-      link: "/portfolio/opti-learn"
+      link: "/portfolio/opti-learn",
+      featured: true
     },
     {
       title: "IA Avenir",
@@ -67,7 +74,8 @@ const Portfolio = () => {
       technologies: ["JavaScript", "Canvas", "WebGL"],
       client: "Projet personnel",
       year: "2023",
-      link: "/portfolio/atari-demoscene"
+      link: "/portfolio/atari-demoscene",
+      featured: true
     },
     {
       title: "DATA Science Explorer",
@@ -107,7 +115,8 @@ const Portfolio = () => {
       technologies: ["C++", "Python", "SDL"],
       client: "Projet personnel",
       year: "2021",
-      link: "/portfolio/atari-st-tools"
+      link: "/portfolio/atari-st-tools",
+      featured: true
     },
     {
       title: "Personal Mp3 Metadata Manager",
@@ -141,6 +150,22 @@ const Portfolio = () => {
     "Portfolio"
   ];
 
+  // Filtre les projets en fonction de la recherche et de la catégorie
+  useEffect(() => {
+    const filtered = projects.filter(project => {
+      const matchesSearch = searchQuery.trim() === '' || 
+        project.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
+        project.description.toLowerCase().includes(searchQuery.toLowerCase()) ||
+        project.technologies.some(tech => tech.toLowerCase().includes(searchQuery.toLowerCase()));
+      
+      const matchesCategory = selectedCategory === 'Tous' || project.category === selectedCategory;
+      
+      return matchesSearch && matchesCategory;
+    });
+    
+    setFilteredProjects(filtered);
+  }, [searchQuery, selectedCategory, projects]);
+
   const container = {
     hidden: { opacity: 0 },
     show: {
@@ -156,43 +181,150 @@ const Portfolio = () => {
     show: { opacity: 1, y: 0 }
   };
 
+  const handleCategoryChange = (value) => {
+    setSelectedCategory(value);
+  };
+
   return (
     <Layout>
-      <section className="py-16 md:py-24 bg-secondary/30">
-        <div className="container">
+      <section className="relative py-16 md:py-24">
+        {/* Background with gradient and overlays */}
+        <div className="absolute inset-0 bg-gradient-to-b from-secondary/10 via-background to-background -z-10"></div>
+        <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1518770660439-4636190af475?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80')] bg-fixed bg-cover opacity-5 mix-blend-overlay -z-10"></div>
+        
+        <div className="container max-w-7xl mx-auto px-4 sm:px-6">
           <SectionTitle
             title="Mon Portfolio"
             subtitle="Découvrez mes projets personnels réalisés avec passion et créativité"
             centered
           />
 
-          <Tabs defaultValue="Tous" className="w-full">
-            <div className="flex justify-center mb-12 overflow-x-auto">
-              <TabsList className="bg-background/60 backdrop-blur-sm">
+          {/* Barre de recherche */}
+          <div className="max-w-md mx-auto mb-12 relative">
+            <div className="relative">
+              <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-muted-foreground" size={18} />
+              <Input
+                type="text"
+                placeholder="Rechercher un projet, une technologie..."
+                className="pl-10 pr-4 py-2 w-full bg-background/70 backdrop-blur-sm border border-accent/20 focus:border-accent/40 rounded-full transition-all"
+                value={searchQuery}
+                onChange={(e) => setSearchQuery(e.target.value)}
+              />
+              {searchQuery && (
+                <Button 
+                  variant="ghost" 
+                  size="sm" 
+                  className="absolute right-2 top-1/2 transform -translate-y-1/2 h-6 w-6 p-0 rounded-full"
+                  onClick={() => setSearchQuery("")}
+                >
+                  ×
+                </Button>
+              )}
+            </div>
+          </div>
+
+          <Tabs 
+            defaultValue="Tous" 
+            className="w-full"
+            value={selectedCategory}
+            onValueChange={handleCategoryChange}
+          >
+            <div className="flex justify-center mb-12 overflow-x-auto scrollbar-hide">
+              <TabsList className="bg-background/60 backdrop-blur-sm border border-accent/10 p-1 rounded-full">
                 {projectCategories.map((category) => (
-                  <TabsTrigger key={category} value={category} className="px-4 py-2">
+                  <TabsTrigger 
+                    key={category} 
+                    value={category} 
+                    className="px-4 py-2 rounded-full data-[state=active]:bg-accent data-[state=active]:text-white transition-all duration-300"
+                  >
                     {category}
                   </TabsTrigger>
                 ))}
               </TabsList>
             </div>
 
-            {projectCategories.map((category) => (
-              <TabsContent key={category} value={category} className="mt-0">
+            {/* Featured Projects - Always visible */}
+            {selectedCategory === "Tous" && (
+              <div className="mb-16">
+                <h3 className="text-2xl font-display font-semibold mb-8 text-center">Projets mis en avant</h3>
+                <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                  {projects
+                    .filter(project => project.featured)
+                    .map((project, index) => (
+                      <motion.div
+                        key={`featured-${index}`}
+                        initial={{ opacity: 0, y: 20 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.5, delay: index * 0.1 }}
+                        className="group relative overflow-hidden rounded-xl bg-gradient-to-br from-card to-card/80 border border-accent/10 shadow-lg hover:shadow-xl transition-all duration-500"
+                      >
+                        <div className="absolute inset-0 bg-gradient-to-br from-accent/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-10"></div>
+                        <div className="relative aspect-video overflow-hidden">
+                          <motion.img
+                            src={project.image}
+                            alt={project.title}
+                            className="w-full h-full object-cover"
+                            whileHover={{ scale: 1.05 }}
+                            transition={{ duration: 0.5 }}
+                          />
+                          <div className="absolute top-4 left-4 z-20">
+                            <Badge className="bg-accent text-white hover:bg-accent/90 shadow-md">{project.category}</Badge>
+                          </div>
+                        </div>
+                        <div className="p-6 relative z-20">
+                          <h3 className="text-2xl font-display font-semibold mb-3 group-hover:text-accent transition-colors duration-300">{project.title}</h3>
+                          <p className="text-muted-foreground mb-4">{project.description}</p>
+                          
+                          <div className="flex flex-wrap gap-2 mb-4">
+                            {project.technologies.map((tech, idx) => (
+                              <Badge key={idx} variant="outline" className="bg-background/50 backdrop-blur-sm">{tech}</Badge>
+                            ))}
+                          </div>
+                          
+                          <div className="flex justify-between items-center text-sm text-muted-foreground mt-4">
+                            <span>{project.client}</span>
+                            <span>{project.year}</span>
+                          </div>
+                          
+                          <div className="mt-6 pt-4 border-t border-border">
+                            <a 
+                              href={project.link} 
+                              className="inline-flex items-center text-accent hover:text-accent/80 font-medium group/link"
+                            >
+                              Explorer ce projet
+                              <ArrowRight size={16} className="ml-2 transform group-hover/link:translate-x-1 transition-transform duration-300" />
+                            </a>
+                          </div>
+                        </div>
+                        <div className="absolute inset-0 bg-gradient-to-t from-background/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                      </motion.div>
+                    ))}
+                </div>
+              </div>
+            )}
+
+            {/* Grid de projets filtrés */}
+            <AnimatePresence mode="wait">
+              <motion.div 
+                key={selectedCategory + searchQuery}
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
+                transition={{ duration: 0.3 }}
+              >
                 <motion.div 
                   className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
                   variants={container}
                   initial="hidden"
                   animate="show"
                 >
-                  {projects
-                    .filter(project => category === "Tous" || project.category === category)
-                    .map((project, index) => (
+                  {filteredProjects.length > 0 ? (
+                    filteredProjects.map((project, index) => (
                       <motion.div 
                         key={index} 
                         variants={item}
                         whileHover={{ y: -10 }}
-                        className="bg-card rounded-lg overflow-hidden border shadow-sm hover:shadow-md transition-all duration-300"
+                        className="bg-card rounded-lg overflow-hidden border border-border shadow-sm hover:shadow-md transition-all duration-300"
                       >
                         <div className="relative aspect-video overflow-hidden">
                           <img 
@@ -222,18 +354,36 @@ const Portfolio = () => {
                           <div className="mt-4 pt-4 border-t border-border">
                             <a 
                               href={project.link} 
-                              className="inline-flex items-center text-accent hover:underline gap-1 font-medium"
+                              className="inline-flex items-center text-accent hover:text-accent/80 gap-1 font-medium group"
                             >
                               Voir le projet
-                              <ExternalLink size={16} className="ml-1" />
+                              <ExternalLink size={16} className="ml-1 transform group-hover:translate-x-1 transition-transform duration-300" />
                             </a>
                           </div>
                         </div>
                       </motion.div>
-                    ))}
+                    ))
+                  ) : (
+                    <div className="col-span-full py-16 text-center">
+                      <h3 className="text-xl font-semibold mb-2">Aucun projet trouvé</h3>
+                      <p className="text-muted-foreground">
+                        Aucun projet ne correspond à votre recherche. Essayez avec d'autres termes ou catégories.
+                      </p>
+                      <Button 
+                        variant="outline" 
+                        className="mt-4" 
+                        onClick={() => {
+                          setSearchQuery("");
+                          setSelectedCategory("Tous");
+                        }}
+                      >
+                        Réinitialiser les filtres
+                      </Button>
+                    </div>
+                  )}
                 </motion.div>
-              </TabsContent>
-            ))}
+              </motion.div>
+            </AnimatePresence>
           </Tabs>
         </div>
       </section>
