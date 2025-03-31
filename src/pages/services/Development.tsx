@@ -1,3 +1,4 @@
+
 import React from 'react';
 import Layout from "@/components/layout/Layout";
 import { SectionTitle } from "@/components/ui/section-title";
@@ -5,7 +6,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { StatCard } from "@/components/ui/stat-card";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
-import { ArrowRight, Check, Code, Server, Globe, Smartphone, Zap, Lightbulb, BrainCircuit, Database } from "lucide-react";
+import { ArrowRight, Check, Code, Server, Globe, Smartphone, Zap, Lightbulb, BrainCircuit, Database, Monitor } from "lucide-react";
 import { motion } from "framer-motion";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 
