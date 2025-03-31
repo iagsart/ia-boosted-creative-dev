@@ -8,25 +8,25 @@ import { Badge } from "@/components/ui/badge";
 const PortfolioSection = () => {
   const projects = [
     {
-      title: "Neuro Diversity Info",
-      category: "Éducatif",
-      description: "Plateforme d'information sur la neurodiversité, les troubles dys, TDAH, autisme et maladies neurodégénératives",
-      image: "https://images.unsplash.com/photo-1580894742597-87bc8789db3d?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
-      link: "/portfolio/neuro-diversity"
+      title: "Hylst Music Haven",
+      category: "Artistique & Technique",
+      description: "Bibliothèque musicale de mes créations personnelles assistées par IA, avec interface moderne et lecteur multimédia évolué",
+      image: "https://images.unsplash.com/photo-1511379938547-c1f69419868d?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
+      link: "/portfolio/hylst-music-haven"
     },
     {
-      title: "Assistant Coach Sportif",
-      category: "Application",
-      description: "Application de gestion pour coachs sportifs (clients, activités, planning, facturation, chronos spécialisés)",
-      image: "https://images.unsplash.com/photo-1517836357463-d25dfeac3438?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
-      link: "/portfolio/coach-sportif"
+      title: "Hylst Graphical Fantasy",
+      category: "Artistique & Graphique",
+      description: "Galerie de créations graphiques et musicales par IA dans le domaine de la Fantasy, avec design spécifique par catégorie",
+      image: "https://images.unsplash.com/photo-1614851099175-e5b30eb6f696?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
+      link: "/portfolio/hylst-graphical-fantasy"
     },
     {
-      title: "ATARI Demoscene & FX",
-      category: "Rétro & Technique",
-      description: "Site sur la demoscene ATARI avec simulations d'effets, historique et informations techniques détaillées",
-      image: "https://images.unsplash.com/photo-1607016284318-d1384f74495a?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
-      link: "/portfolio/atari-demoscene"
+      title: "Retro Gaming Memories",
+      category: "Ludique & Data",
+      description: "Site web dédié à l'histoire des consoles et ordinateurs rétro, avec caractéristiques, jeux populaires et ressources d'émulation",
+      image: "https://images.unsplash.com/photo-1551103782-8ab07afd45c1?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
+      link: "/portfolio/retro-gaming-memories"
     }
   ];
 
