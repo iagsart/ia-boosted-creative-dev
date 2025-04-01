@@ -227,15 +227,20 @@
   }
   
   /* Styles de curseur personnalisés */
-  .fantasy .link-hover {
-    @apply transition-all duration-300 cursor-[url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='40' height='48' viewport='0 0 100 100' style='font-size:24px;'><text y='50%' x='8%'>✨</text></svg>"),pointer];
+  .link-hover {
+    @apply transition-all duration-300;
   }
-  
-  .tech .link-hover {
-    @apply transition-all duration-300 cursor-[url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='40' height='48' viewport='0 0 100 100' style='font-size:24px;'><text y='50%' x='8%'>⚡</text></svg>"),pointer];
-  }
-  
-  .dark .link-hover {
-    @apply transition-all duration-300 cursor-[url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='40' height='48' viewport='0 0 100 100' style='fill:white;font-size:24px;'><text y='50%' x='8%'>👆</text></svg>"),pointer];
-  }
+}
+
+/* Placing cursor styles outside of @apply to fix the parsing issues */
+.fantasy .link-hover {
+  cursor: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='40' height='48' viewport='0 0 100 100' style='font-size:24px;'><text y='50%' x='8%'>✨</text></svg>"), pointer;
+}
+
+.tech .link-hover {
+  cursor: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='40' height='48' viewport='0 0 100 100' style='font-size:24px;'><text y='50%' x='8%'>⚡</text></svg>"), pointer;
+}
+
+.dark .link-hover {
+  cursor: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='40' height='48' viewport='0 0 100 100' style='fill:white;font-size:24px;'><text y='50%' x='8%'>👆</text></svg>"), pointer;
 }

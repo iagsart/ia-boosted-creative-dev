@@ -84,28 +84,30 @@ const PortfolioSection = () => {
     }
   };
 
-  // Animation du fond
-  const backgroundVariants = {
+  // Animation du fond - Fixed to use proper framer-motion variant format
+  const backgroundAnimation = {
     initial: { 
       backgroundPosition: "0% 0%"
     },
     animate: { 
-      backgroundPosition: "100% 100%",
-      transition: {
-        repeat: Infinity,
-        repeatType: "mirror",
-        duration: 20,
-        ease: "linear"
-      }
+      backgroundPosition: "100% 100%"
     }
+  };
+
+  const backgroundTransition = {
+    repeat: Infinity,
+    repeatType: "mirror" as const, // Type assertion to one of the allowed values
+    duration: 20,
+    ease: "linear"
   };
 
   return (
     <motion.section 
       className={`section-padding relative overflow-hidden ${theme === 'fantasy' ? 'bg-gradient-to-br from-purple-50 via-pink-50 to-purple-50' : 'bg-background'}`}
-      variants={backgroundVariants}
+      variants={backgroundAnimation}
       initial="initial"
       animate="animate"
+      transition={backgroundTransition}
     >
       {/* Particules de fond stylisées */}
       {theme === 'fantasy' && (
