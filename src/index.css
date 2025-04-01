@@ -226,9 +226,77 @@
     @apply bg-blue-500;
   }
   
-  /* Styles de curseur personnalisés */
+  /* Amélioration de la visibilité des catégories de blog */
+  .blog-category {
+    @apply px-3 py-1.5 rounded-full text-sm font-medium transition-all duration-200;
+    @apply bg-secondary text-foreground/90 hover:bg-accent/20 hover:text-accent;
+    @apply border border-accent/20;
+    @apply shadow-sm;
+  }
+  
+  .blog-category.active {
+    @apply bg-accent/20 text-accent font-semibold;
+  }
+  
+  /* Styles pour les logos */
+  .logo-grid {
+    @apply grid grid-cols-2 gap-4;
+  }
+  
+  .logo-container {
+    @apply aspect-square bg-accent/10 rounded-lg overflow-hidden p-4;
+    @apply flex items-center justify-center;
+    @apply transition-all duration-300 hover:bg-accent/20;
+  }
+
+  /* Animation pour le titre */
+  .title-animated span {
+    @apply inline-block transition-all duration-300;
+  }
+  
+  .title-animated:hover span {
+    @apply animate-bounce;
+    animation-delay: calc(var(--index) * 0.05s);
+  }
+  
+  /* Animation pour les logos */
+  .logo-animate {
+    @apply transition-all duration-500;
+  }
+  
+  .logo-animate:hover {
+    @apply transform scale-110 rotate-3;
+  }
+  
+  /* Améliorations pour le portfolio */
+  .portfolio-tag {
+    @apply bg-accent/15 text-accent font-medium px-3 py-1 rounded-full text-sm;
+    @apply border border-accent/30 shadow-sm;
+  }
+
+  /* Styles pour le texte avec animation */
+  .animated-text-container span {
+    @apply inline-block transition-transform;
+  }
+  
+  .animated-text-container:hover span {
+    animation: letter-wave 0.3s ease-in-out;
+    animation-fill-mode: forwards;
+  }
+  
+  /* Lien hover */
   .link-hover {
     @apply transition-all duration-300;
+  }
+}
+
+/* Animation de vague pour le texte */
+@keyframes letter-wave {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-5px);
   }
 }
 

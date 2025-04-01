@@ -13,13 +13,19 @@ const ServicesSection = () => {
       link: "/services/ai"
     },
     {
+      icon: <Palette size={28} />,
+      title: "Infographie & Design",
+      description: "Création de logos, identités visuelles et supports graphiques personnalisés avec une approche combinant créativité humaine et outils numériques avancés.",
+      link: "/services/content"
+    },
+    {
       icon: <Cpu size={28} />,
       title: "Expertise Optronique",
       description: "Conseil en optique, électronique, systèmes embarqués et traitement du signal basé sur plus de 15 ans d'expérience dans l'industrie spécialisée.",
       link: "/services/consulting"
     },
     {
-      icon: <Palette size={28} />,
+      icon: <Code size={28} />,
       title: "Solutions No-Code & Low-Code",
       description: "Création d'applications et sites web sans code complexe, privilégiant les outils open source et adaptables à vos besoins spécifiques.",
       link: "/services/development"
@@ -35,12 +41,6 @@ const ServicesSection = () => {
       title: "Gestion & Visualisation de Données",
       description: "Organisation, traitement et visualisation de vos données avec des outils adaptés (Python, Jupyter, Metabase), automatisation de processus (n8n, make).",
       link: "/services/data"
-    },
-    {
-      icon: <Laptop size={28} />,
-      title: "Sites Web Éducatifs & Interactifs",
-      description: "Conception de sites web de formation et d'information dans divers domaines techniques avec une approche pédagogique et interactive.",
-      link: "/services/development"
     }
   ];
 
@@ -60,7 +60,7 @@ const ServicesSection = () => {
   };
 
   return (
-    <section className="section-padding bg-background">
+    <section id="services" className="section-padding bg-background">
       <div className="container">
         <SectionTitle 
           title="Mes Services" 

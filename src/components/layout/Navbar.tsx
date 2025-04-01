@@ -1,11 +1,12 @@
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { useMediaQuery } from "@/hooks/use-media-query";
 import { Menu, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { ThemeSelector } from "../ui/theme-selector";
+import { useTheme } from "@/context/theme-provider";
 
 interface NavLink {
   label: string;
@@ -25,6 +26,7 @@ const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const location = useLocation();
   const isMobile = useMediaQuery("(max-width: 768px)");
+  const { theme } = useTheme();
 
   const handleNavClick = () => {
     if (isMobile) {
@@ -65,6 +67,22 @@ const Navbar = () => {
     open: { opacity: 1, x: 0 },
   };
 
+  // Animation pour le titre
+  const titleLetters = "Hylst Human AI".split("");
+  
+  // Définition des couleurs selon le thème
+  const getTitleColorClass = (index: number) => {
+    if (theme === 'fantasy') {
+      return index % 2 === 0 ? 'text-purple-500' : 'text-pink-500';
+    } else if (theme === 'tech') {
+      return index % 2 === 0 ? 'text-blue-500' : 'text-cyan-400';
+    } else if (theme === 'dark') {
+      return index % 2 === 0 ? 'text-indigo-400' : 'text-blue-300';
+    } else {
+      return index % 2 === 0 ? 'text-accent' : 'text-accent/80';
+    }
+  };
+
   return (
     <nav className="sticky top-0 z-50 w-full bg-background/80 backdrop-blur-md shadow-sm border-b border-border">
       <div className="container mx-auto px-4 md:px-6">
@@ -75,7 +93,32 @@ const Navbar = () => {
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
-              <span className="text-xl font-semibold text-gradient">HYLST</span>
+              <div className="flex items-center">
+                <img 
+                  src="/lovable-uploads/7e4352c2-152e-4866-baa0-22257e10b12c.png" 
+                  alt="Hylst Logo" 
+                  className="h-8 w-8 mr-2 dark:invert" 
+                />
+                <div className="flex overflow-hidden">
+                  {titleLetters.map((letter, index) => (
+                    <motion.span
+                      key={index}
+                      className={`text-xl font-semibold ${letter === " " ? "mr-2" : ""} ${getTitleColorClass(index)}`}
+                      initial={{ y: -20, opacity: 0 }}
+                      animate={{ y: 0, opacity: 1 }}
+                      transition={{
+                        delay: index * 0.05,
+                        repeat: Infinity,
+                        repeatType: "reverse",
+                        repeatDelay: 10,
+                        duration: 0.5
+                      }}
+                    >
+                      {letter}
+                    </motion.span>
+                  ))}
+                </div>
+              </div>
             </motion.div>
           </Link>
 
