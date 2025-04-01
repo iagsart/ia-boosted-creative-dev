@@ -3,6 +3,7 @@ import { ArrowRight, CheckCircle } from "lucide-react";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { SectionTitle } from "@/components/ui/section-title";
+import { Avatar } from "@/components/ui/avatar";
 
 const AboutSection = () => {
   const values = [
@@ -17,36 +18,13 @@ const AboutSection = () => {
       <div className="container">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <div>
-            <div className="relative">
-              <div className="grid grid-cols-2 gap-4">
-                <div className="aspect-square bg-accent/10 rounded-lg overflow-hidden p-4 flex items-center justify-center">
-                  <img 
-                    src="/lovable-uploads/363fd92b-1b9d-4b16-b03a-96f72f450c30.png" 
-                    alt="Hylst Logo" 
-                    className="w-full h-auto dark:invert" 
-                  />
-                </div>
-                <div className="aspect-square bg-accent/10 rounded-lg overflow-hidden p-4 flex items-center justify-center">
-                  <img 
-                    src="/lovable-uploads/95d61ee5-7e97-432d-b5d3-e44473a39d6a.png" 
-                    alt="Hylst Logo Créatif" 
-                    className="w-full h-auto dark:invert" 
-                  />
-                </div>
-                <div className="aspect-square bg-accent/10 rounded-lg overflow-hidden p-4 flex items-center justify-center">
-                  <img 
-                    src="/lovable-uploads/e0a57209-0359-4d7b-a8dd-c60c69c1ea63.png" 
-                    alt="Hylst Logo Tech" 
-                    className="w-full h-auto" 
-                  />
-                </div>
-                <div className="aspect-square bg-accent/10 rounded-lg overflow-hidden p-4 flex items-center justify-center">
-                  <img 
-                    src="/lovable-uploads/cde530d4-9329-44e9-9db7-66ecf5bfd9e3.png" 
-                    alt="Hylst Logo Artistique" 
-                    className="w-full h-auto dark:invert" 
-                  />
-                </div>
+            <div className="relative flex justify-center">
+              <div className="w-full max-w-md aspect-square rounded-lg overflow-hidden p-1 bg-accent/10 shadow-lg">
+                <img 
+                  src="/public/lovable-uploads/d019b205-4b3a-47e7-a7c2-ab36adcff0ee.png" 
+                  alt="Geoffroy Streit portrait" 
+                  className="w-full h-full object-cover rounded-lg"
+                />
               </div>
               <div className="absolute -bottom-6 -right-6 bg-background p-6 rounded-lg border shadow-lg">
                 <p className="font-semibold">Geoffroy Streit</p>

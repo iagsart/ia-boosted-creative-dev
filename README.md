@@ -41,6 +41,9 @@ Ce projet est un site web portfolio personnel développé avec React, Tailwind C
   /lib               # Utilitaires et fonctions
   /pages             # Pages principales de l'application
     /services        # Pages des différents services
+  /public
+    /images          # Images personnalisées
+    /lovable-uploads # Images uploadées via l'interface
 ```
 
 ## Comment ajouter du contenu
@@ -58,6 +61,10 @@ Le site offre plusieurs thèmes accessibles via le sélecteur en haut à droite:
 - **Dark**: Thème sombre élégant
 - **Fantasy**: Thème coloré avec des accents violets
 - **Tech**: Thème axé technologie avec des accents bleus
+
+## Pour plus d'informations
+
+Pour une documentation complète sur la structure et les fonctionnalités du site, consultez le fichier `structure.md` à la racine du projet.
 
 ## Développement
 

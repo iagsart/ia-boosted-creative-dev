@@ -13,15 +13,19 @@ et ce projet adhère au [Semantic Versioning](https://semver.org/spec/v2.0.0.htm
 - ServicesGrid comme composant réutilisable
 - Animations améliorées pour les sections Portfolio et Services
 - Effets interactifs sur les cartes de projets
+- Fichier structure.md détaillant l'architecture et les fonctionnalités du site
+- Dossier public/images pour les ressources image personnalisées
 
 ### Modifié
 - Déplacement de la section "Mes Services" de la page d'accueil vers la page Services
+- Remplacement des logos dans la section "Qui suis-je" par une photo de profil
 - Amélioration de la visibilité des catégories dans la section Portfolio
 - Refactorisation des composants Portfolio pour une meilleure organisation
 - Mise à jour du README avec des informations détaillées sur le projet
 
 ### Corrigé
 - Correction des routes pour la section Services
+- Intégration correcte de ServicesGrid dans la page Services
 - Amélioration de la visibilité des badges de catégories dans le Portfolio
 - Meilleure adaptation aux différents thèmes (Light, Dark, Fantasy, Tech)
 - Ajustement des contrastes pour une meilleure accessibilité
