@@ -28,31 +28,41 @@ const PortfolioCategories = ({ categories, activeCategory, onCategoryChange }: P
     visible: { opacity: 1, y: 0 }
   };
 
-  // Tailwind classes for different themes
+  // Tailwind classes for different themes - enhanced for better visibility
   const getTagClasses = (isActive: boolean) => {
-    const baseClasses = "px-3 py-1.5 rounded-full transition-all duration-300 cursor-pointer text-sm font-medium border";
+    const baseClasses = "px-3 py-2 rounded-full transition-all duration-300 cursor-pointer text-sm font-medium border shadow-sm hover:shadow-md";
     
     if (isActive) {
-      return `${baseClasses} bg-accent text-accent-foreground border-accent shadow-sm`;
+      // Active states with stronger contrast
+      switch (theme) {
+        case 'dark':
+          return `${baseClasses} bg-accent text-white border-accent shadow-accent/30`;
+        case 'fantasy': 
+          return `${baseClasses} bg-accent text-white border-accent shadow-purple-400/30`;
+        case 'tech':
+          return `${baseClasses} bg-accent text-white border-accent shadow-blue-400/30`;
+        default: // light
+          return `${baseClasses} bg-accent text-white border-accent shadow-accent/20`;
+      }
     }
     
-    // Different background colors for different themes to ensure visibility
+    // Inactive states with better visibility
     switch (theme) {
       case 'dark':
-        return `${baseClasses} bg-secondary/80 text-foreground hover:bg-secondary/90 border-border/50`;
+        return `${baseClasses} bg-secondary/90 text-foreground hover:bg-secondary border-border hover:border-accent/30`;
       case 'fantasy':
-        return `${baseClasses} bg-secondary/80 text-foreground hover:bg-secondary/90 border-purple-300/50`;
+        return `${baseClasses} bg-purple-100/90 text-purple-900 hover:bg-purple-200/90 border-purple-300/50 hover:border-purple-400/70`;
       case 'tech':
-        return `${baseClasses} bg-secondary/80 text-foreground hover:bg-secondary/90 border-blue-300/50`;
+        return `${baseClasses} bg-blue-50/90 text-blue-900 hover:bg-blue-100/90 border-blue-200/50 hover:border-blue-300/70`;
       default: // light
-        return `${baseClasses} bg-secondary/80 text-foreground hover:bg-secondary/90 border-border/50`;
+        return `${baseClasses} bg-secondary/90 text-foreground hover:bg-secondary/100 border-border/50 hover:border-accent/20`;
     }
   };
 
   return (
     <div className="my-6">
       <motion.div 
-        className="flex flex-wrap gap-2"
+        className="flex flex-wrap gap-2 justify-center"
         variants={container}
         initial="hidden"
         animate="visible"

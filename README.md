@@ -1,60 +1,77 @@
 
-# AgenceDev - Agence d'Innovation Digitale
+# Hylst Human AI - Site Portfolio Personnel
 
-## Présentation
+Ce projet est un site web portfolio personnel développé avec React, Tailwind CSS et Vite, mettant en valeur des compétences en développement, IA, infographie et consulting.
 
-AgenceDev est une agence digitale nouvelle génération qui associe l'expertise technique traditionnelle à la puissance de l'intelligence artificielle. Notre approche "Human-Centric AI" garantit que la technologie reste au service de l'humain, pas l'inverse.
+## Fonctionnalités
 
-Nous proposons des services de développement d'applications et sites web, d'analyse et traitement de données, de recherche de solutions et d'optimisations à base d'IA et d'automatisation, ainsi que de création de contenu graphique, rédactionnel, commercial, et musical assisté par IA.
-
-## Structure du site
-
-- **Accueil**: Présentation de l'agence et de ses services
-- **Services**: Détail des services proposés
-  - Développement Sur Mesure
-  - Intelligence Artificielle
-  - Création Assistée par IA
-  - Conseil Tech
-- **Portfolio**: Présentation des projets réalisés
-- **À propos**: Présentation de l'équipe et de la philosophie de l'agence
-- **Blog**: Articles sur les technologies et l'IA
-- **Contact**: Formulaire de contact et demande de devis
+- **Design responsive multi-thèmes** (Light, Dark, Fantasy, Tech)
+- **Portfolio interactif** avec filtrage et animations
+- **Blog** avec articles structurés et système de catégories
+- **Présentation des services** offerts
+- **Showcase de projets** développés personnellement
+- **Section contact** avec formulaire
 
 ## Technologies utilisées
 
-- React
+- React 18
 - TypeScript
-- Vite
 - Tailwind CSS
-- shadcn/ui
-- Supabase (backend)
+- Framer Motion pour les animations
+- Shadcn/UI pour les composants
+- Vite pour le développement
+- React Router pour la navigation
+
+## Structure du projet
+
+```
+/src
+  /components        # Composants réutilisables
+    /blog            # Composants pour le blog
+    /home            # Composants pour la page d'accueil
+    /layout          # Layout de l'application
+    /portfolio       # Composants pour la section portfolio
+    /services        # Composants pour la section services
+    /ui              # Composants UI réutilisables
+  /context           # Contextes React (Theme, etc.)
+  /data              # Données du site (articles, projets)
+  /docs              # Documentation
+  /hooks             # Custom React hooks
+  /integrations      # Intégrations avec services externes
+  /lib               # Utilitaires et fonctions
+  /pages             # Pages principales de l'application
+    /services        # Pages des différents services
+```
+
+## Comment ajouter du contenu
+
+- **Portfolio**: Modifiez `src/pages/Portfolio.tsx` pour ajouter de nouveaux projets
+- **Blog**: Ajoutez des articles dans `src/data/blogPosts.tsx`
+- **Services**: Modifiez `src/components/services/ServicesGrid.tsx` pour mettre à jour vos services
+
+Consultez `src/docs/image-upload-guide.md` pour ajouter vos propres images.
+
+## Personnalisation
+
+Le site offre plusieurs thèmes accessibles via le sélecteur en haut à droite:
+- **Light**: Thème clair professionnel
+- **Dark**: Thème sombre élégant
+- **Fantasy**: Thème coloré avec des accents violets
+- **Tech**: Thème axé technologie avec des accents bleus
 
 ## Développement
 
-Ce projet est développé par Geoffroy Streit (geoffroy.streit@gmail.com).
-
-### Connexions
-
-- Supabase: https://supabase.com/dashboard/project/lvqvbyrhpbdrbymhthup
-- GitHub: [Lien vers le repo GitHub]
-
-## Installation et lancement
-
 ```bash
-# Cloner le dépôt
-git clone [URL_DU_REPO]
-
-# Installer les dépendances
+# Installation des dépendances
 npm install
 
-# Lancer le serveur de développement
+# Lancement du serveur de développement
 npm run dev
+
+# Build pour la production
+npm run build
 ```
 
 ## Déploiement
 
-Le site est déployé sur [URL_DE_DEPLOIEMENT].
-
-## Licence
-
-Tous droits réservés © AgenceDev 2023-2024
+Le site peut être déployé sur n'importe quelle plateforme supportant les applications React statiques comme Vercel, Netlify, GitHub Pages, etc.

@@ -1,34 +1,37 @@
 
 # Changelog
 
-Toutes les modifications notables apportées à ce projet seront documentées dans ce fichier.
+Toutes les modifications notables de ce projet seront documentées dans ce fichier.
 
-## [Unreleased]
+Le format est basé sur [Keep a Changelog](https://keepachangelog.com/fr/1.0.0/),
+et ce projet adhère au [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-### Added
-- Nouvelle page Portfolio complète avec filtrage par catégorie et affichage de projets détaillés
-- Pages détaillées pour les services: Développement, Intelligence Artificielle, Création Graphique & Vidéo, Data Science, Création Musicale et Conseil Tech
-- Section Services personnalisée avec compétences spécifiques de Geoffroy Streit
-- Profil professionnel détaillé dans la section Conseil Tech
-- Animations et transitions fluides sur tous les composants avec Framer Motion
-- Mise en place de routes pour les nouvelles pages
-- Layout global avec navbar et footer
-- Nouveau composant StatCard pour mettre en valeur les chiffres clés
-- Améliorations visuelles des cartes de service avec icônes et animations
-- Animations de transition avec Framer Motion pour une expérience utilisateur fluide
-- Effets d'interaction améliorés sur les composants des cartes de service et statistiques
+## [Non publié]
 
-### Changed
-- Refonte de la section Hero avec animations et meilleure mise en page
-- Amélioration des sections Portfolio, Témoignages et À propos avec une mise en page plus attractive
-- Section CTA avec dégradé et boutons plus visibles
-- Layout principal optimisé avec animations de transition
-- Composants ServiceCard et StatCard améliorés avec des animations subtiles
-- Expérience interactive enrichie sur les éléments cliquables
-- Contenu personnalisé reflétant l'expertise spécifique dans les domaines tech et créatifs
+### Ajouté
+- Guide pour l'ajout d'images personnalisées au Portfolio et Blog
+- ServicesGrid comme composant réutilisable
+- Animations améliorées pour les sections Portfolio et Services
+- Effets interactifs sur les cartes de projets
 
-### Fixed
-- N/A
+### Modifié
+- Déplacement de la section "Mes Services" de la page d'accueil vers la page Services
+- Amélioration de la visibilité des catégories dans la section Portfolio
+- Refactorisation des composants Portfolio pour une meilleure organisation
+- Mise à jour du README avec des informations détaillées sur le projet
 
-## [0.1.0] - 2024-XX-XX
-- Version initiale du site
+### Corrigé
+- Correction des routes pour la section Services
+- Amélioration de la visibilité des badges de catégories dans le Portfolio
+- Meilleure adaptation aux différents thèmes (Light, Dark, Fantasy, Tech)
+- Ajustement des contrastes pour une meilleure accessibilité
+
+## [1.0.0] - 2023-08-01
+
+### Ajouté
+- Structure initiale du site avec React et Tailwind CSS
+- Implémentation des sections principales: Accueil, Portfolio, Services, Blog, À propos, Contact
+- Système de thèmes multiples (Light, Dark, Fantasy, Tech)
+- Animations et transitions fluides avec Framer Motion
+- Portfolio filtrable par catégories et recherche
+- Intégration des composants UI réutilisables avec shadcn/ui

@@ -16,6 +16,7 @@ import Content from "./pages/services/Content";
 import Data from "./pages/services/Data";
 import MusicService from "./pages/services/Music";
 import Consulting from "./pages/services/Consulting";
+import ServicesIndex from "./pages/services/index";
 import Blog from "./pages/Blog";
 import BlogPost from "./pages/BlogPost";
 
@@ -34,8 +35,7 @@ const App = () => (
             <Route path="/about" element={<About />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/services">
-              {/* Add a default redirect for /services */}
-              <Route index element={<Navigate to="/services/consulting" replace />} />
+              <Route index element={<ServicesIndex />} />
               <Route path="development" element={<Development />} />
               <Route path="ai" element={<AI />} />
               <Route path="content" element={<Content />} />
