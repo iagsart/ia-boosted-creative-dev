@@ -1,89 +1,163 @@
 
-import React, { useState } from 'react';
-import { Link } from "react-router-dom";
-import { Menu, X } from "lucide-react";
+import React, { useState } from "react";
+import { Link, useLocation } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { cn } from "@/lib/utils";
+import { useMediaQuery } from "@/hooks/use-mobile";
+import { Menu, X } from "lucide-react";
+import { motion, AnimatePresence } from "framer-motion";
+import { ThemeSelector } from "../ui/theme-selector";
 
-const navItems = [
-  { name: "Accueil", path: "/" },
-  { name: "Services", path: "/services/development" },
-  { name: "Portfolio", path: "/portfolio" },
-  { name: "Blog", path: "/blog" },
-  { name: "À propos", path: "/about" },
-  { name: "Contact", path: "/contact" },
+interface NavLink {
+  label: string;
+  href: string;
+}
+
+const navLinks: NavLink[] = [
+  { label: "Accueil", href: "/" },
+  { label: "Portfolio", href: "/portfolio" },
+  { label: "Services", href: "/#services" },
+  { label: "Blog", href: "/blog" },
+  { label: "À propos", href: "/about" },
+  { label: "Contact", href: "/contact" },
 ];
 
 const Navbar = () => {
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [isOpen, setIsOpen] = useState(false);
+  const location = useLocation();
+  const isMobile = useMediaQuery("(max-width: 768px)");
+
+  const handleNavClick = () => {
+    if (isMobile) {
+      setIsOpen(false);
+    }
+  };
+
+  // Fonction pour vérifier si un lien est actif
+  const isActive = (href: string) => {
+    if (href === "/") {
+      return location.pathname === "/";
+    }
+    return location.pathname.startsWith(href);
+  };
+
+  // Animation pour le menu mobile
+  const menuVariants = {
+    closed: {
+      opacity: 0,
+      x: -20,
+      transition: {
+        staggerChildren: 0.1,
+        staggerDirection: -1,
+      },
+    },
+    open: {
+      opacity: 1,
+      x: 0,
+      transition: {
+        staggerChildren: 0.1,
+        delayChildren: 0.2,
+      },
+    },
+  };
+
+  const itemVariants = {
+    closed: { opacity: 0, x: -20 },
+    open: { opacity: 1, x: 0 },
+  };
 
   return (
-    <header className="sticky top-0 z-50 w-full bg-background/95 backdrop-blur-sm border-b">
-      <div className="container flex h-16 items-center justify-between">
-        <div className="flex items-center gap-6">
-          <Link to="/" className="flex items-center gap-2">
-            <div className="h-8 w-8 rounded-md bg-accent flex items-center justify-center">
-              <span className="text-accent-foreground font-bold">AD</span>
-            </div>
-            <span className="font-display font-bold text-xl hidden sm:inline-block">AgenceDev</span>
-          </Link>
-        </div>
-
-        {/* Desktop navigation */}
-        <nav className="hidden md:flex gap-6">
-          {navItems.map((item) => (
-            <Link key={item.path} to={item.path} className="nav-link">
-              {item.name}
-            </Link>
-          ))}
-        </nav>
-        
-        <div className="hidden md:flex items-center gap-4">
-          <Button asChild variant="ghost">
-            <Link to="/login">Espace Client</Link>
-          </Button>
-          <Button asChild>
-            <Link to="/contact">Demander un devis</Link>
-          </Button>
-        </div>
-
-        {/* Mobile menu button */}
-        <button 
-          className="md:hidden" 
-          onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-          aria-label="Toggle menu"
-        >
-          {isMobileMenuOpen ? <X /> : <Menu />}
-        </button>
-      </div>
-      
-      {/* Mobile menu */}
-      <div className={cn(
-        "fixed inset-0 top-16 z-50 bg-background md:hidden transform transition-transform duration-300 ease-in-out",
-        isMobileMenuOpen ? "translate-x-0" : "translate-x-full"
-      )}>
-        <nav className="container flex flex-col gap-4 py-8">
-          {navItems.map((item) => (
-            <Link 
-              key={item.path} 
-              to={item.path} 
-              className="text-foreground/80 hover:text-foreground text-lg py-2 border-b border-border/50"
-              onClick={() => setIsMobileMenuOpen(false)}
+    <nav className="sticky top-0 z-50 w-full bg-background/80 backdrop-blur-md shadow-sm border-b border-border">
+      <div className="container mx-auto px-4 md:px-6">
+        <div className="flex items-center justify-between h-16">
+          {/* Logo */}
+          <Link to="/" className="flex items-center space-x-2">
+            <motion.div
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
             >
-              {item.name}
-            </Link>
-          ))}
-          <div className="flex flex-col gap-2 mt-4">
-            <Button asChild variant="outline" className="w-full">
-              <Link to="/login" onClick={() => setIsMobileMenuOpen(false)}>Espace Client</Link>
-            </Button>
-            <Button asChild className="w-full">
-              <Link to="/contact" onClick={() => setIsMobileMenuOpen(false)}>Demander un devis</Link>
-            </Button>
+              <span className="text-xl font-semibold text-gradient">HYLST</span>
+            </motion.div>
+          </Link>
+
+          {/* Navigation sur Desktop */}
+          <div className="hidden md:flex items-center space-x-6">
+            {navLinks.map((link) => (
+              <Link
+                key={link.href}
+                to={link.href}
+                className={`nav-link link-hover ${
+                  isActive(link.href)
+                    ? "text-foreground font-medium"
+                    : "text-foreground/70"
+                }`}
+                onClick={handleNavClick}
+              >
+                {link.label}
+              </Link>
+            ))}
           </div>
-        </nav>
+
+          {/* Actions (incluant le sélecteur de thème) */}
+          <div className="flex items-center space-x-3">
+            <ThemeSelector />
+            <Button asChild className="hidden md:flex">
+              <Link to="/contact">Me contacter</Link>
+            </Button>
+            <button
+              onClick={() => setIsOpen(!isOpen)}
+              className="md:hidden p-2 rounded-md"
+              aria-label="Toggle menu"
+            >
+              {isOpen ? (
+                <X className="h-6 w-6 text-foreground" />
+              ) : (
+                <Menu className="h-6 w-6 text-foreground" />
+              )}
+            </button>
+          </div>
+        </div>
       </div>
-    </header>
+
+      {/* Menu Mobile */}
+      <AnimatePresence>
+        {isOpen && (
+          <motion.div
+            className="md:hidden bg-background/95 backdrop-blur-md"
+            initial="closed"
+            animate="open"
+            exit="closed"
+            variants={menuVariants}
+          >
+            <div className="container mx-auto px-4 py-4">
+              <div className="space-y-4">
+                {navLinks.map((link) => (
+                  <motion.div key={link.href} variants={itemVariants}>
+                    <Link
+                      to={link.href}
+                      className={`block py-2 px-4 rounded-md ${
+                        isActive(link.href)
+                          ? "bg-accent/10 text-accent font-medium"
+                          : "text-foreground/70 hover:bg-accent/5"
+                      } transition-colors duration-200 link-hover`}
+                      onClick={handleNavClick}
+                    >
+                      {link.label}
+                    </Link>
+                  </motion.div>
+                ))}
+                <motion.div variants={itemVariants} className="pt-2">
+                  <Button asChild className="w-full">
+                    <Link to="/contact" onClick={handleNavClick}>
+                      Me contacter
+                    </Link>
+                  </Button>
+                </motion.div>
+              </div>
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </nav>
   );
 };
 
