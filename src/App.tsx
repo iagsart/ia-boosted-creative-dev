@@ -3,7 +3,7 @@ import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import { ThemeProvider } from "@/context/theme-provider";
 import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
@@ -33,12 +33,16 @@ const App = () => (
             <Route path="/portfolio" element={<Portfolio />} />
             <Route path="/about" element={<About />} />
             <Route path="/contact" element={<Contact />} />
-            <Route path="/services/development" element={<Development />} />
-            <Route path="/services/ai" element={<AI />} />
-            <Route path="/services/content" element={<Content />} />
-            <Route path="/services/data" element={<Data />} />
-            <Route path="/services/music" element={<MusicService />} />
-            <Route path="/services/consulting" element={<Consulting />} />
+            <Route path="/services">
+              {/* Add a default redirect for /services */}
+              <Route index element={<Navigate to="/services/consulting" replace />} />
+              <Route path="development" element={<Development />} />
+              <Route path="ai" element={<AI />} />
+              <Route path="content" element={<Content />} />
+              <Route path="data" element={<Data />} />
+              <Route path="music" element={<MusicService />} />
+              <Route path="consulting" element={<Consulting />} />
+            </Route>
             <Route path="/blog" element={<Blog />} />
             <Route path="/blog/:slug" element={<BlogPost />} />
             <Route path="*" element={<NotFound />} />

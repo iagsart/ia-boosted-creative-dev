@@ -53,9 +53,9 @@ const Footer = () => {
           <div>
             <h3 className="font-semibold text-lg mb-4">Contact</h3>
             <ul className="space-y-2">
-              <li className="text-muted-foreground">contact@humanai-conseil.com</li>
+              <li className="text-muted-foreground">geoffroy.streit@gmail.com</li>
               <li className="text-muted-foreground">+33 6 00 00 00 00</li>
-              <li className="text-muted-foreground">Paris, France</li>
+              <li className="text-muted-foreground">Strasbourg, France</li>
             </ul>
           </div>
         </div>

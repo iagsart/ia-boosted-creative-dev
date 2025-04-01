@@ -16,7 +16,7 @@ interface NavLink {
 const navLinks: NavLink[] = [
   { label: "Accueil", href: "/" },
   { label: "Portfolio", href: "/portfolio" },
-  { label: "Services", href: "/#services" },
+  { label: "Services", href: "/services/consulting" }, // Updated to point to a services page
   { label: "Blog", href: "/blog" },
   { label: "À propos", href: "/about" },
   { label: "Contact", href: "/contact" },

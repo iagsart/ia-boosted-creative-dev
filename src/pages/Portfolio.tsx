@@ -568,10 +568,10 @@ const Portfolio = () => {
                   <Badge 
                     key={category}
                     onClick={() => handleCategoryChange(category)}
-                    className={`px-3 py-1 cursor-pointer transition-all duration-300 ${
+                    className={`px-3 py-1 cursor-pointer transition-all duration-300 border ${
                       selectedCategory === category 
-                        ? 'bg-accent text-white hover:bg-accent/90' 
-                        : 'bg-background/80 hover:bg-background/90'
+                        ? 'bg-accent text-white hover:bg-accent/90 border-accent' 
+                        : 'bg-secondary/70 hover:bg-secondary text-foreground border-border/30'
                     }`}
                   >
                     {category}

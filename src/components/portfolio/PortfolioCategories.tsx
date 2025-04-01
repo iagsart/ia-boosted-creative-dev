@@ -28,6 +28,27 @@ const PortfolioCategories = ({ categories, activeCategory, onCategoryChange }: P
     visible: { opacity: 1, y: 0 }
   };
 
+  // Tailwind classes for different themes
+  const getTagClasses = (isActive: boolean) => {
+    const baseClasses = "px-3 py-1.5 rounded-full transition-all duration-300 cursor-pointer text-sm font-medium border";
+    
+    if (isActive) {
+      return `${baseClasses} bg-accent text-accent-foreground border-accent shadow-sm`;
+    }
+    
+    // Different background colors for different themes to ensure visibility
+    switch (theme) {
+      case 'dark':
+        return `${baseClasses} bg-secondary/80 text-foreground hover:bg-secondary/90 border-border/50`;
+      case 'fantasy':
+        return `${baseClasses} bg-secondary/80 text-foreground hover:bg-secondary/90 border-purple-300/50`;
+      case 'tech':
+        return `${baseClasses} bg-secondary/80 text-foreground hover:bg-secondary/90 border-blue-300/50`;
+      default: // light
+        return `${baseClasses} bg-secondary/80 text-foreground hover:bg-secondary/90 border-border/50`;
+    }
+  };
+
   return (
     <div className="my-6">
       <motion.div 
@@ -38,7 +59,7 @@ const PortfolioCategories = ({ categories, activeCategory, onCategoryChange }: P
       >
         <motion.button
           variants={item}
-          className={`portfolio-tag ${activeCategory === 'Tous' ? 'bg-accent text-accent-foreground' : ''}`}
+          className={getTagClasses(activeCategory === 'Tous')}
           onClick={() => onCategoryChange('Tous')}
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}
@@ -50,7 +71,7 @@ const PortfolioCategories = ({ categories, activeCategory, onCategoryChange }: P
           <motion.button
             key={category}
             variants={item}
-            className={`portfolio-tag ${activeCategory === category ? 'bg-accent text-accent-foreground' : ''}`}
+            className={getTagClasses(activeCategory === category)}
             onClick={() => onCategoryChange(category)}
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
