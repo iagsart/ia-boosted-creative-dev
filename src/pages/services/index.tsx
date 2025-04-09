@@ -58,6 +58,9 @@ const ServicesIndex = () => {
             transition={{ duration: 0.5 }}
             className="text-center mb-12"
           >
+            <div className="inline-block mb-4 px-4 py-2 bg-accent/10 rounded-full text-sm font-medium">
+              L'humain augmenté par l'IA - Strasbourg
+            </div>
             <h1 className="text-4xl md:text-5xl font-bold mb-6 font-display">
               <span className="text-gradient">Mes Services</span>
             </h1>
@@ -99,16 +102,16 @@ const ServicesIndex = () => {
               />
 
               <div className="ml-4 mt-4 grid grid-cols-1 md:grid-cols-2 gap-x-6 gap-y-3 mb-6">
-                <UseCase title="Réponse intelligente aux emails : automatisation avancée avec critères personnalisés" />
-                <UseCase title="Assistant téléphonique vocal automatisé avec synthèse personnalisée" />
-                <UseCase title="CRM & Support client automatisé : intégration IA dans le parcours client" />
-                <UseCase title="Automatisation de publications : génération de contenu, planification" />
-                <UseCase title="Rédaction de devis, contrats, documents à partir d'informations client" />
-                <UseCase title="Veille et alertes automatisées sur le marché et vos concurrents" />
-                <UseCase title="Dashboards IA : visualisation et synthèse automatique de vos données" />
-                <UseCase title="Réconciliation de données : fusion et nettoyage de bases via IA" />
-                <UseCase title="Automatisation de workflows internes et signatures électroniques" />
-                <UseCase title="Automatisation RH : gestion de candidatures, entretiens automatisés" />
+                <UseCase title="Réponse intelligente aux emails : automatisation avancée avec critères personnalisés, analyse de sentiments, extraction d'infos" />
+                <UseCase title="Assistant téléphonique vocal automatisé : réception, analyse et réponse vocale avec synthèse personnalisée" />
+                <UseCase title="CRM & Support client automatisé : intégration IA dans le parcours client (ticketing, FAQ, relance, enquêtes)" />
+                <UseCase title="Automatisation de publications : génération de contenu, planification multi-plateformes, A/B testing" />
+                <UseCase title="Rédaction de devis, contrats, documents à partir d'informations client (formulaires intelligents)" />
+                <UseCase title="Veille et alertes automatisées : sur le marché, vos concurrents, les réseaux sociaux, les tendances" />
+                <UseCase title="Dashboards IA : visualisation et synthèse automatique de vos données internes (chiffres, documents)" />
+                <UseCase title="Réconciliation de données : fusion et nettoyage de bases de données disparates via IA" />
+                <UseCase title="Automatisation de workflows internes : signatures électroniques, relances, reporting, transferts" />
+                <UseCase title="Automatisation RH : gestion de candidatures, entretiens automatisés, onboarding, synthèse de CV" />
               </div>
 
               <ServiceItem 
@@ -188,8 +191,8 @@ const ServicesIndex = () => {
             <p className="text-muted-foreground text-lg">
               Chaque projet est unique et mérite une approche personnalisée. Discutons ensemble de vos besoins pour trouver la solution la plus adaptée.
             </p>
-            <Button size="lg" asChild>
-              <Link to="/contact" className="group">
+            <Button size="lg" asChild className="group">
+              <Link to="/contact">
                 Prendre contact
                 <ArrowRight className="ml-2 group-hover:translate-x-1 transition-transform" size={18} />
               </Link>

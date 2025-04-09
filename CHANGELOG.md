@@ -17,6 +17,7 @@ et ce projet adhère au [Semantic Versioning](https://semver.org/spec/v2.0.0.htm
 - Dossier public/images pour les ressources image personnalisées
 - Descriptions détaillées des services dans la page Services
 - Catégorisation des services avec des exemples de cas d'usage
+- Design uniformisé sur toutes les pages du site
 
 ### Modifié
 - Déplacement de la section "Mes Services" de la page d'accueil vers la page Services
@@ -25,6 +26,8 @@ et ce projet adhère au [Semantic Versioning](https://semver.org/spec/v2.0.0.htm
 - Refactorisation des composants Portfolio pour une meilleure organisation
 - Mise à jour du README avec des informations détaillées sur le projet
 - Enrichissement du contenu de la page Services avec des descriptions complètes
+- Modernisation du design de la page Consulting avec un style cohérent
+- Uniformisation des animations et des éléments interactifs sur toutes les pages
 
 ### Corrigé
 - Correction des routes pour la section Services
