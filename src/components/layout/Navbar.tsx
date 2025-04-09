@@ -13,7 +13,7 @@ import {
 } from "@/components/ui/navigation-menu";
 import { cn } from '@/lib/utils';
 import { motion } from 'framer-motion';
-import { ThemeToggle } from '../ui/theme-selector';
+import { ThemeSelector } from '../ui/theme-selector';
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -108,7 +108,7 @@ const Navbar = () => {
         </div>
 
         <div className="flex items-center gap-4">
-          <ThemeToggle />
+          <ThemeSelector />
           <Button asChild className="hidden md:inline-flex">
             <Link to="/contact">Contact</Link>
           </Button>
