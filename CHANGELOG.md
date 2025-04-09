@@ -9,6 +9,8 @@ et ce projet adhère au [Semantic Versioning](https://semver.org/spec/v2.0.0.htm
 ## [Non publié]
 
 ### Ajouté
+- Logo animé "Hylst Digital Solutions" dans la navbar et le footer
+- Animations améliorées pour le logo et les éléments d'interface
 - Guide pour l'ajout d'images personnalisées au Portfolio et Blog
 - ServicesGrid comme composant réutilisable
 - Animations améliorées pour les sections Portfolio et Services
@@ -20,6 +22,8 @@ et ce projet adhère au [Semantic Versioning](https://semver.org/spec/v2.0.0.htm
 - Design uniformisé sur toutes les pages du site
 
 ### Modifié
+- Modernisation du design de la barre de navigation et du pied de page
+- Amélioration des icônes dans le pied de page avec un style plus cohérent
 - Déplacement de la section "Mes Services" de la page d'accueil vers la page Services
 - Remplacement des logos dans la section "Qui suis-je" par une photo de profil
 - Amélioration de la visibilité des catégories dans la section Portfolio

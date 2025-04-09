@@ -2,7 +2,7 @@
 import React, { useState } from 'react';
 import { Link, NavLink, useLocation } from 'react-router-dom';
 import { Button } from "@/components/ui/button";
-import { Menu, X, ChevronDown } from 'lucide-react';
+import { Menu, X, ChevronDown, Sparkles } from 'lucide-react';
 import {
   NavigationMenu,
   NavigationMenuContent,
@@ -47,12 +47,60 @@ const Navbar = () => {
     return location.pathname.startsWith(path);
   };
 
+  const letterVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: (i: number) => ({
+      opacity: 1,
+      y: 0,
+      transition: {
+        delay: i * 0.05,
+        duration: 0.3
+      }
+    })
+  };
+
   return (
     <header className="sticky top-0 z-40 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
       <div className="container flex h-16 items-center justify-between">
         <div className="flex items-center gap-6 md:gap-8">
-          <Link to="/" className="flex items-center space-x-2">
-            <span className="font-bold text-xl md:text-2xl">Geoffroy<span className="text-accent">.</span></span>
+          <Link to="/" className="flex items-center space-x-2 overflow-hidden">
+            <div className="flex items-baseline">
+              {/* Animated logo */}
+              <motion.div className="flex items-baseline">
+                {Array.from("Hylst").map((letter, i) => (
+                  <motion.span
+                    key={i}
+                    custom={i}
+                    variants={letterVariants}
+                    initial="hidden"
+                    animate="visible"
+                    className="font-bold text-xl md:text-2xl"
+                  >
+                    {letter}
+                  </motion.span>
+                ))}
+                <motion.div
+                  initial={{ opacity: 0, scale: 0 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  transition={{ delay: 0.3, duration: 0.3 }}
+                  className="text-accent mx-0.5"
+                >
+                  <Sparkles className="h-4 w-4" />
+                </motion.div>
+                {Array.from("Digital Solutions").map((letter, i) => (
+                  <motion.span
+                    key={i + "Hylst".length}
+                    custom={i + "Hylst".length + 1}
+                    variants={letterVariants}
+                    initial="hidden"
+                    animate="visible"
+                    className={`text-sm md:text-base font-medium ${letter === " " ? "mx-1" : ""}`}
+                  >
+                    {letter}
+                  </motion.span>
+                ))}
+              </motion.div>
+            </div>
           </Link>
           
           <nav className="hidden md:flex gap-6">
