@@ -1,75 +1,118 @@
 
-# Guide pour ajouter vos propres images d'illustrations
+# Guide pour l'ajout d'images personnalisées
 
-## Option 1: Utiliser l'éditeur Lovable
+Ce guide explique comment ajouter et utiliser vos propres images dans le site, que ce soit pour le portfolio, le blog ou d'autres sections.
 
-L'éditeur Lovable vous permet d'uploader des images directement:
+## Méthode 1: Utiliser le dossier public/images
 
-1. Cliquez sur le bouton "+" dans l'interface de chat
-2. Sélectionnez votre image à uploader
-3. L'image sera ensuite disponible à l'URL: `public/lovable-uploads/[nom-du-fichier].png`
-4. Vous pouvez ensuite utiliser cette URL dans votre code
+Cette méthode est recommandée pour les images statiques qui font partie intégrante du site.
 
-## Option 2: Stocker des images dans `public/images`
+### Étapes:
 
-Pour une organisation plus structurée de vos images:
+1. **Préparer vos images**
+   - Optimisez vos images pour le web (compression, dimensions appropriées)
+   - Formats recommandés: `.jpg`, `.png`, `.webp`
+   - Résolution recommandée: 1200x800px pour les grandes images, 600x400px pour les vignettes
 
-1. Créez un dossier `images` dans le répertoire `public`
-2. Structurez-le avec des sous-dossiers, par exemple:
-   - `public/images/portfolio/`
-   - `public/images/blog/`
-   - `public/images/logos/`
-3. Référencez vos images par leur chemin relatif: `/images/portfolio/mon-projet.jpg`
+2. **Organiser vos images**
+   - Placez vos images dans le dossier `public/images/`
+   - Créez des sous-dossiers pour mieux organiser (`portfolio`, `blog`, etc.)
+   - Exemple: `public/images/portfolio/projet-a.jpg`
 
-## Comment ajouter des images à votre Portfolio
+3. **Référencer vos images dans le code**
+   - Utilisez le chemin relatif depuis la racine, commençant par `/images/`
+   - Exemple: `<img src="/images/portfolio/projet-a.jpg" alt="Projet A" />`
 
-Pour ajouter un nouveau projet à votre portfolio:
+### Exemple pour le Portfolio:
 
-1. Ouvrez le fichier `src/pages/Portfolio.tsx`
-2. Localisez la section `webProjects` ou `desktopProjects`
-3. Ajoutez un nouvel objet projet avec vos informations:
+Pour ajouter un nouveau projet avec votre image personnalisée:
 
 ```jsx
+// Dans src/data/portfolioProjects.ts
 {
+  id: "mon-nouveau-projet",
   title: "Mon Nouveau Projet",
-  category: "Catégorie du Projet",
-  subcategory: "Web", // ou PC, ATARI, etc.
-  description: "Description détaillée du projet...",
-  image: "/images/portfolio/mon-nouveau-projet.jpg", // Votre image ici
-  technologies: ["React", "Node.js", "MongoDB"],
-  client: "Nom du client ou Projet personnel",
-  year: "2023",
-  link: "/portfolio/mon-nouveau-projet",
-  featured: true // optionnel, pour mettre en avant
+  description: "Description du projet...",
+  categories: ["web", "design"],
+  image: "/images/portfolio/mon-nouveau-projet.jpg",
+  link: "/portfolio/mon-nouveau-projet"
 }
 ```
 
-## Comment ajouter des images à votre Blog
+### Exemple pour le Blog:
 
-Pour ajouter une nouvelle image à un article de blog:
+Pour ajouter une image dans un article de blog:
 
-1. Ouvrez le fichier `src/data/blogPosts.tsx`
-2. Localisez l'article que vous souhaitez modifier
-3. Mettez à jour le champ `image` avec le chemin de votre nouvelle image
-4. Pour ajouter des images dans le contenu d'un article, utilisez la syntaxe markdown:
-
-```markdown
-![Description de l'image](/images/blog/mon-image.jpg)
+```jsx
+// Dans src/data/blogPosts.tsx
+{
+  title: "Mon nouvel article",
+  content: (
+    <>
+      <p>Introduction de l'article...</p>
+      <img 
+        src="/images/blog/mon-image-article.jpg" 
+        alt="Description de l'image" 
+        className="w-full rounded-lg my-6" 
+      />
+      <p>Suite du contenu...</p>
+    </>
+  ),
+  // Autres propriétés...
+}
 ```
 
-## Recommandations pour les images
+## Méthode 2: Télécharger via l'interface Lovable
 
-- **Formats**: Utilisez des formats optimisés pour le web comme JPG, PNG ou WebP
-- **Dimensions**: 
-  - Pour les images d'en-tête: environ 1200×800px
-  - Pour les miniatures: environ 600×400px
-- **Taille des fichiers**: Essayez de garder les images sous 200Ko pour de meilleures performances
-- **Nommage**: Utilisez des noms descriptifs avec des tirets pour séparer les mots (ex: mon-nouveau-projet.jpg)
+Cette méthode est idéale pour les ajouts rapides pendant le développement du site.
 
-## Outils de compression d'images recommandés
+### Étapes:
 
-- [TinyPNG](https://tinypng.com/) - Compression PNG et JPG
-- [Squoosh](https://squoosh.app/) - Outil de compression avancé
-- [Convertio](https://convertio.co/fr/) - Conversion entre formats d'image
+1. **Télécharger l'image**
+   - Dans la conversation avec Lovable, cliquez sur l'icône d'image (📎)
+   - Sélectionnez l'image à télécharger depuis votre ordinateur
+   - L'image sera automatiquement téléchargée et disponible dans le dossier `/lovable-uploads/`
 
-N'hésitez pas à modifier la structure des dossiers selon vos besoins d'organisation.
+2. **Utiliser l'image**
+   - Lovable vous fournira le chemin complet vers l'image (par ex. `/public/lovable-uploads/123abc-image.jpg`)
+   - Utilisez ce chemin dans votre code pour référencer l'image
+
+### Exemple d'utilisation:
+
+```jsx
+<img 
+  src="/public/lovable-uploads/123abc-image.jpg" 
+  alt="Description de l'image" 
+  className="rounded-lg shadow-md"
+/>
+```
+
+## Bonnes pratiques pour les images
+
+1. **Optimisation**
+   - Compressez vos images avant de les ajouter (utilisez des outils comme TinyPNG, ImageOptim)
+   - Utilisez `.webp` quand possible pour un meilleur rapport qualité/taille
+
+2. **Accessibilité**
+   - Toujours inclure des attributs `alt` descriptifs pour chaque image
+   - Utilisez des textes alternatifs qui décrivent la fonction ou le contenu de l'image
+
+3. **Responsive**
+   - Utilisez les classes Tailwind appropriées (ex: `w-full h-auto`)
+   - Pour les images importantes, envisagez d'utiliser des versions différentes selon la taille d'écran
+
+4. **Organisation**
+   - Maintenez une structure de dossiers cohérente pour vos images
+   - Nommez vos fichiers de manière descriptive et utilisez des tirets pour les espaces
+   
+5. **Copyright**
+   - N'utilisez que des images dont vous possédez les droits ou qui sont libres de droits
+   - Créditez les auteurs quand nécessaire
+
+## Résolution de problèmes
+
+- **Image non affichée**: Vérifiez le chemin d'accès et assurez-vous que l'image existe à l'emplacement spécifié
+- **Image trop grande**: Assurez-vous d'avoir optimisé l'image avant de l'ajouter
+- **Problèmes de performance**: Si le chargement des images ralentit le site, envisagez d'utiliser le lazy loading
+
+En suivant ce guide, vous pourrez facilement ajouter et gérer des images personnalisées dans votre site portfolio.

@@ -1,5 +1,5 @@
 
-import { Code, Brain, Palette, Lightbulb, Music, Database, BarChart3, Laptop, Cpu } from "lucide-react";
+import { Code, Brain, Palette, Lightbulb, Music, Database, BarChart3, Laptop, Cpu, FileText, Headphones, Bot } from "lucide-react";
 import { SectionTitle } from "@/components/ui/section-title";
 import { ServiceCard } from "@/components/ui/service-card";
 import { motion } from "framer-motion";
@@ -31,28 +31,40 @@ const ServicesGrid = ({
       link: "/services/content"
     },
     {
+      icon: <Code size={28} />,
+      title: "Développement Web",
+      description: "Création d'applications et sites web sans code complexe, privilégiant les outils open source et adaptables à vos besoins spécifiques.",
+      link: "/services/development"
+    },
+    {
       icon: <Cpu size={28} />,
       title: "Expertise Optronique",
       description: "Conseil en optique, électronique, systèmes embarqués et traitement du signal basé sur plus de 15 ans d'expérience dans l'industrie spécialisée.",
       link: "/services/consulting"
     },
     {
-      icon: <Code size={28} />,
-      title: "Solutions No-Code & Low-Code",
-      description: "Création d'applications et sites web sans code complexe, privilégiant les outils open source et adaptables à vos besoins spécifiques.",
-      link: "/services/development"
-    },
-    {
-      icon: <Lightbulb size={28} />,
-      title: "Idéation & Stratégie Créative",
-      description: "Séances de brainstorming assistées par IA, génération de concepts innovants et élaboration de stratégies créatives pour votre entreprise ou projet.",
-      link: "/services/consulting"
-    },
-    {
       icon: <Database size={28} />,
-      title: "Gestion & Visualisation de Données",
+      title: "Gestion de Données",
       description: "Organisation, traitement et visualisation de vos données avec des outils adaptés (Python, Jupyter, Metabase), automatisation de processus (n8n, make).",
       link: "/services/data"
+    },
+    {
+      icon: <Music size={28} />,
+      title: "Audio & Musique",
+      description: "Création musicale, sound design, traitement audio et transcription multi-langue pour tous vos projets nécessitant une dimension sonore professionnelle.",
+      link: "/services/music"
+    },
+    {
+      icon: <Bot size={28} />,
+      title: "Chatbots & IA avancée",
+      description: "Développement de chatbots avec mémoire, personnalité adaptative et base documentaire personnalisée pour améliorer votre service client.",
+      link: "/services/ai"
+    },
+    {
+      icon: <FileText size={28} />,
+      title: "Contenus & Communication",
+      description: "Copywriting, storytelling et génération de contenus sur mesure pour vos produits et services avec une touche personnelle boostée par l'IA.",
+      link: "/services/content"
     }
   ];
 

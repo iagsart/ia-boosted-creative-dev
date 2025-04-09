@@ -15,6 +15,8 @@ et ce projet adhère au [Semantic Versioning](https://semver.org/spec/v2.0.0.htm
 - Effets interactifs sur les cartes de projets
 - Fichier structure.md détaillant l'architecture et les fonctionnalités du site
 - Dossier public/images pour les ressources image personnalisées
+- Descriptions détaillées des services dans la page Services
+- Catégorisation des services avec des exemples de cas d'usage
 
 ### Modifié
 - Déplacement de la section "Mes Services" de la page d'accueil vers la page Services
@@ -22,6 +24,7 @@ et ce projet adhère au [Semantic Versioning](https://semver.org/spec/v2.0.0.htm
 - Amélioration de la visibilité des catégories dans la section Portfolio
 - Refactorisation des composants Portfolio pour une meilleure organisation
 - Mise à jour du README avec des informations détaillées sur le projet
+- Enrichissement du contenu de la page Services avec des descriptions complètes
 
 ### Corrigé
 - Correction des routes pour la section Services

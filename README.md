@@ -8,7 +8,7 @@ Ce projet est un site web portfolio personnel développé avec React, Tailwind C
 - **Design responsive multi-thèmes** (Light, Dark, Fantasy, Tech)
 - **Portfolio interactif** avec filtrage et animations
 - **Blog** avec articles structurés et système de catégories
-- **Présentation des services** offerts
+- **Présentation des services** offerts avec descriptions détaillées
 - **Showcase de projets** développés personnellement
 - **Section contact** avec formulaire
 
@@ -46,13 +46,48 @@ Ce projet est un site web portfolio personnel développé avec React, Tailwind C
     /lovable-uploads # Images uploadées via l'interface
 ```
 
-## Comment ajouter du contenu
+## Comment ajouter des images personnalisées
 
-- **Portfolio**: Modifiez `src/pages/Portfolio.tsx` pour ajouter de nouveaux projets
-- **Blog**: Ajoutez des articles dans `src/data/blogPosts.tsx`
-- **Services**: Modifiez `src/components/services/ServicesGrid.tsx` pour mettre à jour vos services
+### Pour le Portfolio
 
-Consultez `src/docs/image-upload-guide.md` pour ajouter vos propres images.
+1. **Préparer les images** : Optimisez vos images pour le web (format .jpg, .png ou .webp, taille recommandée: 1200x800px)
+2. **Ajouter à public/images** : Placez vos images dans le dossier `public/images/`
+3. **Utiliser dans le code** : Référencez vos images avec le chemin `/images/votre-image.jpg`
+
+Exemple d'utilisation dans un composant:
+```jsx
+<img src="/images/mon-projet.jpg" alt="Description du projet" />
+```
+
+### Pour le Blog
+
+1. **Préparer les images** : Optimisez vos images pour le web
+2. **Ajouter à public/images/blog** : Créez un sous-dossier dans `public/images/blog/` pour organiser vos images
+3. **Utiliser dans les articles** : Référencez vos images dans les articles du blog
+
+Exemple d'ajout d'image dans un article de blog:
+```jsx
+// Dans src/data/blogPosts.tsx
+{
+  title: "Mon nouvel article",
+  content: (
+    <>
+      <p>Contenu de l'article...</p>
+      <img src="/images/blog/mon-image.jpg" alt="Description de l'image" className="my-6 rounded-lg" />
+      <p>Suite du contenu...</p>
+    </>
+  ),
+  // Autres propriétés...
+}
+```
+
+### Via l'interface Lovable
+
+Vous pouvez également télécharger des images directement via l'interface Lovable:
+1. Dans la conversation, cliquez sur l'icône d'image
+2. Sélectionnez l'image à télécharger
+3. Une fois téléchargée, l'image sera disponible dans `/lovable-uploads/`
+4. Utilisez le chemin complet fourni par Lovable pour référencer l'image
 
 ## Personnalisation
 
