@@ -102,15 +102,15 @@ const ServicesIndex = () => {
               />
 
               <div className="ml-4 mt-4 grid grid-cols-1 md:grid-cols-2 gap-x-6 gap-y-3 mb-6">
-                <UseCase title="Réponse intelligente aux emails : automatisation avancée avec critères personnalisés, analyse de sentiments, extraction d'infos" />
-                <UseCase title="Assistant téléphonique vocal automatisé : réception, analyse et réponse vocale avec synthèse personnalisée" />
-                <UseCase title="CRM & Support client automatisé : intégration IA dans le parcours client (ticketing, FAQ, relance, enquêtes)" />
-                <UseCase title="Automatisation de publications : génération de contenu, planification multi-plateformes, A/B testing" />
-                <UseCase title="Rédaction de devis, contrats, documents à partir d'informations client (formulaires intelligents)" />
-                <UseCase title="Veille et alertes automatisées : sur le marché, vos concurrents, les réseaux sociaux, les tendances" />
-                <UseCase title="Dashboards IA : visualisation et synthèse automatique de vos données internes (chiffres, documents)" />
+                <UseCase title="Réponse intelligente aux emails : automatisation avancée avec critères personnalisés, analyse de sentiments, extraction d'infos, génération de réponses avec IA" />
+                <UseCase title="Assistant téléphonique vocal automatisé : réception, analyse et réponse vocale avec synthèse personnalisée et base de connaissance" />
+                <UseCase title="CRM & Support client automatisé : intégration IA dans le parcours client (ticketing, FAQ, relance, enquêtes, suivi)" />
+                <UseCase title="Automatisation de publications : génération de contenu, planification multi-plateformes, A/B testing automatique" />
+                <UseCase title="Rédaction de devis, contrats, documents à partir d'informations client (formulaires intelligents, extraction d'informations)" />
+                <UseCase title="Veille et alertes automatisées : sur le marché, vos concurrents, les réseaux sociaux, les tendances clients" />
+                <UseCase title="Dashboards IA : visualisation et synthèse automatique de vos données internes (chiffres, documents, retours clients)" />
                 <UseCase title="Réconciliation de données : fusion et nettoyage de bases de données disparates via IA" />
-                <UseCase title="Automatisation de workflows internes : signatures électroniques, relances, reporting, transferts" />
+                <UseCase title="Automatisation de workflows internes : signatures électroniques, relances, reporting, transferts de fichiers, synchronisation d'outils" />
                 <UseCase title="Automatisation RH : gestion de candidatures, entretiens automatisés, onboarding, synthèse de CV" />
               </div>
 

@@ -145,12 +145,9 @@ const Consulting = () => {
                 <div className="absolute -inset-0.5 bg-gradient-to-r from-accent to-accent/60 rounded-lg blur opacity-30"></div>
                 <div className="relative bg-card rounded-lg p-2 shadow-xl">
                   <img 
-                    src="/images/consulting-hero.jpg" 
+                    src="https://images.unsplash.com/photo-1591267990532-e5bdb1b0ceb8?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" 
                     alt="Conseil technologique" 
                     className="w-full h-auto rounded"
-                    onError={(e) => {
-                      e.currentTarget.src = "https://images.unsplash.com/photo-1591267990532-e5bdb1b0ceb8?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80";
-                    }}
                   />
                 </div>
                 <div className="absolute -bottom-4 -right-4 bg-accent/10 backdrop-blur-sm border border-accent/20 p-4 rounded-lg shadow-lg">
@@ -276,12 +273,9 @@ const Consulting = () => {
                 <div className="absolute -inset-0.5 bg-gradient-to-r from-accent/70 to-accent/40 rounded-lg blur opacity-30"></div>
                 <div className="relative rounded-lg overflow-hidden shadow-xl border">
                   <img 
-                    src="/images/geoffroy-profile.jpg" 
+                    src="https://images.unsplash.com/photo-1602992708529-c9fdb12905c9?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" 
                     alt="Geoffroy Streit" 
                     className="w-full h-auto"
-                    onError={(e) => {
-                      e.currentTarget.src = "https://images.unsplash.com/photo-1602992708529-c9fdb12905c9?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80";
-                    }}
                   />
                 </div>
               </div>

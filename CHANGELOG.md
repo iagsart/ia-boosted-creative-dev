@@ -28,6 +28,7 @@ et ce projet adhère au [Semantic Versioning](https://semver.org/spec/v2.0.0.htm
 - Enrichissement du contenu de la page Services avec des descriptions complètes
 - Modernisation du design de la page Consulting avec un style cohérent
 - Uniformisation des animations et des éléments interactifs sur toutes les pages
+- Correction des liens dans la barre de navigation pour assurer une navigation cohérente
 
 ### Corrigé
 - Correction des routes pour la section Services
@@ -35,6 +36,8 @@ et ce projet adhère au [Semantic Versioning](https://semver.org/spec/v2.0.0.htm
 - Amélioration de la visibilité des badges de catégories dans le Portfolio
 - Meilleure adaptation aux différents thèmes (Light, Dark, Fantasy, Tech)
 - Ajustement des contrastes pour une meilleure accessibilité
+- Correction des problèmes de navigation et de liens dans le menu principal
+- Résolution des problèmes de contenu manquant sur la page Services
 
 ## [1.0.0] - 2023-08-01
 
