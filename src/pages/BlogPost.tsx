@@ -7,6 +7,19 @@ import { blogPosts } from "@/data/blogPosts";
 import { ArrowLeft, Calendar, Tag, Clock, Share2 } from "lucide-react";
 import { formatDistance } from 'date-fns';
 import { fr } from 'date-fns/locale';
+import { motion } from 'framer-motion';
+
+// Map pour associer chaque article à une image
+const postImages: Record<string, string> = {
+  'introduction-ai': '/images/ai-futuristic.jpg',
+  'python-data-analysis': '/images/python-code.jpg',
+  'opensource-alternatives': '/images/opensource-collab.jpg',
+  'future-of-ai': '/images/ai-robot-future.jpg',
+  'no-code-revolution': '/images/no-code-tools.jpg',
+  'prompt-engineering': '/images/prompt-engineering.jpg',
+  'ai-ethics': '/images/ai-ethics-balance.jpg',
+  'machine-learning-basics': '/images/ml-algorithms.jpg'
+};
 
 const BlogPost = () => {
   const { slug } = useParams();
@@ -28,32 +41,53 @@ const BlogPost = () => {
   
   return (
     <Layout>
+      <div className="relative w-full h-[50vh] max-h-[500px] overflow-hidden">
+        <div className="absolute inset-0 bg-black/50 z-10"></div>
+        <img 
+          src={postImages[post.slug] || '/placeholder.svg'} 
+          alt={post.title} 
+          className="w-full h-full object-cover"
+        />
+        <div className="absolute inset-0 z-20 flex items-center">
+          <div className="container">
+            <motion.div 
+              className="max-w-3xl"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5 }}
+            >
+              <Button variant="ghost" className="mb-6 text-white hover:bg-white/20" onClick={() => navigate('/blog')}>
+                <ArrowLeft className="mr-2 h-4 w-4" />
+                Retour aux articles
+              </Button>
+              
+              <h1 className="text-3xl md:text-4xl lg:text-5xl font-display font-bold mb-4 text-white drop-shadow-md">{post.title}</h1>
+              
+              <div className="flex flex-wrap gap-3 items-center text-white/80 mb-8">
+                <div className="flex items-center">
+                  <Calendar className="h-4 w-4 mr-1" />
+                  <time dateTime={post.date}>
+                    {formatDistance(new Date(post.date), new Date(), { addSuffix: true, locale: fr })}
+                  </time>
+                </div>
+                
+                <div className="flex items-center">
+                  <Clock className="h-4 w-4 mr-1" />
+                  <span>{post.readingTime} min de lecture</span>
+                </div>
+              </div>
+            </motion.div>
+          </div>
+        </div>
+      </div>
+
       <article className="container py-12 md:py-16 max-w-4xl">
-        <Button variant="ghost" className="mb-6" onClick={() => navigate('/blog')}>
-          <ArrowLeft className="mr-2 h-4 w-4" />
-          Retour aux articles
-        </Button>
-        
-        <h1 className="text-3xl md:text-4xl lg:text-5xl font-display font-bold mb-4">{post.title}</h1>
-        
-        <div className="flex flex-wrap gap-3 items-center text-muted-foreground mb-8">
-          <div className="flex items-center">
-            <Calendar className="h-4 w-4 mr-1" />
-            <time dateTime={post.date}>
-              {formatDistance(new Date(post.date), new Date(), { addSuffix: true, locale: fr })}
-            </time>
-          </div>
-          
-          <div className="flex items-center">
-            <Clock className="h-4 w-4 mr-1" />
-            <span>{post.readingTime} min de lecture</span>
-          </div>
-          
+        <div className="mb-8 flex flex-wrap gap-2">
           {post.categories.map(category => (
             <Link 
               key={category} 
               to={`/blog?category=${category}`} 
-              className="flex items-center text-sm bg-secondary px-2 py-1 rounded-full hover:bg-secondary/80 transition-colors"
+              className="flex items-center text-sm bg-secondary px-3 py-1.5 rounded-full hover:bg-accent/10 hover:text-accent transition-colors"
             >
               <Tag className="h-3 w-3 mr-1" />
               {category}
@@ -61,19 +95,15 @@ const BlogPost = () => {
           ))}
         </div>
         
-        {post.image && (
-          <div className="mb-8 rounded-lg overflow-hidden">
-            <img 
-              src={post.image} 
-              alt={post.title} 
-              className="w-full object-cover h-64 md:h-96"
-            />
-          </div>
-        )}
+        <motion.div 
+          className="prose prose-lg max-w-none" 
+          dangerouslySetInnerHTML={{ __html: post.content }}
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.2, duration: 0.5 }}
+        />
         
-        <div className="prose prose-lg max-w-none" dangerouslySetInnerHTML={{ __html: post.content }} />
-        
-        <div className="mt-10 pt-8 border-t">
+        <div className="mt-12 pt-8 border-t">
           <div className="flex justify-between items-center">
             <div className="space-y-2">
               <h3 className="font-semibold">Partager cet article</h3>

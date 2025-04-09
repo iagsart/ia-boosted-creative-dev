@@ -1,7 +1,7 @@
 
 import React, { useState } from 'react';
 import Layout from "@/components/layout/Layout";
-import { SectionTitle } from "@/components/ui/section-title";
+import { PageHeader } from "@/components/ui/page-header";
 import { BlogList } from "@/components/blog/BlogList";
 import { BlogCategories } from "@/components/blog/BlogCategories";
 import { BlogSearch } from "@/components/blog/BlogSearch";
@@ -30,13 +30,13 @@ const Blog = () => {
 
   return (
     <Layout>
+      <PageHeader
+        title="Blog Tech & IA"
+        subtitle="Articles, analyses et réflexions sur la tech, l'IA et l'innovation"
+        backgroundEffect="gradient"
+      />
+      
       <div className="container py-12 md:py-16">
-        <SectionTitle 
-          title="Blog Tech & IA" 
-          subtitle="Articles, analyses et réflexions sur la tech, l'IA et l'innovation"
-          centered
-        />
-        
         <div className="grid grid-cols-1 lg:grid-cols-4 gap-8 mt-8">
           <div className="lg:col-span-1 space-y-8">
             <BlogSearch 
