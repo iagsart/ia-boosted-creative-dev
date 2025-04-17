@@ -21,7 +21,7 @@ const AboutSection = () => {
             <div className="relative flex justify-center">
               <div className="w-full max-w-md aspect-square rounded-lg overflow-hidden p-1 bg-accent/10 shadow-lg">
                 <img 
-                  src="/public/lovable-uploads/d019b205-4b3a-47e7-a7c2-ab36adcff0ee.png" 
+                  src="/images/geoffroy-profile.jpg" 
                   alt="Geoffroy Streit portrait" 
                   className="w-full h-full object-cover rounded-lg"
                 />

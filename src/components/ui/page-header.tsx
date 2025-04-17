@@ -20,6 +20,7 @@ export function PageHeader({
   children,
   backgroundEffect = "gradient",
 }: PageHeaderProps) {
+  // Animation variants
   const container = {
     hidden: { opacity: 0 },
     show: {
@@ -42,6 +43,11 @@ export function PageHeader({
       }
     },
   };
+
+  // Split title into words for gradient effect
+  const words = title.split(' ');
+  const firstHalf = words.slice(0, Math.ceil(words.length / 2)).join(' ');
+  const secondHalf = words.slice(Math.ceil(words.length / 2)).join(' ');
 
   return (
     <section 
@@ -80,7 +86,8 @@ export function PageHeader({
             className="font-display text-3xl md:text-4xl lg:text-5xl font-bold leading-tight"
             variants={item}
           >
-            {title}
+            <span className="text-foreground">{firstHalf}</span>{' '}
+            <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">{secondHalf}</span>
           </motion.h1>
           
           {subtitle && (
