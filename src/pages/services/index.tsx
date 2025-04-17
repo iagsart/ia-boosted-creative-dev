@@ -1,4 +1,3 @@
-
 import React from 'react';
 import Layout from "@/components/layout/Layout";
 import { SectionTitle } from "@/components/ui/section-title";
@@ -8,6 +7,52 @@ import { ArrowRight, Check, Code, Brain, Palette, Music, Database, Bot, FileText
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+
+// Define services data directly in this file
+const servicesData = [
+  {
+    title: "Développement Web",
+    description: "Interfaces modernes et réactives, développement IA-assisted",
+    icon: <Code size={24} className="text-accent" />,
+    link: "/services/development",
+    imageKey: "development"
+  },
+  {
+    title: "Conseil IA",
+    description: "Stratégie IA, automatisation et optimisation digitale",
+    icon: <Brain size={24} className="text-accent" />,
+    link: "/services/ai",
+    imageKey: "ai"
+  },
+  {
+    title: "Data & Analytics",
+    description: "Extraction, traitement et visualisation de données",
+    icon: <Database size={24} className="text-accent" />,
+    link: "/services/data",
+    imageKey: "data"
+  },
+  {
+    title: "Design & UI/UX",
+    description: "Identité visuelle, interfaces utilisateur, génération d'images IA",
+    icon: <Palette size={24} className="text-accent" />,
+    link: "/services/design",
+    imageKey: "design"
+  },
+  {
+    title: "Conseil Stratégique",
+    description: "Transformation digitale et stratégie technologique",
+    icon: <FileText size={24} className="text-accent" />,
+    link: "/services/consulting",
+    imageKey: "consulting"
+  },
+  {
+    title: "Création Musicale",
+    description: "Production musicale, sound design, voice-over",
+    icon: <Music size={24} className="text-accent" />,
+    link: "/services/music",
+    imageKey: "formation"
+  }
+];
 
 const ServiceCategory = ({ icon, title, children, className = "" }) => {
   return (
@@ -69,7 +114,7 @@ const ServicesIndex = () => {
             </p>
           </motion.div>
           
-          <ServicesGrid showTitle={false} />
+          <ServicesGrid services={servicesData} showTitle={false} />
         </div>
       </section>
 
