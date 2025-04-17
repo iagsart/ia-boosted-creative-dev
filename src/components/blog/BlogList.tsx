@@ -14,14 +14,14 @@ interface BlogListProps {
 
 // Map pour associer chaque article à une image
 const postImages: Record<string, string> = {
-  'introduction-ai': '/images/ai-futuristic.jpg',
-  'python-data-analysis': '/images/python-code.jpg',
-  'opensource-alternatives': '/images/opensource-collab.jpg',
-  'future-of-ai': '/images/ai-robot-future.jpg',
-  'no-code-revolution': '/images/no-code-tools.jpg',
-  'prompt-engineering': '/images/prompt-engineering.jpg',
-  'ai-ethics': '/images/ai-ethics-balance.jpg',
-  'machine-learning-basics': '/images/ml-algorithms.jpg'
+  'introduction-ai': '/images/blog/ai-futuristic.jpg',
+  'python-data-analysis': '/images/blog/python-code.jpg',
+  'opensource-alternatives': '/images/blog/opensource-collab.jpg',
+  'future-of-ai': '/images/blog/ai-robot-future.jpg',
+  'no-code-revolution': '/images/blog/no-code-tools.jpg',
+  'prompt-engineering': '/images/blog/prompt-engineering.jpg',
+  'ai-ethics': '/images/blog/ai-ethics-balance.jpg',
+  'machine-learning-basics': '/images/blog/ml-algorithms.jpg'
 };
 
 export const BlogList = ({ posts }: BlogListProps) => {
@@ -63,10 +63,14 @@ export const BlogList = ({ posts }: BlogListProps) => {
               <Link to={`/blog/${post.slug}`} className="block">
                 <div className="relative h-52 w-full overflow-hidden">
                   <img 
-                    src={postImages[post.slug] || '/placeholder.svg'} 
+                    src={postImages[post.slug] || '/images/blog/placeholder.jpg'} 
                     alt={post.title}
                     className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                     loading="lazy"
+                    onError={(e) => {
+                      const target = e.target as HTMLImageElement;
+                      target.src = '/placeholder.svg';
+                    }}
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                 </div>

@@ -1,5 +1,7 @@
+
 import React, { useState, useEffect } from 'react';
 import Layout from "@/components/layout/Layout";
+import { PageHeader } from "@/components/ui/page-header";
 import { SectionTitle } from "@/components/ui/section-title";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Badge } from "@/components/ui/badge";
@@ -487,10 +489,16 @@ const Portfolio = () => {
 
   return (
     <Layout>
+      <PageHeader
+        title="Mon Portfolio Dev"
+        subtitle="Découvrez mes projets personnels réalisés avec passion et créativité"
+        backgroundEffect="gradient"
+      />
+
       <section className="relative py-16 md:py-24">
         {/* Background with gradient and overlays */}
         <div className="absolute inset-0 bg-gradient-to-b from-secondary/10 via-background to-background -z-10"></div>
-        <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1518770660439-4636190af475?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80')] bg-fixed bg-cover opacity-5 mix-blend-overlay -z-10"></div>
+        <div className="absolute inset-0 bg-[url('/images/portfolio-background.jpg')] bg-fixed bg-cover opacity-5 mix-blend-overlay -z-10"></div>
         
         <div className="container max-w-7xl mx-auto px-4 sm:px-6">
           <SectionTitle

@@ -11,14 +11,14 @@ import { motion } from 'framer-motion';
 
 // Map pour associer chaque article à une image
 const postImages: Record<string, string> = {
-  'introduction-ai': '/images/ai-futuristic.jpg',
-  'python-data-analysis': '/images/python-code.jpg',
-  'opensource-alternatives': '/images/opensource-collab.jpg',
-  'future-of-ai': '/images/ai-robot-future.jpg',
-  'no-code-revolution': '/images/no-code-tools.jpg',
-  'prompt-engineering': '/images/prompt-engineering.jpg',
-  'ai-ethics': '/images/ai-ethics-balance.jpg',
-  'machine-learning-basics': '/images/ml-algorithms.jpg'
+  'introduction-ai': '/images/blog/ai-futuristic.jpg',
+  'python-data-analysis': '/images/blog/python-code.jpg',
+  'opensource-alternatives': '/images/blog/opensource-collab.jpg',
+  'future-of-ai': '/images/blog/ai-robot-future.jpg',
+  'no-code-revolution': '/images/blog/no-code-tools.jpg',
+  'prompt-engineering': '/images/blog/prompt-engineering.jpg',
+  'ai-ethics': '/images/blog/ai-ethics-balance.jpg',
+  'machine-learning-basics': '/images/blog/ml-algorithms.jpg'
 };
 
 const BlogPost = () => {
@@ -44,9 +44,13 @@ const BlogPost = () => {
       <div className="relative w-full h-[50vh] max-h-[500px] overflow-hidden">
         <div className="absolute inset-0 bg-black/50 z-10"></div>
         <img 
-          src={postImages[post.slug] || '/placeholder.svg'} 
+          src={postImages[post.slug] || '/images/blog/placeholder.jpg'} 
           alt={post.title} 
           className="w-full h-full object-cover"
+          onError={(e) => {
+            const target = e.target as HTMLImageElement;
+            target.src = '/placeholder.svg';
+          }}
         />
         <div className="absolute inset-0 z-20 flex items-center">
           <div className="container">

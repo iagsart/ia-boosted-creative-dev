@@ -24,6 +24,10 @@ const AboutSection = () => {
                   src="/images/geoffroy-profile.jpg" 
                   alt="Geoffroy Streit portrait" 
                   className="w-full h-full object-cover rounded-lg"
+                  onError={(e) => {
+                    const target = e.target as HTMLImageElement;
+                    target.src = '/placeholder.svg';
+                  }}
                 />
               </div>
               <div className="absolute -bottom-6 -right-6 bg-background p-6 rounded-lg border shadow-lg">
