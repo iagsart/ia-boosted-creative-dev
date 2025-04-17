@@ -2,7 +2,7 @@
 import React, { useState } from 'react';
 import Layout from "@/components/layout/Layout";
 import { PageHeader } from "@/components/ui/page-header";
-import { BlogList } from "@/components/blog/BlogList";
+import BlogList from "@/components/blog/BlogList";
 import { BlogCategories } from "@/components/blog/BlogCategories";
 import { BlogSearch } from "@/components/blog/BlogSearch";
 import { blogPosts } from "@/data/blogPosts";

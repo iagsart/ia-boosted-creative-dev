@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
@@ -15,9 +14,10 @@ interface Service {
 
 interface ServicesGridProps {
   services: Service[];
+  showTitle?: boolean; // Adding this optional prop
 }
 
-const ServicesGrid: React.FC<ServicesGridProps> = ({ services }) => {
+const ServicesGrid: React.FC<ServicesGridProps> = ({ services, showTitle = true }) => {
   const container = {
     hidden: { opacity: 0 },
     show: {
