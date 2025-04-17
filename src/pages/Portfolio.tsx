@@ -1,13 +1,15 @@
+
 import React, { useState, useEffect } from 'react';
 import Layout from "@/components/layout/Layout";
 import { PageHeader } from "@/components/ui/page-header";
-import { SectionTitle } from "@/components/ui/section-title";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Badge } from "@/components/ui/badge";
 import { motion, AnimatePresence } from "framer-motion";
-import { ExternalLink, ArrowRight, Search, Cpu, Globe, Monitor, Code, Gamepad2 } from "lucide-react";
+import { ExternalLink, ArrowRight, Search, Cpu, Globe, Monitor, Code } from "lucide-react";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
+import PortfolioProjectCard from "@/components/portfolio/PortfolioProjectCard";
+import PortfolioCategories from "@/components/portfolio/PortfolioCategories";
 
 const Portfolio = () => {
   const [searchQuery, setSearchQuery] = useState("");
@@ -496,12 +498,6 @@ const Portfolio = () => {
 
       <section className="relative py-16 md:py-24">
         <div className="container max-w-7xl mx-auto px-4 sm:px-6">
-          <SectionTitle
-            title="Mon Portfolio Dev"
-            subtitle="Découvrez mes projets personnels réalisés avec passion et créativité"
-            centered
-          />
-
           {/* Barre de recherche */}
           <div className="max-w-md mx-auto mb-12 relative">
             <div className="relative">
@@ -526,17 +522,49 @@ const Portfolio = () => {
             </div>
           </div>
 
-          <Tabs 
-            defaultValue="Tous" 
-            className="w-full"
-            value={selectedCategory}
-            onValueChange={handleCategoryChange}
+          {/* Categories filter */}
+          <PortfolioCategories 
+            categories={projectCategories.filter(cat => cat !== "Tous")} 
+            activeCategory={selectedCategory} 
+            onCategoryChange={handleCategoryChange} 
+          />
+
+          {/* Projects grid */}
+          <motion.div 
+            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-12"
+            variants={container}
+            initial="hidden"
+            animate="show"
           >
-            <div className="flex justify-center mb-12 overflow-x-auto scrollbar-hide">
-              <TabsList className="bg-background/60 backdrop-blur-sm border border-accent/10 p-1 rounded-full mb-6">
-                <TabsTrigger 
-                  value="Tous" 
-                  className="px-4 py-2 rounded-full data-[state=active]:bg-accent data-[state=active]:text-white transition-all duration-300"
+            {filteredProjects.length > 0 ? (
+              filteredProjects.map((project, index) => (
+                <PortfolioProjectCard 
+                  key={project.title} 
+                  project={project} 
+                  index={index} 
+                  isFeatured={project.featured}
+                />
+              ))
+            ) : (
+              <div className="col-span-full text-center py-12">
+                <p className="text-muted-foreground text-lg">Aucun projet ne correspond à votre recherche.</p>
+                <Button 
+                  variant="outline" 
+                  className="mt-4"
+                  onClick={() => {
+                    setSearchQuery("");
+                    setSelectedCategory("Tous");
+                  }}
                 >
-                  Tous
-                </
+                  Réinitialiser les filtres
+                </Button>
+              </div>
+            )}
+          </motion.div>
+        </div>
+      </section>
+    </Layout>
+  );
+};
+
+export default Portfolio;
