@@ -1,4 +1,3 @@
-
 # Hylst Human AI - Site Portfolio Personnel
 
 Ce projet est un site web portfolio personnel développé avec React, Tailwind CSS et Vite, mettant en valeur des compétences en développement, IA, infographie et consulting.
@@ -88,6 +87,28 @@ Vous pouvez également télécharger des images directement via l'interface Lova
 2. Sélectionnez l'image à télécharger
 3. Une fois téléchargée, l'image sera disponible dans `/lovable-uploads/`
 4. Utilisez le chemin complet fourni par Lovable pour référencer l'image
+
+## Structure des images
+
+### Images du Blog
+Les images des articles sont stockées dans `public/images/` et suivent la nomenclature suivante :
+
+- `ai-office-automation.jpg` - L'IA au bureau : automatisation des tâches
+- `osi-model-explained.jpg` - Le modèle OSI expliqué simplement
+- `ai-carbon-footprint.jpg` - L'empreinte carbone de l'IA
+- `iot-smart-devices.jpg` - IoT et appareils connectés
+- Plus les images existantes (ai-ethics.jpg, python-data-analysis.jpg, etc.)
+
+Format recommandé : JPEG, 1200x800px, optimisé pour le web
+
+### Images des Services
+Les images des services sont dans `public/images/` avec le préfixe "service-" :
+- `service-dev.jpg`
+- `service-ai-consulting.jpg`
+- `service-data.jpg`
+etc.
+
+Format recommandé : JPEG, 800x600px, optimisé pour le web
 
 ## Personnalisation
 

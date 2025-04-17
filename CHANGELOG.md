@@ -1,4 +1,3 @@
-
 # Changelog
 
 Toutes les modifications notables de ce projet seront documentées dans ce fichier.
@@ -25,6 +24,10 @@ et ce projet adhère au [Semantic Versioning](https://semver.org/spec/v2.0.0.htm
 - Descriptions détaillées des services dans la page Services
 - Catégorisation des services avec des exemples de cas d'usage
 - Design uniformisé sur toutes les pages du site
+- Nouvelles images pour les articles de blog
+- Constantes pour la gestion des chemins d'images
+- Structure de dossiers pour les images de blog et services
+- Images par défaut pour blog et services
 
 ### Modifié
 - Modernisation du design de la barre de navigation avec meilleur espacement entre éléments
@@ -39,6 +42,9 @@ et ce projet adhère au [Semantic Versioning](https://semver.org/spec/v2.0.0.htm
 - Modernisation du design de la page Consulting avec un style cohérent
 - Uniformisation des animations et des éléments interactifs sur toutes les pages
 - Correction des liens dans la barre de navigation pour assurer une navigation cohérente
+- Mise à jour des chemins d'images dans les composants
+- Réorganisation des assets dans le dossier public/images
+- Documentation des images requises et leurs utilisations
 
 ### Corrigé
 - Correction des routes pour la section Services
