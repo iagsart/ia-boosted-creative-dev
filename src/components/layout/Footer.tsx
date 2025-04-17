@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Link } from "react-router-dom";
 import { motion } from 'framer-motion';
@@ -192,7 +191,7 @@ const Footer = () => {
                 <div className="h-8 w-8 rounded-full bg-accent/10 flex items-center justify-center flex-shrink-0">
                   <Mail size={16} className="text-accent" />
                 </div>
-                <span className="text-muted-foreground">hylst@digitalsolutions.com</span>
+                <span className="text-muted-foreground">geoffroy.streit@gmail.com</span>
               </li>
               <li className="flex items-center gap-3">
                 <div className="h-8 w-8 rounded-full bg-accent/10 flex items-center justify-center flex-shrink-0">
@@ -215,7 +214,7 @@ const Footer = () => {
         <div className="flex flex-col sm:flex-row justify-between items-center gap-4">
           <p className="text-muted-foreground text-sm">© {currentYear} Hylst Digital Solutions. Tous droits réservés.</p>
           <div className="flex gap-6">
-            <Link to="/terms" className="text-sm text-muted-foreground hover:text-accent transition-colors">Mentions légales</Link>
+            <Link to="/legal" className="text-sm text-muted-foreground hover:text-accent transition-colors">Mentions légales</Link>
             <Link to="/privacy" className="text-sm text-muted-foreground hover:text-accent transition-colors">Politique de confidentialité</Link>
           </div>
         </div>
