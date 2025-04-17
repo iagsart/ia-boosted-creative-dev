@@ -1,3 +1,4 @@
+
 # Changelog
 
 Toutes les modifications notables de ce projet seront documentées dans ce fichier.
@@ -28,6 +29,9 @@ et ce projet adhère au [Semantic Versioning](https://semver.org/spec/v2.0.0.htm
 - Constantes pour la gestion des chemins d'images
 - Structure de dossiers pour les images de blog et services
 - Images par défaut pour blog et services
+- Composants modulaires pour la page Portfolio: PortfolioSearch, PortfolioGrid, PortfolioCategories
+- Implémentation des images locales dans les composants ServicesGrid et BlogList
+- Fichier portfolioProjects.ts pour séparer les données des composants d'UI
 
 ### Modifié
 - Modernisation du design de la barre de navigation avec meilleur espacement entre éléments
@@ -45,6 +49,7 @@ et ce projet adhère au [Semantic Versioning](https://semver.org/spec/v2.0.0.htm
 - Mise à jour des chemins d'images dans les composants
 - Réorganisation des assets dans le dossier public/images
 - Documentation des images requises et leurs utilisations
+- Refactorisation de la page Portfolio en composants plus petits et mieux organisés
 
 ### Corrigé
 - Correction des routes pour la section Services
@@ -54,6 +59,8 @@ et ce projet adhère au [Semantic Versioning](https://semver.org/spec/v2.0.0.htm
 - Ajustement des contrastes pour une meilleure accessibilité
 - Correction des problèmes de navigation et de liens dans le menu principal
 - Résolution des problèmes de contenu manquant sur la page Services
+- Correction de l'affichage des images dans les articles de blog et services
+- Optimisation du chargement des images avec fallback en cas d'erreur
 
 ## [1.0.0] - 2023-08-01
 

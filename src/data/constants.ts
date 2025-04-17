@@ -9,10 +9,10 @@ export const BLOG_IMAGES = {
   'prompt-engineering': '/images/prompt-engineering.jpg',
   'ai-ethics': '/images/ai-ethics.jpg',
   'machine-learning-basics': '/images/machine-learning-basics.jpg',
-  'ai-office-automation': '/images/ai-office-automation.jpg', // À créer
-  'osi-model-explained': '/images/osi-model-explained.jpg', // À créer
-  'ai-carbon-footprint': '/images/ai-carbon-footprint.jpg', // À créer
-  'iot-smart-devices': '/images/iot-smart-devices.jpg', // À créer
+  'ai-office-automation': '/images/ai-office-automation.jpg',
+  'osi-model-explained': '/images/osi-model-explained.jpg',
+  'ai-carbon-footprint': '/images/ai-carbon-footprint.jpg',
+  'iot-smart-devices': '/images/iot-smart-devices.jpg',
   'default': '/images/blog-default.jpg'
 };
 
@@ -29,4 +29,3 @@ export const SERVICE_IMAGES = {
   optronics: '/images/service-optronics.jpg',
   default: '/images/service-default.jpg'
 };
-

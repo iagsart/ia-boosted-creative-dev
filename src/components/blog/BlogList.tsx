@@ -1,38 +1,27 @@
 
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
-import { Calendar, Clock, ArrowRight } from "lucide-react";
-import { formatDistance } from 'date-fns';
-import { fr } from 'date-fns/locale';
-import { BlogPost } from '@/types/blog';
 import { motion } from 'framer-motion';
+import { blogPosts } from '@/data/blogPosts';
+import { Calendar, ArrowRight } from 'lucide-react';
+import { format } from 'date-fns';
+import { fr } from 'date-fns/locale';
+import { BLOG_IMAGES } from '@/data/constants';
 
 interface BlogListProps {
-  posts: BlogPost[];
+  posts: typeof blogPosts;
+  showHeading?: boolean;
 }
 
-// Map pour associer chaque article à une image
-const postImages: Record<string, string> = {
-  'introduction-ai': '/images/blog/ai-futuristic.jpg',
-  'python-data-analysis': '/images/blog/python-code.jpg',
-  'opensource-alternatives': '/images/blog/opensource-collab.jpg',
-  'future-of-ai': '/images/blog/ai-robot-future.jpg',
-  'no-code-revolution': '/images/blog/no-code-tools.jpg',
-  'prompt-engineering': '/images/blog/prompt-engineering.jpg',
-  'ai-ethics': '/images/blog/ai-ethics-balance.jpg',
-  'machine-learning-basics': '/images/blog/ml-algorithms.jpg'
-};
-
-export const BlogList = ({ posts }: BlogListProps) => {
+const BlogList: React.FC<BlogListProps> = ({ posts, showHeading = true }) => {
   const container = {
     hidden: { opacity: 0 },
     show: {
       opacity: 1,
       transition: {
-        staggerChildren: 0.1,
-      },
-    },
+        staggerChildren: 0.1
+      }
+    }
   };
 
   const item = {
@@ -40,76 +29,72 @@ export const BlogList = ({ posts }: BlogListProps) => {
     show: { opacity: 1, y: 0 }
   };
 
-  if (posts.length === 0) {
-    return (
-      <div className="text-center py-12">
-        <h3 className="text-xl font-medium mb-2">Aucun article trouvé</h3>
-        <p className="text-muted-foreground">Essayez de modifier vos filtres ou votre recherche.</p>
-      </div>
-    );
-  }
-  
   return (
-    <motion.div 
-      className="grid grid-cols-1 md:grid-cols-2 gap-8"
-      variants={container}
-      initial="hidden"
-      animate="show"
-    >
-      {posts.map((post) => (
-        <motion.div key={post.slug} variants={item}>
-          <Card className="h-full flex flex-col overflow-hidden group hover:shadow-md transition-all duration-300 border-border/60">
-            <CardHeader className="p-0">
-              <Link to={`/blog/${post.slug}`} className="block">
-                <div className="relative h-52 w-full overflow-hidden">
-                  <img 
-                    src={postImages[post.slug] || '/images/blog/placeholder.jpg'} 
-                    alt={post.title}
-                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-                    loading="lazy"
-                    onError={(e) => {
-                      const target = e.target as HTMLImageElement;
-                      target.src = '/placeholder.svg';
-                    }}
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                </div>
-              </Link>
-            </CardHeader>
-            <CardContent className="flex-grow p-6">
-              <div className="flex gap-3 text-sm text-muted-foreground mb-3">
-                <span className="flex items-center">
-                  <Calendar className="mr-1 h-3 w-3" />
-                  <time dateTime={post.date}>
-                    {formatDistance(new Date(post.date), new Date(), { addSuffix: true, locale: fr })}
-                  </time>
-                </span>
-                <span className="flex items-center">
-                  <Clock className="mr-1 h-3 w-3" />
-                  <span>{post.readingTime} min</span>
-                </span>
+    <div className="space-y-12">
+      {showHeading && (
+        <h2 className="text-3xl font-bold tracking-tight">Articles récents</h2>
+      )}
+
+      <motion.div
+        className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
+        variants={container}
+        initial="hidden"
+        animate="show"
+      >
+        {posts.map((post, index) => (
+          <motion.article
+            key={post.slug}
+            className="group flex flex-col overflow-hidden rounded-lg border bg-card shadow-sm hover:shadow-md transition-all duration-300"
+            variants={item}
+          >
+            <Link to={`/blog/${post.slug}`} className="aspect-video w-full overflow-hidden">
+              <div className="relative h-full w-full">
+                <img
+                  src={BLOG_IMAGES[post.slug] || BLOG_IMAGES['default']}
+                  alt={post.title}
+                  className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                  onError={(e) => {
+                    const target = e.target as HTMLImageElement;
+                    target.src = '/placeholder.svg';
+                  }}
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-background/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
               </div>
-              <CardTitle className="mb-3 line-clamp-2">
-                <Link to={`/blog/${post.slug}`} className="hover:text-accent transition-colors">
+            </Link>
+
+            <div className="flex flex-col space-y-2 p-4 flex-grow">
+              <div className="flex items-center text-sm text-muted-foreground">
+                <Calendar className="mr-1 h-4 w-4" />
+                <time dateTime={post.date}>
+                  {format(new Date(post.date), "d MMMM yyyy", { locale: fr })}
+                </time>
+              </div>
+
+              <Link to={`/blog/${post.slug}`}>
+                <h3 className="line-clamp-2 text-xl font-semibold group-hover:text-accent transition-colors duration-200">
                   {post.title}
-                </Link>
-              </CardTitle>
-              <CardDescription className="line-clamp-3 text-muted-foreground">
-                {post.excerpt}
-              </CardDescription>
-            </CardContent>
-            <CardFooter className="pt-0 pb-6 px-6">
-              <Link 
-                to={`/blog/${post.slug}`} 
-                className="text-sm font-medium flex items-center text-accent group-hover:underline"
-              >
-                Lire l'article
-                <ArrowRight className="ml-1 h-3 w-3 group-hover:translate-x-1 transition-transform" />
+                </h3>
               </Link>
-            </CardFooter>
-          </Card>
-        </motion.div>
-      ))}
-    </motion.div>
+
+              <p className="line-clamp-3 text-muted-foreground">{post.excerpt}</p>
+
+              <div className="flex-grow"></div>
+
+              <div className="pt-2">
+                <Link
+                  to={`/blog/${post.slug}`}
+                  className="inline-flex items-center text-accent hover:text-accent/80 font-medium"
+                >
+                  Lire l'article
+                  <ArrowRight size={16} className="ml-1 transition-transform group-hover:translate-x-1" />
+                </Link>
+              </div>
+            </div>
+          </motion.article>
+        ))}
+      </motion.div>
+    </div>
   );
 };
+
+export default BlogList;

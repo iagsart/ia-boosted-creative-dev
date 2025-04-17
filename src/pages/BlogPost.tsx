@@ -8,18 +8,7 @@ import { ArrowLeft, Calendar, Tag, Clock, Share2 } from "lucide-react";
 import { formatDistance } from 'date-fns';
 import { fr } from 'date-fns/locale';
 import { motion } from 'framer-motion';
-
-// Map pour associer chaque article à une image
-const postImages: Record<string, string> = {
-  'introduction-ai': '/images/blog/ai-futuristic.jpg',
-  'python-data-analysis': '/images/blog/python-code.jpg',
-  'opensource-alternatives': '/images/blog/opensource-collab.jpg',
-  'future-of-ai': '/images/blog/ai-robot-future.jpg',
-  'no-code-revolution': '/images/blog/no-code-tools.jpg',
-  'prompt-engineering': '/images/blog/prompt-engineering.jpg',
-  'ai-ethics': '/images/blog/ai-ethics-balance.jpg',
-  'machine-learning-basics': '/images/blog/ml-algorithms.jpg'
-};
+import { BLOG_IMAGES } from '@/data/constants';
 
 const BlogPost = () => {
   const { slug } = useParams();
@@ -44,7 +33,7 @@ const BlogPost = () => {
       <div className="relative w-full h-[50vh] max-h-[500px] overflow-hidden">
         <div className="absolute inset-0 bg-black/50 z-10"></div>
         <img 
-          src={postImages[post.slug] || '/images/blog/placeholder.jpg'} 
+          src={BLOG_IMAGES[post.slug] || BLOG_IMAGES['default']} 
           alt={post.title} 
           className="w-full h-full object-cover"
           onError={(e) => {
