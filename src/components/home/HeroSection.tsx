@@ -1,8 +1,7 @@
-
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { StatCard } from "@/components/ui/stat-card";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, Construction } from "lucide-react";
 
 const HeroSection = () => {
   return (
@@ -14,6 +13,11 @@ const HeroSection = () => {
       
       <div className="container relative z-10">
         <div className="max-w-3xl mx-auto text-center space-y-8">
+          <div className="flex items-center justify-center gap-2 mb-4">
+            <Construction className="h-5 w-5 text-yellow-500 animate-bounce" />
+            <span className="text-sm font-medium text-yellow-500">Site en construction</span>
+          </div>
+          
           <div className="animate-fade-up [animation-delay:200ms]">
             <div className="inline-block mb-4 px-4 py-2 bg-accent/10 rounded-full text-sm font-medium">
               L'humain augmenté par l'IA - Strasbourg
