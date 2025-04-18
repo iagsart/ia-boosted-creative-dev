@@ -4,6 +4,7 @@ import { Bot, Send, Loader2 } from 'lucide-react';
 import { Button } from "@/components/ui/button";
 import { Drawer, DrawerContent, DrawerHeader, DrawerTitle, DrawerTrigger } from "@/components/ui/drawer";
 import { useToast } from "@/hooks/use-toast";
+import { createClient } from '@/integrations/supabase/client';
 
 interface Message {
   role: 'user' | 'assistant';
@@ -16,6 +17,7 @@ const Chatbot = () => {
   const [input, setInput] = useState('');
   const [isLoading, setIsLoading] = useState(false);
   const { toast } = useToast();
+  const supabase = createClient();
 
   const handleSendMessage = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -28,17 +30,14 @@ const Chatbot = () => {
     setIsLoading(true);
 
     try {
-      const response = await fetch('/api/generate-response', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ message: input.trim() }),
+      // Appel à l'edge function Supabase directement
+      const { data, error } = await supabase.functions.invoke('generate-response', {
+        body: { message: input.trim() },
       });
 
-      if (!response.ok) throw new Error('Failed to get response');
+      if (error) throw new Error(error.message || 'Failed to get response');
       
-      const data = await response.json();
       const assistantMessage = { role: 'assistant' as const, content: data.response };
-      
       setMessages(prev => [...prev, assistantMessage]);
     } catch (error) {
       console.error('Error:', error);
@@ -59,7 +58,7 @@ const Chatbot = () => {
           <Button
             variant="default"
             size="icon"
-            className="fixed bottom-4 right-4 h-14 w-14 rounded-full shadow-lg"
+            className="fixed bottom-4 right-4 h-14 w-14 rounded-full shadow-lg z-50"
           >
             <Bot className="h-6 w-6" />
           </Button>
@@ -71,7 +70,14 @@ const Chatbot = () => {
           </DrawerHeader>
           
           <div className="flex flex-col h-full p-4">
-            <div className="flex-1 overflow-y-auto space-y-4">
+            <div className="flex-1 overflow-y-auto space-y-4 mb-4">
+              {messages.length === 0 && (
+                <div className="text-center py-8 text-muted-foreground">
+                  <Bot className="h-12 w-12 mx-auto mb-2 opacity-50" />
+                  <p>Bonjour ! Comment puis-je vous aider aujourd'hui ?</p>
+                </div>
+              )}
+              
               {messages.map((message, index) => (
                 <div
                   key={index}
@@ -90,6 +96,7 @@ const Chatbot = () => {
                   </div>
                 </div>
               ))}
+              
               {isLoading && (
                 <div className="flex justify-start">
                   <div className="bg-muted rounded-lg p-3">
@@ -99,7 +106,7 @@ const Chatbot = () => {
               )}
             </div>
             
-            <form onSubmit={handleSendMessage} className="mt-4 flex gap-2">
+            <form onSubmit={handleSendMessage} className="mt-auto flex gap-2">
               <input
                 type="text"
                 value={input}
