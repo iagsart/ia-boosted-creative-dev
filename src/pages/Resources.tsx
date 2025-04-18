@@ -1,4 +1,3 @@
-
 import { PageHeader } from "@/components/ui/page-header";
 import Layout from "@/components/layout/Layout";
 import { Link } from "react-router-dom";
@@ -6,6 +5,8 @@ import { Button } from "@/components/ui/button";
 import { Card, CardHeader, CardTitle, CardDescription, CardContent, CardFooter } from "@/components/ui/card";
 import { ArrowRight, FileText, Book, Download, Layout as LayoutIcon, Code, FileCode } from "lucide-react";
 import { cn } from "@/lib/utils";
+import FaqSection from "@/components/faq/FaqSection";
+import Chatbot from "@/components/chat/Chatbot";
 
 interface ResourceItem {
   title: string;
@@ -25,7 +26,7 @@ const resources: ResourceItem[] = [
   },
   {
     title: "Template React/TypeScript",
-    description: "Un modèle de projet React avec TypeScript, préconfigué avec les meilleures pratiques.",
+    description: "Un modèle de projet React avec TypeScript, préconfiguré avec les meilleures pratiques.",
     icon: <Code className="h-6 w-6" />,
     link: "https://github.com/yourusername/react-typescript-template",
     category: 'template'
@@ -129,6 +130,9 @@ const Resources = () => {
           </div>
         </div>
       </div>
+
+      <FaqSection />
+      <Chatbot />
     </Layout>
   );
 };
