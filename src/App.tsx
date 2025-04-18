@@ -20,6 +20,7 @@ import Blog from "./pages/Blog";
 import BlogPost from "./pages/BlogPost";
 import Legal from "./pages/Legal";
 import Privacy from "./pages/Privacy";
+import Resources from "./pages/Resources";
 
 const queryClient = new QueryClient();
 
@@ -35,6 +36,7 @@ const App = () => (
             <Route path="/portfolio" element={<Portfolio />} />
             <Route path="/about" element={<About />} />
             <Route path="/contact" element={<Contact />} />
+            <Route path="/resources" element={<Resources />} />
             <Route path="/services">
               <Route index element={<ServicesIndex />} />
               <Route path="development" element={<Development />} />

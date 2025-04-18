@@ -53,6 +53,7 @@ const Navbar = () => {
         { name: 'Conseil Technique', path: '/services/consulting' }
       ]
     },
+    { name: 'Ressources', path: '/resources' },
     { name: 'Blog', path: '/blog' },
     { name: 'À propos', path: '/about' }
   ];
