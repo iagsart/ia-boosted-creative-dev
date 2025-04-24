@@ -45,8 +45,8 @@ const AboutSection = () => {
             className="relative"
           >
             <img
-              src="/images/services/competences_et_valeurs.svg"
-              alt="Compétences et valeurs"
+              src="/images/geoffroy-profile.jpg"
+              alt="Geoffroy Streit"
               className="w-full h-auto rounded-lg shadow-lg"
             />
           </motion.div>
