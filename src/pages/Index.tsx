@@ -11,6 +11,19 @@ const Index = () => {
     <Layout>
       <HeroSection />
       <AboutSection />
+          <motion.div
+            initial={{ opacity: 0, x: 20 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: 0.2 }}
+            className="relative"
+          >
+            <img
+              src="/images/services/competences_et_valeurs.svg"
+              alt="Compétences et valeurs"
+              className="w-full h-auto rounded-lg shadow-lg"
+            />
+          </motion.div>
       <PortfolioSection />
       <TestimonialsSection />
       <CtaSection />
