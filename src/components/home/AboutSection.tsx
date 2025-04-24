@@ -52,6 +52,11 @@ const AboutSection = () => {
           </motion.div>
         </div>
       </div>
+      <img
+              src="/images/services/competences_et_valeurs.svg"
+              alt="Compétences et valeurs"
+              className="w-full h-auto rounded-lg shadow-lg"
+      />
     </section>
   );
 };
