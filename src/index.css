@@ -1,0 +1,314 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Montserrat:wght@400;500;600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root,
+  .light {
+    --background: 0 0% 100%;
+    --foreground: 224 71.4% 4.1%;
+    
+    --card: 0 0% 100%;
+    --card-foreground: 224 71.4% 4.1%;
+ 
+    --popover: 0 0% 100%;
+    --popover-foreground: 224 71.4% 4.1%;
+ 
+    --primary: 240 5.9% 10%;
+    --primary-foreground: 0 0% 98%;
+ 
+    --secondary: 240 4.8% 95.9%;
+    --secondary-foreground: 240 5.9% 10%;
+ 
+    --muted: 240 4.8% 95.9%;
+    --muted-foreground: 240 3.8% 46.1%;
+ 
+    --accent: 263 85% 60%;
+    --accent-foreground: 210 40% 98%;
+ 
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+ 
+    --border: 240 5.9% 90%;
+    --input: 240 5.9% 90%;
+    --ring: 240 10% 3.9%;
+ 
+    --radius: 0.5rem;
+
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+ 
+  .dark {
+    --background: 224 71.4% 4.1%;
+    --foreground: 210 20% 98%;
+ 
+    --card: 224 71.4% 4.1%;
+    --card-foreground: 210 20% 98%;
+ 
+    --popover: 224 71.4% 4.1%;
+    --popover-foreground: 210 20% 98%;
+ 
+    --primary: 210 20% 98%;
+    --primary-foreground: 220.9 39.3% 11%;
+ 
+    --secondary: 215 27.9% 16.9%;
+    --secondary-foreground: 210 20% 98%;
+ 
+    --muted: 215 27.9% 16.9%;
+    --muted-foreground: 217.9 10.6% 64.9%;
+ 
+    --accent: 263 85% 50%;
+    --accent-foreground: 210 20% 98%;
+ 
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 20% 98%;
+ 
+    --border: 215 27.9% 16.9%;
+    --input: 215 27.9% 16.9%;
+    --ring: 216 12.2% 83.9%;
+
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .fantasy {
+    --background: 280 30% 98%;
+    --foreground: 280 60% 15%;
+    
+    --card: 280 20% 100%;
+    --card-foreground: 280 60% 15%;
+ 
+    --popover: 280 20% 100%;
+    --popover-foreground: 280 60% 15%;
+ 
+    --primary: 280 60% 30%;
+    --primary-foreground: 280 10% 98%;
+ 
+    --secondary: 280 15% 92%;
+    --secondary-foreground: 280 60% 15%;
+ 
+    --muted: 280 15% 92%;
+    --muted-foreground: 280 40% 40%;
+ 
+    --accent: 310 90% 60%;
+    --accent-foreground: 280 10% 98%;
+ 
+    --destructive: 0 80% 60%;
+    --destructive-foreground: 280 10% 98%;
+ 
+    --border: 280 20% 85%;
+    --input: 280 20% 85%;
+    --ring: 280 60% 40%;
+ 
+    --radius: 1rem;
+
+    --sidebar-background: 280 20% 95%;
+    --sidebar-foreground: 280 60% 30%;
+    --sidebar-primary: 310 70% 50%;
+    --sidebar-primary-foreground: 280 10% 98%;
+    --sidebar-accent: 280 20% 90%;
+    --sidebar-accent-foreground: 280 60% 30%;
+    --sidebar-border: 280 30% 85%;
+    --sidebar-ring: 310 70% 50%;
+  }
+
+  .tech {
+    --background: 220 20% 97%;
+    --foreground: 220 80% 10%;
+    
+    --card: 220 10% 99%;
+    --card-foreground: 220 80% 10%;
+ 
+    --popover: 220 10% 99%;
+    --popover-foreground: 220 80% 10%;
+ 
+    --primary: 220 80% 15%;
+    --primary-foreground: 220 10% 98%;
+ 
+    --secondary: 220 15% 92%;
+    --secondary-foreground: 220 80% 15%;
+ 
+    --muted: 220 15% 92%;
+    --muted-foreground: 220 40% 40%;
+ 
+    --accent: 210 90% 50%;
+    --accent-foreground: 220 10% 98%;
+ 
+    --destructive: 0 80% 50%;
+    --destructive-foreground: 220 10% 98%;
+ 
+    --border: 220 20% 85%;
+    --input: 220 20% 85%;
+    --ring: 210 90% 50%;
+ 
+    --radius: 0.25rem;
+
+    --sidebar-background: 220 20% 95%;
+    --sidebar-foreground: 220 80% 25%;
+    --sidebar-primary: 210 90% 40%;
+    --sidebar-primary-foreground: 220 10% 98%;
+    --sidebar-accent: 220 20% 90%;
+    --sidebar-accent-foreground: 220 80% 25%;
+    --sidebar-border: 220 30% 85%;
+    --sidebar-ring: 210 90% 40%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+}
+
+@layer components {
+  .hero-gradient {
+    @apply bg-gradient-to-r from-accent/80 via-accent to-accent/80 bg-size-200 animate-pulse-slow;
+  }
+  
+  .text-gradient {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-accent to-accent/80;
+  }
+  
+  .nav-link {
+    @apply relative px-2 py-1.5 text-foreground/80 hover:text-foreground transition-colors duration-200 ease-in-out;
+  }
+  
+  .nav-link::after {
+    @apply content-[''] absolute bottom-0 left-0 w-0 h-0.5 bg-accent transition-all duration-300 ease-in-out;
+  }
+  
+  .nav-link:hover::after {
+    @apply w-full;
+  }
+  
+  .card-hover {
+    @apply transition-all duration-300 hover:shadow-lg hover:-translate-y-1;
+  }
+  
+  .section-padding {
+    @apply py-16 md:py-24;
+  }
+
+  /* Styles spécifiques aux thèmes */
+  .fantasy .text-gradient {
+    @apply bg-gradient-to-r from-purple-500 via-pink-500 to-purple-500;
+  }
+  
+  .fantasy .nav-link::after {
+    @apply bg-gradient-to-r from-purple-500 to-pink-500;
+  }
+  
+  .tech .text-gradient {
+    @apply bg-gradient-to-r from-blue-500 to-cyan-400;
+  }
+  
+  .tech .nav-link::after {
+    @apply bg-blue-500;
+  }
+  
+  /* Amélioration de la visibilité des catégories de blog */
+  .blog-category {
+    @apply px-3 py-1.5 rounded-full text-sm font-medium transition-all duration-200;
+    @apply bg-secondary text-foreground/90 hover:bg-accent/20 hover:text-accent;
+    @apply border border-accent/20;
+    @apply shadow-sm;
+  }
+  
+  .blog-category.active {
+    @apply bg-accent/20 text-accent font-semibold;
+  }
+  
+  /* Styles pour les logos */
+  .logo-grid {
+    @apply grid grid-cols-2 gap-4;
+  }
+  
+  .logo-container {
+    @apply aspect-square bg-accent/10 rounded-lg overflow-hidden p-4;
+    @apply flex items-center justify-center;
+    @apply transition-all duration-300 hover:bg-accent/20;
+  }
+
+  /* Animation pour le titre */
+  .title-animated span {
+    @apply inline-block transition-all duration-300;
+  }
+  
+  .title-animated:hover span {
+    @apply animate-bounce;
+    animation-delay: calc(var(--index) * 0.05s);
+  }
+  
+  /* Animation pour les logos */
+  .logo-animate {
+    @apply transition-all duration-500;
+  }
+  
+  .logo-animate:hover {
+    @apply transform scale-110 rotate-3;
+  }
+  
+  /* Améliorations pour le portfolio */
+  .portfolio-tag {
+    @apply bg-accent/15 text-accent font-medium px-3 py-1 rounded-full text-sm;
+    @apply border border-accent/30 shadow-sm;
+  }
+
+  /* Styles pour le texte avec animation */
+  .animated-text-container span {
+    @apply inline-block transition-transform;
+  }
+  
+  .animated-text-container:hover span {
+    animation: letter-wave 0.3s ease-in-out;
+    animation-fill-mode: forwards;
+  }
+  
+  /* Lien hover */
+  .link-hover {
+    @apply transition-all duration-300;
+  }
+}
+
+/* Animation de vague pour le texte */
+@keyframes letter-wave {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-5px);
+  }
+}
+
+/* Placing cursor styles outside of @apply to fix the parsing issues */
+.fantasy .link-hover {
+  cursor: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='40' height='48' viewport='0 0 100 100' style='font-size:24px;'><text y='50%' x='8%'>✨</text></svg>"), pointer;
+}
+
+.tech .link-hover {
+  cursor: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='40' height='48' viewport='0 0 100 100' style='font-size:24px;'><text y='50%' x='8%'>⚡</text></svg>"), pointer;
+}
+
+.dark .link-hover {
+  cursor: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='40' height='48' viewport='0 0 100 100' style='fill:white;font-size:24px;'><text y='50%' x='8%'>👆</text></svg>"), pointer;
+}
