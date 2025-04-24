@@ -17,6 +17,7 @@ import { useState } from "react";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "@/components/ui/collapsible";
 import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
+import { motion } from "framer-motion";
 
 interface ResourceItem {
   title: string;
@@ -40,6 +41,7 @@ const resources: ResourceItem[] = [
     category: 'guide',
     tags: ['IA', 'Éthique', 'Bonnes pratiques'],
     featured: true,
+    preview: "/images/ai-ethics.jpg",
     downloadCount: 1248
   },
   {
@@ -49,6 +51,7 @@ const resources: ResourceItem[] = [
     link: "/blog/python-data-analysis",
     category: 'guide',
     tags: ['Python', 'Data Science', 'Pandas', 'NumPy'],
+    preview: "/images/python-data-analysis.jpg",
     downloadCount: 985
   },
   {
@@ -58,6 +61,7 @@ const resources: ResourceItem[] = [
     link: "/blog/machine-learning-basics",
     category: 'guide',
     tags: ['Machine Learning', 'IA', 'Algorithmes'],
+    preview: "/images/machine-learning-basics.jpg",
     downloadCount: 765
   },
   {
@@ -67,6 +71,7 @@ const resources: ResourceItem[] = [
     link: "/blog/opensource-alternatives",
     category: 'guide',
     tags: ['Open Source', 'Logiciels', 'Alternatives'],
+    preview: "/images/opensource-alternatives.jpg",
     downloadCount: 632
   },
   {
@@ -77,6 +82,7 @@ const resources: ResourceItem[] = [
     category: 'guide',
     tags: ['Prompts', 'IA Générative', 'ChatGPT'],
     featured: true,
+    preview: "/images/prompt-engineering.jpg",
     downloadCount: 1576
   },
   
@@ -89,7 +95,7 @@ const resources: ResourceItem[] = [
     category: 'template',
     tags: ['React', 'TypeScript', 'Frontend'],
     featured: true,
-    preview: "/images/service-design.jpg",
+    preview: "/images/services/developpement_web.jpg",
     downloadCount: 2145
   },
   {
@@ -99,7 +105,7 @@ const resources: ResourceItem[] = [
     link: "https://github.com/yourusername/portfolio-template",
     category: 'template',
     tags: ['Portfolio', 'CSS', 'Responsive'],
-    preview: "/images/service-optronics.jpg",
+    preview: "/images/services/services_creatifs.svg",
     downloadCount: 1821
   },
   {
@@ -109,7 +115,7 @@ const resources: ResourceItem[] = [
     link: "https://github.com/yourusername/admin-dashboard",
     category: 'template',
     tags: ['Dashboard', 'Admin', 'React', 'Charts'],
-    preview: "/images/service-data.jpg",
+    preview: "/images/services/solutions_ia.svg",
     downloadCount: 1536
   },
   {
@@ -119,6 +125,7 @@ const resources: ResourceItem[] = [
     link: "https://github.com/yourusername/react-native-starter",
     category: 'template',
     tags: ['React Native', 'Mobile', 'iOS', 'Android'],
+    preview: "/images/service-accompagnement-projet.jpg",
     downloadCount: 1289
   },
   {
@@ -128,6 +135,7 @@ const resources: ResourceItem[] = [
     link: "https://github.com/yourusername/nodejs-api-template",
     category: 'template',
     tags: ['Node.js', 'API', 'Express', 'MongoDB'],
+    preview: "/images/service-data.jpg",
     downloadCount: 1745
   },
   {
@@ -138,7 +146,7 @@ const resources: ResourceItem[] = [
     category: 'template',
     tags: ['Marketing', 'Landing Page', 'Conversion'],
     featured: true,
-    preview: "/images/service-design.jpg",
+    preview: "/images/services/services_de_developpement.svg",
     downloadCount: 2356
   },
   {
@@ -148,6 +156,7 @@ const resources: ResourceItem[] = [
     link: "https://github.com/yourusername/ecommerce-template",
     category: 'template',
     tags: ['E-commerce', 'Boutique', 'Paiement'],
+    preview: "/images/service-nocode.jpg",
     downloadCount: 1953
   },
   
@@ -159,6 +168,7 @@ const resources: ResourceItem[] = [
     link: "/blog/graphql-api-tutorial",
     category: 'tutoriel',
     tags: ['GraphQL', 'API', 'Node.js', 'Apollo'],
+    preview: "/images/blog/ai-office-automation.jpg",
     downloadCount: 843
   },
   {
@@ -169,6 +179,7 @@ const resources: ResourceItem[] = [
     category: 'tutoriel',
     tags: ['CI/CD', 'DevOps', 'GitHub Actions'],
     featured: true,
+    preview: "/images/blog/osi-model-explained.jpg",
     downloadCount: 765
   },
   {
@@ -178,6 +189,7 @@ const resources: ResourceItem[] = [
     link: "/blog/figma-ui-design",
     category: 'tutoriel',
     tags: ['UI Design', 'Figma', 'UX'],
+    preview: "/images/blog/ai-carbon-footprint.jpg",
     downloadCount: 987
   },
   
@@ -186,37 +198,41 @@ const resources: ResourceItem[] = [
     title: "Générateur de Palettes de Couleurs",
     description: "Créez des palettes de couleurs harmonieuses pour vos projets web et design.",
     icon: <ImageIcon className="h-6 w-6" />,
-    link: "https://tools.yourdomain.com/color-palette",
+    link: "https://coolors.co",
     category: 'outil',
     tags: ['Couleurs', 'Design', 'Web'],
+    preview: "/images/services/services_creatifs.svg",
     downloadCount: 1254
   },
   {
     title: "Calculateur de Performance Web",
     description: "Analysez et optimisez les performances de votre site web.",
     icon: <PieChart className="h-6 w-6" />,
-    link: "https://tools.yourdomain.com/web-performance",
+    link: "https://pagespeed.web.dev/",
     category: 'outil',
     tags: ['Performance', 'Web', 'Optimisation'],
     featured: true,
+    preview: "/images/expertise-dev.jpg",
     downloadCount: 876
   },
   {
     title: "Générateur de Politique de Confidentialité",
     description: "Créez une politique de confidentialité conforme au RGPD pour votre site web.",
     icon: <FileLock className="h-6 w-6" />,
-    link: "https://tools.yourdomain.com/privacy-policy-generator",
+    link: "https://www.privacypolicygenerator.info/",
     category: 'outil',
     tags: ['RGPD', 'Légal', 'Confidentialité'],
+    preview: "/images/service-conseil-strategique.jpg",
     downloadCount: 1432
   },
   {
     title: "Explorateur de Schémas SQL",
     description: "Visualisez et concevez des schémas de base de données SQL.",
     icon: <Database className="h-6 w-6" />,
-    link: "https://tools.yourdomain.com/sql-schema-explorer",
+    link: "https://dbdiagram.io/",
     category: 'outil',
     tags: ['SQL', 'Database', 'Schéma'],
+    preview: "/images/service-data.jpg",
     downloadCount: 789
   }
 ];
@@ -245,6 +261,24 @@ const Resources = () => {
   // Extraire les ressources mises en avant
   const featuredResources = resources.filter(resource => resource.featured);
 
+  // Animations pour les cartes
+  const container = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: { staggerChildren: 0.1 }
+    }
+  };
+  
+  const item = {
+    hidden: { opacity: 0, y: 20 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: 0.5 }
+    }
+  };
+
   return (
     <Layout>
       <PageHeader
@@ -257,55 +291,66 @@ const Resources = () => {
         {/* Section Ressources en Vedette */}
         <section className="mb-16">
           <h2 className="text-3xl font-bold mb-6">Ressources en Vedette</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <motion.div 
+            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
+            variants={container}
+            initial="hidden"
+            animate="visible"
+          >
             {featuredResources.map((resource, index) => (
-              <Card key={`featured-${index}`} className="overflow-hidden hover:shadow-lg transition-all duration-300">
-                {resource.preview && (
-                  <div className="h-48 overflow-hidden">
-                    <img 
-                      src={resource.preview} 
-                      alt={resource.title} 
-                      className="w-full h-full object-cover transition-transform hover:scale-105 duration-500"
-                    />
-                  </div>
-                )}
-                <CardHeader className={!resource.preview ? "pt-6" : ""}>
-                  <div className="flex items-center gap-2 mb-2">
-                    <div className="p-1.5 rounded-md bg-primary/10 text-primary">
-                      {resource.icon}
+              <motion.div key={`featured-${index}`} variants={item}>
+                <Card className="overflow-hidden hover:shadow-lg transition-all duration-300 h-full flex flex-col">
+                  {resource.preview && (
+                    <div className="h-48 overflow-hidden">
+                      <img 
+                        src={resource.preview} 
+                        alt={resource.title} 
+                        className="w-full h-full object-cover transition-transform hover:scale-105 duration-500"
+                        onError={(e) => {
+                          const target = e.target as HTMLImageElement;
+                          target.src = '/placeholder.svg';
+                        }}
+                      />
                     </div>
-                    <span className="text-sm font-medium text-muted-foreground capitalize">{resource.category}</span>
-                  </div>
-                  <CardTitle>{resource.title}</CardTitle>
-                  <CardDescription>{resource.description}</CardDescription>
-                </CardHeader>
-                <CardContent>
-                  <div className="flex flex-wrap gap-2 mt-2">
-                    {resource.tags.map((tag, tagIndex) => (
-                      <span 
-                        key={tagIndex} 
-                        className="px-2 py-1 bg-secondary/20 text-secondary-foreground rounded-md text-xs font-medium"
-                      >
-                        {tag}
-                      </span>
-                    ))}
-                  </div>
-                </CardContent>
-                <CardFooter className="flex justify-between items-center">
-                  <div className="text-sm text-muted-foreground flex items-center gap-1">
-                    <Download className="h-4 w-4" />
-                    {formatDownloadCount(resource.downloadCount)}
-                  </div>
-                  <Button asChild variant="default" size="sm" className="group">
-                    <a href={resource.link} target="_blank" rel="noopener noreferrer" className="flex items-center gap-1">
-                      {resource.category === 'template' ? 'Télécharger' : 'Consulter'}
-                      <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform" />
-                    </a>
-                  </Button>
-                </CardFooter>
-              </Card>
+                  )}
+                  <CardHeader className={!resource.preview ? "pt-6" : ""}>
+                    <div className="flex items-center gap-2 mb-2">
+                      <div className="p-1.5 rounded-md bg-primary/10 text-primary">
+                        {resource.icon}
+                      </div>
+                      <span className="text-sm font-medium text-muted-foreground capitalize">{resource.category}</span>
+                    </div>
+                    <CardTitle>{resource.title}</CardTitle>
+                    <CardDescription>{resource.description}</CardDescription>
+                  </CardHeader>
+                  <CardContent className="flex-grow">
+                    <div className="flex flex-wrap gap-2 mt-2">
+                      {resource.tags.map((tag, tagIndex) => (
+                        <span 
+                          key={tagIndex} 
+                          className="px-2 py-1 bg-secondary/20 text-secondary-foreground rounded-md text-xs font-medium"
+                        >
+                          {tag}
+                        </span>
+                      ))}
+                    </div>
+                  </CardContent>
+                  <CardFooter className="flex justify-between items-center">
+                    <div className="text-sm text-muted-foreground flex items-center gap-1">
+                      <Download className="h-4 w-4" />
+                      {formatDownloadCount(resource.downloadCount)}
+                    </div>
+                    <Button asChild variant="default" size="sm" className="group">
+                      <a href={resource.link} target="_blank" rel="noopener noreferrer" className="flex items-center gap-1">
+                        {resource.category === 'template' ? 'Télécharger' : 'Consulter'}
+                        <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform" />
+                      </a>
+                    </Button>
+                  </CardFooter>
+                </Card>
+              </motion.div>
             ))}
-          </div>
+          </motion.div>
         </section>
         
         {/* Barre de recherche et filtres */}
@@ -335,49 +380,70 @@ const Resources = () => {
         
         {/* Liste des ressources filtrées */}
         <section className="mb-16">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <motion.div 
+            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
+            variants={container}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+          >
             {filteredResources.map((resource, index) => (
-              <Card key={index} className="group transition-all hover:shadow-md h-full flex flex-col">
-                <CardHeader>
-                  <div className="flex items-start gap-4">
-                    <div className="p-2 rounded-lg bg-accent/10 text-accent">
-                      {resource.icon}
+              <motion.div key={index} variants={item}>
+                <Card className="group transition-all hover:shadow-md h-full flex flex-col">
+                  {resource.preview && (
+                    <div className="h-36 overflow-hidden">
+                      <img 
+                        src={resource.preview} 
+                        alt={resource.title} 
+                        className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                        onError={(e) => {
+                          const target = e.target as HTMLImageElement;
+                          target.src = '/placeholder.svg';
+                        }}
+                      />
                     </div>
-                    <div>
-                      <CardTitle className="group-hover:text-primary transition-colors">
-                        {resource.title}
-                      </CardTitle>
-                      <CardDescription>{resource.description}</CardDescription>
+                  )}
+                  <CardHeader>
+                    <div className="flex items-start gap-4">
+                      <div className="p-2 rounded-lg bg-accent/10 text-accent">
+                        {resource.icon}
+                      </div>
+                      <div>
+                        <CardTitle className="group-hover:text-primary transition-colors">
+                          {resource.title}
+                        </CardTitle>
+                        <CardDescription>{resource.description}</CardDescription>
+                      </div>
                     </div>
-                  </div>
-                </CardHeader>
-                <CardContent className="flex-grow">
-                  <div className="flex flex-wrap gap-2 mt-2">
-                    {resource.tags.map((tag, tagIndex) => (
-                      <span 
-                        key={tagIndex} 
-                        className="px-2 py-1 bg-secondary/10 text-secondary-foreground rounded-md text-xs font-medium"
-                      >
-                        {tag}
-                      </span>
-                    ))}
-                  </div>
-                </CardContent>
-                <CardFooter className="pt-2 flex justify-between items-center">
-                  <div className="text-sm text-muted-foreground flex items-center gap-1">
-                    <Download className="h-4 w-4" />
-                    {formatDownloadCount(resource.downloadCount)}
-                  </div>
-                  <Button asChild variant="ghost" className="ml-auto group">
-                    <a href={resource.link} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2">
-                      {resource.category === 'template' ? 'Télécharger' : 'Consulter'}
-                      <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform" />
-                    </a>
-                  </Button>
-                </CardFooter>
-              </Card>
+                  </CardHeader>
+                  <CardContent className="flex-grow">
+                    <div className="flex flex-wrap gap-2 mt-2">
+                      {resource.tags.map((tag, tagIndex) => (
+                        <span 
+                          key={tagIndex} 
+                          className="px-2 py-1 bg-secondary/10 text-secondary-foreground rounded-md text-xs font-medium"
+                        >
+                          {tag}
+                        </span>
+                      ))}
+                    </div>
+                  </CardContent>
+                  <CardFooter className="pt-2 flex justify-between items-center">
+                    <div className="text-sm text-muted-foreground flex items-center gap-1">
+                      <Download className="h-4 w-4" />
+                      {formatDownloadCount(resource.downloadCount)}
+                    </div>
+                    <Button asChild variant="ghost" className="ml-auto group">
+                      <a href={resource.link} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2">
+                        {resource.category === 'template' ? 'Télécharger' : 'Consulter'}
+                        <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform" />
+                      </a>
+                    </Button>
+                  </CardFooter>
+                </Card>
+              </motion.div>
             ))}
-          </div>
+          </motion.div>
         </section>
         
         {/* Section d'aide pour choisir */}
@@ -414,7 +480,11 @@ const Resources = () => {
               </Dialog>
             </div>
             <div className="md:w-1/3 flex justify-center">
-              <Video className="h-32 w-32 text-accent opacity-80" />
+              <img 
+                src="/images/aide-apprentissage.jpg" 
+                alt="Assistance et apprentissage" 
+                className="rounded-lg shadow-md max-w-full h-auto"
+              />
             </div>
           </div>
         </section>
@@ -430,21 +500,32 @@ const Resources = () => {
               </CardDescription>
             </CardHeader>
             <CardContent>
-              <Collapsible className="w-full">
-                <CollapsibleTrigger className="flex w-full items-center justify-between rounded-md bg-secondary p-4 font-medium">
-                  <span>Comment soumettre une ressource</span>
-                  <ArrowRight className="h-4 w-4" />
-                </CollapsibleTrigger>
-                <CollapsibleContent className="p-4 pt-2 text-sm">
-                  <ol className="list-decimal pl-5 space-y-2">
-                    <li>Créez un dépôt GitHub pour votre ressource</li>
-                    <li>Assurez-vous d'inclure une documentation claire</li>
-                    <li>Envoyez-nous le lien via le formulaire de contact</li>
-                    <li>Notre équipe examinera votre soumission</li>
-                    <li>Une fois approuvée, votre ressource sera ajoutée à notre collection</li>
-                  </ol>
-                </CollapsibleContent>
-              </Collapsible>
+              <div className="flex flex-col md:flex-row gap-6 items-center">
+                <div className="md:w-1/3">
+                  <img 
+                    src="/images/expertise-creativite.jpg" 
+                    alt="Contribuer à la communauté" 
+                    className="rounded-lg shadow-md w-full h-auto"
+                  />
+                </div>
+                <div className="md:w-2/3">
+                  <Collapsible className="w-full">
+                    <CollapsibleTrigger className="flex w-full items-center justify-between rounded-md bg-secondary p-4 font-medium">
+                      <span>Comment soumettre une ressource</span>
+                      <ArrowRight className="h-4 w-4" />
+                    </CollapsibleTrigger>
+                    <CollapsibleContent className="p-4 pt-2 text-sm">
+                      <ol className="list-decimal pl-5 space-y-2">
+                        <li>Créez un dépôt GitHub pour votre ressource</li>
+                        <li>Assurez-vous d'inclure une documentation claire</li>
+                        <li>Envoyez-nous le lien via le formulaire de contact</li>
+                        <li>Notre équipe examinera votre soumission</li>
+                        <li>Une fois approuvée, votre ressource sera ajoutée à notre collection</li>
+                      </ol>
+                    </CollapsibleContent>
+                  </Collapsible>
+                </div>
+              </div>
             </CardContent>
             <CardFooter>
               <Link to="/contact">
