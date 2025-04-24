@@ -1,4 +1,3 @@
-
 import React from 'react';
 import Layout from "@/components/layout/Layout";
 import { SectionTitle } from "@/components/ui/section-title";
@@ -6,60 +5,60 @@ import { Card, CardContent } from "@/components/ui/card";
 import { StatCard } from "@/components/ui/stat-card";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
-import { ArrowRight, Check, Brain, LineChart, MessagesSquare, Database, BarChart3 } from "lucide-react";
+import { ArrowRight, Check, BrainCircuit, Code, FileSearch2, Search, TrendingUp } from "lucide-react";
 import { motion } from "framer-motion";
 
 const AI = () => {
   const features = [
     {
-      icon: <LineChart className="h-6 w-6" />,
-      title: "Analyse Prédictive",
-      description: "Prédiction des tendances, détection d'anomalies et optimisation des processus métier grâce aux algorithmes d'apprentissage automatique."
+      icon: <BrainCircuit className="h-6 w-6" />,
+      title: "Conseil en IA",
+      description: "Stratégies d'intégration de l'IA pour optimiser vos opérations et innover."
     },
     {
-      icon: <MessagesSquare className="h-6 w-6" />,
-      title: "Chatbots & Assistants IA",
-      description: "Assistants virtuels intelligents capables de comprendre le langage naturel pour automatiser le support client et les processus internes."
+      icon: <Code className="h-6 w-6" />,
+      title: "Développement d'Agents IA",
+      description: "Création d'agents autonomes pour automatiser des tâches complexes."
     },
     {
-      icon: <Database className="h-6 w-6" />,
-      title: "Computer Vision",
-      description: "Reconnaissance d'images, détection d'objets et analyse visuelle pour automatiser les processus d'inspection et de contrôle qualité."
+      icon: <FileSearch2 className="h-6 w-6" />,
+      title: "Optimisation de Prompts",
+      description: "Amélioration de vos prompts pour obtenir des résultats précis et pertinents."
     },
     {
-      icon: <BarChart3 className="h-6 w-6" />,
-      title: "IA pour l'Optimisation",
-      description: "Optimisation des ressources, planification intelligente et automatisation des décisions complexes pour améliorer l'efficacité opérationnelle."
+      icon: <Search className="h-6 w-6" />,
+      title: "Solutions de Recherche",
+      description: "Implémentation de solutions de recherche avancées basées sur l'IA."
     }
   ];
 
   const processSteps = [
     {
       number: "01",
-      title: "Exploration & Définition",
-      description: "Nous identifions les opportunités d'application de l'IA dans votre entreprise et définissons les objectifs du projet."
+      title: "Analyse des Besoins",
+      description: "Identification précise de vos défis et opportunités."
     },
     {
       number: "02",
-      title: "Collecte & Préparation des Données",
-      description: "Nous collectons, nettoyons et structurons vos données pour les rendre exploitables par les algorithmes d'IA."
+      title: "Conception de la Solution",
+      description: "Élaboration d'une stratégie IA sur mesure pour répondre à vos objectifs."
     },
     {
       number: "03",
-      title: "Développement & Entraînement",
-      description: "Nos data scientists développent et entraînent des modèles d'IA personnalisés pour répondre à vos besoins spécifiques."
+      title: "Développement & Intégration",
+      description: "Mise en œuvre de la solution IA avec une intégration transparente."
     },
     {
       number: "04",
-      title: "Déploiement & Amélioration Continue",
-      description: "Intégration de la solution dans votre environnement et optimisation continue pour des performances toujours meilleures."
+      title: "Suivi & Optimisation",
+      description: "Surveillance continue et ajustements pour garantir des performances optimales."
     }
   ];
 
-  const technologies = [
-    "TensorFlow", "PyTorch", "scikit-learn", "NLP", 
-    "Computer Vision", "Deep Learning", "GPT", "BERT", 
-    "Machine Learning", "MLOps", "Data Mining"
+  const tools = [
+    "GPT-4", "Claude 3 Opus", "Langchain", "Llama 3",
+    "Pinecone", "Weaviate", "n8n", "Make",
+    "Python", "Jupyter", "Metabase"
   ];
 
   const container = {
@@ -95,17 +94,17 @@ const AI = () => {
                 transition={{ duration: 0.5 }}
               >
                 <h1 className="font-display text-4xl md:text-5xl font-bold leading-tight mb-6">
-                  Intelligence<br /><span className="text-gradient">Artificielle</span>
+                  Solutions<br /><span className="text-gradient">Intelligence Artificielle</span>
                 </h1>
                 <p className="text-xl text-muted-foreground mb-8">
-                  Tirez parti de la puissance de l'intelligence artificielle pour automatiser vos processus, prédire les tendances et prendre des décisions basées sur les données.
+                  Maximisez votre potentiel grâce à des solutions IA sur mesure, conçues pour automatiser, innover et transformer votre activité.
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4">
                   <Button size="lg" asChild>
-                    <Link to="/contact">Démarrer un projet IA</Link>
+                    <Link to="/contact">Discuter de votre projet</Link>
                   </Button>
                   <Button variant="outline" size="lg" asChild>
-                    <Link to="/portfolio?filter=ai">Voir nos réalisations IA</Link>
+                    <Link to="/portfolio?filter=ai">Découvrir mes réalisations</Link>
                   </Button>
                 </div>
               </motion.div>
@@ -121,13 +120,13 @@ const AI = () => {
                 <div className="absolute -inset-0.5 bg-gradient-to-r from-accent to-accent/60 rounded-lg blur opacity-30"></div>
                 <div className="relative bg-card rounded-lg p-2 shadow-xl">
                   <img 
-                    src="https://images.unsplash.com/photo-1589254065878-42c9da997008?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" 
-                    alt="Intelligence Artificielle" 
+                    src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b" 
+                    alt="Solutions IA" 
                     className="w-full h-auto rounded"
                   />
                 </div>
                 <div className="absolute -bottom-4 -right-4 bg-accent/10 backdrop-blur-sm border border-accent/20 p-4 rounded-lg shadow-lg">
-                  <Brain className="h-12 w-12 text-accent" />
+                  <BrainCircuit className="h-12 w-12 text-accent" />
                 </div>
               </div>
             </motion.div>
@@ -139,10 +138,18 @@ const AI = () => {
       <section className="py-16 md:py-24 bg-background">
         <div className="container">
           <SectionTitle
-            title="Solutions d'Intelligence Artificielle"
+            title="Mes Services IA"
             subtitle="Des applications concrètes pour booster votre activité"
             centered
           />
+          
+          <div className="mt-12 flex justify-center">
+            <img
+              src="/images/services/solutions_ia.svg"
+              alt="Solutions IA"
+              className="w-full max-w-4xl h-auto"
+            />
+          </div>
           
           <motion.div 
             className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-12"
@@ -171,8 +178,8 @@ const AI = () => {
       <section className="py-16 md:py-24 bg-secondary/30">
         <div className="container">
           <SectionTitle
-            title="Notre Approche IA"
-            subtitle="Une méthodologie scientifique pour des résultats mesurables"
+            title="Mon Processus IA"
+            subtitle="Une approche structurée pour des résultats optimaux"
             centered
           />
           
@@ -192,17 +199,17 @@ const AI = () => {
         </div>
       </section>
 
-      {/* Technologies section */}
+      {/* Tools section */}
       <section className="py-16 md:py-24 bg-background">
         <div className="container">
           <SectionTitle
-            title="Technologies IA"
-            subtitle="Nous utilisons les dernières avancées en matière d'intelligence artificielle"
+            title="Mes Outils IA"
+            subtitle="Les technologies de pointe pour des solutions performantes"
             centered
           />
           
           <div className="flex flex-wrap justify-center gap-4 mt-12">
-            {technologies.map((tech, index) => (
+            {tools.map((tech, index) => (
               <div 
                 key={index} 
                 className="px-6 py-3 bg-secondary/50 rounded-full text-foreground font-medium"
@@ -220,16 +227,16 @@ const AI = () => {
           <div className="flex flex-col md:flex-row items-center gap-12">
             <div className="md:w-1/2 space-y-8">
               <h2 className="text-3xl md:text-4xl font-display font-bold">
-                Pourquoi Intégrer l'IA à Votre Activité?
+                Pourquoi Choisir Mes Services IA ?
               </h2>
               
               <div className="space-y-4">
                 {[
-                  "Automatisation des tâches répétitives pour libérer vos équipes",
-                  "Prédiction des tendances pour une prise de décision éclairée",
-                  "Personnalisation avancée pour une meilleure expérience client",
-                  "Optimisation des processus et réduction des coûts opérationnels",
-                  "Détection d'anomalies et prévention des risques"
+                  "Expertise pointue en IA et en développement",
+                  "Solutions sur mesure adaptées à vos besoins spécifiques",
+                  "Intégration transparente avec vos systèmes existants",
+                  "Suivi continu et optimisation des performances",
+                  "Accompagnement personnalisé à chaque étape du projet"
                 ].map((point, index) => (
                   <div key={index} className="flex items-start gap-3">
                     <div className="mt-1 bg-accent/20 p-1 rounded-full">
@@ -242,17 +249,17 @@ const AI = () => {
               
               <Button asChild>
                 <Link to="/contact" className="inline-flex items-center gap-2">
-                  Évaluer le potentiel IA
+                  Discuter de votre projet
                   <ArrowRight size={16} />
                 </Link>
               </Button>
             </div>
             
             <div className="md:w-1/2 grid grid-cols-2 gap-6">
-              <StatCard value="+150%" label="de ROI moyen sur nos projets IA" />
-              <StatCard value="-35%" label="de réduction des coûts opérationnels" />
-              <StatCard value="+60%" label="d'amélioration de la productivité" />
-              <StatCard value="94%" label="de précision dans les prédictions" />
+              <StatCard value="95%" label="de satisfaction client" />
+              <StatCard value="+30" label="projets IA réalisés" />
+              <StatCard value="+10" label="années d'expérience" />
+              <StatCard value="illimité" label="support technique" />
             </div>
           </div>
         </div>
@@ -263,13 +270,13 @@ const AI = () => {
         <div className="container">
           <div className="max-w-3xl mx-auto text-center space-y-6">
             <h2 className="text-3xl md:text-4xl font-display font-bold">
-              Prêt à révolutionner votre entreprise avec l'IA?
+              Prêt à transformer votre entreprise avec l'IA ?
             </h2>
             <p className="text-accent-foreground/80 text-lg">
-              Contactez-nous pour un audit gratuit de votre potentiel d'intégration IA.
+              Contactez-moi dès aujourd'hui pour discuter de votre projet et découvrir comment l'IA peut vous aider à atteindre vos objectifs.
             </p>
             <Button size="lg" variant="outline" className="bg-white text-accent hover:bg-white/90 border-white" asChild>
-              <Link to="/contact">Obtenir un audit IA gratuit</Link>
+              <Link to="/contact">Démarrer un projet</Link>
             </Button>
           </div>
         </div>

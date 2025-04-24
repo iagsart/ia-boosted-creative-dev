@@ -1,4 +1,3 @@
-
 import React from 'react';
 import Layout from "@/components/layout/Layout";
 import { SectionTitle } from "@/components/ui/section-title";
@@ -135,7 +134,6 @@ const Content = () => {
         </div>
       </section>
 
-      {/* Features section */}
       <section className="py-16 md:py-24 bg-background">
         <div className="container">
           <SectionTitle
@@ -143,6 +141,14 @@ const Content = () => {
             subtitle="Solutions visuelles personnalisées pour tous vos projets"
             centered
           />
+          
+          <div className="mt-12 flex justify-center">
+            <img
+              src="/images/services/services_creatifs.svg"
+              alt="Services créatifs"
+              className="w-full max-w-4xl h-auto"
+            />
+          </div>
           
           <motion.div 
             className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-12"

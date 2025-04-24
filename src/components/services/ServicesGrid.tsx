@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
@@ -42,7 +43,7 @@ const ServicesGrid: React.FC<ServicesGridProps> = ({ services, showTitle = true 
       viewport={{ once: true }}
     >
       {services.map((service, index) => {
-        // Déterminer la clé d'image à utiliser
+        // Determine which image key to use
         const imageKey = service.imageKey || service.link.split('/').pop() || 'default';
         const imagePath = SERVICE_IMAGES[imageKey] || SERVICE_IMAGES.default;
         
