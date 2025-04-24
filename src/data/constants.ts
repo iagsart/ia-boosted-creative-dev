@@ -1,3 +1,4 @@
+
 import { Code, Brain, Palette, Lightbulb, Music, Database, BarChart3, Laptop, Cpu } from "lucide-react";
 
 export const navLinks = [
@@ -316,4 +317,13 @@ export const SERVICE_IMAGES = {
   music: '/images/services/creation_musicale.jpg',
   consulting: '/images/services/conseil_technologique.jpg',
   default: '/images/services/developpement_web.jpg'
+} as const;
+
+// Add the BLOG_IMAGES constant for blog post illustrations
+export const BLOG_IMAGES = {
+  'ia-creation-contenu': '/images/blog/ai-office-automation.jpg',
+  'enjeux-ethiques-ia': '/images/blog/ai-ethics.jpg',
+  'no-code-revolution': '/images/blog/no-code-tools.jpg',
+  'ia-marketing-digital': '/images/blog/ai-carbon-footprint.jpg',
+  'default': '/images/blog/osi-model-explained.jpg'
 } as const;
