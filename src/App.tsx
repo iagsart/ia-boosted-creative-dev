@@ -24,17 +24,21 @@ import ReactTypeScript from "./pages/blog/ReactTypeScript";
 import LandingPageMarketing from "./pages/blog/LandingPageMarketing";
 import CICDDeployment from "./pages/blog/CICDDeployment";
 import WebPerformance from "./pages/blog/WebPerformance";
+import Portfolio from "./pages/Portfolio";
+import About from "./pages/About";
 
 const App = () => {
   return (
     <Routes>
       <Route path="/" element={<Home />} />
+      <Route path="/about" element={<About />} />
+      <Route path="/portfolio" element={<Portfolio />} />
       <Route path="/services" element={<ServicesIndex />} />
       <Route path="/contact" element={<Contact />} />
       <Route path="/services/development" element={<Development />} />
       <Route path="/services/ai" element={<AI />} />
       <Route path="/services/data" element={<Data />} />
-      <Route path="/services/design" element={<Content />} />
+      <Route path="/services/content" element={<Content />} />
       <Route path="/services/consulting" element={<Consulting />} />
       <Route path="/services/music" element={<MusicService />} />
       <Route path="/resources" element={<Resources />} />
