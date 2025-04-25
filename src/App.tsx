@@ -16,6 +16,8 @@ import Content from "./pages/services/Content";
 import Consulting from "./pages/services/Consulting";
 import MusicService from "./pages/services/Music";
 import Resources from "./pages/Resources";
+import Blog from "./pages/Blog";
+import BlogPost from "./pages/BlogPost";
 import IAEthique from "./pages/blog/IAEthique";
 import PromptEngineering from "./pages/blog/PromptEngineering";
 import ReactTypeScript from "./pages/blog/ReactTypeScript";
@@ -36,6 +38,8 @@ const App = () => {
       <Route path="/services/consulting" element={<Consulting />} />
       <Route path="/services/music" element={<MusicService />} />
       <Route path="/resources" element={<Resources />} />
+      <Route path="/blog" element={<Blog />} />
+      <Route path="/blog/:slug" element={<BlogPost />} />
       <Route path="/blog/ia-ethique" element={<IAEthique />} />
       <Route path="/blog/prompt-engineering" element={<PromptEngineering />} />
       <Route path="/blog/react-typescript" element={<ReactTypeScript />} />
