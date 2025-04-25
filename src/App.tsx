@@ -1,3 +1,4 @@
+
 import {
   createBrowserRouter,
   createRoutesFromElements,
@@ -5,15 +6,15 @@ import {
   RouterProvider,
   Routes,
 } from "react-router-dom";
-import Home from "./pages/Home";
-import ServicesIndex from "./pages/services";
+import Home from "./pages/Index";
+import ServicesIndex from "./pages/services/index";
 import Contact from "./pages/Contact";
 import Development from "./pages/services/Development";
-import AIDesign from "./pages/services/AIDesign";
-import DataAnalytics from "./pages/services/DataAnalytics";
-import CreativeServices from "./pages/services/CreativeServices";
+import AI from "./pages/services/AI";
+import Data from "./pages/services/Data";
+import Content from "./pages/services/Content";
 import Consulting from "./pages/services/Consulting";
-import MusicalCreation from "./pages/services/MusicalCreation";
+import MusicService from "./pages/services/Music";
 import Resources from "./pages/Resources";
 import IAEthique from "./pages/blog/IAEthique";
 import PromptEngineering from "./pages/blog/PromptEngineering";
@@ -29,11 +30,11 @@ const App = () => {
       <Route path="/services" element={<ServicesIndex />} />
       <Route path="/contact" element={<Contact />} />
       <Route path="/services/development" element={<Development />} />
-      <Route path="/services/ai" element={<AIDesign />} />
-      <Route path="/services/data" element={<DataAnalytics />} />
-      <Route path="/services/design" element={<CreativeServices />} />
+      <Route path="/services/ai" element={<AI />} />
+      <Route path="/services/data" element={<Data />} />
+      <Route path="/services/design" element={<Content />} />
       <Route path="/services/consulting" element={<Consulting />} />
-      <Route path="/services/music" element={<MusicalCreation />} />
+      <Route path="/services/music" element={<MusicService />} />
       <Route path="/resources" element={<Resources />} />
       <Route path="/blog/ia-ethique" element={<IAEthique />} />
       <Route path="/blog/prompt-engineering" element={<PromptEngineering />} />
