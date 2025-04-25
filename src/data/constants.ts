@@ -35,8 +35,8 @@ export const siteConfig = {
   description:
     "Boostez votre présence en ligne grâce à des solutions innovantes en IA et en développement web. Conseils personnalisés et expertise technique pour des résultats exceptionnels.",
   keywords: ["IA", "Développement Web", "Conseil", "Freelance", "Innovation"],
-  authors: [{ name: "Cédric B.", url: "https://nextlevelia.fr" }],
-  creator: "Cédric B.",
+  authors: [{ name: "Geoffroy S.", url: "https://nextlevelia.fr" }],
+  creator: "Geoffroy S.",
   themeColor: [
     { media: "(prefers-color-scheme: light)", color: "white" },
     { media: "(prefers-color-scheme: dark)", color: "black" },
@@ -261,11 +261,11 @@ export const pricingData = [
 
 export const blogPosts = [
   {
-    title: "L'IA au service de la création de contenu",
-    slug: "ia-creation-contenu",
+    title: "L'IA au bureau : comment automatiser les tâches",
+    slug: "ia-bureau-automatisation", 
     date: "2024-03-15",
-    author: "Cédric B.",
-    image: "/images/blog/ia-contenu.jpg",
+    author: "Geoffroy S.",
+    image: "/images/blog/ai-office-automation.jpg",
     excerpt:
       "Découvrez comment l'intelligence artificielle peut vous aider à créer du contenu de qualité, rapidement et efficacement.",
     content:
@@ -276,8 +276,8 @@ export const blogPosts = [
     title: "Les enjeux éthiques de l'intelligence artificielle",
     slug: "enjeux-ethiques-ia",
     date: "2024-02-28",
-    author: "Cédric B.",
-    image: "/images/blog/ethique-ia.jpg",
+    author: "Geoffroy S.",
+    image: "/images/blog/ai-ethics.jpg",
     excerpt:
       "L'intelligence artificielle soulève de nombreuses questions éthiques. Cet article explore les principaux enjeux et les pistes de réflexion pour une IA responsable.",
     content:
@@ -285,11 +285,11 @@ export const blogPosts = [
     categories: ["IA", "Société", "Ethique"],
   },
   {
-    title: "Le no-code : une révolution pour le développement web ?",
-    slug: "no-code-revolution",
+    title: "Le modèle OSI expliqué à ma grand-mère",
+    slug: "modele-osi-explique",
     date: "2024-02-15",
-    author: "Cédric B.",
-    image: "/images/blog/no-code.jpg",
+    author: "Geoffroy S.",
+    image: "/images/blog/osi-model-explained.jpg",
     excerpt:
       "Le no-code permet de créer des applications web sans écrire une seule ligne de code. Est-ce une révolution ou un simple effet de mode ?",
     content:
@@ -297,25 +297,36 @@ export const blogPosts = [
     categories: ["Web", "No-code", "Productivité"],
   },
   {
-    title: "Comment l'IA transforme le marketing digital",
-    slug: "ia-marketing-digital",
+    title: "L'empreinte carbone de l'IA",
+    slug: "empreinte-carbone-ia",
     date: "2024-01-31",
-    author: "Cédric B.",
-    image: "/images/blog/ia-marketing.jpg",
+    author: "Geoffroy S.",
+    image: "/images/blog/ai-carbon-footprint.jpg",
     excerpt:
       "L'IA offre de nouvelles opportunités pour le marketing digital. Découvrez comment l'utiliser pour améliorer votre stratégie et atteindre vos objectifs.",
     content:
       "L'intelligence artificielle est en train de transformer le marketing digital. Grâce à des outils comme le machine learning et le natural language processing, il est désormais possible d'automatiser les tâches répétitives, de personnaliser les messages et d'analyser les données avec une précision inégalée. Comment utiliser l'IA pour améliorer votre stratégie de marketing digital ? Quels sont les avantages et les inconvénients de cette approche ? Cet article vous donne toutes les clés pour comprendre et utiliser l'IA au service de votre marketing digital.",
     categories: ["IA", "Marketing", "Digital"],
   },
+  {
+    title: "IoT : Quand votre frigo juge vos choix",
+    slug: "iot-frigo-intelligent",
+    date: "2024-04-01",
+    author: "Geoffroy S.",
+    image: "/images/blog/iot-smart-devices.jpg",
+    excerpt: "Découvrez comment les objets connectés redéfinissent notre quotidien et les défis de sécurité associés.",
+    content: "L'Internet des Objets transforme nos foyers mais soulève des questions cruciales sur la vie privée et la sécurité des données. Cet article explore les enjeux techniques et éthiques des appareils connectés.",
+    categories: ["Technologie", "IoT", "Sécurité"]
+  },
 ];
 
 export const SERVICE_IMAGES = {
-  development: '/images/services/services_de_developpement.svg',
-  ai: '/images/services/solutions_ia.svg',
-  content: '/images/services/services_creatifs.svg',
+  development: '/images/services/developpement_web.jpg',
+  ai: '/images/service-ai-consulting.jpg',
+  data: '/images/service-data.jpg',
+  design: '/images/service-design.jpg',
+  consulting: '/images/service-conseil-strategique.jpg',
   music: '/images/services/creation_musicale.jpg',
-  consulting: '/images/services/conseil_technologique.jpg',
   default: '/images/services/developpement_web.jpg'
 } as const;
 

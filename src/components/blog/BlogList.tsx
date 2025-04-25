@@ -50,7 +50,7 @@ const BlogList: React.FC<BlogListProps> = ({ posts, showHeading = true }) => {
             <Link to={`/blog/${post.slug}`} className="aspect-video w-full overflow-hidden">
               <div className="relative h-full w-full">
                 <img
-                  src={BLOG_IMAGES[post.slug] || BLOG_IMAGES['default']}
+                  src={post.image}
                   alt={post.title}
                   className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
                   onError={(e) => {

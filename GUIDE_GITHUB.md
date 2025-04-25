@@ -2,7 +2,7 @@
 
 ## État actuel de votre projet
 
-Votre projet est déjà initialisé avec Git (un dépôt Git local existe) et un dépôt distant est configuré sous le nom `dev` pointant vers `https://github.com/iagsart/ia-boosted-creative-dev.git`.
+Votre projet est déjà initialisé avec Git (un dépôt Git local existe), mais il semble qu'aucun dépôt distant n'est actuellement configuré.
 
 ## Étapes pour synchroniser votre projet avec GitHub
 
@@ -48,21 +48,36 @@ Si vous souhaitez pousser vers une branche différente :
 git push dev nom-de-votre-branche
 ```
 
-## Configuration d'un nouveau dépôt distant (si nécessaire)
+## Configuration d'un dépôt distant
 
-Si vous souhaitez changer le dépôt distant ou en ajouter un nouveau :
+Pour configurer un dépôt distant nommé 'dev' :
 
-1. Créez un nouveau dépôt sur GitHub
-2. Ajoutez-le comme dépôt distant :
+```bash
+git remote add dev https://github.com/iagsart/hylst-digital-solutions.git
+```
+
+Pour vérifier que le dépôt distant a bien été ajouté :
+
+```bash
+git remote -v
+```
+
+Si vous souhaitez changer l'URL d'un dépôt distant existant :
+
+```bash
+git remote set-url nom-du-remote nouvelle-url
+```
+
+Pour ajouter un autre dépôt distant (par exemple 'origin') :
 
 ```bash
 git remote add origin https://github.com/votre-nom-utilisateur/votre-nouveau-depot.git
 ```
 
-3. Poussez votre code vers ce nouveau dépôt :
+Pour pousser votre code vers ce dépôt distant :
 
 ```bash
-git push -u origin master
+git push -u nom-du-remote master
 ```
 
 ## Conseils supplémentaires

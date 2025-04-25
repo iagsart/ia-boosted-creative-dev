@@ -200,7 +200,7 @@ const Development = () => {
                 <div className="absolute -inset-0.5 bg-gradient-to-r from-accent to-accent/60 rounded-lg blur opacity-30"></div>
                 <div className="relative bg-card rounded-lg p-2 shadow-xl">
                   <img 
-                    src="https://images.unsplash.com/photo-1551033406-611cf9a28f67?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" 
+                    src="/images/services/services_de_developpement.svg" 
                     alt="Développement d'applications" 
                     className="w-full h-auto rounded"
                   />
