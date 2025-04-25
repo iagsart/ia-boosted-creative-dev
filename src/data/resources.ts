@@ -1,4 +1,3 @@
-
 import { ResourceItem } from "@/types/resources";
 
 export const resources: ResourceItem[] = [
@@ -60,7 +59,7 @@ export const resources: ResourceItem[] = [
     title: "Template React/TypeScript",
     description: "Un modèle de projet React avec TypeScript, préconfiguré avec les meilleures pratiques.",
     icon: "Code",
-    link: "/blog/react-typescript-template",
+    link: "/blog/react-typescript",
     category: 'template',
     tags: ['React', 'TypeScript', 'Frontend'],
     featured: true,
@@ -175,7 +174,7 @@ export const resources: ResourceItem[] = [
     title: "Calculateur de Performance Web",
     description: "Analysez et optimisez les performances de votre site web.",
     icon: "LineChart",
-    link: "/blog/performance-web",
+    link: "/blog/web-performance",
     category: 'outil',
     tags: ['Performance', 'Web', 'Optimisation'],
     featured: true,
