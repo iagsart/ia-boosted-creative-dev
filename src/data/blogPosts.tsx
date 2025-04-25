@@ -57,7 +57,7 @@ export const blogPosts: BlogPost[] = [
     `,
     date: "2019-05-12",
     readingTime: 8,
-    image: "/placeholder.svg",
+    image: "/images/blog/ai-office-automation.jpg",
     categories: ["IA", "Productivité", "Automatisation"],
     author: {
       name: "Thomas Durand",
@@ -158,7 +158,7 @@ export const blogPosts: BlogPost[] = [
     `,
     date: "2020-02-27",
     readingTime: 10,
-    image: "/placeholder.svg",
+    image: "/images/blog/osi-model-explained.jpg",
     categories: ["Réseaux", "Fondamentaux"],
     author: {
       name: "Thomas Durand",
@@ -245,7 +245,7 @@ export const blogPosts: BlogPost[] = [
     `,
     date: "2021-07-15",
     readingTime: 9,
-    image: "/placeholder.svg",
+    image: "/images/blog/ai-carbon-footprint.jpg",
     categories: ["IA", "Environnement", "Éthique"],
     author: {
       name: "Thomas Durand",
@@ -350,7 +350,7 @@ export const blogPosts: BlogPost[] = [
     `,
     date: "2020-10-05",
     readingTime: 12,
-    image: "/placeholder.svg",
+    image: "/images/blog/iot-smart-devices.jpg",
     categories: ["IoT", "Technologie", "Sécurité"],
     author: {
       name: "Thomas Durand",
@@ -1347,7 +1347,7 @@ export const blogPosts: BlogPost[] = [
     `,
     date: "2023-10-05",
     readingTime: 15,
-    image: "/placeholder.svg",
+    image: "/images/blog/ai-carbon-footprint.jpg",
     categories: ["Développement", "IA", "Productivité"],
     author: {
       name: "Thomas Durand",
