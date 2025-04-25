@@ -36,7 +36,7 @@ const resources: ResourceItem[] = [
     title: "Guide d'IA Éthique",
     description: "Un guide complet sur les bonnes pratiques en matière d'IA éthique et responsable.",
     icon: <Book className="h-6 w-6" />,
-    link: "/blog/ai-ethics",
+    link: "/blog/enjeux-ethiques-ia",
     category: 'guide',
     tags: ['IA', 'Éthique', 'Bonnes pratiques'],
     featured: true,
@@ -57,7 +57,7 @@ const resources: ResourceItem[] = [
     title: "Introduction au Machine Learning",
     description: "Comprendre les concepts fondamentaux du machine learning et ses applications.",
     icon: <Sparkles className="h-6 w-6" />,
-    link: "/blog/machine-learning-basics",
+    link: "/blog/introduction-ai",
     category: 'guide',
     tags: ['Machine Learning', 'IA', 'Algorithmes'],
     preview: "/images/machine-learning-intro.svg",
@@ -104,7 +104,7 @@ const resources: ResourceItem[] = [
     link: "https://github.com/yourusername/portfolio-template",
     category: 'template',
     tags: ['Portfolio', 'CSS', 'Responsive'],
-    preview: "/images/service-optronics.jpg",
+    preview: "/images/template-portfolio.svg",
     downloadCount: 1821
   },
   {
@@ -114,7 +114,7 @@ const resources: ResourceItem[] = [
     link: "https://github.com/yourusername/admin-dashboard",
     category: 'template',
     tags: ['Dashboard', 'Admin', 'React', 'Charts'],
-    preview: "/images/service-data.jpg",
+    preview: "/images/dashboard-admin-react.svg",
     downloadCount: 1536
   },
   {
@@ -164,7 +164,7 @@ const resources: ResourceItem[] = [
     title: "Tutoriel Création API GraphQL",
     description: "Apprenez à créer une API GraphQL complète avec Node.js et Apollo Server.",
     icon: <Braces className="h-6 w-6" />,
-    link: "/blog/graphql-api-tutorial",
+    link: "https://graphql.org/learn/",
     category: 'tutoriel',
     tags: ['GraphQL', 'API', 'Node.js', 'Apollo'],
     downloadCount: 843
@@ -173,7 +173,7 @@ const resources: ResourceItem[] = [
     title: "Tutoriel Déploiement CI/CD",
     description: "Guide étape par étape pour mettre en place un pipeline CI/CD avec GitHub Actions.",
     icon: <FolderGit className="h-6 w-6" />,
-    link: "/blog/cicd-github-actions",
+    link: "https://docs.github.com/fr/actions/learn-github-actions",
     category: 'tutoriel',
     tags: ['CI/CD', 'DevOps', 'GitHub Actions'],
     featured: true,
@@ -184,7 +184,7 @@ const resources: ResourceItem[] = [
     title: "Tutoriel UI Design Figma",
     description: "Créez une interface utilisateur moderne et responsive avec Figma.",
     icon: <Palette className="h-6 w-6" />,
-    link: "/blog/figma-ui-design",
+    link: "https://www.figma.com/community/file/1044318474393017528/ui-design-tutorial",
     category: 'tutoriel',
     tags: ['UI Design', 'Figma', 'UX'],
     downloadCount: 987
@@ -195,7 +195,7 @@ const resources: ResourceItem[] = [
     title: "Générateur de Palettes de Couleurs",
     description: "Créez des palettes de couleurs harmonieuses pour vos projets web et design.",
     icon: <ImageIcon className="h-6 w-6" />,
-    link: "https://tools.yourdomain.com/color-palette",
+    link: "https://coolors.co/",
     category: 'outil',
     tags: ['Couleurs', 'Design', 'Web'],
     downloadCount: 1254
@@ -204,7 +204,7 @@ const resources: ResourceItem[] = [
     title: "Calculateur de Performance Web",
     description: "Analysez et optimisez les performances de votre site web.",
     icon: <PieChart className="h-6 w-6" />,
-    link: "https://tools.yourdomain.com/web-performance",
+    link: "https://pagespeed.web.dev/",
     category: 'outil',
     tags: ['Performance', 'Web', 'Optimisation'],
     featured: true,
@@ -214,7 +214,7 @@ const resources: ResourceItem[] = [
     title: "Générateur de Politique de Confidentialité",
     description: "Créez une politique de confidentialité conforme au RGPD pour votre site web.",
     icon: <FileLock className="h-6 w-6" />,
-    link: "https://tools.yourdomain.com/privacy-policy-generator",
+    link: "https://www.privacypolicygenerator.info/",
     category: 'outil',
     tags: ['RGPD', 'Légal', 'Confidentialité'],
     downloadCount: 1432
@@ -223,7 +223,7 @@ const resources: ResourceItem[] = [
     title: "Explorateur de Schémas SQL",
     description: "Visualisez et concevez des schémas de base de données SQL.",
     icon: <Database className="h-6 w-6" />,
-    link: "https://tools.yourdomain.com/sql-schema-explorer",
+    link: "https://dbdiagram.io/",
     category: 'outil',
     tags: ['SQL', 'Database', 'Schéma'],
     downloadCount: 789
@@ -274,7 +274,7 @@ const Resources = () => {
                     <img 
                       src={resource.preview} 
                       alt={resource.title} 
-                      className="w-full h-full object-cover transition-transform hover:scale-105 duration-500"
+                      className="w-full h-full object-contain transition-transform hover:scale-105 duration-500"
                     />
                   </div>
                 )}
