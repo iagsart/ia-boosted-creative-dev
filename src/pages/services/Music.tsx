@@ -121,7 +121,7 @@ const MusicService = () => {
                 <div className="absolute -inset-0.5 bg-gradient-to-r from-accent to-accent/60 rounded-lg blur opacity-30"></div>
                 <div className="relative bg-card rounded-lg p-2 shadow-xl">
                   <img 
-                    src="https://images.unsplash.com/photo-1511379938547-c1f69419868d?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" 
+                    src="/images/services/creation_musicale.jpg" 
                     alt="Création musicale" 
                     className="w-full h-auto rounded"
                   />

@@ -120,7 +120,7 @@ const AI = () => {
                 <div className="absolute -inset-0.5 bg-gradient-to-r from-accent to-accent/60 rounded-lg blur opacity-30"></div>
                 <div className="relative bg-card rounded-lg p-2 shadow-xl">
                   <img 
-                    src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b" 
+                    src="/images/services/intelligence_artificielle.jpg" 
                     alt="Solutions IA" 
                     className="w-full h-auto rounded"
                   />

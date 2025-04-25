@@ -145,7 +145,7 @@ const Consulting = () => {
                 <div className="absolute -inset-0.5 bg-gradient-to-r from-accent to-accent/60 rounded-lg blur opacity-30"></div>
                 <div className="relative bg-card rounded-lg p-2 shadow-xl">
                   <img 
-                    src="https://images.unsplash.com/photo-1591267990532-e5bdb1b0ceb8?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" 
+                    src="/images/services/conseil_technologique.jpg" 
                     alt="Conseil technologique" 
                     className="w-full h-auto rounded"
                   />

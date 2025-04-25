@@ -57,12 +57,12 @@ const AboutSection = () => {
         whileInView={{ opacity: 1, x: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.5, delay: 0.2 }}
-        className="relative"
+        className="relative mt-8 mb-[-4rem]"
       >
           <img
                   src="/images/services/competences_et_valeurs.svg"
                   alt="Compétences et valeurs"
-                  className="w-full h-auto rounded-lg shadow-lg"
+                  className="w-1/2 mx-auto h-auto rounded-lg shadow-lg"
           />
       </motion.div>
     </section>

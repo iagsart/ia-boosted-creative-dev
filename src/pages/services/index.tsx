@@ -50,7 +50,7 @@ const servicesData = [
     description: "Production musicale, sound design, voice-over",
     icon: <Music size={24} className="text-accent" />,
     link: "/services/music",
-    imageKey: "formation"
+    imageKey: "music"
   }
 ];
 
