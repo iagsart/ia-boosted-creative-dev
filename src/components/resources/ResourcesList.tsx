@@ -1,7 +1,7 @@
 
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { Download, ArrowRight } from "lucide-react";
+import { Download, ArrowRight, FileText } from "lucide-react";
 import { ResourceItem } from "@/types/resources";
 import * as LucideIcons from "lucide-react";
 
@@ -15,10 +15,11 @@ export function ResourcesList({ resources }: ResourcesListProps) {
     return count > 999 ? `${(count / 1000).toFixed(1)}k` : count.toString();
   };
 
-  // Dynamically render icons from icon names
+  // Dynamically render icons from icon names with proper type checking
   const renderIcon = (iconName: string) => {
-    const IconComponent = LucideIcons[iconName as keyof typeof LucideIcons];
-    return IconComponent ? <IconComponent className="h-6 w-6" /> : <LucideIcons.FileText className="h-6 w-6" />;
+    // Type assertion to prevent TypeScript errors
+    const IconComponent = (LucideIcons as Record<string, React.ComponentType<any>>)[iconName];
+    return IconComponent ? <IconComponent className="h-6 w-6" /> : <FileText className="h-6 w-6" />;
   };
 
   return (
