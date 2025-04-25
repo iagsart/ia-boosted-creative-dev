@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" width="800" height="450">
+  <rect width="800" height="450" fill="#1a202c" />
+  
+  <!-- Portfolio grid mockup -->
+  <rect x="150" y="100" width="500" height="250" rx="5" fill="#2d3748" />
+  
+  <!-- Portfolio items -->
+  <rect x="170" y="120" width="140" height="100" rx="3" fill="#4a5568" />
+  <rect x="330" y="120" width="140" height="100" rx="3" fill="#4a5568" />
+  <rect x="490" y="120" width="140" height="100" rx="3" fill="#4a5568" />
+  
+  <rect x="170" y="230" width="140" height="100" rx="3" fill="#4a5568" />
+  <rect x="330" y="230" width="140" height="100" rx="3" fill="#4a5568" />
+  <rect x="490" y="230" width="140" height="100" rx="3" fill="#4a5568" />
+  
+  <!-- Portfolio item hover effect -->
+  <rect x="330" y="120" width="140" height="100" rx="3" fill="#3182ce" opacity="0.8" />
+  <rect x="350" y="150" width="100" height="15" rx="3" fill="white" />
+  <rect x="350" y="175" width="70" height="10" rx="3" fill="#e2e8f0" />
+  
+  <!-- Navigation -->
+  <circle cx="180" cy="80" r="15" fill="#3182ce" />
+  <rect x="350" y="70" width="60" height="20" rx="3" fill="#4a5568" />
+  <rect x="430" y="70" width="60" height="20" rx="3" fill="#4a5568" />
+  <rect x="510" y="70" width="60" height="20" rx="3" fill="#4a5568" />
+  <rect x="590" y="70" width="40" height="20" rx="10" fill="#3182ce" />
+  
+  <!-- Title -->
+  <text x="400" y="40" font-family="Arial" font-size="32" fill="white" text-anchor="middle">Template Portfolio</text>
+  <text x="400" y="380" font-family="Arial" font-size="20" fill="white" text-anchor="middle">Moderne et responsive pour votre portfolio professionnel</text>
+</svg>

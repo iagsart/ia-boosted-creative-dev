@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" width="800" height="450">
+  <rect width="800" height="450" fill="#2c3e50" />
+  <rect x="150" y="100" width="500" height="250" rx="10" fill="#34495e" />
+  
+  <!-- Pipeline stages -->
+  <rect x="200" y="150" width="100" height="60" rx="5" fill="#3498db" />
+  <rect x="350" y="150" width="100" height="60" rx="5" fill="#2ecc71" />
+  <rect x="500" y="150" width="100" height="60" rx="5" fill="#e74c3c" />
+  
+  <!-- Connecting arrows -->
+  <path d="M300 180 L350 180" stroke="#ecf0f1" stroke-width="3" />
+  <polygon points="345,175 355,180 345,185" fill="#ecf0f1" />
+  
+  <path d="M450 180 L500 180" stroke="#ecf0f1" stroke-width="3" />
+  <polygon points="495,175 505,180 495,185" fill="#ecf0f1" />
+  
+  <!-- Stage labels -->
+  <text x="250" y="185" font-family="Arial" font-size="16" fill="white" text-anchor="middle">Build</text>
+  <text x="400" y="185" font-family="Arial" font-size="16" fill="white" text-anchor="middle">Test</text>
+  <text x="550" y="185" font-family="Arial" font-size="16" fill="white" text-anchor="middle">Deploy</text>
+  
+  <!-- Status indicators -->
+  <circle cx="250" cy="230" r="10" fill="#2ecc71" />
+  <circle cx="400" cy="230" r="10" fill="#2ecc71" />
+  <circle cx="550" cy="230" r="10" fill="#f39c12" />
+  <text x="250" y="260" font-family="Arial" font-size="14" fill="white" text-anchor="middle">Success</text>
+  <text x="400" y="260" font-family="Arial" font-size="14" fill="white" text-anchor="middle">Success</text>
+  <text x="550" y="260" font-family="Arial" font-size="14" fill="white" text-anchor="middle">In Progress</text>
+  
+  <!-- Title -->
+  <text x="400" y="50" font-family="Arial" font-size="32" fill="white" text-anchor="middle">Tutoriel Déploiement CI/CD</text>
+  <text x="400" y="400" font-family="Arial" font-size="24" fill="white" text-anchor="middle">Pipeline d'intégration et déploiement continus</text>
+</svg>

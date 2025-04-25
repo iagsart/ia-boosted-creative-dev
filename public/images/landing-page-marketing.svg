@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" width="800" height="450">
+  <rect width="800" height="450" fill="#4a5568" />
+  
+  <!-- Landing page mockup -->
+  <rect x="150" y="80" width="500" height="300" rx="5" fill="white" />
+  
+  <!-- Header section -->
+  <rect x="150" y="80" width="500" height="60" rx="5" fill="#edf2f7" />
+  <circle cx="180" cy="110" r="15" fill="#3182ce" />
+  <rect x="350" y="100" width="60" height="20" rx="3" fill="#cbd5e0" />
+  <rect x="430" y="100" width="60" height="20" rx="3" fill="#cbd5e0" />
+  <rect x="510" y="100" width="60" height="20" rx="3" fill="#cbd5e0" />
+  <rect x="590" y="100" width="40" height="20" rx="10" fill="#3182ce" />
+  
+  <!-- Hero section -->
+  <rect x="170" y="160" width="280" height="30" rx="3" fill="#2d3748" />
+  <rect x="170" y="200" width="220" height="15" rx="3" fill="#718096" />
+  <rect x="170" y="225" width="220" height="15" rx="3" fill="#718096" />
+  <rect x="170" y="260" width="120" height="30" rx="15" fill="#3182ce" />
+  
+  <!-- Hero image -->
+  <rect x="470" y="160" width="160" height="130" rx="5" fill="#bee3f8" />
+  <circle cx="550" cy="200" r="30" fill="#3182ce" />
+  <path d="M530 220 L570 220" stroke="#3182ce" stroke-width="5" />
+  <path d="M530 230 L570 230" stroke="#3182ce" stroke-width="5" />
+  
+  <!-- Features section -->
+  <circle cx="200" cy="330" r="15" fill="#3182ce" />
+  <rect x="230" y="320" width="80" height="10" rx="3" fill="#2d3748" />
+  <rect x="230" y="340" width="60" height="8" rx="3" fill="#718096" />
+  
+  <circle cx="350" cy="330" r="15" fill="#3182ce" />
+  <rect x="380" y="320" width="80" height="10" rx="3" fill="#2d3748" />
+  <rect x="380" y="340" width="60" height="8" rx="3" fill="#718096" />
+  
+  <circle cx="500" cy="330" r="15" fill="#3182ce" />
+  <rect x="530" y="320" width="80" height="10" rx="3" fill="#2d3748" />
+  <rect x="530" y="340" width="60" height="8" rx="3" fill="#718096" />
+  
+  <!-- Title -->
+  <text x="400" y="50" font-family="Arial" font-size="32" fill="white" text-anchor="middle">Landing Page Marketing</text>
+  <text x="400" y="410" font-family="Arial" font-size="20" fill="white" text-anchor="middle">Template optimisé pour la conversion</text>
+</svg>
