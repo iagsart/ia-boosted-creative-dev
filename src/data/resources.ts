@@ -1,11 +1,11 @@
-import { Book, Code, FileCode, Sparkles, LayoutIcon, Terminal, Layers, LineChart, MonitorSmartphone, PenTool, Table, ImageIcon, PieChart, FileLock, Database, Braces, FolderGit, Palette } from "lucide-react";
+
 import { ResourceItem } from "@/types/resources";
 
 export const resources: ResourceItem[] = [
   {
     title: "Guide d'IA Éthique",
     description: "Un guide complet sur les bonnes pratiques en matière d'IA éthique et responsable.",
-    icon: <Book className="h-6 w-6" />,
+    icon: "Book",
     link: "/blog/ia-ethique",
     category: 'guide',
     tags: ['IA', 'Éthique', 'Bonnes pratiques'],
@@ -16,7 +16,7 @@ export const resources: ResourceItem[] = [
   {
     title: "Guide Python Data Science",
     description: "Introduction complète à l'analyse de données avec Python et ses bibliothèques essentielles.",
-    icon: <FileCode className="h-6 w-6" />,
+    icon: "FileCode",
     link: "/blog/python-data-analysis",
     category: 'guide',
     tags: ['Python', 'Data Science', 'Pandas', 'NumPy'],
@@ -26,7 +26,7 @@ export const resources: ResourceItem[] = [
   {
     title: "Introduction au Machine Learning",
     description: "Comprendre les concepts fondamentaux du machine learning et ses applications.",
-    icon: <Sparkles className="h-6 w-6" />,
+    icon: "Sparkles",
     link: "/blog/introduction-ai",
     category: 'guide',
     tags: ['Machine Learning', 'IA', 'Algorithmes'],
@@ -36,7 +36,7 @@ export const resources: ResourceItem[] = [
   {
     title: "Guide des Alternatives Open Source",
     description: "Découvrez les meilleures alternatives open source aux logiciels propriétaires populaires.",
-    icon: <BookOpen className="h-6 w-6" />,
+    icon: "FileText",
     link: "/blog/opensource-alternatives",
     category: 'guide',
     tags: ['Open Source', 'Logiciels', 'Alternatives'],
@@ -46,7 +46,7 @@ export const resources: ResourceItem[] = [
   {
     title: "L'art du Prompt Engineering",
     description: "Maîtrisez la création de prompts efficaces pour les modèles d'IA générative.",
-    icon: <PenTool className="h-6 w-6" />,
+    icon: "PenTool",
     link: "/blog/prompt-engineering",
     category: 'guide',
     tags: ['Prompts', 'IA Générative', 'ChatGPT'],
@@ -59,7 +59,7 @@ export const resources: ResourceItem[] = [
   {
     title: "Template React/TypeScript",
     description: "Un modèle de projet React avec TypeScript, préconfiguré avec les meilleures pratiques.",
-    icon: <Code className="h-6 w-6" />,
+    icon: "Code",
     link: "/blog/react-typescript-template",
     category: 'template',
     tags: ['React', 'TypeScript', 'Frontend'],
@@ -70,7 +70,7 @@ export const resources: ResourceItem[] = [
   {
     title: "Template Portfolio",
     description: "Un template moderne et responsive pour créer votre portfolio professionnel.",
-    icon: <LayoutIcon className="h-6 w-6" />,
+    icon: "Layout",
     link: "https://github.com/yourusername/portfolio-template",
     category: 'template',
     tags: ['Portfolio', 'CSS', 'Responsive'],
@@ -80,7 +80,7 @@ export const resources: ResourceItem[] = [
   {
     title: "Dashboard Admin React",
     description: "Template d'administration complet avec tableaux de bord, graphiques et gestion d'utilisateurs.",
-    icon: <LineChart className="h-6 w-6" />,
+    icon: "LineChart",
     link: "https://github.com/yourusername/admin-dashboard",
     category: 'template',
     tags: ['Dashboard', 'Admin', 'React', 'Charts'],
@@ -90,7 +90,7 @@ export const resources: ResourceItem[] = [
   {
     title: "Application Mobile React Native",
     description: "Structure de base pour une application mobile multi-plateforme avec React Native.",
-    icon: <MonitorSmartphone className="h-6 w-6" />,
+    icon: "Smartphone",
     link: "https://github.com/yourusername/react-native-starter",
     category: 'template',
     tags: ['React Native', 'Mobile', 'iOS', 'Android'],
@@ -100,7 +100,7 @@ export const resources: ResourceItem[] = [
   {
     title: "API Backend Node.js",
     description: "Structure complète pour une API RESTful avec Express.js, MongoDB et authentification JWT.",
-    icon: <Terminal className="h-6 w-6" />,
+    icon: "Terminal",
     link: "https://github.com/yourusername/nodejs-api-template",
     category: 'template',
     tags: ['Node.js', 'API', 'Express', 'MongoDB'],
@@ -110,7 +110,7 @@ export const resources: ResourceItem[] = [
   {
     title: "Landing Page Marketing",
     description: "Template de page d'accueil optimisé pour la conversion avec sections modulaires.",
-    icon: <Layers className="h-6 w-6" />,
+    icon: "Layers",
     link: "/blog/landing-page-marketing",
     category: 'template',
     tags: ['Marketing', 'Landing Page', 'Conversion'],
@@ -121,7 +121,7 @@ export const resources: ResourceItem[] = [
   {
     title: "Template E-commerce",
     description: "Structure complète pour une boutique en ligne avec panier, paiement et gestion de produits.",
-    icon: <Table className="h-6 w-6" />,
+    icon: "ShoppingCart",
     link: "https://github.com/yourusername/ecommerce-template",
     category: 'template',
     tags: ['E-commerce', 'Boutique', 'Paiement'],
@@ -133,7 +133,7 @@ export const resources: ResourceItem[] = [
   {
     title: "Tutoriel Création API GraphQL",
     description: "Apprenez à créer une API GraphQL complète avec Node.js et Apollo Server.",
-    icon: <Braces className="h-6 w-6" />,
+    icon: "Braces",
     link: "https://graphql.org/learn/",
     category: 'tutoriel',
     tags: ['GraphQL', 'API', 'Node.js', 'Apollo'],
@@ -142,7 +142,7 @@ export const resources: ResourceItem[] = [
   {
     title: "Tutoriel Déploiement CI/CD",
     description: "Guide étape par étape pour mettre en place un pipeline CI/CD avec GitHub Actions.",
-    icon: <FolderGit className="h-6 w-6" />,
+    icon: "GitBranch",
     link: "/blog/cicd-deployment",
     category: 'tutoriel',
     tags: ['CI/CD', 'DevOps', 'GitHub Actions'],
@@ -153,7 +153,7 @@ export const resources: ResourceItem[] = [
   {
     title: "Tutoriel UI Design Figma",
     description: "Créez une interface utilisateur moderne et responsive avec Figma.",
-    icon: <Palette className="h-6 w-6" />,
+    icon: "Palette",
     link: "https://www.figma.com/community/file/1044318474393017528/ui-design-tutorial",
     category: 'tutoriel',
     tags: ['UI Design', 'Figma', 'UX'],
@@ -164,7 +164,7 @@ export const resources: ResourceItem[] = [
   {
     title: "Générateur de Palettes de Couleurs",
     description: "Créez des palettes de couleurs harmonieuses pour vos projets web et design.",
-    icon: <ImageIcon className="h-6 w-6" />,
+    icon: "Palette",
     link: "https://coolors.co",
     category: 'outil',
     tags: ['Couleurs', 'Design', 'Web'],
@@ -174,7 +174,7 @@ export const resources: ResourceItem[] = [
   {
     title: "Calculateur de Performance Web",
     description: "Analysez et optimisez les performances de votre site web.",
-    icon: <PieChart className="h-6 w-6" />,
+    icon: "LineChart",
     link: "/blog/performance-web",
     category: 'outil',
     tags: ['Performance', 'Web', 'Optimisation'],
@@ -185,7 +185,7 @@ export const resources: ResourceItem[] = [
   {
     title: "Générateur de Politique de Confidentialité",
     description: "Créez une politique de confidentialité conforme au RGPD pour votre site web.",
-    icon: <FileLock className="h-6 w-6" />,
+    icon: "Shield",
     link: "https://www.privacypolicygenerator.info/",
     category: 'outil',
     tags: ['RGPD', 'Légal', 'Confidentialité'],
@@ -195,7 +195,7 @@ export const resources: ResourceItem[] = [
   {
     title: "Explorateur de Schémas SQL",
     description: "Visualisez et concevez des schémas de base de données SQL.",
-    icon: <Database className="h-6 w-6" />,
+    icon: "Database",
     link: "https://dbdiagram.io/",
     category: 'outil',
     tags: ['SQL', 'Database', 'Schéma'],

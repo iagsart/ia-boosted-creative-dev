@@ -1,10 +1,8 @@
 
-import { ReactNode } from "react";
-
 export interface ResourceItem {
   title: string;
   description: string;
-  icon: ReactNode;
+  icon: string;  // Changed from ReactNode to string
   link: string;
   category: 'template' | 'guide' | 'tutoriel' | 'outil';
   tags: string[];

@@ -3,6 +3,7 @@ import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle }
 import { Button } from "@/components/ui/button";
 import { Download, ArrowRight } from "lucide-react";
 import { ResourceItem } from "@/types/resources";
+import * as LucideIcons from "lucide-react";
 
 interface ResourcesListProps {
   resources: ResourceItem[];
@@ -14,6 +15,12 @@ export function ResourcesList({ resources }: ResourcesListProps) {
     return count > 999 ? `${(count / 1000).toFixed(1)}k` : count.toString();
   };
 
+  // Dynamically render icons from icon names
+  const renderIcon = (iconName: string) => {
+    const IconComponent = LucideIcons[iconName as keyof typeof LucideIcons];
+    return IconComponent ? <IconComponent className="h-6 w-6" /> : <LucideIcons.FileText className="h-6 w-6" />;
+  };
+
   return (
     <section className="mb-16">
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -22,7 +29,7 @@ export function ResourcesList({ resources }: ResourcesListProps) {
             <CardHeader>
               <div className="flex items-start gap-4">
                 <div className="p-2 rounded-lg bg-accent/10 text-accent">
-                  {resource.icon}
+                  {renderIcon(resource.icon)}
                 </div>
                 <div>
                   <CardTitle className="group-hover:text-primary transition-colors">

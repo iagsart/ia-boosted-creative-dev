@@ -3,6 +3,7 @@ import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle }
 import { Button } from "@/components/ui/button";
 import { Download, ArrowRight } from "lucide-react";
 import { ResourceItem } from "@/types/resources";
+import * as LucideIcons from "lucide-react";
 
 interface FeaturedResourcesProps {
   resources: ResourceItem[];
@@ -12,6 +13,12 @@ export function FeaturedResources({ resources }: FeaturedResourcesProps) {
   const formatDownloadCount = (count?: number) => {
     if (!count) return "";
     return count > 999 ? `${(count / 1000).toFixed(1)}k` : count.toString();
+  };
+
+  // Dynamically render icons from icon names
+  const renderIcon = (iconName: string) => {
+    const IconComponent = LucideIcons[iconName as keyof typeof LucideIcons];
+    return IconComponent ? <IconComponent className="h-6 w-6" /> : <LucideIcons.FileText className="h-6 w-6" />;
   };
 
   return (
@@ -32,7 +39,7 @@ export function FeaturedResources({ resources }: FeaturedResourcesProps) {
             <CardHeader className={!resource.preview ? "pt-6" : ""}>
               <div className="flex items-center gap-2 mb-2">
                 <div className="p-1.5 rounded-md bg-primary/10 text-primary">
-                  {resource.icon}
+                  {renderIcon(resource.icon)}
                 </div>
                 <span className="text-sm font-medium text-muted-foreground capitalize">{resource.category}</span>
               </div>
