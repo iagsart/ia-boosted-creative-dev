@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="600" viewBox="0 0 800 600">
+  <!-- Background -->
+  <rect width="800" height="600" fill="#f8f9fa" />
+  
+  <!-- GraphQL Logo -->
+  <g transform="translate(400, 200) scale(1.5)">
+    <!-- Hexagon -->
+    <path d="M0,-50 L43.3,-25 L43.3,25 L0,50 L-43.3,25 L-43.3,-25 Z" fill="none" stroke="#e535ab" stroke-width="6" />
+    
+    <!-- Inner connections -->
+    <line x1="0" y1="-50" x2="0" y2="50" stroke="#e535ab" stroke-width="6" />
+    <line x1="-43.3" y1="-25" x2="43.3" y2="-25" stroke="#e535ab" stroke-width="6" />
+    <line x1="-43.3" y1="25" x2="43.3" y2="25" stroke="#e535ab" stroke-width="6" />
+    
+    <!-- Dots at vertices -->
+    <circle cx="0" cy="-50" r="6" fill="#e535ab" />
+    <circle cx="43.3" cy="-25" r="6" fill="#e535ab" />
+    <circle cx="43.3" cy="25" r="6" fill="#e535ab" />
+    <circle cx="0" cy="50" r="6" fill="#e535ab" />
+    <circle cx="-43.3" cy="25" r="6" fill="#e535ab" />
+    <circle cx="-43.3" cy="-25" r="6" fill="#e535ab" />
+  </g>
+  
+  <!-- Code Snippet -->
+  <g transform="translate(400, 350)">
+    <rect x="-150" y="-50" width="300" height="100" rx="5" ry="5" fill="#282c34" />
+    
+    <!-- Code Text -->
+    <text x="-140" y="-25" font-family="Courier New, monospace" font-size="12" fill="#98c379">type</text>
+    <text x="-110" y="-25" font-family="Courier New, monospace" font-size="12" fill="#e06c75">User</text>
+    <text x="-80" y="-25" font-family="Courier New, monospace" font-size="12" fill="#abb2bf">{</text>
+    
+    <text x="-140" y="-5" font-family="Courier New, monospace" font-size="12" fill="#e06c75">  id</text>
+    <text x="-120" y="-5" font-family="Courier New, monospace" font-size="12" fill="#abb2bf">:</text>
+    <text x="-110" y="-5" font-family="Courier New, monospace" font-size="12" fill="#56b6c2">ID!</text>
+    
+    <text x="-140" y="15" font-family="Courier New, monospace" font-size="12" fill="#e06c75">  name</text>
+    <text x="-110" y="15" font-family="Courier New, monospace" font-size="12" fill="#abb2bf">:</text>
+    <text x="-100" y="15" font-family="Courier New, monospace" font-size="12" fill="#56b6c2">String!</text>
+    
+    <text x="-140" y="35" font-family="Courier New, monospace" font-size="12" fill="#e06c75">  email</text>
+    <text x="-110" y="35" font-family="Courier New, monospace" font-size="12" fill="#abb2bf">:</text>
+    <text x="-100" y="35" font-family="Courier New, monospace" font-size="12" fill="#56b6c2">String!</text>
+    
+    <text x="-140" y="55" font-family="Courier New, monospace" font-size="12" fill="#abb2bf">}</text>
+  </g>
+  
+  <!-- Title -->
+  <text x="400" y="480" font-family="Arial, sans-serif" font-size="32" font-weight="bold" text-anchor="middle" fill="#333333">Tutoriel Création API GraphQL</text>
+  <text x="400" y="520" font-family="Arial, sans-serif" font-size="18" text-anchor="middle" fill="#666666">Node.js • Apollo • Schemas • Resolvers</text>
+</svg>

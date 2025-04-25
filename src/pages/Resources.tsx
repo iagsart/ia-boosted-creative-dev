@@ -40,6 +40,7 @@ const resources: ResourceItem[] = [
     category: 'guide',
     tags: ['IA', 'Éthique', 'Bonnes pratiques'],
     featured: true,
+    preview: "/images/ai-ethics-guide.svg",
     downloadCount: 1248
   },
   {
@@ -49,6 +50,7 @@ const resources: ResourceItem[] = [
     link: "/blog/python-data-analysis",
     category: 'guide',
     tags: ['Python', 'Data Science', 'Pandas', 'NumPy'],
+    preview: "/images/python-data-science-guide.svg",
     downloadCount: 985
   },
   {
@@ -58,6 +60,7 @@ const resources: ResourceItem[] = [
     link: "/blog/machine-learning-basics",
     category: 'guide',
     tags: ['Machine Learning', 'IA', 'Algorithmes'],
+    preview: "/images/machine-learning-intro.svg",
     downloadCount: 765
   },
   {
@@ -67,6 +70,7 @@ const resources: ResourceItem[] = [
     link: "/blog/opensource-alternatives",
     category: 'guide',
     tags: ['Open Source', 'Logiciels', 'Alternatives'],
+    preview: "/images/opensource-alternatives-guide.svg",
     downloadCount: 632
   },
   {
@@ -77,6 +81,7 @@ const resources: ResourceItem[] = [
     category: 'guide',
     tags: ['Prompts', 'IA Générative', 'ChatGPT'],
     featured: true,
+    preview: "/images/prompt-engineering-art.svg",
     downloadCount: 1576
   },
   
@@ -89,7 +94,7 @@ const resources: ResourceItem[] = [
     category: 'template',
     tags: ['React', 'TypeScript', 'Frontend'],
     featured: true,
-    preview: "/images/service-design.jpg",
+    preview: "/images/template-react-typescript.svg",
     downloadCount: 2145
   },
   {
@@ -119,6 +124,7 @@ const resources: ResourceItem[] = [
     link: "https://github.com/yourusername/react-native-starter",
     category: 'template',
     tags: ['React Native', 'Mobile', 'iOS', 'Android'],
+    preview: "/images/react-native-app-template.svg",
     downloadCount: 1289
   },
   {
@@ -128,6 +134,7 @@ const resources: ResourceItem[] = [
     link: "https://github.com/yourusername/nodejs-api-template",
     category: 'template',
     tags: ['Node.js', 'API', 'Express', 'MongoDB'],
+    preview: "/images/nodejs-api-template.svg",
     downloadCount: 1745
   },
   {
@@ -138,7 +145,7 @@ const resources: ResourceItem[] = [
     category: 'template',
     tags: ['Marketing', 'Landing Page', 'Conversion'],
     featured: true,
-    preview: "/images/service-design.jpg",
+    preview: "/images/landing-page-marketing.svg",
     downloadCount: 2356
   },
   {
@@ -148,6 +155,7 @@ const resources: ResourceItem[] = [
     link: "https://github.com/yourusername/ecommerce-template",
     category: 'template',
     tags: ['E-commerce', 'Boutique', 'Paiement'],
+    preview: "/images/ecommerce-template.svg",
     downloadCount: 1953
   },
   
@@ -169,6 +177,7 @@ const resources: ResourceItem[] = [
     category: 'tutoriel',
     tags: ['CI/CD', 'DevOps', 'GitHub Actions'],
     featured: true,
+    preview: "/images/cicd-deployment.svg",
     downloadCount: 765
   },
   {

@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" width="800" height="450">
+  <rect width="800" height="450" fill="#2d3748" />
+  <rect x="100" y="100" width="600" height="250" rx="10" fill="#4a5568" />
+  <rect x="120" y="130" width="560" height="40" rx="5" fill="#2d3748" />
+  <rect x="120" y="190" width="560" height="140" rx="5" fill="#1a202c" />
+  <text x="150" y="160" font-family="Arial" font-size="20" fill="#a0aec0" text-anchor="start">Prompt:</text>
+  <text x="400" y="260" font-family="Arial" font-size="18" fill="#e2e8f0" text-anchor="middle">Générer une image futuriste avec des éléments technologiques</text>
+  <text x="400" y="290" font-family="Arial" font-size="18" fill="#e2e8f0" text-anchor="middle">et des motifs géométriques en bleu et violet</text>
+  <circle cx="650" cy="160" r="15" fill="#4299e1" />
+  <polygon points="645,155 655,155 650,165" fill="white" />
+  <text x="400" y="50" font-family="Arial" font-size="32" fill="white" text-anchor="middle">L'art du Prompt Engineering</text>
+  <text x="400" y="400" font-family="Arial" font-size="24" fill="white" text-anchor="middle">Maîtrisez la création de prompts efficaces</text>
+</svg>

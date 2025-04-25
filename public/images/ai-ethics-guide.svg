@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" width="800" height="450">
+  <rect width="800" height="450" fill="#1a365d" />
+  <circle cx="400" cy="225" r="150" fill="none" stroke="#63b3ed" stroke-width="8" />
+  <path d="M300 225 L500 225 M400 125 L400 325" stroke="#63b3ed" stroke-width="8" />
+  <circle cx="300" cy="175" r="30" fill="#4299e1" />
+  <circle cx="500" cy="175" r="30" fill="#4299e1" />
+  <circle cx="300" cy="275" r="30" fill="#4299e1" />
+  <circle cx="500" cy="275" r="30" fill="#4299e1" />
+  <circle cx="400" cy="225" r="50" fill="none" stroke="#90cdf4" stroke-width="4" stroke-dasharray="10,5" />
+  <text x="400" y="50" font-family="Arial" font-size="32" fill="white" text-anchor="middle">Guide d'IA Éthique</text>
+  <text x="400" y="400" font-family="Arial" font-size="24" fill="white" text-anchor="middle">Bonnes pratiques pour une IA responsable</text>
+</svg>

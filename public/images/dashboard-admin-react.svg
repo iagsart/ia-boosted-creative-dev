@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" width="800" height="450">
+  <rect width="800" height="450" fill="#1e293b" />
+  
+  <!-- Dashboard layout -->
+  <rect x="100" y="80" width="600" height="300" rx="5" fill="#334155" />
+  
+  <!-- Sidebar -->
+  <rect x="100" y="80" width="150" height="300" rx="5" fill="#475569" />
+  <circle cx="125" cy="110" r="15" fill="#3b82f6" />
+  <rect x="150" y="100" width="80" height="20" rx="3" fill="#94a3b8" />
+  
+  <!-- Sidebar menu items -->
+  <rect x="120" y="150" width="110" height="25" rx="3" fill="#64748b" />
+  <rect x="120" y="185" width="110" height="25" rx="3" fill="#64748b" />
+  <rect x="120" y="220" width="110" height="25" rx="3" fill="#3b82f6" />
+  <rect x="120" y="255" width="110" height="25" rx="3" fill="#64748b" />
+  <rect x="120" y="290" width="110" height="25" rx="3" fill="#64748b" />
+  
+  <!-- Main content -->
+  <rect x="270" y="100" width="410" height="60" rx="5" fill="#475569" />
+  
+  <!-- Stats cards -->
+  <rect x="270" y="170" width="130" height="80" rx="5" fill="#3b82f6" />
+  <circle cx="300" cy="195" r="15" fill="white" opacity="0.8" />
+  <rect x="290" y="220" width="90" height="15" rx="3" fill="white" opacity="0.6" />
+  
+  <rect x="410" y="170" width="130" height="80" rx="5" fill="#10b981" />
+  <circle cx="440" cy="195" r="15" fill="white" opacity="0.8" />
+  <rect x="430" y="220" width="90" height="15" rx="3" fill="white" opacity="0.6" />
+  
+  <rect x="550" y="170" width="130" height="80" rx="5" fill="#f59e0b" />
+  <circle cx="580" cy="195" r="15" fill="white" opacity="0.8" />
+  <rect x="570" y="220" width="90" height="15" rx="3" fill="white" opacity="0.6" />
+  
+  <!-- Chart -->
+  <rect x="270" y="260" width="250" height="100" rx="5" fill="#475569" />
+  <polyline points="290,330 320,310 350,320 380,290 410,300 440,280 470,290 500,270" stroke="#3b82f6" stroke-width="3" fill="none" />
+  
+  <!-- Table -->
+  <rect x="530" y="260" width="150" height="100" rx="5" fill="#475569" />
+  <rect x="540" y="270" width="130" height="20" rx="2" fill="#64748b" />
+  <rect x="540" y="295" width="130" height="15" rx="2" fill="#64748b" opacity="0.7" />
+  <rect x="540" y="315" width="130" height="15" rx="2" fill="#64748b" opacity="0.7" />
+  <rect x="540" y="335" width="130" height="15" rx="2" fill="#64748b" opacity="0.7" />
+  
+  <!-- Title -->
+  <text x="400" y="40" font-family="Arial" font-size="32" fill="white" text-anchor="middle">Dashboard Admin React</text>
+  <text x="400" y="400" font-family="Arial" font-size="20" fill="white" text-anchor="middle">Tableaux de bord, graphiques et gestion d'utilisateurs</text>
+</svg>

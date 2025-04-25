@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="600" viewBox="0 0 800 600">
+  <!-- Background -->
+  <rect width="800" height="600" fill="#f8f9fa" />
+  
+  <!-- Shopping Cart Icon -->
+  <g transform="translate(250, 200) scale(1.2)">
+    <path d="M10,10 L60,10 L80,40 L25,40 L10,10 Z" fill="#4285f4" />
+    <path d="M25,40 L35,80 L90,80 L80,40 L25,40 Z" fill="#4285f4" />
+    <circle cx="40" cy="95" r="10" fill="#333" />
+    <circle cx="80" cy="95" r="10" fill="#333" />
+  </g>
+  
+  <!-- E-commerce UI Elements -->
+  <g transform="translate(500, 200)">
+    <!-- Product Cards -->
+    <rect x="-100" y="-80" width="80" height="100" rx="5" ry="5" fill="#ffffff" stroke="#ddd" stroke-width="2" />
+    <rect x="-90" y="-70" width="60" height="50" fill="#f1f3f5" />
+    <rect x="-85" y="-10" width="50" height="8" fill="#333" rx="1" ry="1" />
+    <rect x="-85" y="5" width="30" height="8" fill="#ea4335" rx="1" ry="1" />
+    
+    <rect x="-10" y="-80" width="80" height="100" rx="5" ry="5" fill="#ffffff" stroke="#ddd" stroke-width="2" />
+    <rect x="0" y="-70" width="60" height="50" fill="#f1f3f5" />
+    <rect x="5" y="-10" width="50" height="8" fill="#333" rx="1" ry="1" />
+    <rect x="5" y="5" width="30" height="8" fill="#ea4335" rx="1" ry="1" />
+    
+    <rect x="-100" y="30" width="80" height="100" rx="5" ry="5" fill="#ffffff" stroke="#ddd" stroke-width="2" />
+    <rect x="-90" y="40" width="60" height="50" fill="#f1f3f5" />
+    <rect x="-85" y="100" width="50" height="8" fill="#333" rx="1" ry="1" />
+    <rect x="-85" y="115" width="30" height="8" fill="#ea4335" rx="1" ry="1" />
+    
+    <rect x="-10" y="30" width="80" height="100" rx="5" ry="5" fill="#ffffff" stroke="#ddd" stroke-width="2" />
+    <rect x="0" y="40" width="60" height="50" fill="#f1f3f5" />
+    <rect x="5" y="100" width="50" height="8" fill="#333" rx="1" ry="1" />
+    <rect x="5" y="115" width="30" height="8" fill="#ea4335" rx="1" ry="1" />
+  </g>
+  
+  <!-- Payment Icons -->
+  <g transform="translate(400, 350)">
+    <rect x="-120" y="0" width="50" height="30" rx="5" ry="5" fill="#1a1f71" />
+    <text x="-95" y="20" font-family="Arial, sans-serif" font-size="12" font-weight="bold" text-anchor="middle" fill="#ffffff">VISA</text>
+    
+    <rect x="-60" y="0" width="50" height="30" rx="5" ry="5" fill="#ff5f00" />
+    <circle cx="-45" cy="15" r="10" fill="#eb001b" />
+    <circle cx="-25" cy="15" r="10" fill="#f79e1b" />
+    
+    <rect x="0" y="0" width="50" height="30" rx="5" ry="5" fill="#006fcf" />
+    <text x="25" y="20" font-family="Arial, sans-serif" font-size="10" font-weight="bold" text-anchor="middle" fill="#ffffff">PayPal</text>
+    
+    <rect x="60" y="0" width="50" height="30" rx="5" ry="5" fill="#5f6368" />
+    <text x="85" y="20" font-family="Arial, sans-serif" font-size="10" font-weight="bold" text-anchor="middle" fill="#ffffff">Stripe</text>
+  </g>
+  
+  <!-- Title -->
+  <text x="400" y="450" font-family="Arial, sans-serif" font-size="32" font-weight="bold" text-anchor="middle" fill="#333333">Template E-commerce</text>
+  <text x="400" y="490" font-family="Arial, sans-serif" font-size="18" text-anchor="middle" fill="#666666">Boutique • Panier • Paiement • Produits</text>
+</svg>

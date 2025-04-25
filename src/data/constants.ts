@@ -336,5 +336,9 @@ export const BLOG_IMAGES = {
   'enjeux-ethiques-ia': '/images/blog/ai-ethics.jpg',
   'no-code-revolution': '/images/blog/no-code-tools.jpg',
   'ia-marketing-digital': '/images/blog/ai-carbon-footprint.jpg',
+  'ia-automatisation-bureau': '/images/blog/ai-office-automation.jpg',
+  'modele-osi-explique-simplement': '/images/blog/osi-model-explained.jpg',
+  'empreinte-carbone-ia': '/images/blog/ai-carbon-footprint.jpg',
+  'internet-des-objets-usages-limites': '/images/blog/iot-smart-devices.jpg',
   'default': '/images/blog/osi-model-explained.jpg'
 } as const;
