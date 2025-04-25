@@ -1,9 +1,9 @@
 
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { Download, ArrowRight, FileText } from "lucide-react";
+import { Download, ArrowRight } from "lucide-react";
 import { ResourceItem } from "@/types/resources";
-import * as LucideIcons from "lucide-react";
+import { getLucideIcon } from "@/utils/iconUtils";
 
 interface FeaturedResourcesProps {
   resources: ResourceItem[];
@@ -13,13 +13,6 @@ export function FeaturedResources({ resources }: FeaturedResourcesProps) {
   const formatDownloadCount = (count?: number) => {
     if (!count) return "";
     return count > 999 ? `${(count / 1000).toFixed(1)}k` : count.toString();
-  };
-
-  // Dynamically render icons from icon names with proper type checking
-  const renderIcon = (iconName: string) => {
-    // Type assertion to prevent TypeScript errors
-    const IconComponent = (LucideIcons as Record<string, React.ComponentType<any>>)[iconName];
-    return IconComponent ? <IconComponent className="h-6 w-6" /> : <FileText className="h-6 w-6" />;
   };
 
   return (
@@ -40,7 +33,7 @@ export function FeaturedResources({ resources }: FeaturedResourcesProps) {
             <CardHeader className={!resource.preview ? "pt-6" : ""}>
               <div className="flex items-center gap-2 mb-2">
                 <div className="p-1.5 rounded-md bg-primary/10 text-primary">
-                  {renderIcon(resource.icon)}
+                  {getLucideIcon(resource.icon)}
                 </div>
                 <span className="text-sm font-medium text-muted-foreground capitalize">{resource.category}</span>
               </div>

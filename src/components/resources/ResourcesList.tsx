@@ -1,9 +1,9 @@
 
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { Download, ArrowRight, FileText } from "lucide-react";
+import { Download, ArrowRight } from "lucide-react";
 import { ResourceItem } from "@/types/resources";
-import * as LucideIcons from "lucide-react";
+import { getLucideIcon } from "@/utils/iconUtils";
 
 interface ResourcesListProps {
   resources: ResourceItem[];
@@ -15,13 +15,6 @@ export function ResourcesList({ resources }: ResourcesListProps) {
     return count > 999 ? `${(count / 1000).toFixed(1)}k` : count.toString();
   };
 
-  // Dynamically render icons from icon names with proper type checking
-  const renderIcon = (iconName: string) => {
-    // Type assertion to prevent TypeScript errors
-    const IconComponent = (LucideIcons as Record<string, React.ComponentType<any>>)[iconName];
-    return IconComponent ? <IconComponent className="h-6 w-6" /> : <FileText className="h-6 w-6" />;
-  };
-
   return (
     <section className="mb-16">
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -30,7 +23,7 @@ export function ResourcesList({ resources }: ResourcesListProps) {
             <CardHeader>
               <div className="flex items-start gap-4">
                 <div className="p-2 rounded-lg bg-accent/10 text-accent">
-                  {renderIcon(resource.icon)}
+                  {getLucideIcon(resource.icon)}
                 </div>
                 <div>
                   <CardTitle className="group-hover:text-primary transition-colors">
