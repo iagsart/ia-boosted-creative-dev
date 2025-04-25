@@ -73,6 +73,46 @@ const faqItems = [
   {
     question: "Comment choisir le bon template pour mon projet ?",
     answer: "Pour choisir le bon template, considérez les critères suivants : vos besoins fonctionnels, votre niveau technique, les technologies utilisées, et l'échelle de votre projet. Notre assistant IA peut vous guider dans ce choix en analysant vos besoins spécifiques."
+  },
+  {
+    question: "Comment gérer la sécurité avec les templates ?",
+    answer: "Tous nos templates incluent des bonnes pratiques de sécurité comme la validation des entrées, la protection CSRF, et le stockage sécurisé des données sensibles. Nous fournissons également une documentation détaillée sur la configuration des paramètres de sécurité."
+  },
+  {
+    question: "Les ressources sont-elles compatibles avec les derniers frameworks ?",
+    answer: "Oui, nous maintenons nos ressources à jour avec les dernières versions des frameworks populaires comme React 18+, Next.js 13+, et les dernières versions de TypeScript. Les mises à jour sont régulières et documentées."
+  },
+  {
+    question: "Proposez-vous des ressources pour l'apprentissage de l'IA ?",
+    answer: "Oui, nous offrons une variété de ressources d'apprentissage sur l'IA, notamment des guides de démarrage, des tutoriels pratiques, des études de cas, et des exemples de code pour différents niveaux d'expertise."
+  },
+  {
+    question: "Comment assurer la compatibilité mobile des templates ?",
+    answer: "Nos templates sont développés avec une approche 'mobile-first' et utilisent des pratiques de design responsive modernes. Chaque template est testé sur différents appareils et navigateurs pour garantir une expérience cohérente."
+  },
+  {
+    question: "Existe-t-il des ressources pour l'optimisation SEO ?",
+    answer: "Oui, nous proposons des guides et outils pour l'optimisation SEO, incluant des bonnes pratiques pour le référencement, des check-lists SEO, et des composants React optimisés pour les moteurs de recherche."
+  },
+  {
+    question: "Comment contribuer à l'amélioration des ressources ?",
+    answer: "Vous pouvez contribuer de plusieurs façons : soumettre des corrections via GitHub, proposer de nouvelles fonctionnalités, partager vos retours d'expérience, ou créer du contenu complémentaire pour la communauté."
+  },
+  {
+    question: "Les ressources sont-elles accessibles aux personnes handicapées ?",
+    answer: "Oui, nous accordons une grande importance à l'accessibilité. Nos templates suivent les normes WCAG 2.1 et incluent des fonctionnalités comme la navigation au clavier, le support des lecteurs d'écran, et des contrastes de couleurs appropriés."
+  },
+  {
+    question: "Quelles sont les meilleures pratiques pour utiliser l'IA de manière éthique ?",
+    answer: "Nous recommandons de suivre nos guides sur l'IA éthique qui couvrent la transparence algorithmique, la protection des données personnelles, l'équité dans les décisions automatisées, et la réduction des biais."
+  },
+  {
+    question: "Comment intégrer les ressources avec des CMS headless ?",
+    answer: "Nos templates et guides incluent des exemples d'intégration avec des CMS headless populaires comme Strapi, Contentful, et Sanity. Nous fournissons des tutoriels détaillés pour chaque intégration."
+  },
+  {
+    question: "Proposez-vous des solutions pour le déploiement automatisé ?",
+    answer: "Oui, nos ressources incluent des configurations CI/CD prêtes à l'emploi pour GitHub Actions, GitLab CI, et d'autres plateformes. Consultez notre guide de déploiement pour plus de détails."
   }
 ];
 
