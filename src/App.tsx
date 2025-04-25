@@ -21,6 +21,7 @@ import BlogPost from "./pages/BlogPost";
 import Legal from "./pages/Legal";
 import Privacy from "./pages/Privacy";
 import Resources from "./pages/Resources";
+import IAEthique from "./pages/blog/IAEthique";
 
 const queryClient = new QueryClient();
 
@@ -51,6 +52,7 @@ const App = () => (
             <Route path="/legal" element={<Legal />} />
             <Route path="/privacy" element={<Privacy />} />
             <Route path="*" element={<NotFound />} />
+            <Route path="/blog/ia-ethique" element={<IAEthique />} />
           </Routes>
         </BrowserRouter>
       </TooltipProvider>
