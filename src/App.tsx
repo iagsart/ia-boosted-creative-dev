@@ -39,13 +39,15 @@ const App = () => {
       <Route path="/services/music" element={<MusicService />} />
       <Route path="/resources" element={<Resources />} />
       <Route path="/blog" element={<Blog />} />
-      <Route path="/blog/:slug" element={<BlogPost />} />
+      {/* Specific blog post routes should come before the dynamic route */}
       <Route path="/blog/ia-ethique" element={<IAEthique />} />
       <Route path="/blog/prompt-engineering" element={<PromptEngineering />} />
       <Route path="/blog/react-typescript" element={<ReactTypeScript />} />
       <Route path="/blog/landing-page-marketing" element={<LandingPageMarketing />} />
       <Route path="/blog/cicd-deployment" element={<CICDDeployment />} />
       <Route path="/blog/web-performance" element={<WebPerformance />} />
+      {/* Dynamic route should be last to avoid catching specific routes */}
+      <Route path="/blog/:slug" element={<BlogPost />} />
     </Routes>
   );
 };
