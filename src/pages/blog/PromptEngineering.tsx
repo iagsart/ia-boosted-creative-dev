@@ -1,10 +1,9 @@
-
 import Layout from "@/components/layout/Layout";
 import { PageHeader } from "@/components/ui/page-header";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
-import { Download, Code, Lightbulb, Tool } from "lucide-react";
+import { Download, Code, Lightbulb, Settings } from "lucide-react";
 
 const PromptEngineering = () => {
   return (
@@ -96,7 +95,7 @@ const PromptEngineering = () => {
                   <h3 className="text-xl font-semibold mb-4">Outils et Ressources</h3>
                   <div className="space-y-4">
                     <Button variant="outline" className="w-full justify-start gap-2">
-                      <Tool className="w-4 h-4" />
+                      <Settings className="w-4 h-4" />
                       Template de Prompts
                     </Button>
                     <Button variant="outline" className="w-full justify-start gap-2">
