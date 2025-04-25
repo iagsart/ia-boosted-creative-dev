@@ -2,17 +2,18 @@
 import * as LucideIcons from "lucide-react";
 import { FileText } from "lucide-react";
 import React from "react";
+import { LucideProps } from "lucide-react";
 
 // Helper function to safely get Lucide icons by name
 export const getLucideIcon = (iconName: string): React.ReactNode => {
   // First convert to unknown then to the specific type to avoid TypeScript errors
-  const icons = LucideIcons as unknown as Record<string, React.ComponentType<React.SVGProps<SVGSVGElement>>>;
+  const icons = LucideIcons as unknown as Record<string, React.ComponentType<LucideProps>>;
   
   // Safely access the icon
   const IconComponent = icons[iconName];
   
   // Return the icon component or a default if not found
-  if (IconComponent && typeof IconComponent === 'function') {
+  if (IconComponent) {
     return <IconComponent className="h-6 w-6" />;
   }
   
