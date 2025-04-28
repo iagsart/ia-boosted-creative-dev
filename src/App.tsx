@@ -24,6 +24,7 @@ import WebPerformance from "./pages/blog/WebPerformance";
 import Portfolio from "./pages/Portfolio";
 import About from "./pages/About";
 import Chatbot from "./components/chat/Chatbot";
+import { Toaster } from "./components/ui/toaster";
 
 const App = () => {
   return (
@@ -53,6 +54,7 @@ const App = () => {
         <Route path="/blog/:slug" element={<BlogPost />} />
       </Routes>
       <Chatbot />
+      <Toaster />
     </>
   );
 };

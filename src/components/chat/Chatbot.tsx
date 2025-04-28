@@ -1,11 +1,12 @@
 
 import { useState, useEffect } from 'react';
-import { Bot, Send, Loader2, X } from 'lucide-react';
+import { Bot, Send, Loader2, X, RefreshCw, MessageSquare } from 'lucide-react';
 import { Button } from "@/components/ui/button";
 import { Drawer, DrawerContent, DrawerHeader, DrawerTitle, DrawerTrigger } from "@/components/ui/drawer";
 import { useToast } from "@/hooks/use-toast";
 import { supabase } from '@/integrations/supabase/client';
 import { useLocation } from 'react-router-dom';
+import { AlertDialog, AlertDialogAction, AlertDialogCancel, AlertDialogContent, AlertDialogDescription, AlertDialogFooter, AlertDialogHeader, AlertDialogTitle } from '@/components/ui/alert-dialog';
 
 interface Message {
   role: 'user' | 'assistant';
@@ -23,6 +24,7 @@ const Chatbot = () => {
   const [input, setInput] = useState('');
   const [isLoading, setIsLoading] = useState(false);
   const [showPresets, setShowPresets] = useState(false);
+  const [showResetDialog, setShowResetDialog] = useState(false);
   const { toast } = useToast();
   const location = useLocation();
 
@@ -231,7 +233,15 @@ const Chatbot = () => {
         },
       });
 
-      if (error) throw new Error(error.message || 'Failed to get response');
+      if (error) {
+        console.error("Erreur lors de l'appel de la fonction edge:", error);
+        throw new Error(error.message || "Échec de l'obtention d'une réponse");
+      }
+      
+      if (!data || !data.response) {
+        console.error("Réponse invalide de l'API:", data);
+        throw new Error("Réponse invalide de l'assistant");
+      }
       
       const assistantMessage = { role: 'assistant' as const, content: data.response };
       setMessages(prev => [...prev, assistantMessage]);
@@ -252,6 +262,15 @@ const Chatbot = () => {
     setShowPresets(false);
   };
 
+  const resetConversation = () => {
+    setMessages([]);
+    setShowResetDialog(false);
+    toast({
+      title: "Conversation réinitialisée",
+      description: "Une nouvelle conversation a été démarrée.",
+    });
+  };
+
   // Réinitialiser les messages lors du changement de page
   useEffect(() => {
     setMessages([]);
@@ -264,43 +283,66 @@ const Chatbot = () => {
           <Button
             variant="default"
             size="icon"
-            className="fixed bottom-4 right-4 h-14 w-14 rounded-full shadow-lg z-50"
+            className="fixed bottom-4 right-4 h-14 w-14 rounded-full shadow-lg z-50 bg-primary hover:bg-primary/90 transition-all duration-300 ease-in-out animate-fade-in"
           >
             <Bot className="h-6 w-6" />
           </Button>
         </DrawerTrigger>
         
-        <DrawerContent className="h-[80vh]">
-          <DrawerHeader className="flex justify-between items-center">
-            <DrawerTitle>Assistant IA</DrawerTitle>
-            <Button variant="ghost" size="icon" onClick={() => setIsOpen(false)}>
-              <X className="h-4 w-4" />
-            </Button>
+        <DrawerContent className="h-[80vh] border-t-4 border-primary">
+          <DrawerHeader className="flex justify-between items-center bg-primary/5 pb-2">
+            <div className="flex items-center gap-2">
+              <Bot className="h-5 w-5 text-primary" />
+              <DrawerTitle>Assistant IA</DrawerTitle>
+            </div>
+            <div className="flex gap-2">
+              {messages.length > 0 && (
+                <Button 
+                  variant="ghost" 
+                  size="icon" 
+                  onClick={() => setShowResetDialog(true)}
+                  title="Nouvelle conversation"
+                  className="hover:bg-primary/10"
+                >
+                  <RefreshCw className="h-4 w-4" />
+                </Button>
+              )}
+              <Button 
+                variant="ghost" 
+                size="icon" 
+                onClick={() => setIsOpen(false)}
+                className="hover:bg-primary/10"
+              >
+                <X className="h-4 w-4" />
+              </Button>
+            </div>
           </DrawerHeader>
           
           <div className="flex flex-col h-full p-4">
-            <div className="flex-1 overflow-y-auto space-y-4 mb-4">
+            <div className="flex-1 overflow-y-auto space-y-4 mb-4 pr-1 custom-scrollbar">
               {messages.length === 0 && (
                 <div className="text-center py-8 text-muted-foreground">
                   <Bot className="h-12 w-12 mx-auto mb-2 opacity-50" />
-                  <p>Bonjour ! Comment puis-je vous aider aujourd'hui ?</p>
+                  <p className="text-lg font-medium">Bonjour ! Comment puis-je vous aider aujourd'hui ?</p>
+                  <p className="text-sm mb-4">Je suis l'assistant IA de Geoffroy Streit. N'hésitez pas à me poser vos questions.</p>
                   <Button 
                     variant="outline" 
-                    className="mt-4"
+                    className="mt-2"
                     onClick={() => setShowPresets(!showPresets)}
                   >
                     {showPresets ? 'Masquer les suggestions' : 'Voir des suggestions'}
                   </Button>
 
                   {showPresets && (
-                    <div className="mt-4 space-y-2">
+                    <div className="mt-6 space-y-2 max-h-80 overflow-y-auto">
                       {getPromptPresets().map((preset, index) => (
                         <Button
                           key={index}
                           variant="ghost"
-                          className="w-full justify-start text-left text-sm"
+                          className="w-full justify-start text-left text-sm hover:bg-primary/10 transition-colors"
                           onClick={() => handlePresetClick(preset.prompt)}
                         >
+                          <MessageSquare className="h-3 w-3 mr-2 text-primary" />
                           {preset.label}
                         </Button>
                       ))}
@@ -312,15 +354,15 @@ const Chatbot = () => {
               {messages.map((message, index) => (
                 <div
                   key={index}
-                  className={`flex ${
+                  className={`flex animate-fade-in ${
                     message.role === 'user' ? 'justify-end' : 'justify-start'
                   }`}
                 >
                   <div
-                    className={`max-w-[80%] rounded-lg p-3 ${
+                    className={`max-w-[80%] rounded-lg p-3 shadow-sm ${
                       message.role === 'user'
-                        ? 'bg-primary text-primary-foreground ml-auto'
-                        : 'bg-muted'
+                        ? 'bg-primary text-primary-foreground ml-auto rounded-br-none'
+                        : 'bg-muted rounded-bl-none'
                     }`}
                   >
                     {message.content}
@@ -329,30 +371,71 @@ const Chatbot = () => {
               ))}
               
               {isLoading && (
-                <div className="flex justify-start">
-                  <div className="bg-muted rounded-lg p-3">
-                    <Loader2 className="h-5 w-5 animate-spin" />
+                <div className="flex justify-start animate-fade-in">
+                  <div className="bg-muted rounded-lg p-3 max-w-[80%] rounded-bl-none shadow-sm">
+                    <div className="flex items-center gap-2">
+                      <Loader2 className="h-4 w-4 animate-spin text-primary" />
+                      <span className="text-sm text-muted-foreground">Génération de la réponse...</span>
+                    </div>
                   </div>
                 </div>
               )}
             </div>
             
-            <form onSubmit={handleSendMessage} className="mt-auto flex gap-2">
+            <form onSubmit={handleSendMessage} className="mt-auto flex gap-2 bg-background sticky bottom-0 pb-2 pt-2">
               <input
                 type="text"
                 value={input}
                 onChange={(e) => setInput(e.target.value)}
                 placeholder="Posez votre question..."
-                className="flex-1 rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
+                className="flex-1 rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 transition-all"
                 disabled={isLoading}
               />
-              <Button type="submit" disabled={isLoading || !input.trim()}>
+              <Button 
+                type="submit" 
+                disabled={isLoading || !input.trim()}
+                className="transition-all"
+              >
                 <Send className="h-5 w-5" />
               </Button>
             </form>
           </div>
         </DrawerContent>
       </Drawer>
+
+      {/* Dialog de confirmation pour réinitialiser la conversation */}
+      <AlertDialog open={showResetDialog} onOpenChange={setShowResetDialog}>
+        <AlertDialogContent>
+          <AlertDialogHeader>
+            <AlertDialogTitle>Nouvelle conversation</AlertDialogTitle>
+            <AlertDialogDescription>
+              Êtes-vous sûr de vouloir terminer cette conversation et en démarrer une nouvelle ? 
+              Tout l'historique de cette conversation sera effacé.
+            </AlertDialogDescription>
+          </AlertDialogHeader>
+          <AlertDialogFooter>
+            <AlertDialogCancel>Annuler</AlertDialogCancel>
+            <AlertDialogAction onClick={resetConversation}>Confirmer</AlertDialogAction>
+          </AlertDialogFooter>
+        </AlertDialogContent>
+      </AlertDialog>
+
+      {/* Styles globaux pour le chatbot */}
+      <style jsx global>{`
+        .custom-scrollbar::-webkit-scrollbar {
+          width: 5px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-track {
+          background: transparent;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+          background-color: rgba(0, 0, 0, 0.2);
+          border-radius: 10px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+          background-color: rgba(0, 0, 0, 0.3);
+        }
+      `}</style>
     </>
   );
 };

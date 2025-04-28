@@ -25,6 +25,12 @@ Répondez de manière concise et précise à cette question: ${message}`;
 
     console.log("Prompt envoyé à l'API:", prompt);
 
+    // Vérification que la clé API est présente
+    if (!geminiApiKey) {
+      console.error("Erreur: Clé API Gemini non trouvée");
+      throw new Error("La clé API Gemini n'est pas configurée");
+    }
+
     const response = await fetch('https://generativelanguage.googleapis.com/v1beta/models/gemini-pro:generateContent', {
       method: 'POST',
       headers: {
@@ -63,6 +69,13 @@ Répondez de manière concise et précise à cette question: ${message}`;
         ]
       }),
     });
+
+    // Vérification du statut de la réponse
+    if (!response.ok) {
+      const errorData = await response.json();
+      console.error("Erreur de l'API Gemini:", errorData);
+      throw new Error(`Erreur de l'API Gemini: ${response.status} ${response.statusText}`);
+    }
 
     const data = await response.json();
     
