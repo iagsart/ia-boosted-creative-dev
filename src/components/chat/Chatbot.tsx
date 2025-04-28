@@ -421,7 +421,8 @@ const Chatbot = () => {
       </AlertDialog>
 
       {/* Styles globaux pour le chatbot */}
-      <style jsx global>{`
+      <style>
+        {`
         .custom-scrollbar::-webkit-scrollbar {
           width: 5px;
         }
@@ -435,7 +436,8 @@ const Chatbot = () => {
         .custom-scrollbar::-webkit-scrollbar-thumb:hover {
           background-color: rgba(0, 0, 0, 0.3);
         }
-      `}</style>
+        `}
+      </style>
     </>
   );
 };

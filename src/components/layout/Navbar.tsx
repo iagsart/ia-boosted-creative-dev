@@ -2,7 +2,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link, NavLink, useLocation } from 'react-router-dom';
 import { Button } from "@/components/ui/button";
-import { Menu, X, ChevronDown, Sparkles } from 'lucide-react';
+import { Menu, X, ChevronDown } from 'lucide-react';
 import {
   NavigationMenu,
   NavigationMenuContent,
@@ -14,6 +14,7 @@ import {
 import { cn } from '@/lib/utils';
 import { motion } from 'framer-motion';
 import { ThemeSelector } from '../ui/theme-selector';
+import AnimatedLogo from './AnimatedLogo';
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -63,19 +64,6 @@ const Navbar = () => {
     return location.pathname.startsWith(path);
   };
 
-  const letterVariants = {
-    hidden: { opacity: 0, y: 20 },
-    visible: (i: number) => ({
-      opacity: 1,
-      y: 0,
-      transition: {
-        delay: i * 0.04,
-        duration: 0.4,
-        ease: [0.22, 1, 0.36, 1]
-      }
-    })
-  };
-
   return (
     <header className={cn(
       "sticky top-0 z-40 w-full border-b backdrop-blur supports-[backdrop-filter]:bg-background/60 transition-all duration-300",
@@ -84,43 +72,7 @@ const Navbar = () => {
       <div className="container flex h-16 md:h-20 items-center justify-between">
         <div className="flex items-center gap-10">
           <Link to="/" className="flex items-center space-x-2 overflow-hidden" onClick={closeMenu}>
-            <div className="flex items-baseline">
-              {/* Improved animated logo */}
-              <motion.div 
-                className="flex items-baseline"
-                initial="hidden"
-                animate="visible"
-              >
-                {Array.from("Hylst").map((letter, i) => (
-                  <motion.span
-                    key={i}
-                    custom={i}
-                    variants={letterVariants}
-                    className="font-bold text-2xl tracking-tight"
-                  >
-                    {letter}
-                  </motion.span>
-                ))}
-                <motion.div
-                  initial={{ opacity: 0, scale: 0 }}
-                  animate={{ opacity: 1, scale: 1 }}
-                  transition={{ delay: 0.25, duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
-                  className="text-accent mx-0.5"
-                >
-                  <Sparkles className="h-5 w-5" />
-                </motion.div>
-                {Array.from("Digital Solutions").map((letter, i) => (
-                  <motion.span
-                    key={i + "Hylst".length}
-                    custom={i + "Hylst".length + 1}
-                    variants={letterVariants}
-                    className={`hidden md:inline-block text-base font-medium ${letter === " " ? "mx-1.5" : ""}`}
-                  >
-                    {letter}
-                  </motion.span>
-                ))}
-              </motion.div>
-            </div>
+            <AnimatedLogo size="md" showTagline={true} />
           </Link>
           
           <nav className="hidden lg:flex">

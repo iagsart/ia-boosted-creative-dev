@@ -1,93 +1,49 @@
+
 import React from 'react';
 import { Link } from "react-router-dom";
 import { motion } from 'framer-motion';
-import { Sparkles, Linkedin, Twitter, Instagram, Mail, Phone, MapPin, ExternalLink } from 'lucide-react';
+import { Linkedin, Twitter, Instagram, Mail, Phone, MapPin, ExternalLink } from 'lucide-react';
 import { Separator } from "@/components/ui/separator";
+import AnimatedLogo from './AnimatedLogo';
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
-
-  const letterVariants = {
-    hidden: { opacity: 0, y: 20 },
-    visible: (i: number) => ({
-      opacity: 1,
-      y: 0,
-      transition: {
-        delay: i * 0.04,
-        duration: 0.4,
-        ease: [0.22, 1, 0.36, 1]
-      }
-    })
-  };
 
   return (
     <footer className="bg-secondary mt-auto border-t border-border">
       <div className="container py-16 md:py-20">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-12">
           <div className="space-y-6">
-            <div className="overflow-hidden">
-              {/* Animated logo with improved styling */}
-              <motion.div 
-                className="flex items-baseline"
-                initial="hidden"
-                animate="visible"
-                viewport={{ once: true }}
-              >
-                {Array.from("Hylst").map((letter, i) => (
-                  <motion.span
-                    key={i}
-                    custom={i}
-                    variants={letterVariants}
-                    className="font-bold text-2xl tracking-tight"
-                  >
-                    {letter}
-                  </motion.span>
-                ))}
-                <motion.div
-                  initial={{ opacity: 0, scale: 0 }}
-                  animate={{ opacity: 1, scale: 1 }}
-                  transition={{ delay: 0.25, duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
-                  className="text-accent mx-0.5"
-                >
-                  <Sparkles className="h-5 w-5" />
-                </motion.div>
-                {Array.from("Digital Solutions").map((letter, i) => (
-                  <motion.span
-                    key={i + "Hylst".length}
-                    custom={i + "Hylst".length + 1}
-                    variants={letterVariants}
-                    className={`text-base font-medium ${letter === " " ? "mx-1.5" : ""}`}
-                  >
-                    {letter}
-                  </motion.span>
-                ))}
-              </motion.div>
-            </div>
+            <AnimatedLogo size="lg" showTagline />
+            
             <p className="text-muted-foreground text-sm leading-relaxed">
               Consultant indépendant combinant qualités humaines et intelligence artificielle pour des solutions créatives et adaptées à vos besoins.
             </p>
             <div className="flex gap-5">
-              <a 
+              <motion.a 
                 href="#" 
                 className="text-muted-foreground hover:text-accent transition-colors duration-300" 
                 aria-label="LinkedIn"
+                whileHover={{ scale: 1.2, rotate: 5 }}
               >
                 <Linkedin size={20} />
-              </a>
-              <a 
+              </motion.a>
+              <motion.a 
                 href="#" 
                 className="text-muted-foreground hover:text-accent transition-colors duration-300" 
                 aria-label="Twitter"
+                whileHover={{ scale: 1.2, rotate: -5 }}
               >
                 <Twitter size={20} />
-              </a>
-              <a 
+              </motion.a>
+              <motion.a 
                 href="#" 
                 className="text-muted-foreground hover:text-accent transition-colors duration-300" 
                 aria-label="Instagram"
+                whileHover={{ scale: 1.2, rotate: 5 }}
               >
                 <Instagram size={20} />
-              </a>
+              </motion.a>
             </div>
           </div>
           
