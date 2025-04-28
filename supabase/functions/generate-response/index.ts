@@ -16,7 +16,14 @@ serve(async (req) => {
   }
 
   try {
-    const { message } = await req.json();
+    const { message, contextualInstructions } = await req.json();
+
+    // Combinaison des instructions contextuelles avec le message de l'utilisateur
+    const prompt = `${contextualInstructions || "Vous êtes un assistant utile et professionnel."} 
+
+Répondez de manière concise et précise à cette question: ${message}`;
+
+    console.log("Prompt envoyé à l'API:", prompt);
 
     const response = await fetch('https://generativelanguage.googleapis.com/v1beta/models/gemini-pro:generateContent', {
       method: 'POST',
@@ -27,8 +34,7 @@ serve(async (req) => {
       body: JSON.stringify({
         contents: [{
           parts: [{
-            text: `Vous êtes un assistant utile et professionnel qui aide les visiteurs du site. 
-            Répondez de manière concise et précise à cette question: ${message}`
+            text: prompt
           }]
         }],
         generationConfig: {
@@ -59,7 +65,20 @@ serve(async (req) => {
     });
 
     const data = await response.json();
+    
+    // Vérification des erreurs possibles dans la réponse de l'API
+    if (data.error) {
+      console.error("Erreur API Gemini:", data.error);
+      throw new Error(data.error.message || "Erreur de l'API Gemini");
+    }
+    
+    if (!data.candidates || data.candidates.length === 0) {
+      console.error("Aucune réponse générée:", data);
+      throw new Error("Aucune réponse n'a pu être générée");
+    }
+    
     const generatedText = data.candidates[0].content.parts[0].text;
+    console.log("Réponse générée:", generatedText.substring(0, 100) + "...");
 
     return new Response(JSON.stringify({ response: generatedText }), {
       headers: { ...corsHeaders, 'Content-Type': 'application/json' },

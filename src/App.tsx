@@ -1,9 +1,6 @@
 
 import {
-  createBrowserRouter,
-  createRoutesFromElements,
   Route,
-  RouterProvider,
   Routes,
 } from "react-router-dom";
 import Home from "./pages/Index";
@@ -26,33 +23,37 @@ import CICDDeployment from "./pages/blog/CICDDeployment";
 import WebPerformance from "./pages/blog/WebPerformance";
 import Portfolio from "./pages/Portfolio";
 import About from "./pages/About";
+import Chatbot from "./components/chat/Chatbot";
 
 const App = () => {
   return (
-    <Routes>
-      <Route path="/" element={<Home />} />
-      <Route path="/about" element={<About />} />
-      <Route path="/portfolio" element={<Portfolio />} />
-      <Route path="/services" element={<ServicesIndex />} />
-      <Route path="/contact" element={<Contact />} />
-      <Route path="/services/development" element={<Development />} />
-      <Route path="/services/ai" element={<AI />} />
-      <Route path="/services/data" element={<Data />} />
-      <Route path="/services/content" element={<Content />} />
-      <Route path="/services/consulting" element={<Consulting />} />
-      <Route path="/services/music" element={<MusicService />} />
-      <Route path="/resources" element={<Resources />} />
-      <Route path="/blog" element={<Blog />} />
-      {/* Specific blog post routes should come before the dynamic route */}
-      <Route path="/blog/ia-ethique" element={<IAEthique />} />
-      <Route path="/blog/prompt-engineering" element={<PromptEngineering />} />
-      <Route path="/blog/react-typescript" element={<ReactTypeScript />} />
-      <Route path="/blog/landing-page-marketing" element={<LandingPageMarketing />} />
-      <Route path="/blog/cicd-deployment" element={<CICDDeployment />} />
-      <Route path="/blog/web-performance" element={<WebPerformance />} />
-      {/* Dynamic route should be last to avoid catching specific routes */}
-      <Route path="/blog/:slug" element={<BlogPost />} />
-    </Routes>
+    <>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/portfolio" element={<Portfolio />} />
+        <Route path="/services" element={<ServicesIndex />} />
+        <Route path="/contact" element={<Contact />} />
+        <Route path="/services/development" element={<Development />} />
+        <Route path="/services/ai" element={<AI />} />
+        <Route path="/services/data" element={<Data />} />
+        <Route path="/services/content" element={<Content />} />
+        <Route path="/services/consulting" element={<Consulting />} />
+        <Route path="/services/music" element={<MusicService />} />
+        <Route path="/resources" element={<Resources />} />
+        <Route path="/blog" element={<Blog />} />
+        {/* Specific blog post routes should come before the dynamic route */}
+        <Route path="/blog/ia-ethique" element={<IAEthique />} />
+        <Route path="/blog/prompt-engineering" element={<PromptEngineering />} />
+        <Route path="/blog/react-typescript" element={<ReactTypeScript />} />
+        <Route path="/blog/landing-page-marketing" element={<LandingPageMarketing />} />
+        <Route path="/blog/cicd-deployment" element={<CICDDeployment />} />
+        <Route path="/blog/web-performance" element={<WebPerformance />} />
+        {/* Dynamic route should be last to avoid catching specific routes */}
+        <Route path="/blog/:slug" element={<BlogPost />} />
+      </Routes>
+      <Chatbot />
+    </>
   );
 };
 
