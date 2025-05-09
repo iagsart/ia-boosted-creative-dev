@@ -48,6 +48,7 @@ const Navbar = () => {
         { name: 'Tous les services', path: '/services' },
         { name: 'Conseil IA', path: '/services/ai' },
         { name: 'Développement', path: '/services/development' },
+        { name: 'No-Code / Low-Code', path: '/services/nocode' },
         { name: 'Contenu & Design', path: '/services/content' },
         { name: 'Data Science', path: '/services/data' },
         { name: 'Musique & Audio', path: '/services/music' },

@@ -1,4 +1,5 @@
 
+
 # Changelog
 
 Toutes les modifications notables de ce projet seront documentées dans ce fichier.
@@ -18,6 +19,7 @@ et ce projet adhère au [Semantic Versioning](https://semver.org/spec/v2.0.0.htm
 - Optimisation du traitement des requêtes pour l'assistant IA
 - Amélioration du design UI/UX de l'assistant IA
 - Développement d'un logo animé pour la barre de navigation et le pied de page
+- Création d'une nouvelle page No-Code / Low-Code dans la section Services
 
 ### En cours
 - Amélioration de l'expérience utilisateur de l'assistant IA
@@ -118,4 +120,5 @@ et ce projet adhère au [Semantic Versioning](https://semver.org/spec/v2.0.0.htm
 - Correction de l'affichage des images dans les articles de blog et services
 - Optimisation du chargement des images avec fallback en cas d'erreur
 - Correction des bugs dans l'assistant IA
+
 
