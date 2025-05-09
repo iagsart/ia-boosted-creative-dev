@@ -13,7 +13,7 @@ import {
   Building,
   Handshake,
   Laptop,
-  Mobile,
+  Smartphone, // Replacing Mobile with Smartphone which is available
   Lightbulb,
   FileText,
   Layers 
@@ -63,7 +63,7 @@ const NoCodePage = () => {
     {
       name: "Glide",
       description: "Transforme des feuilles de calcul en applications mobiles ou web en quelques minutes.",
-      icon: <Mobile className="h-6 w-6 text-[#D6BCFA]" />,
+      icon: <Smartphone className="h-6 w-6 text-[#D6BCFA]" />, // Updated to use Smartphone
       useCases: ["Applications internes", "Catalogues produits", "Outils de terrain"],
       color: "bg-gradient-to-br from-[#D6BCFA]/20 to-[#9b87f5]/20"
     },
