@@ -6,7 +6,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { StatCard } from "@/components/ui/stat-card";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
-import { ArrowRight, Check, Code, Server, Globe, Smartphone, Zap, Lightbulb, BrainCircuit, Database, Monitor } from "lucide-react";
+import { ArrowRight, Check, Code, Server, Globe, Smartphone, Zap, Lightbulb, BrainCircuit, Database, Monitor, Cpu } from "lucide-react";
 import { motion } from "framer-motion";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 
@@ -23,14 +23,24 @@ const Development = () => {
       description: "Applications natives et cross-platform pour iOS et Android, optimisées pour offrir des performances exceptionnelles et une expérience utilisateur fluide."
     },
     {
-      icon: <Server className="h-6 w-6" />,
-      title: "Back-end & API",
-      description: "Services back-end robustes et API RESTful ou GraphQL pour connecter vos applications et systèmes avec une architecture scalable et sécurisée."
+      icon: <Monitor className="h-6 w-6" />,
+      title: "Applications Desktop Python",
+      description: "Logiciels multiplateforme sur mesure pour vos besoins spécifiques : CRM, gestion de données, migration assistée vers le numérique - développés avec Python pour une performance et une flexibilité optimales."
+    },
+    {
+      icon: <Cpu className="h-6 w-6" />,
+      title: "Développement Embarqué & IoT",
+      description: "Solutions logicielles pour systèmes embarqués et objets connectés, avec expertise en optronique, électronique et technologies de capteurs, traitement du signal et reconnaissance d'images."
     },
     {
       icon: <Zap className="h-6 w-6" />,
       title: "Optimisation & Performance",
       description: "Audit et optimisation de vos applications existantes pour améliorer les temps de chargement, l'indexation SEO et l'expérience utilisateur."
+    },
+    {
+      icon: <Code className="h-6 w-6" />,
+      title: "Solutions No-Code & Low-Code",
+      description: "Création rapide d'applications fonctionnelles sans code complexe, idéal pour les prototypes, MVP et solutions agiles nécessitant une mise sur le marché rapide."
     }
   ];
 
@@ -58,9 +68,9 @@ const Development = () => {
   ];
 
   const technologies = [
-    "React", "Node.js", "TypeScript", "Python", "Django", 
-    "React Native", "GraphQL", "PostgreSQL", "MongoDB", 
-    "Docker", "AWS", "CI/CD"
+    "Python", "C/C++", "HTML/CSS", "No-Code/Low-Code", 
+    "ASM", "Google Cloud", "Open Source", 
+    "React*", "TypeScript*", "CI/CD*"
   ];
 
   const container = {
@@ -78,7 +88,7 @@ const Development = () => {
     show: { opacity: 1, y: 0 }
   };
 
-  // New project ideas by category
+  // Project ideas by category
   const projectIdeas = {
     web: [
       {
@@ -108,16 +118,22 @@ const Development = () => {
     ],
     desktop: [
       {
+        title: "Logiciel de Gestion CRM Personnalisé",
+        description: "Application bureau Python avec interface utilisateur moderne pour gérer clients, prospects, tâches et projets, avec fonctionnalités d'import/export et rapports personnalisés.",
+        difficulty: "Modérée",
+        time: "4-8 semaines"
+      },
+      {
         title: "Éditeur de Métadonnées Avancé",
         description: "Application bureau pour éditer et organiser les métadonnées de divers formats de fichiers (photos, musique, vidéo) avec prévisualisation et édition par lot.",
         difficulty: "Modérée",
         time: "4-8 semaines"
       },
       {
-        title: "Convertisseur Audio/Vidéo Spécialisé",
-        description: "Outil de conversion optimisé pour des formats spécifiques avec préservation de métadonnées et paramètres avancés pour les créateurs de contenu.",
-        difficulty: "Modérée",
-        time: "3-5 semaines"
+        title: "Système de Migration de Données",
+        description: "Outil spécialisé pour la migration assistée de données depuis des formats anciens vers des formats modernes, avec validation, correction automatique et reporting.",
+        difficulty: "Modérée à Élevée",
+        time: "6-10 semaines"
       },
       {
         title: "Outil de Développement Rétro",
@@ -146,6 +162,18 @@ const Development = () => {
         description: "Système de monitoring environnemental avec capteurs (température, humidité, pression) et interface web/mobile pour visualiser les données.",
         difficulty: "Modérée",
         time: "4-6 semaines"
+      },
+      {
+        title: "Système de Reconnaissance d'Images",
+        description: "Solution embarquée utilisant des capteurs optiques et des algorithmes de traitement d'images pour la détection d'objets, personnes ou événements spécifiques.",
+        difficulty: "Élevée",
+        time: "8-12 semaines"
+      },
+      {
+        title: "Système de Métrologie Optique",
+        description: "Dispositif de mesure de précision utilisant des technologies optiques pour des applications industrielles ou scientifiques avec interface de calibration et d'analyse.",
+        difficulty: "Élevée",
+        time: "10-14 semaines"
       },
       {
         title: "Contrôleur Domotique DIY",
@@ -177,7 +205,7 @@ const Development = () => {
                   Développement<br /><span className="text-gradient">Sur Mesure</span>
                 </h1>
                 <p className="text-xl text-muted-foreground mb-8">
-                  Créez des applications web et mobile performantes, évolutives et ergonomiques qui répondent exactement à vos besoins métier.
+                  Des applications web, mobiles, desktop et embarquées qui répondent exactement à vos besoins, avec une expertise technique approfondie.
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4">
                   <Button size="lg" asChild>
@@ -224,7 +252,7 @@ const Development = () => {
           />
           
           <motion.div 
-            className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-12"
+            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-12"
             variants={container}
             initial="hidden"
             animate="show"
@@ -246,8 +274,86 @@ const Development = () => {
         </div>
       </section>
 
+      {/* Expertise technique section - NOUVEAU */}
+      <section className="py-16 md:py-24 bg-secondary/20">
+        <div className="container">
+          <SectionTitle
+            title="Expertise Technique Spécialisée"
+            subtitle="Une combinaison unique de compétences pour vos projets avancés"
+            centered
+          />
+          
+          <div className="mt-12">
+            <div className="bg-card border rounded-lg p-8 shadow-md">
+              <h3 className="text-2xl font-semibold mb-6 text-center">Technologies Optroniques & Électroniques</h3>
+              
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-y-8 gap-x-12">
+                <div className="space-y-2">
+                  <h4 className="font-semibold text-accent flex items-center gap-2">
+                    <div className="p-1 bg-accent/20 rounded-full">
+                      <BrainCircuit className="h-4 w-4 text-accent" />
+                    </div>
+                    Systèmes de Capteurs Avancés
+                  </h4>
+                  <p className="text-muted-foreground">
+                    Conception et intégration de systèmes de capteurs optiques, infrarouges et multispectraux
+                    pour applications industrielles et scientifiques.
+                  </p>
+                </div>
+                
+                <div className="space-y-2">
+                  <h4 className="font-semibold text-accent flex items-center gap-2">
+                    <div className="p-1 bg-accent/20 rounded-full">
+                      <Lightbulb className="h-4 w-4 text-accent" />
+                    </div>
+                    Métrologie & Mesure de Précision
+                  </h4>
+                  <p className="text-muted-foreground">
+                    Développement de solutions pour mesures optiques de haute précision avec calibration
+                    automatisée et analyse de données en temps réel.
+                  </p>
+                </div>
+                
+                <div className="space-y-2">
+                  <h4 className="font-semibold text-accent flex items-center gap-2">
+                    <div className="p-1 bg-accent/20 rounded-full">
+                      <Code className="h-4 w-4 text-accent" />
+                    </div>
+                    Traitement du Signal & Reconnaissance d'Images
+                  </h4>
+                  <p className="text-muted-foreground">
+                    Algorithmes spécialisés pour filtrage, détection de contours, segmentation et 
+                    reconnaissance de formes dans des environnements complexes.
+                  </p>
+                </div>
+                
+                <div className="space-y-2">
+                  <h4 className="font-semibold text-accent flex items-center gap-2">
+                    <div className="p-1 bg-accent/20 rounded-full">
+                      <Cpu className="h-4 w-4 text-accent" />
+                    </div>
+                    Systèmes Embarqués & Integration
+                  </h4>
+                  <p className="text-muted-foreground">
+                    Programmation bas niveau et optimisation de systèmes embarqués avec contraintes
+                    de temps réel, de consommation énergétique et de fiabilité.
+                  </p>
+                </div>
+              </div>
+              
+              <div className="mt-8 p-4 bg-accent/10 rounded-lg border border-accent/20">
+                <p className="italic text-center">
+                  "Une expérience de plus de 15 ans dans l'industrie optronique et électronique
+                  mise au service de vos projets innovants."
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Process section */}
-      <section className="py-16 md:py-24 bg-secondary/30">
+      <section className="py-16 md:py-24 bg-background">
         <div className="container">
           <SectionTitle
             title="Notre Processus"
@@ -272,11 +378,11 @@ const Development = () => {
       </section>
 
       {/* Technologies section */}
-      <section className="py-16 md:py-24 bg-background">
+      <section className="py-16 md:py-24 bg-secondary/30">
         <div className="container">
           <SectionTitle
             title="Nos Technologies"
-            subtitle="Nous utilisons des technologies modernes et éprouvées pour construire des solutions robustes"
+            subtitle="Outils modernes et open source pour des solutions robustes"
             centered
           />
           
@@ -284,16 +390,20 @@ const Development = () => {
             {technologies.map((tech, index) => (
               <div 
                 key={index} 
-                className="px-6 py-3 bg-secondary/50 rounded-full text-foreground font-medium"
+                className={`px-6 py-3 rounded-full text-foreground font-medium ${tech.includes('*') ? 'bg-accent/20 border border-accent/30' : 'bg-secondary/50'}`}
               >
-                {tech}
+                {tech.includes('*') ? tech.replace('*', '') + ' (en acquisition)' : tech}
               </div>
             ))}
+          </div>
+          
+          <div className="mt-8 text-center text-muted-foreground">
+            <p>Priorité donnée aux solutions Google Cloud et Open Source</p>
           </div>
         </div>
       </section>
 
-      {/* Project Ideas section - NEW */}
+      {/* Project Ideas section */}
       <section className="py-16 md:py-24 bg-background">
         <div className="container">
           <SectionTitle
@@ -331,7 +441,7 @@ const Development = () => {
                   className="px-4 py-2 rounded-full data-[state=active]:bg-accent data-[state=active]:text-white transition-all duration-300"
                 >
                   <BrainCircuit className="mr-2" size={16} />
-                  IoT
+                  IoT/Embarqué
                 </TabsTrigger>
               </TabsList>
             </div>
@@ -461,7 +571,7 @@ const Development = () => {
               <div className="text-center mt-8">
                 <Button asChild>
                   <Link to="/contact" className="inline-flex items-center gap-2">
-                    Discuter d'un projet IoT
+                    Discuter d'un projet IoT/Embarqué
                     <ArrowRight size={16} />
                   </Link>
                 </Button>
@@ -502,10 +612,10 @@ const Development = () => {
               <div className="space-y-4">
                 {[
                   "Applications sur mesure adaptées à vos besoins spécifiques",
+                  "Expertise technique en optique, électronique et développement logiciel",
                   "Code propre et maintenable pour une évolution pérenne",
                   "Architecture scalable qui grandit avec votre entreprise",
-                  "Sécurité intégrée dès la conception du projet",
-                  "Méthodologie agile pour des résultats rapides et concrets"
+                  "Approche No-Code/Low-Code pour des résultats rapides quand c'est pertinent"
                 ].map((point, index) => (
                   <div key={index} className="flex items-start gap-3">
                     <div className="mt-1 bg-accent/20 p-1 rounded-full">
@@ -527,7 +637,7 @@ const Development = () => {
             <div className="md:w-1/2 grid grid-cols-2 gap-6">
               <StatCard value="+40%" label="de ROI moyen pour nos clients" />
               <StatCard value="100%" label="de projets livrés à temps" />
-              <StatCard value="+2M" label="d'utilisateurs de nos applications" />
+              <StatCard value="+15" label="années d'expertise technique" />
               <StatCard value="24/7" label="support technique disponible" />
             </div>
           </div>
