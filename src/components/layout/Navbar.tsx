@@ -2,7 +2,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link, NavLink, useLocation } from 'react-router-dom';
 import { Button } from "@/components/ui/button";
-import { Menu, X, ChevronDown } from 'lucide-react';
+import { Menu, X, ChevronDown, Info } from 'lucide-react';
 import {
   NavigationMenu,
   NavigationMenuContent,
@@ -39,8 +39,6 @@ const Navbar = () => {
   }, []);
 
   const navLinks = [
-    { name: 'Accueil', path: '/' },
-    { name: 'Portfolio', path: '/portfolio' },
     { 
       name: 'Services', 
       path: '/services',
@@ -55,9 +53,10 @@ const Navbar = () => {
         { name: 'Conseil Technique', path: '/services/consulting' }
       ]
     },
+    { name: 'Portfolio', path: '/portfolio' },
     { name: 'Ressources', path: '/resources' },
     { name: 'Blog', path: '/blog' },
-    { name: 'À propos', path: '/about' }
+    { icon: Info, name: '', path: '/about' }
   ];
 
   const isActive = (path: string) => {
@@ -117,13 +116,14 @@ const Navbar = () => {
                         to={item.path}
                         onClick={closeMenu}
                         className={cn(
-                          "text-base font-medium hover:text-accent transition-colors px-4 py-2 rounded-md",
+                          "text-base font-medium hover:text-accent transition-colors px-4 py-2 rounded-md inline-flex items-center gap-2",
                           isActive(item.path) 
                             ? "text-accent bg-accent/5" 
                             : "text-muted-foreground hover:bg-accent/5"
                         )}
+                        title={item.icon ? "À propos" : item.name}
                       >
-                        {item.name}
+                        {item.icon ? <item.icon size={20} /> : item.name}
                       </Link>
                     </NavigationMenuItem>
                   )
@@ -149,7 +149,7 @@ const Navbar = () => {
         </div>
       </div>
 
-      {/* Mobile menu with improved animation */}
+      {/* Mobile menu avec liste modifiée */}
       {isMenuOpen && (
         <motion.div 
           className="fixed inset-0 top-16 bg-background/95 backdrop-blur-sm z-30 p-6 lg:hidden overflow-y-auto"
@@ -199,11 +199,11 @@ const Navbar = () => {
                       to={item.path}
                       onClick={closeMenu}
                       className={cn(
-                        "block text-lg font-medium hover:text-accent transition-colors",
+                        "block text-lg font-medium hover:text-accent transition-colors flex items-center gap-2",
                         isActive(item.path) ? "text-accent" : "text-muted-foreground" 
                       )}
                     >
-                      {item.name}
+                      {item.icon ? <><item.icon size={20} /> À propos</> : item.name}
                     </Link>
                   </li>
                 )}
