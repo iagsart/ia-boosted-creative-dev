@@ -17,12 +17,21 @@ import {
   Laptop,
   Lightbulb,
   FileText,
-  Layers 
+  Layers,
+  Database,
+  ExternalLink,
+  RefreshCcw,
+  CheckCircle,
+  AlertCircle,
+  Settings,
+  TrendingUp
 } from "lucide-react";
 import { Button } from '@/components/ui/button';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
-import { Card, CardContent } from '@/components/ui/card';
+import { Card, CardContent, CardHeader, CardTitle, CardDescription, CardFooter } from '@/components/ui/card';
 import { Link } from 'react-router-dom';
+import { Alert, AlertDescription } from '@/components/ui/alert';
+import { Badge } from '@/components/ui/badge';
 
 const NoCode = () => {
   // Animation variants
@@ -48,7 +57,7 @@ const NoCode = () => {
       name: "Bubble.io",
       description: "Créez des applications web complexes sans écrire de code. Interface visuelle puissante et flexible.",
       icon: <Code className="h-6 w-6 text-[#6366F1]" />,
-      useCases: ["Applications complexes", "SaaS", "Portails clients"],
+      useCases: ["Applications métier", "SaaS", "Portails clients"],
       color: "bg-gradient-to-br from-[#6366F1]/20 to-[#4338CA]/20"
     },
     {
@@ -122,6 +131,40 @@ const NoCode = () => {
     }
   ];
 
+  // Projets réels (exemples concrets)
+  const realProjects = [
+    {
+      title: "Application de suivi commercial",
+      description: "Une entreprise de conseil a remplacé son système basé sur Excel par une application no-code en seulement 3 semaines. Résultat : 75% de temps gagné sur la saisie des données et un meilleur suivi des opportunités.",
+      platform: "Bubble.io",
+      industry: "Conseil",
+      before: "Feuilles Excel partagées par email",
+      after: "Application web avec tableaux de bord en temps réel",
+      roi: "Retour sur investissement en moins de 2 mois",
+      icon: <TrendingUp className="h-10 w-10 text-primary" />
+    },
+    {
+      title: "Portail clients pour architecte",
+      description: "Un cabinet d'architectes a créé un portail où les clients peuvent suivre l'avancement de leurs projets, consulter les plans et communiquer avec l'équipe, le tout sans une seule ligne de code.",
+      platform: "Webflow + Airtable",
+      industry: "Architecture",
+      before: "Communication par email et partage de fichiers manuel",
+      after: "Portail centralisé avec accès sécurisé et notifications automatiques",
+      roi: "Réduction de 60% des emails et appels de suivi",
+      icon: <Building className="h-10 w-10 text-primary" />
+    },
+    {
+      title: "App mobile pour techniciens terrain",
+      description: "Une PME de maintenance industrielle a développé une app mobile permettant à ses techniciens de consulter les fiches d'intervention, documenter leur travail avec photos, et faire signer les clients directement sur l'appareil.",
+      platform: "Glide + Google Sheets",
+      industry: "Maintenance industrielle",
+      before: "Fiches papier et doubles saisies au bureau",
+      after: "Saisie unique sur mobile et synchronisation automatique",
+      roi: "Gain de 2h par jour et par technicien",
+      icon: <Smartphone className="h-10 w-10 text-primary" />
+    }
+  ];
+
   // Cas d'usage par secteur
   const useCases = [
     {
@@ -133,7 +176,11 @@ const NoCode = () => {
         "CRM sur mesure adapté à votre activité",
         "Portail client avec gestion de projets"
       ],
-      icon: <Building className="h-8 w-8" />
+      icon: <Building className="h-8 w-8" />,
+      stats: [
+        { value: "70%", label: "des PMEs utilisent encore des processus manuels" },
+        { value: "90%", label: "de réduction du temps de traitement avec des outils digitaux" }
+      ]
     },
     {
       sector: "Grandes entreprises",
@@ -144,7 +191,11 @@ const NoCode = () => {
         "Applications pour optimiser la logistique",
         "Portails de collaboration inter-départements"
       ],
-      icon: <Briefcase className="h-8 w-8" />
+      icon: <Briefcase className="h-8 w-8" />,
+      stats: [
+        { value: "65%", label: "des grands groupes explorent le no-code pour l'innovation interne" },
+        { value: "4x", label: "plus rapide pour déployer des applications départementales" }
+      ]
     },
     {
       sector: "Startups",
@@ -155,7 +206,11 @@ const NoCode = () => {
         "Tests A/B de différentes fonctionnalités",
         "Validation de votre concept avant investissement lourd"
       ],
-      icon: <Lightbulb className="h-8 w-8" />
+      icon: <Lightbulb className="h-8 w-8" />,
+      stats: [
+        { value: "80%", label: "d'économie sur le développement initial" },
+        { value: "3x", label: "plus de fonctionnalités testées dans le même délai" }
+      ]
     },
     {
       sector: "Freelances",
@@ -166,7 +221,81 @@ const NoCode = () => {
         "Applications métier pour vos clients",
         "Dashboards et outils de reporting"
       ],
-      icon: <Laptop className="h-8 w-8" />
+      icon: <Laptop className="h-8 w-8" />,
+      stats: [
+        { value: "50%", label: "d'augmentation du panier moyen" },
+        { value: "2x", label: "plus de projets réalisables en parallèle" }
+      ]
+    }
+  ];
+
+  // FAQ sur No-Code
+  const faqs = [
+    {
+      question: "Le no-code peut-il remplacer le développement traditionnel ?",
+      answer: "Le no-code ne remplace pas entièrement le développement traditionnel, mais le complète. Il est particulièrement efficace pour des applications internes, des MVP et des cas d'usage bien définis. Pour des applications très complexes, hautement personnalisées ou nécessitant des performances extrêmes, le développement traditionnel reste souvent nécessaire."
+    },
+    {
+      question: "Est-ce que les applications no-code sont évolutives ?",
+      answer: "Les plateformes no-code modernes offrent une bonne évolutivité pour la plupart des cas d'usage courants. Elles peuvent généralement gérer des milliers d'utilisateurs et de grandes quantités de données. Cependant, pour les applications à très grande échelle (millions d'utilisateurs), des limitations peuvent apparaître. La bonne nouvelle est qu'il existe souvent des chemins de migration vers des solutions plus robustes si nécessaire."
+    },
+    {
+      question: "Comment garantir la sécurité des applications no-code ?",
+      answer: "Les plateformes no-code de qualité intègrent des mesures de sécurité solides comme l'authentification, la gestion des rôles, le chiffrement des données et les connexions sécurisées. Il est toutefois important de configurer correctement ces fonctionnalités et de suivre les bonnes pratiques en matière de gestion des accès et des données sensibles, tout comme pour des applications traditionnelles."
+    },
+    {
+      question: "Suis-je limité par les fonctionnalités de la plateforme ?",
+      answer: "Les plateformes no-code modernes offrent une grande flexibilité et de nombreuses possibilités d'intégration. La plupart permettent d'étendre les fonctionnalités via des API, des webhooks, et même l'insertion de code personnalisé dans certaines parties de l'application. Ces approches hybrides 'low-code' permettent de combiner la rapidité du no-code avec la flexibilité du code quand c'est nécessaire."
+    },
+    {
+      question: "Quel est le risque de dépendance à la plateforme ?",
+      answer: "C'est une préoccupation légitime. Pour limiter ce risque, privilégiez les plateformes qui permettent l'exportation des données dans des formats standards, qui utilisent des technologies web standards (plutôt que des formats propriétaires), et qui ont une communauté active et une stabilité financière. Il est également judicieux d'avoir un plan de sortie documenté dès le début du projet."
+    }
+  ];
+
+  // Comparaison Code vs No-Code/Low-Code
+  const comparison = [
+    {
+      category: "Temps de développement",
+      traditional: "Plusieurs mois",
+      nocode: "Quelques semaines",
+      winner: "nocode"
+    },
+    {
+      category: "Coût initial",
+      traditional: "Élevé (équipe de développeurs)",
+      nocode: "Modéré à faible (abonnement plateforme)",
+      winner: "nocode"
+    },
+    {
+      category: "Flexibilité technique",
+      traditional: "Très élevée (tout est possible)",
+      nocode: "Modérée (limitée par la plateforme)",
+      winner: "traditional"
+    },
+    {
+      category: "Maintenance",
+      traditional: "Complexe (nécessite des développeurs)",
+      nocode: "Simple (modifications visuelles)",
+      winner: "nocode"
+    },
+    {
+      category: "Évolutivité",
+      traditional: "Excellente",
+      nocode: "Bonne à moyenne",
+      winner: "traditional"
+    },
+    {
+      category: "Accessibilité",
+      traditional: "Réservée aux développeurs",
+      nocode: "Accessible aux non-techniciens",
+      winner: "nocode"
+    },
+    {
+      category: "Personnalisation",
+      traditional: "Illimitée",
+      nocode: "Limitée par la plateforme",
+      winner: "traditional"
     }
   ];
 
@@ -218,7 +347,7 @@ const NoCode = () => {
                 className="flex items-center gap-2 mb-4"
               >
                 <div className="bg-primary/10 text-primary rounded-full px-3 py-1 text-sm font-medium">
-                  Innovation sans code
+                  Guide d'information
                 </div>
               </motion.div>
               
@@ -228,7 +357,7 @@ const NoCode = () => {
                 transition={{ duration: 0.8, delay: 0.2 }}
                 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight"
               >
-                Solutions <span className="text-primary">No-Code</span> et <span className="text-primary">Low-Code</span>
+                <span className="text-primary">No-Code</span> et <span className="text-primary">Low-Code</span>
               </motion.h1>
               
               <motion.p 
@@ -237,7 +366,7 @@ const NoCode = () => {
                 transition={{ duration: 0.8, delay: 0.4 }}
                 className="text-xl text-muted-foreground max-w-[600px]"
               >
-                Développez vos applications d'entreprise jusqu'à 10 fois plus rapidement et à une fraction du coût, sans compromettre la qualité ou l'évolutivité.
+                Comprendre comment ces technologies révolutionnent la création d'applications et démocratisent l'accès au développement logiciel
               </motion.p>
               
               <motion.div 
@@ -247,10 +376,10 @@ const NoCode = () => {
                 className="flex flex-wrap gap-4"
               >
                 <Button asChild size="lg">
-                  <Link to="/contact">Démarrer un projet</Link>
+                  <a href="#real-examples">Exemples concrets</a>
                 </Button>
                 <Button variant="outline" size="lg" asChild>
-                  <Link to="/portfolio">Voir nos réalisations</Link>
+                  <a href="#comparison">Code vs No-Code</a>
                 </Button>
               </motion.div>
             </div>
@@ -263,14 +392,14 @@ const NoCode = () => {
             >
               <div className="relative bg-gradient-to-br from-primary/10 to-secondary/10 rounded-2xl p-1 shadow-lg">
                 <img 
-                  src="/images/services/services_de_developpement.svg"
-                  alt="No-Code / Low-Code Development"
-                  className="rounded-xl w-full"
+                  src="https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?auto=format&fit=crop&q=80&w=2340"
+                  alt="Développement No-Code / Low-Code"
+                  className="rounded-xl w-full object-cover h-[300px]"
                 />
                 <div className="absolute inset-0 bg-black/40 rounded-xl flex items-center justify-center opacity-0 hover:opacity-100 transition-all duration-300">
                   <div className="text-center p-6">
-                    <h3 className="text-white font-bold text-2xl mb-2">Créez sans coder</h3>
-                    <p className="text-white/90">Transformez vos idées en applications fonctionnelles</p>
+                    <h3 className="text-white font-bold text-2xl mb-2">L'avenir du développement</h3>
+                    <p className="text-white/90">La démocratisation des technologies numériques</p>
                   </div>
                 </div>
               </div>
@@ -278,7 +407,7 @@ const NoCode = () => {
               <div className="absolute -bottom-4 -right-4 bg-background rounded-lg border shadow-lg p-4 hidden md:block">
                 <div className="flex items-center gap-3">
                   <Zap className="text-primary h-5 w-5" />
-                  <p className="font-medium">Développement 10x plus rapide</p>
+                  <p className="font-medium">10x plus rapide que le code traditionnel</p>
                 </div>
               </div>
             </motion.div>
@@ -286,15 +415,70 @@ const NoCode = () => {
         </div>
       </section>
 
+      {/* Introduction */}
+      <section className="py-12 bg-muted/30">
+        <div className="container px-4 md:px-6">
+          <div className="max-w-4xl mx-auto">
+            <h2 className="text-3xl font-bold mb-6 text-center">Qu'est-ce que le No-Code / Low-Code ?</h2>
+            
+            <div className="prose prose-lg mx-auto dark:prose-invert">
+              <p>
+                Le <strong>No-Code</strong> et le <strong>Low-Code</strong> représentent une évolution majeure dans la création d'applications numériques. Ces approches permettent de développer des solutions logicielles avec peu ou pas de programmation traditionnelle, en utilisant des interfaces visuelles et des composants prédéfinis.
+              </p>
+              
+              <div className="flex flex-col md:flex-row gap-6 my-8">
+                <div className="flex-1 border rounded-lg p-6 bg-background/50">
+                  <h3 className="text-xl font-bold mb-2 flex items-center gap-2">
+                    <Code className="h-5 w-5 text-primary" /> No-Code
+                  </h3>
+                  <p className="text-muted-foreground">
+                    Développement d'applications <strong>sans aucune programmation</strong>, uniquement via des interfaces visuelles par glisser-déposer et des configurations.
+                  </p>
+                  <div className="mt-4 text-sm">
+                    <Badge variant="outline" className="mr-2 mb-2">Pour non-techniciens</Badge>
+                    <Badge variant="outline" className="mr-2 mb-2">Interfaces visuelles</Badge>
+                    <Badge variant="outline" className="mr-2 mb-2">Applications simples à moyennes</Badge>
+                  </div>
+                </div>
+                
+                <div className="flex-1 border rounded-lg p-6 bg-background/50">
+                  <h3 className="text-xl font-bold mb-2 flex items-center gap-2">
+                    <Code className="h-5 w-5 text-primary" /> Low-Code
+                  </h3>
+                  <p className="text-muted-foreground">
+                    Développement qui combine des interfaces visuelles avec la <strong>possibilité d'ajouter du code personnalisé</strong> pour des fonctionnalités avancées.
+                  </p>
+                  <div className="mt-4 text-sm">
+                    <Badge variant="outline" className="mr-2 mb-2">Pour développeurs et techniciens</Badge>
+                    <Badge variant="outline" className="mr-2 mb-2">Hybride visuel/code</Badge>
+                    <Badge variant="outline" className="mr-2 mb-2">Applications complexes</Badge>
+                  </div>
+                </div>
+              </div>
+              
+              <Alert className="mb-6 bg-primary/5 border-primary/20">
+                <AlertDescription>
+                  Ces technologies ne remplacent pas totalement le développement traditionnel, mais offrent des alternatives rapides et accessibles pour de nombreux cas d'usage.
+                </AlertDescription>
+              </Alert>
+              
+              <p>
+                À l'ère où la transformation numérique est cruciale pour toute organisation, ces approches permettent de créer rapidement des applications fonctionnelles sans avoir à recruter une équipe complète de développeurs ou à investir dans des projets informatiques longs et coûteux.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Avantages No-Code / Low-Code */}
-      <section className="py-16 bg-muted/30">
+      <section className="py-16">
         <div className="container px-4 md:px-6">
           <div className="text-center max-w-3xl mx-auto mb-12">
             <h2 className="text-3xl font-bold tracking-tight mb-4">
-              Pourquoi choisir le No-Code / Low-Code ?
+              Pourquoi s'intéresser au No-Code / Low-Code ?
             </h2>
             <p className="text-muted-foreground text-lg">
-              Les plateformes No-Code et Low-Code révolutionnent la façon dont les entreprises créent leurs solutions digitales
+              Ces approches offrent des bénéfices tangibles pour les organisations de toutes tailles
             </p>
           </div>
 
@@ -322,15 +506,67 @@ const NoCode = () => {
         </div>
       </section>
 
+      {/* Exemples du monde réel */}
+      <section id="real-examples" className="py-16 bg-muted/30">
+        <div className="container px-4 md:px-6">
+          <div className="text-center max-w-3xl mx-auto mb-12">
+            <h2 className="text-3xl font-bold tracking-tight mb-4">
+              Exemples concrets et résultats
+            </h2>
+            <p className="text-muted-foreground text-lg">
+              Découvrez comment des organisations ont transformé leurs processus grâce au No-Code / Low-Code
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+            {realProjects.map((project, index) => (
+              <Card key={index} className="h-full flex flex-col">
+                <CardHeader>
+                  <div className="mb-4">{project.icon}</div>
+                  <CardTitle>{project.title}</CardTitle>
+                  <CardDescription className="text-sm">
+                    Secteur: {project.industry} | Plateforme: {project.platform}
+                  </CardDescription>
+                </CardHeader>
+                <CardContent className="flex-grow">
+                  <p className="text-muted-foreground mb-4">{project.description}</p>
+                  <div className="space-y-3 mt-4">
+                    <div className="flex items-start gap-2">
+                      <AlertCircle className="h-5 w-5 text-amber-500 mt-0.5" />
+                      <div>
+                        <p className="font-medium">Avant:</p>
+                        <p className="text-sm text-muted-foreground">{project.before}</p>
+                      </div>
+                    </div>
+                    <div className="flex items-start gap-2">
+                      <CheckCircle className="h-5 w-5 text-green-500 mt-0.5" />
+                      <div>
+                        <p className="font-medium">Après:</p>
+                        <p className="text-sm text-muted-foreground">{project.after}</p>
+                      </div>
+                    </div>
+                  </div>
+                </CardContent>
+                <CardFooter className="border-t pt-4">
+                  <Badge variant="secondary" className="w-full justify-center py-2 font-medium">
+                    {project.roi}
+                  </Badge>
+                </CardFooter>
+              </Card>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* Plateformes No-Code / Low-Code */}
       <section className="py-16">
         <div className="container px-4 md:px-6">
           <div className="text-center max-w-3xl mx-auto mb-10">
             <h2 className="text-3xl font-bold tracking-tight mb-4">
-              Plateformes No-Code que nous maîtrisons
+              Les plateformes No-Code populaires
             </h2>
             <p className="text-muted-foreground text-lg">
-              Nous utilisons les outils les plus puissants et flexibles du marché pour créer vos applications sur mesure
+              Explorer les outils qui permettent de créer des applications sans code
             </p>
           </div>
 
@@ -365,6 +601,15 @@ const NoCode = () => {
               </motion.div>
             ))}
           </motion.div>
+
+          <div className="mt-10 flex justify-center">
+            <Button asChild variant="outline" className="group">
+              <a href="https://nocodelist.co" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2">
+                Explorer plus de plateformes
+                <ExternalLink className="h-4 w-4 transition-transform group-hover:translate-x-1" />
+              </a>
+            </Button>
+          </div>
         </div>
       </section>
 
@@ -373,10 +618,10 @@ const NoCode = () => {
         <div className="container px-4 md:px-6">
           <div className="text-center max-w-3xl mx-auto mb-12">
             <h2 className="text-3xl font-bold tracking-tight mb-4">
-              Solutions adaptées à votre secteur
+              Applications par secteur d'activité
             </h2>
             <p className="text-muted-foreground text-lg">
-              Découvrez comment le No-Code et le Low-Code peuvent transformer votre activité
+              Comment différentes organisations tirent parti du No-Code / Low-Code
             </p>
           </div>
 
@@ -401,7 +646,7 @@ const NoCode = () => {
                         <h3 className="text-2xl font-bold mb-3">{useCase.title}</h3>
                         <p className="text-muted-foreground mb-6">{useCase.description}</p>
                         
-                        <div>
+                        <div className="mb-6">
                           <h4 className="font-semibold mb-3">Applications populaires:</h4>
                           <ul className="space-y-3">
                             {useCase.examples.map((example, i) => (
@@ -412,11 +657,22 @@ const NoCode = () => {
                             ))}
                           </ul>
                         </div>
+
+                        <div className="flex flex-wrap gap-4">
+                          {useCase.stats.map((stat, i) => (
+                            <div key={i} className="bg-primary/10 rounded-lg p-3 flex-1 min-w-[150px]">
+                              <p className="text-2xl font-bold text-primary">{stat.value}</p>
+                              <p className="text-sm text-muted-foreground">{stat.label}</p>
+                            </div>
+                          ))}
+                        </div>
                       </div>
 
-                      <div className="bg-muted/30 rounded-lg p-6">
+                      <div className="bg-muted/30 rounded-lg p-6 flex items-center justify-center">
                         <img 
-                          src={index % 2 === 0 ? "/images/services/solutions_ia.svg" : "/images/services/services_creatifs.svg"}
+                          src={index % 2 === 0 ? 
+                            "https://images.unsplash.com/photo-1531973576160-7125cd663d86?auto=format&fit=crop&q=80&w=2340" : 
+                            "https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&q=80&w=2340"}
                           alt={`${useCase.sector} solutions`}
                           className="w-full h-auto rounded-lg"
                         />
@@ -430,57 +686,83 @@ const NoCode = () => {
         </div>
       </section>
 
-      {/* Processus */}
-      <section className="py-16">
+      {/* Comparaison Code vs No-Code */}
+      <section id="comparison" className="py-16">
         <div className="container px-4 md:px-6">
           <div className="text-center max-w-3xl mx-auto mb-12">
             <h2 className="text-3xl font-bold tracking-tight mb-4">
-              Notre approche de projet
+              Développement traditionnel vs No-Code/Low-Code
             </h2>
             <p className="text-muted-foreground text-lg">
-              Un processus simple et efficace pour concrétiser rapidement vos idées
+              Comparaison objective pour vous aider à choisir la bonne approche
             </p>
           </div>
 
-          <div className="relative">
-            {/* Timeline line */}
-            <div className="absolute left-4 md:left-1/2 transform md:-translate-x-1/2 top-0 bottom-0 w-0.5 bg-border"></div>
-            
-            {/* Timeline steps */}
-            <div className="space-y-12">
-              {projectSteps.map((step, index) => (
-                <div key={index} className="relative">
-                  <motion.div
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.5, delay: index * 0.1 }}
-                    className={`flex flex-col md:flex-row gap-8 items-center ${
-                      index % 2 !== 0 ? 'md:flex-row-reverse' : ''
-                    }`}
-                  >
-                    {/* Timeline dot */}
-                    <div className="absolute left-4 md:left-1/2 transform md:-translate-x-1/2 w-8 h-8 rounded-full bg-primary flex items-center justify-center z-10">
-                      <span className="text-primary-foreground font-bold text-sm">
-                        {step.step}
-                      </span>
-                    </div>
-                    
-                    {/* Content */}
-                    <div className={`ml-12 md:ml-0 md:w-1/2 ${
-                      index % 2 !== 0 ? 'md:pr-12 text-left' : 'md:pl-12 text-left md:text-right'
-                    }`}
-                    >
-                      <h3 className="text-xl font-bold mb-2">{step.title}</h3>
-                      <p className="text-muted-foreground">{step.description}</p>
-                    </div>
+          <div className="overflow-hidden rounded-lg border mb-8">
+            <table className="w-full">
+              <thead>
+                <tr className="bg-muted/50">
+                  <th className="p-4 text-left font-medium">Critère</th>
+                  <th className="p-4 text-left font-medium">Code traditionnel</th>
+                  <th className="p-4 text-left font-medium">No-Code / Low-Code</th>
+                  <th className="p-4 text-center font-medium">Avantage</th>
+                </tr>
+              </thead>
+              <tbody>
+                {comparison.map((item, index) => (
+                  <tr key={index} className={index % 2 === 0 ? 'bg-background' : 'bg-muted/20'}>
+                    <td className="p-4 font-medium">{item.category}</td>
+                    <td className="p-4">{item.traditional}</td>
+                    <td className="p-4">{item.nocode}</td>
+                    <td className="p-4 text-center">
+                      {item.winner === 'nocode' ? (
+                        <Badge className="bg-primary">No-Code</Badge>
+                      ) : (
+                        <Badge variant="outline">Traditionnel</Badge>
+                      )}
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
 
-                    {/* Spacer for alignment on mobile */}
-                    <div className="md:w-1/2 hidden md:block"></div>
-                  </motion.div>
-                </div>
-              ))}
-            </div>
+          <Alert className="bg-amber-500/10 border-amber-500/30 mb-6">
+            <AlertDescription className="flex items-start gap-2">
+              <RefreshCcw className="h-5 w-5 text-amber-500 mt-1 shrink-0" />
+              <span>
+                <strong>Approche hybride recommandée</strong>: Pour de nombreuses organisations, la meilleure stratégie est d'utiliser le no-code pour les applications simples et les prototypes, et le développement traditionnel pour les systèmes complexes et critiques.
+              </span>
+            </AlertDescription>
+          </Alert>
+        </div>
+      </section>
+
+      {/* FAQ Section */}
+      <section className="py-16 bg-muted/30">
+        <div className="container px-4 md:px-6">
+          <div className="text-center max-w-3xl mx-auto mb-12">
+            <h2 className="text-3xl font-bold tracking-tight mb-4">
+              Questions fréquentes
+            </h2>
+            <p className="text-muted-foreground text-lg">
+              Réponses aux interrogations courantes sur le No-Code / Low-Code
+            </p>
+          </div>
+
+          <div className="max-w-4xl mx-auto space-y-6">
+            {faqs.map((faq, index) => (
+              <Card key={index}>
+                <CardHeader>
+                  <CardTitle className="text-xl flex items-center gap-3">
+                    <Settings className="h-6 w-6 text-primary" /> {faq.question}
+                  </CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <p className="text-muted-foreground">{faq.answer}</p>
+                </CardContent>
+              </Card>
+            ))}
           </div>
         </div>
       </section>
@@ -490,14 +772,14 @@ const NoCode = () => {
         <div className="container px-4 md:px-6">
           <div className="max-w-3xl mx-auto text-center">
             <h2 className="text-3xl font-bold tracking-tight mb-4">
-              Prêt à créer votre solution sans code ?
+              Envie d'explorer le potentiel du No-Code / Low-Code ?
             </h2>
             <p className="text-xl text-muted-foreground mb-8">
-              Transformez vos idées en applications fonctionnelles en quelques semaines au lieu de plusieurs mois.
+              Découvrez comment ces technologies peuvent accélérer votre transformation numérique
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button size="lg" asChild>
-                <Link to="/contact">Discuter de mon projet</Link>
+                <Link to="/contact">Discuter de votre projet</Link>
               </Button>
               <Button variant="outline" size="lg" asChild>
                 <Link to="/portfolio">Explorer nos réalisations</Link>

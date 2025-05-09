@@ -46,13 +46,13 @@ const Navbar = () => {
         { name: 'Tous les services', path: '/services' },
         { name: 'Conseil IA', path: '/services/ai' },
         { name: 'Développement', path: '/services/development' },
-        { name: 'No-Code / Low-Code', path: '/services/nocode' },
-        { name: 'Contenu & Design', path: '/services/content' },
         { name: 'Data Science', path: '/services/data' },
+        { name: 'Contenu & Design', path: '/services/content' },
         { name: 'Musique & Audio', path: '/services/music' },
         { name: 'Conseil Technique', path: '/services/consulting' }
       ]
     },
+    { name: 'No/Low Code', path: '/services/nocode' },
     { name: 'Portfolio', path: '/portfolio' },
     { name: 'Ressources', path: '/resources' },
     { name: 'Blog', path: '/blog' },
