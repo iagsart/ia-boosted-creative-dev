@@ -1,4 +1,3 @@
-
 import React from 'react';
 import Layout from "@/components/layout/Layout";
 import { motion } from "framer-motion";
@@ -18,7 +17,6 @@ import {
   Lightbulb,
   FileText,
   Layers,
-  Database,
   ExternalLink,
   RefreshCcw,
   CheckCircle,
@@ -32,6 +30,24 @@ import { Card, CardContent, CardHeader, CardTitle, CardDescription, CardFooter }
 import { Link } from 'react-router-dom';
 import { Alert, AlertDescription } from '@/components/ui/alert';
 import { Badge } from '@/components/ui/badge';
+
+// Custom Database icon component since it's not available in lucide-react
+const Database = ({ className }: { className?: string }) => (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    strokeWidth="2"
+    strokeLinecap="round"
+    strokeLinejoin="round"
+    className={className}
+  >
+    <ellipse cx="12" cy="5" rx="9" ry="3" />
+    <path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3" />
+    <path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5" />
+  </svg>
+);
 
 const NoCode = () => {
   // Animation variants
@@ -689,125 +705,4 @@ const NoCode = () => {
       {/* Comparaison Code vs No-Code */}
       <section id="comparison" className="py-16">
         <div className="container px-4 md:px-6">
-          <div className="text-center max-w-3xl mx-auto mb-12">
-            <h2 className="text-3xl font-bold tracking-tight mb-4">
-              Développement traditionnel vs No-Code/Low-Code
-            </h2>
-            <p className="text-muted-foreground text-lg">
-              Comparaison objective pour vous aider à choisir la bonne approche
-            </p>
-          </div>
-
-          <div className="overflow-hidden rounded-lg border mb-8">
-            <table className="w-full">
-              <thead>
-                <tr className="bg-muted/50">
-                  <th className="p-4 text-left font-medium">Critère</th>
-                  <th className="p-4 text-left font-medium">Code traditionnel</th>
-                  <th className="p-4 text-left font-medium">No-Code / Low-Code</th>
-                  <th className="p-4 text-center font-medium">Avantage</th>
-                </tr>
-              </thead>
-              <tbody>
-                {comparison.map((item, index) => (
-                  <tr key={index} className={index % 2 === 0 ? 'bg-background' : 'bg-muted/20'}>
-                    <td className="p-4 font-medium">{item.category}</td>
-                    <td className="p-4">{item.traditional}</td>
-                    <td className="p-4">{item.nocode}</td>
-                    <td className="p-4 text-center">
-                      {item.winner === 'nocode' ? (
-                        <Badge className="bg-primary">No-Code</Badge>
-                      ) : (
-                        <Badge variant="outline">Traditionnel</Badge>
-                      )}
-                    </td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-          </div>
-
-          <Alert className="bg-amber-500/10 border-amber-500/30 mb-6">
-            <AlertDescription className="flex items-start gap-2">
-              <RefreshCcw className="h-5 w-5 text-amber-500 mt-1 shrink-0" />
-              <span>
-                <strong>Approche hybride recommandée</strong>: Pour de nombreuses organisations, la meilleure stratégie est d'utiliser le no-code pour les applications simples et les prototypes, et le développement traditionnel pour les systèmes complexes et critiques.
-              </span>
-            </AlertDescription>
-          </Alert>
-        </div>
-      </section>
-
-      {/* FAQ Section */}
-      <section className="py-16 bg-muted/30">
-        <div className="container px-4 md:px-6">
-          <div className="text-center max-w-3xl mx-auto mb-12">
-            <h2 className="text-3xl font-bold tracking-tight mb-4">
-              Questions fréquentes
-            </h2>
-            <p className="text-muted-foreground text-lg">
-              Réponses aux interrogations courantes sur le No-Code / Low-Code
-            </p>
-          </div>
-
-          <div className="max-w-4xl mx-auto space-y-6">
-            {faqs.map((faq, index) => (
-              <Card key={index}>
-                <CardHeader>
-                  <CardTitle className="text-xl flex items-center gap-3">
-                    <Settings className="h-6 w-6 text-primary" /> {faq.question}
-                  </CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <p className="text-muted-foreground">{faq.answer}</p>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* CTA */}
-      <section className="py-16 bg-primary/5">
-        <div className="container px-4 md:px-6">
-          <div className="max-w-3xl mx-auto text-center">
-            <h2 className="text-3xl font-bold tracking-tight mb-4">
-              Envie d'explorer le potentiel du No-Code / Low-Code ?
-            </h2>
-            <p className="text-xl text-muted-foreground mb-8">
-              Découvrez comment ces technologies peuvent accélérer votre transformation numérique
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button size="lg" asChild>
-                <Link to="/contact">Discuter de votre projet</Link>
-              </Button>
-              <Button variant="outline" size="lg" asChild>
-                <Link to="/portfolio">Explorer nos réalisations</Link>
-              </Button>
-            </div>
-          </div>
-        </div>
-      </section>
-    </Layout>
-  );
-};
-
-export default NoCode;
-
-// Ajout d'icônes manquantes dans un composant séparé
-const Database = ({ className }: { className?: string }) => (
-  <svg
-    xmlns="http://www.w3.org/2000/svg"
-    viewBox="0 0 24 24"
-    fill="none"
-    stroke="currentColor"
-    strokeWidth="2"
-    strokeLinecap="round"
-    strokeLinejoin="round"
-    className={className}
-  >
-    <ellipse cx="12" cy="5" rx="9" ry="3" />
-    <path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3" />
-    <path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5" />
-  </svg>
-);
+          <div className="text-center max-w-3
