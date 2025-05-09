@@ -1,3 +1,4 @@
+
 import React from 'react';
 import Layout from "@/components/layout/Layout";
 import { motion } from "framer-motion";
@@ -705,4 +706,175 @@ const NoCode = () => {
       {/* Comparaison Code vs No-Code */}
       <section id="comparison" className="py-16">
         <div className="container px-4 md:px-6">
-          <div className="text-center max-w-3
+          <div className="text-center max-w-3xl mx-auto mb-12">
+            <h2 className="text-3xl font-bold tracking-tight mb-4">
+              Comparaison : Code traditionnel vs No-Code
+            </h2>
+            <p className="text-muted-foreground text-lg">
+              Chaque approche a ses avantages et ses limites
+            </p>
+          </div>
+
+          <div className="overflow-x-auto">
+            <table className="w-full border-collapse">
+              <thead>
+                <tr className="border-b">
+                  <th className="py-4 px-6 text-left font-medium">Critère</th>
+                  <th className="py-4 px-6 text-left font-medium">Développement traditionnel</th>
+                  <th className="py-4 px-6 text-left font-medium">No-Code / Low-Code</th>
+                  <th className="py-4 px-6 text-center font-medium">Avantage</th>
+                </tr>
+              </thead>
+              <tbody>
+                {comparison.map((item, index) => (
+                  <tr key={index} className={index % 2 === 0 ? "bg-muted/30" : ""}>
+                    <td className="py-4 px-6 font-medium">{item.category}</td>
+                    <td className="py-4 px-6">{item.traditional}</td>
+                    <td className="py-4 px-6">{item.nocode}</td>
+                    <td className="py-4 px-6 text-center">
+                      <Badge variant={item.winner === "nocode" ? "default" : "outline"}>
+                        {item.winner === "nocode" ? "No-Code" : "Traditionnel"}
+                      </Badge>
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+
+          <div className="mt-12 max-w-3xl mx-auto">
+            <h3 className="text-2xl font-bold mb-6 text-center">
+              Quelle approche choisir ?
+            </h3>
+            <div className="grid md:grid-cols-2 gap-8">
+              <div className="border rounded-lg p-6 bg-background">
+                <h4 className="text-lg font-semibold mb-3 flex items-center gap-2">
+                  <Code className="h-5 w-5 text-primary" />
+                  Privilégier le Code Traditionnel quand :
+                </h4>
+                <ul className="space-y-3">
+                  <li className="flex items-start gap-2">
+                    <ArrowRightCircle className="h-5 w-5 text-primary mt-0.5 shrink-0" />
+                    <span>Vous avez besoin d'une personnalisation extrême</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <ArrowRightCircle className="h-5 w-5 text-primary mt-0.5 shrink-0" />
+                    <span>Les performances sont critiques</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <ArrowRightCircle className="h-5 w-5 text-primary mt-0.5 shrink-0" />
+                    <span>Vous prévoyez des millions d'utilisateurs</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <ArrowRightCircle className="h-5 w-5 text-primary mt-0.5 shrink-0" />
+                    <span>Vous avez des besoins d'intégration très spécifiques</span>
+                  </li>
+                </ul>
+              </div>
+              <div className="border rounded-lg p-6 bg-background">
+                <h4 className="text-lg font-semibold mb-3 flex items-center gap-2">
+                  <Zap className="h-5 w-5 text-primary" />
+                  Privilégier le No-Code / Low-Code quand :
+                </h4>
+                <ul className="space-y-3">
+                  <li className="flex items-start gap-2">
+                    <ArrowRightCircle className="h-5 w-5 text-primary mt-0.5 shrink-0" />
+                    <span>Vous avez besoin d'un développement rapide</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <ArrowRightCircle className="h-5 w-5 text-primary mt-0.5 shrink-0" />
+                    <span>Votre budget est limité</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <ArrowRightCircle className="h-5 w-5 text-primary mt-0.5 shrink-0" />
+                    <span>Vous souhaitez itérer et tester rapidement</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <ArrowRightCircle className="h-5 w-5 text-primary mt-0.5 shrink-0" />
+                    <span>Vous n'avez pas accès à des développeurs</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Étapes de projet */}
+      <section className="py-16 bg-muted/30">
+        <div className="container px-4 md:px-6">
+          <div className="text-center max-w-3xl mx-auto mb-12">
+            <h2 className="text-3xl font-bold tracking-tight mb-4">
+              Comment se déroule un projet No-Code / Low-Code ?
+            </h2>
+            <p className="text-muted-foreground text-lg">
+              Notre méthodologie pour des projets efficaces et réussis
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {projectSteps.map((step, index) => (
+              <div key={index} className="bg-background rounded-xl border shadow-sm p-6 flex flex-col">
+                <div className="h-10 w-10 rounded-full bg-primary/10 flex items-center justify-center text-primary font-bold mb-4">
+                  {step.step}
+                </div>
+                <h3 className="text-xl font-semibold mb-2">{step.title}</h3>
+                <p className="text-muted-foreground">{step.description}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* FAQ */}
+      <section className="py-16">
+        <div className="container px-4 md:px-6">
+          <div className="text-center max-w-3xl mx-auto mb-12">
+            <h2 className="text-3xl font-bold tracking-tight mb-4">
+              Questions fréquentes
+            </h2>
+            <p className="text-muted-foreground text-lg">
+              Les réponses aux questions que vous vous posez sur le No-Code / Low-Code
+            </p>
+          </div>
+
+          <div className="max-w-3xl mx-auto">
+            <div className="grid gap-6">
+              {faqs.map((faq, index) => (
+                <div key={index} className="border rounded-lg p-6 bg-background/50">
+                  <h3 className="text-xl font-semibold mb-3">{faq.question}</h3>
+                  <p className="text-muted-foreground">{faq.answer}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Call to Action */}
+      <section className="py-16 bg-primary/5">
+        <div className="container px-4 md:px-6">
+          <div className="max-w-4xl mx-auto text-center">
+            <h2 className="text-3xl font-bold mb-4">
+              Prêt à explorer les possibilités du No-Code / Low-Code ?
+            </h2>
+            <p className="text-muted-foreground text-lg mb-8 max-w-2xl mx-auto">
+              Discutons de votre projet et voyons comment ces technologies peuvent vous aider à atteindre vos objectifs plus rapidement et à moindre coût.
+            </p>
+            <div className="flex flex-wrap justify-center gap-4">
+              <Button asChild size="lg">
+                <Link to="/contact">Contactez-nous</Link>
+              </Button>
+              <Button variant="outline" size="lg" asChild>
+                <Link to="/services">Découvrir nos autres services</Link>
+              </Button>
+            </div>
+          </div>
+        </div>
+      </section>
+    </Layout>
+  );
+};
+
+export default NoCode;
+
