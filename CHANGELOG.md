@@ -4,6 +4,7 @@
 
 
 
+
 # Changelog
 
 Toutes les modifications notables de ce projet seront documentées dans ce fichier.
@@ -39,6 +40,13 @@ et ce projet adhère au [Semantic Versioning](https://semver.org/spec/v2.0.0.htm
 - Ajout d'exemples détaillés de workflows combinant IA et automatisation
 - Développement d'une présentation visuelle des avantages de l'automatisation intelligente
 - Création de cartes descriptives pour les technologies d'IA pertinentes pour l'automatisation
+- Refactorisation de la page Automatisation avec une architecture modulaire et composants réutilisables
+- Enrichissement substantiel du contenu de la page Automatisation avec 12 workflows détaillés
+- Ajout d'études de cas réels pour l'automatisation intelligente
+- Intégration de statistiques et témoignages sur l'impact de l'automatisation IA
+- Amélioration du design avec des gradients personnalisés et une meilleure mise en page
+- Développement d'une section FAQ détaillée sur l'automatisation intelligente
+- Création de composants spécialisés pour afficher les avantages, technologies, workflows et plateformes
 
 ### En cours
 - Amélioration de l'expérience utilisateur de l'assistant IA
@@ -141,6 +149,7 @@ et ce projet adhère au [Semantic Versioning](https://semver.org/spec/v2.0.0.htm
 - Correction de l'affichage des images dans les articles de blog et services
 - Optimisation du chargement des images avec fallback en cas d'erreur
 - Correction des bugs dans l'assistant IA
+
 
 
 
