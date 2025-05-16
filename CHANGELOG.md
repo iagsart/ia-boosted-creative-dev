@@ -3,6 +3,7 @@
 
 
 
+
 # Changelog
 
 Toutes les modifications notables de ce projet seront documentées dans ce fichier.
@@ -33,6 +34,11 @@ et ce projet adhère au [Semantic Versioning](https://semver.org/spec/v2.0.0.htm
 - Ajout de nouvelles statistiques sur l'adoption des technologies No-Code
 - Intégration de citations inspirantes de leaders du secteur No-Code
 - Ajout de nouvelles FAQs sur les technologies No-Code / Low-Code
+- Création d'une nouvelle section/page 'Automatisation' avec intégration au menu principal
+- Implémentation d'un contenu riche sur l'IA combinée à l'automatisation (n8n, Make, Zapier)
+- Ajout d'exemples détaillés de workflows combinant IA et automatisation
+- Développement d'une présentation visuelle des avantages de l'automatisation intelligente
+- Création de cartes descriptives pour les technologies d'IA pertinentes pour l'automatisation
 
 ### En cours
 - Amélioration de l'expérience utilisateur de l'assistant IA
@@ -135,6 +141,7 @@ et ce projet adhère au [Semantic Versioning](https://semver.org/spec/v2.0.0.htm
 - Correction de l'affichage des images dans les articles de blog et services
 - Optimisation du chargement des images avec fallback en cas d'erreur
 - Correction des bugs dans l'assistant IA
+
 
 
 

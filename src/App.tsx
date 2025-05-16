@@ -13,6 +13,7 @@ import Content from "./pages/services/Content";
 import Consulting from "./pages/services/Consulting";
 import MusicService from "./pages/services/Music";
 import NoCode from "./pages/services/NoCode";
+import Automatisation from "./pages/Automatisation";
 import Resources from "./pages/Resources";
 import Blog from "./pages/Blog";
 import BlogPost from "./pages/BlogPost";
@@ -43,6 +44,7 @@ const App = () => {
         <Route path="/services/consulting" element={<Consulting />} />
         <Route path="/services/music" element={<MusicService />} />
         <Route path="/services/nocode" element={<NoCode />} />
+        <Route path="/automatisation" element={<Automatisation />} />
         <Route path="/resources" element={<Resources />} />
         <Route path="/blog" element={<Blog />} />
         {/* Specific blog post routes should come before the dynamic route */}

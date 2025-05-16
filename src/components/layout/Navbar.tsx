@@ -53,6 +53,7 @@ const Navbar = () => {
       ]
     },
     { name: 'No/Low Code', path: '/services/nocode' },
+    { name: 'Automatisation', path: '/automatisation' },
     { name: 'Portfolio', path: '/portfolio' },
     { name: 'Ressources', path: '/resources' },
     { name: 'Blog', path: '/blog' },
