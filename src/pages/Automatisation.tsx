@@ -1,4 +1,3 @@
-
 import React from 'react';
 import Layout from "@/components/layout/Layout";
 import { motion } from "framer-motion";
@@ -306,7 +305,7 @@ const Automatisation = () => {
               description="Les outils les plus puissants pour créer vos workflows"
               platforms={automationPlatforms}
               linkText="Comparer les plateformes"
-              linkUrl="#"
+              linkUrl="/automation-platform-comparison"
             />
             
             <PlatformCard

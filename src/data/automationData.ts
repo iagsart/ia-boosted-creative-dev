@@ -1,5 +1,4 @@
-
-import { Bot, CheckCircle, Zap, Workflow, FileText, Network, Database, BarChart, FileCode, Link as LinkIcon } from "lucide-react";
+import { Bot, CheckCircle, Zap, Workflow, FileText, Network, Database, BarChart, FileCode, Link as LinkIcon, BookOpen, Table, Book } from "lucide-react";
 import { TechCardProps } from "@/components/automation/TechCard";
 import { AdvantageCardProps } from "@/components/automation/AdvantageCard";
 import { WorkflowExampleProps } from "@/components/automation/WorkflowExample";
@@ -115,6 +114,18 @@ export const technologies: TechCardProps[] = [
       "Nanonets : extraction intelligente de données des documents",
       "Hyperscience : automatisation du traitement documentaire",
       "Kofax : transformation numérique des workflows documentaires"
+    ]
+  },
+  {
+    title: "RAG & Bases de connaissances",
+    description: "Automatisations basées sur vos données et documents spécialisés",
+    icon: Book,
+    gradientClass: "bg-gradient-to-br from-background to-[#E0FFEB]/20 border border-[#22C55E]/20",
+    examples: [
+      "NotebookLM (Google) : IA conversationnelle sur vos documents",
+      "LangChain RAG : construction de workflows de questions-réponses",
+      "Pinecone / Weaviate : bases de données vectorielles pour IA",
+      "LlamaIndex : indexation et recherche contextuelle sur documents"
     ]
   }
 ];
@@ -335,6 +346,46 @@ export const workflows: WorkflowExampleProps[] = [
     ],
     tools: ["OpenAI", "n8n", "Google Analytics", "Power BI/Tableau"],
     gradientClass: "hover:bg-gradient-to-br hover:from-transparent hover:to-[#ACCBEE]/20"
+  },
+  {
+    title: "Automatisation d'assistance technique avec NotebookLM",
+    description: "Création d'un système d'assistance technique intelligent basé sur votre documentation interne.",
+    detailedSteps: [
+      "Importez votre documentation technique, procédures et historiques de résolution dans NotebookLM.",
+      "Configurez l'IA pour comprendre la structure et le contexte spécifique de vos documents.",
+      "Connectez NotebookLM à votre système de tickets via Make ou n8n.",
+      "Lorsqu'un ticket technique arrive, l'automatisation extrait le problème et l'envoie à NotebookLM.",
+      "NotebookLM génère une réponse pertinente basée uniquement sur vos documents internes.",
+      "La réponse est proposée au technicien qui peut la valider avant envoi ou l'utiliser comme base de travail."
+    ],
+    benefits: [
+      "Résolutions 3x plus rapides des problèmes techniques courants",
+      "Réponses cohérentes basées uniquement sur votre documentation officielle",
+      "Formation accélérée des nouveaux techniciens",
+      "Capitalisation continue sur l'expertise interne"
+    ],
+    tools: ["NotebookLM", "n8n/Make", "Zendesk/Freshdesk", "Google Drive"],
+    gradientClass: "hover:bg-gradient-to-br hover:from-transparent hover:to-[#E0FFEB]/20"
+  },
+  {
+    title: "Formation personnalisée avec base de connaissances RAG",
+    description: "Système de formation automatisé qui s'adapte au profil et aux questions spécifiques de l'apprenant.",
+    detailedSteps: [
+      "Importez vos supports de formation, procédures et manuels dans une base de données vectorielle (Pinecone).",
+      "Configurez un système RAG (Retrieval Augmented Generation) avec LangChain ou LlamaIndex.",
+      "Un formulaire web capture les besoins et le niveau de l'apprenant.",
+      "n8n transmet ces informations au système RAG qui génère un parcours personnalisé.",
+      "À chaque étape, l'apprenant peut poser des questions spécifiques, le système RAG récupère les informations pertinentes dans votre base de connaissances.",
+      "Les progrès sont suivis automatiquement et de nouvelles ressources sont suggérées en fonction des performances."
+    ],
+    benefits: [
+      "Formation 40% plus efficace grâce à la personnalisation",
+      "Réduction de 60% du temps d'onboarding des nouveaux employés",
+      "Documentation toujours à jour et interrogeable en langage naturel",
+      "Analyse des questions fréquentes pour améliorer la documentation"
+    ],
+    tools: ["LangChain", "Pinecone", "n8n", "OpenAI", "Google Forms"],
+    gradientClass: "hover:bg-gradient-to-br hover:from-transparent hover:to-[#D3E4FD]/20"
   }
 ];
 
@@ -437,6 +488,32 @@ export const aiPlatforms: Platform[] = [
       "API simple d'utilisation"
     ],
     gradientClass: "bg-gradient-to-br from-[#FFDEE2]/30 to-[#D946EF]/20"
+  },
+  {
+    name: "NotebookLM (Google)",
+    description: "IA conversationnelle sur vos documents",
+    icon: BookOpen,
+    features: [
+      "RAG sur vos documents privés",
+      "Citations et sources vérifiables",
+      "Questions-réponses contextuelles",
+      "Organisation en notebooks thématiques"
+    ],
+    gradientClass: "bg-gradient-to-br from-[#E0FFEB]/30 to-[#22C55E]/20",
+    url: "https://notebooklm.google/"
+  },
+  {
+    name: "LangChain",
+    description: "Framework pour applications IA contextuelles",
+    icon: Database,
+    features: [
+      "Construction de workflows RAG",
+      "Chaînage de prompts et d'agents",
+      "Intégration multi-LLM",
+      "Open-source et extensible"
+    ],
+    gradientClass: "bg-gradient-to-br from-[#F1F0FB]/30 to-[#8B5CF6]/20",
+    url: "https://www.langchain.com/"
   }
 ];
 
@@ -474,3 +551,298 @@ export const aiStats = [
   { value: "67%", label: "d'augmentation moyenne du ROI après implémentation d'automatisations intelligentes" },
   { value: "93%", label: "des dirigeants considèrent l'automatisation comme prioritaire pour leur transformation digitale" }
 ];
+
+// Nouvelles données pour la page de comparaison des plateformes
+export const platformFeatures = [
+  {
+    name: "Interface visuelle",
+    description: "Facilité de création de workflows sans code",
+    platforms: {
+      "n8n": 4,
+      "Make": 5,
+      "Zapier": 5,
+      "Pipedream": 3,
+      "Tray.io": 4,
+      "Microsoft Power Automate": 4,
+      "Workato": 4
+    }
+  },
+  {
+    name: "Flexibilité technique",
+    description: "Possibilité d'ajouter du code personnalisé",
+    platforms: {
+      "n8n": 5,
+      "Make": 4,
+      "Zapier": 3,
+      "Pipedream": 5,
+      "Tray.io": 4,
+      "Microsoft Power Automate": 3,
+      "Workato": 4
+    }
+  },
+  {
+    name: "Nombre d'intégrations",
+    description: "Quantité d'applications et services supportés",
+    platforms: {
+      "n8n": 4,
+      "Make": 4,
+      "Zapier": 5,
+      "Pipedream": 3,
+      "Tray.io": 4,
+      "Microsoft Power Automate": 4,
+      "Workato": 4
+    }
+  },
+  {
+    name: "Auto-hébergement",
+    description: "Capacité à déployer sur votre infrastructure",
+    platforms: {
+      "n8n": 5,
+      "Make": 1,
+      "Zapier": 1,
+      "Pipedream": 2,
+      "Tray.io": 1,
+      "Microsoft Power Automate": 3,
+      "Workato": 2
+    }
+  },
+  {
+    name: "Prix",
+    description: "Rapport qualité/prix des offres",
+    platforms: {
+      "n8n": 4,
+      "Make": 4,
+      "Zapier": 3,
+      "Pipedream": 4,
+      "Tray.io": 2,
+      "Microsoft Power Automate": 3,
+      "Workato": 2
+    }
+  },
+  {
+    name: "Performances",
+    description: "Vitesse d'exécution et traitement de gros volumes",
+    platforms: {
+      "n8n": 4,
+      "Make": 5,
+      "Zapier": 3,
+      "Pipedream": 4,
+      "Tray.io": 5,
+      "Microsoft Power Automate": 3,
+      "Workato": 5
+    }
+  },
+  {
+    name: "Intégration IA",
+    description: "Facilité d'intégration avec des services d'IA",
+    platforms: {
+      "n8n": 5,
+      "Make": 4,
+      "Zapier": 3,
+      "Pipedream": 5,
+      "Tray.io": 4,
+      "Microsoft Power Automate": 3,
+      "Workato": 4
+    }
+  },
+  {
+    name: "Débogage",
+    description: "Outils de test et de débogage",
+    platforms: {
+      "n8n": 4,
+      "Make": 5,
+      "Zapier": 3,
+      "Pipedream": 4,
+      "Tray.io": 4,
+      "Microsoft Power Automate": 3,
+      "Workato": 4
+    }
+  }
+];
+
+export const platformComparisons = [
+  {
+    name: "n8n",
+    logo: "/placeholder.svg",
+    description: "Solution open-source et auto-hébergeable offrant une grande flexibilité technique.",
+    pricingModel: "Freemium + Cloud ou Self-hosted",
+    priceRange: "0€ - 20€/utilisateur/mois",
+    strongPoints: [
+      "100% open-source",
+      "Possibilité d'auto-hébergement",
+      "Excellent support du code personnalisé",
+      "Interface visuelle intuitive",
+      "Communauté active"
+    ],
+    weakPoints: [
+      "Moins d'intégrations que Zapier",
+      "Configuration serveur nécessaire pour l'auto-hébergement",
+      "Documentation parfois incomplète"
+    ],
+    bestFor: ["Startups techniques", "Développeurs", "Entreprises soucieuses de la confidentialité des données"],
+    aiIntegration: "Excellente, avec support natif pour OpenAI, HuggingFace et autres API d'IA."
+  },
+  {
+    name: "Make (Integromat)",
+    logo: "/placeholder.svg",
+    description: "Plateforme visuelle puissante avec une excellente interface de conception de workflows.",
+    pricingModel: "Freemium + Plans payants",
+    priceRange: "0€ - 29€+/mois",
+    strongPoints: [
+      "Interface visuelle exceptionnelle",
+      "Excellentes performances",
+      "Outils de débogage avancés",
+      "Gestion fine des données",
+      "Plan gratuit généreux"
+    ],
+    weakPoints: [
+      "Pas d'option d'auto-hébergement",
+      "Courbe d'apprentissage moyenne"
+    ],
+    bestFor: ["PME", "Marketeurs", "Professionnels non-techniques avec besoins avancés"],
+    aiIntegration: "Très bonne, via modules dédiés aux principales API d'IA."
+  },
+  {
+    name: "Zapier",
+    logo: "/placeholder.svg",
+    description: "Solution la plus connue avec le plus grand nombre d'intégrations prédéfinies.",
+    pricingModel: "Freemium + Plans payants",
+    priceRange: "0€ - 73,50€+/mois",
+    strongPoints: [
+      "Plus de 5000 applications connectées",
+      "Très simple à prendre en main",
+      "Nombreux templates préexistants",
+      "Support réactif",
+      "Communauté importante"
+    ],
+    weakPoints: [
+      "Options de personnalisation limitées",
+      "Prix élevé pour les fonctionnalités avancées",
+      "Performances moyennes sur workflows complexes"
+    ],
+    bestFor: ["Petites entreprises", "Non-techniciens", "Besoins d'intégrations simples"],
+    aiIntegration: "Bonne, principalement via intégrations préexistantes des services d'IA populaires."
+  },
+  {
+    name: "Pipedream",
+    logo: "/placeholder.svg",
+    description: "Plateforme orientée développeurs offrant une grande flexibilité de code.",
+    pricingModel: "Freemium + Plans payants",
+    priceRange: "0€ - 29€+/mois",
+    strongPoints: [
+      "Support natif de JavaScript/Node.js",
+      "Excellent pour les développeurs",
+      "API-first",
+      "Plan gratuit généreux",
+      "Exécution rapide"
+    ],
+    weakPoints: [
+      "Interface moins intuitive pour les non-développeurs",
+      "Moins d'intégrations prédéfinies que les leaders",
+      "Communauté plus restreinte"
+    ],
+    bestFor: ["Développeurs", "Équipes techniques", "Startups SaaS"],
+    aiIntegration: "Excellente, avec possibilité d'intégrer facilement n'importe quelle API d'IA via du code."
+  },
+  {
+    name: "Microsoft Power Automate",
+    logo: "/placeholder.svg",
+    description: "Solution d'automatisation intégrée à l'écosystème Microsoft 365.",
+    pricingModel: "Inclus avec M365 + Plans premium",
+    priceRange: "Inclus avec M365 - 15€+/utilisateur/mois",
+    strongPoints: [
+      "Intégration parfaite avec produits Microsoft",
+      "Bonne gouvernance d'entreprise",
+      "RPA (Robotic Process Automation) inclus",
+      "Sécurité de niveau entreprise"
+    ],
+    weakPoints: [
+      "Interface parfois complexe",
+      "Performances variables",
+      "Limitations hors écosystème Microsoft",
+      "Prix élevé pour fonctionnalités avancées"
+    ],
+    bestFor: ["Entreprises utilisant Microsoft 365", "Grandes organisations", "Équipes RH et Finance"],
+    aiIntegration: "Bonne, particulièrement avec les services IA de Microsoft Azure."
+  },
+  {
+    name: "Tray.io",
+    logo: "/placeholder.svg",
+    description: "Plateforme d'automatisation enterprise avec fonctionnalités avancées.",
+    pricingModel: "Plans enterprise",
+    priceRange: "Tarification entreprise (sur devis)",
+    strongPoints: [
+      "Performance exceptionnelle",
+      "Adaptée aux grands volumes",
+      "Fonctionnalités enterprise",
+      "Sécurité avancée",
+      "Support dédié"
+    ],
+    weakPoints: [
+      "Prix élevé",
+      "Ciblé entreprise uniquement",
+      "Complexité initiale importante"
+    ],
+    bestFor: ["Grandes entreprises", "Utilisateurs avec volumes importants", "Besoins de sécurité avancés"],
+    aiIntegration: "Très bonne, avec support pour services d'IA enterprise et connecteurs personnalisés."
+  },
+  {
+    name: "Workato",
+    logo: "/placeholder.svg",
+    description: "Solution d'intégration d'entreprise avec automatisations avancées.",
+    pricingModel: "Plans enterprise",
+    priceRange: "Tarification entreprise (sur devis)",
+    strongPoints: [
+      "Fonctionnalités enterprise",
+      "Très bonnes performances",
+      "Support de l'automatisation métier complexe",
+      "Gouvernance et sécurité avancées"
+    ],
+    weakPoints: [
+      "Prix très élevé",
+      "Courbe d'apprentissage importante",
+      "Plus adapté aux grandes organisations"
+    ],
+    bestFor: ["Grandes entreprises", "Équipes IT", "Besoins d'intégration multi-systèmes complexes"],
+    aiIntegration: "Excellente, avec orchestration de workflows IA pour cas d'usage enterprise."
+  }
+];
+
+export const platformUseCases = {
+  beginners: {
+    title: "Pour débutants",
+    description: "Vous débutez avec l'automatisation et recherchez des solutions simples à prendre en main.",
+    recommended: ["Zapier", "Make"],
+    explanation: "Zapier et Make offrent les interfaces les plus intuitives avec de nombreux templates et guides. Zapier est légèrement plus simple pour les vrais débutants, tandis que Make offre plus de flexibilité une fois les bases maîtrisées."
+  },
+  soho: {
+    title: "TPE/PME",
+    description: "Vous recherchez un bon rapport qualité/prix et des fonctionnalités adaptées aux petites structures.",
+    recommended: ["Make", "n8n", "Zapier"],
+    explanation: "Make offre le meilleur rapport qualité/prix pour les PME avec un plan gratuit généreux et une montée en puissance flexible. n8n est excellent si vous avez quelques compétences techniques ou un prestataire pour l'installation."
+  },
+  enterprise: {
+    title: "Grandes entreprises",
+    description: "Vous avez besoin de fonctionnalités enterprise: gouvernance, conformité, volumes importants.",
+    recommended: ["Workato", "Tray.io", "Microsoft Power Automate"],
+    explanation: "Ces plateformes offrent les fonctionnalités de gouvernance, sécurité et scaling nécessaires aux grandes organisations, avec Workato et Tray.io plus orientés performances, et Microsoft Power Automate idéal dans un environnement Microsoft."
+  },
+  developers: {
+    title: "Équipes techniques",
+    description: "Vous avez des compétences techniques et recherchez une solution flexible et programmable.",
+    recommended: ["n8n", "Pipedream"],
+    explanation: "n8n et Pipedream sont conçus avec les développeurs à l'esprit, permettant d'insérer du code personnalisé facilement. n8n offre l'avantage supplémentaire d'être open-source et auto-hébergeable."
+  },
+  aiIntegration: {
+    title: "Intégration IA avancée",
+    description: "Votre priorité est l'intégration facile et puissante avec des modèles d'IA.",
+    recommended: ["n8n", "Pipedream", "Make"],
+    explanation: "Ces plateformes excellent dans l'intégration avec les API d'IA modernes. n8n et Pipedream permettent le plus de contrôle et de personnalisation, tandis que Make offre un bon équilibre entre facilité d'utilisation et puissance."
+  },
+  dataPrivacy: {
+    title: "Confidentialité des données",
+    description: "Vos données sont sensibles et vous préférez une solution que vous contrôlez.",
+    recommended: ["n8n"],
+    explanation: "n8n est la seule solution principale qui peut être entièrement auto-hébergée sur votre infrastructure, vous donnant un contrôle total sur vos données et workflows."
+  }
+};
