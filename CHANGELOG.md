@@ -2,6 +2,7 @@
 
 
 
+
 # Changelog
 
 Toutes les modifications notables de ce projet seront documentées dans ce fichier.
@@ -26,6 +27,12 @@ et ce projet adhère au [Semantic Versioning](https://semver.org/spec/v2.0.0.htm
 - Amélioration de la navigation et des liens dans le menu principal
 - Ajout de No/Low Code comme élément principal du menu de navigation
 - Enrichissement du contenu éducatif de la page No/Low Code avec plus d'exemples pratiques
+- Refonte complète du design de la section No-Code / Low-Code avec une interface plus moderne
+- Ajout d'une étude de cas détaillée dans la section No-Code
+- Amélioration visuelle des cartes et sections avec gradients, animations et nouveaux badges
+- Ajout de nouvelles statistiques sur l'adoption des technologies No-Code
+- Intégration de citations inspirantes de leaders du secteur No-Code
+- Ajout de nouvelles FAQs sur les technologies No-Code / Low-Code
 
 ### En cours
 - Amélioration de l'expérience utilisateur de l'assistant IA
@@ -128,5 +135,6 @@ et ce projet adhère au [Semantic Versioning](https://semver.org/spec/v2.0.0.htm
 - Correction de l'affichage des images dans les articles de blog et services
 - Optimisation du chargement des images avec fallback en cas d'erreur
 - Correction des bugs dans l'assistant IA
+
 
 
