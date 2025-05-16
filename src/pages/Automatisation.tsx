@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { SectionTitle } from "@/components/ui/section-title";
 import { Link } from "react-router-dom";
-import { ArrowRight, Bot, ExternalLink } from "lucide-react";
+import { ArrowRight, Bot, ExternalLink, PlayCircle } from "lucide-react";
 
 // Composants réutilisables pour l'automatisation
 import TechCard from "@/components/automation/TechCard";
@@ -14,6 +14,7 @@ import AdvantageCard from "@/components/automation/AdvantageCard";
 import PlatformCard from "@/components/automation/PlatformCard";
 import AutomationHeader from "@/components/automation/AutomationHeader";
 import CaseStudyCard from "@/components/automation/CaseStudyCard";
+import AutomationDiagrams from "@/components/automation/WorkflowDiagram";
 
 // Données pour l'automatisation
 import { 
@@ -131,6 +132,127 @@ const Automatisation = () => {
                 <p className="text-muted-foreground">{stat.label}</p>
               </motion.div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* NOUVELLE SECTION: Schémas d'automatisation interactifs */}
+      <section className="py-16">
+        <div className="container max-w-5xl">
+          <SectionTitle 
+            title="Comprendre les workflows d'automatisation" 
+            subtitle="Schémas interactifs des différentes architectures d'automatisation"
+            centered
+          />
+          
+          <div className="mt-12">
+            <AutomationDiagrams />
+          </div>
+          
+          <div className="mt-12 grid md:grid-cols-2 gap-8">
+            <div className="bg-accent/5 p-6 rounded-lg border border-border">
+              <h3 className="text-xl font-medium mb-4">Composants d'un workflow</h3>
+              <ul className="space-y-3">
+                <li className="flex items-start gap-3">
+                  <div className="flex-shrink-0 h-6 w-6 rounded-full bg-blue-100 flex items-center justify-center mt-0.5">
+                    <span className="text-sm font-medium text-blue-600">1</span>
+                  </div>
+                  <div>
+                    <span className="font-medium">Déclencheurs (Triggers)</span>
+                    <p className="text-sm text-muted-foreground">
+                      Événements qui initient le workflow : réception d'un email, mise à jour de données, 
+                      formulaire soumis, ou planification temporelle.
+                    </p>
+                  </div>
+                </li>
+                <li className="flex items-start gap-3">
+                  <div className="flex-shrink-0 h-6 w-6 rounded-full bg-green-100 flex items-center justify-center mt-0.5">
+                    <span className="text-sm font-medium text-green-600">2</span>
+                  </div>
+                  <div>
+                    <span className="font-medium">Conditions & Logique</span>
+                    <p className="text-sm text-muted-foreground">
+                      Règles qui déterminent le parcours des données dans le workflow, 
+                      permettant des chemins conditionnels basés sur des critères spécifiques.
+                    </p>
+                  </div>
+                </li>
+                <li className="flex items-start gap-3">
+                  <div className="flex-shrink-0 h-6 w-6 rounded-full bg-purple-100 flex items-center justify-center mt-0.5">
+                    <span className="text-sm font-medium text-purple-600">3</span>
+                  </div>
+                  <div>
+                    <span className="font-medium">Transformation de données</span>
+                    <p className="text-sm text-muted-foreground">
+                      Processus de modification du format, de la structure ou du contenu des données 
+                      pour les adapter aux besoins des systèmes en aval.
+                    </p>
+                  </div>
+                </li>
+                <li className="flex items-start gap-3">
+                  <div className="flex-shrink-0 h-6 w-6 rounded-full bg-amber-100 flex items-center justify-center mt-0.5">
+                    <span className="text-sm font-medium text-amber-600">4</span>
+                  </div>
+                  <div>
+                    <span className="font-medium">Actions</span>
+                    <p className="text-sm text-muted-foreground">
+                      Opérations exécutées par le workflow : envoi d'emails, mise à jour de bases de données, 
+                      publication sur réseaux sociaux, ou appel d'API.
+                    </p>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            
+            <div className="bg-accent/5 p-6 rounded-lg border border-border">
+              <h3 className="text-xl font-medium mb-4">Intégration de l'IA dans les workflows</h3>
+              <ul className="space-y-3">
+                <li className="flex items-start gap-3">
+                  <div className="flex-shrink-0 h-6 w-6 rounded-full bg-primary/20 flex items-center justify-center mt-0.5">
+                    <Bot className="h-3 w-3 text-primary" />
+                  </div>
+                  <div>
+                    <span className="font-medium">Analyse de texte</span>
+                    <p className="text-sm text-muted-foreground">
+                      Classification, extraction d'entités, analyse de sentiment, et résumé automatique de documents.
+                    </p>
+                  </div>
+                </li>
+                <li className="flex items-start gap-3">
+                  <div className="flex-shrink-0 h-6 w-6 rounded-full bg-primary/20 flex items-center justify-center mt-0.5">
+                    <Bot className="h-3 w-3 text-primary" />
+                  </div>
+                  <div>
+                    <span className="font-medium">Traitement d'images</span>
+                    <p className="text-sm text-muted-foreground">
+                      Reconnaissance d'objets, OCR, classification d'images et génération de contenu visuel.
+                    </p>
+                  </div>
+                </li>
+                <li className="flex items-start gap-3">
+                  <div className="flex-shrink-0 h-6 w-6 rounded-full bg-primary/20 flex items-center justify-center mt-0.5">
+                    <Bot className="h-3 w-3 text-primary" />
+                  </div>
+                  <div>
+                    <span className="font-medium">Prédiction et recommandation</span>
+                    <p className="text-sm text-muted-foreground">
+                      Anticipation des besoins utilisateurs, détection d'anomalies et systèmes de recommandation.
+                    </p>
+                  </div>
+                </li>
+                <li className="flex items-start gap-3">
+                  <div className="flex-shrink-0 h-6 w-6 rounded-full bg-primary/20 flex items-center justify-center mt-0.5">
+                    <Bot className="h-3 w-3 text-primary" />
+                  </div>
+                  <div>
+                    <span className="font-medium">RAG (Retrieval Augmented Generation)</span>
+                    <p className="text-sm text-muted-foreground">
+                      Génération de contenu enrichi par des connaissances spécifiques extraites dynamiquement de bases documentaires.
+                    </p>
+                  </div>
+                </li>
+              </ul>
+            </div>
           </div>
         </div>
       </section>
