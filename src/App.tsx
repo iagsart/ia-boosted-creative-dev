@@ -28,6 +28,7 @@ import Legal from './pages/Legal';
 import NotFound from './pages/NotFound';
 import Automatisation from './pages/Automatisation';
 import AutomationPlatformComparison from './pages/AutomationPlatformComparison';
+import ExpertiseIA from './pages/ExpertiseIA';
 
 // Import components
 import { Toaster } from "@/components/ui/toaster";
@@ -73,6 +74,7 @@ function App() {
         <Route path="/legal" element={<Legal />} />
         <Route path="/automatisation" element={<Automatisation />} />
         <Route path="/automation-platform-comparison" element={<AutomationPlatformComparison />} />
+        <Route path="/expertise-ia" element={<ExpertiseIA />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
       <Toaster />

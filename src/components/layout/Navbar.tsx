@@ -54,6 +54,7 @@ const Navbar = () => {
     },
     { name: 'No/Low Code', path: '/services/nocode' },
     { name: 'Automatisation', path: '/automatisation' },
+    { name: 'Expertise IA', path: '/expertise-ia' },
     { name: 'Portfolio', path: '/portfolio' },
     { name: 'Ressources', path: '/resources' },
     { name: 'Blog', path: '/blog' },
@@ -150,7 +151,7 @@ const Navbar = () => {
         </div>
       </div>
 
-      {/* Mobile menu avec liste modifiée */}
+      {/* Mobile menu */}
       {isMenuOpen && (
         <motion.div 
           className="fixed inset-0 top-16 bg-background/95 backdrop-blur-sm z-30 p-6 lg:hidden overflow-y-auto"
