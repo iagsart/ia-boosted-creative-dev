@@ -4,7 +4,7 @@ import Layout from "@/components/layout/Layout";
 import { SectionTitle } from "@/components/ui/section-title";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { Brain, Cpu, Bot, LineChart, Network, Database } from "lucide-react";
+import { Brain, Cpu, Bot, LineChart, Network, Database, CircuitBoard, Gauge } from "lucide-react";
 import { motion } from "framer-motion";
 
 // Animation variants for staggered animations
@@ -630,7 +630,7 @@ const ExpertiseIA = () => {
               <AITechCard 
                 title="IA industrielle"
                 description="Intelligence artificielle appliquée à la production et à la fabrication"
-                icon={<Microchip className="h-6 w-6 text-primary" />}
+                icon={<CircuitBoard className="h-6 w-6 text-primary" />}
                 examples={[
                   "Predictive Maintenance",
                   "Digital Twins",
@@ -666,7 +666,7 @@ const ExpertiseIA = () => {
               <AITechCard 
                 title="AI for Creativity"
                 description="IA pour la création artistique et le design"
-                icon={<Robot className="h-6 w-6 text-primary" />}
+                icon={<Bot className="h-6 w-6 text-primary" />}
                 examples={[
                   "Creative Text Generation",
                   "AI Art & Image Generation",
@@ -702,7 +702,7 @@ const ExpertiseIA = () => {
               <AITechCard 
                 title="Spatial & GeoAI"
                 description="Applications géospatiales de l'intelligence artificielle"
-                icon={<FlowChart className="h-6 w-6 text-primary" />}
+                icon={<Gauge className="h-6 w-6 text-primary" />}
                 examples={[
                   "Satellite Imagery Analysis",
                   "Geospatial Machine Learning",
