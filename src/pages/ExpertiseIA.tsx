@@ -4,7 +4,7 @@ import Layout from "@/components/layout/Layout";
 import { SectionTitle } from "@/components/ui/section-title";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { Brain, Microchip, Robot, FlowChart, Network, Database } from "lucide-react";
+import { Brain, Cpu, Bot, LineChart, Network, Database } from "lucide-react";
 import { motion } from "framer-motion";
 
 // Animation variants for staggered animations
@@ -130,7 +130,7 @@ const ExpertiseIA = () => {
               <AITechCard 
                 title="Machine Learning"
                 description="Algorithmes qui apprennent à partir des données sans être explicitement programmés"
-                icon={<Microchip className="h-6 w-6 text-primary" />}
+                icon={<Cpu className="h-6 w-6 text-primary" />}
                 examples={[
                   "Apprentissage supervisé",
                   "Apprentissage non-supervisé",
@@ -166,7 +166,7 @@ const ExpertiseIA = () => {
               <AITechCard 
                 title="IA Générative"
                 description="Systèmes capables de créer du nouveau contenu à partir de ce qu'ils ont appris"
-                icon={<Robot className="h-6 w-6 text-primary" />}
+                icon={<Bot className="h-6 w-6 text-primary" />}
                 examples={[
                   "Modèles de langage (GPT, LLaMA)",
                   "Diffusion models (Stable Diffusion)",
@@ -184,7 +184,7 @@ const ExpertiseIA = () => {
               <AITechCard 
                 title="IA Hybride"
                 description="Combinaison de plusieurs approches pour tirer le meilleur de chaque méthode"
-                icon={<FlowChart className="h-6 w-6 text-primary" />}
+                icon={<LineChart className="h-6 w-6 text-primary" />}
                 examples={[
                   "Systèmes neuro-symboliques",
                   "LLMs augmentés par des outils",
@@ -202,7 +202,7 @@ const ExpertiseIA = () => {
               <AITechCard 
                 title="Agents IA"
                 description="Systèmes autonomes capables d'observer, de décider et d'agir dans leur environnement"
-                icon={<Robot className="h-6 w-6 text-primary" />}
+                icon={<Bot className="h-6 w-6 text-primary" />}
                 examples={[
                   "Agents autonomes",
                   "Multi-agent systems (MAS)",
@@ -291,7 +291,7 @@ const ExpertiseIA = () => {
               <AITechCard 
                 title="Technologie vocale"
                 description="Conversion entre parole et texte, et synthèse vocale"
-                icon={<Microchip className="h-6 w-6 text-primary" />}
+                icon={<Cpu className="h-6 w-6 text-primary" />}
                 examples={[
                   "Speech-to-Text (STT)",
                   "Text-to-Speech (TTS)",
@@ -327,7 +327,7 @@ const ExpertiseIA = () => {
               <AITechCard 
                 title="Traduction & Multilingue"
                 description="Technologies pour franchir les barrières linguistiques"
-                icon={<FlowChart className="h-6 w-6 text-primary" />}
+                icon={<LineChart className="h-6 w-6 text-primary" />}
                 examples={[
                   "Neural Machine Translation",
                   "Multilingual Models",
@@ -362,7 +362,7 @@ const ExpertiseIA = () => {
               <AITechCard 
                 title="Classification d'images"
                 description="Identification et catégorisation d'objets ou de concepts dans les images"
-                icon={<Microchip className="h-6 w-6 text-primary" />}
+                icon={<Cpu className="h-6 w-6 text-primary" />}
                 examples={[
                   "Convolutional Neural Networks (CNN)",
                   "Vision Transformers (ViT)",
@@ -398,7 +398,7 @@ const ExpertiseIA = () => {
               <AITechCard 
                 title="Générative & Synthèse"
                 description="Création et modification d'images et vidéos par IA"
-                icon={<Robot className="h-6 w-6 text-primary" />}
+                icon={<Bot className="h-6 w-6 text-primary" />}
                 examples={[
                   "Diffusion Models (Stable Diffusion)",
                   "GANs (StyleGAN)",
@@ -416,7 +416,7 @@ const ExpertiseIA = () => {
               <AITechCard 
                 title="Analyse de vidéo"
                 description="Traitement et compréhension de contenu vidéo"
-                icon={<FlowChart className="h-6 w-6 text-primary" />}
+                icon={<LineChart className="h-6 w-6 text-primary" />}
                 examples={[
                   "Video Classification",
                   "Action Recognition",
@@ -487,7 +487,7 @@ const ExpertiseIA = () => {
               <AITechCard 
                 title="Analyse prédictive"
                 description="Modèles pour prévoir des tendances et comportements futurs"
-                icon={<FlowChart className="h-6 w-6 text-primary" />}
+                icon={<LineChart className="h-6 w-6 text-primary" />}
                 examples={[
                   "Regression Models",
                   "Time Series Forecasting",
@@ -523,7 +523,7 @@ const ExpertiseIA = () => {
               <AITechCard 
                 title="Feature Engineering & Selection"
                 description="Optimisation des caractéristiques pour modèles d'IA"
-                icon={<Microchip className="h-6 w-6 text-primary" />}
+                icon={<Cpu className="h-6 w-6 text-primary" />}
                 examples={[
                   "Automated Feature Engineering",
                   "Dimensionality Reduction (PCA)",
@@ -559,7 +559,7 @@ const ExpertiseIA = () => {
               <AITechCard 
                 title="AutoML"
                 description="Automatisation du processus de création de modèles d'IA"
-                icon={<Robot className="h-6 w-6 text-primary" />}
+                icon={<Bot className="h-6 w-6 text-primary" />}
                 examples={[
                   "Neural Architecture Search",
                   "Hyperparameter Optimization",
