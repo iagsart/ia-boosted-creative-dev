@@ -192,31 +192,31 @@ const simpleDiagram = {
       title: "Déclencheur",
       description: "Événement initial",
       icon: <Bot className="h-4 w-4 text-primary" />,
-      position: [15, 30]
+      position: [15, 30] as [number, number]
     },
     {
       title: "Récupération de données",
       description: "Collecte d'informations",
       icon: <Database className="h-4 w-4 text-primary" />,
-      position: [35, 25]
+      position: [35, 25] as [number, number]
     },
     {
       title: "Traitement IA",
       description: "Analyse et traitement",
       icon: <Workflow className="h-4 w-4 text-primary" />,
-      position: [60, 35]
+      position: [60, 35] as [number, number]
     },
     {
       title: "Action finale",
       description: "Exécution de l'action",
       icon: <ArrowRight className="h-4 w-4 text-primary" />,
-      position: [85, 30]
+      position: [85, 30] as [number, number]
     },
     {
       title: "Stockage",
       description: "Sauvegarde des résultats",
       icon: <Database className="h-4 w-4 text-primary" />,
-      position: [75, 65]
+      position: [75, 65] as [number, number]
     }
   ],
   connections: [
@@ -235,49 +235,49 @@ const advancedDiagram = {
       title: "Documents",
       description: "Sources de données",
       icon: <Database className="h-4 w-4 text-blue-500" />,
-      position: [10, 30]
+      position: [10, 30] as [number, number]
     },
     {
       title: "Extraction",
       description: "Parser & OCR",
       icon: <Code className="h-4 w-4 text-purple-500" />,
-      position: [30, 20]
+      position: [30, 20] as [number, number]
     },
     {
       title: "Vectorisation",
       description: "Embeddings",
       icon: <Network className="h-4 w-4 text-green-500" />,
-      position: [50, 20]
+      position: [50, 20] as [number, number]
     },
     {
       title: "Base vectorielle",
       description: "Stockage spécialisé",
       icon: <Database className="h-4 w-4 text-orange-500" />,
-      position: [70, 20]
+      position: [70, 20] as [number, number]
     },
     {
       title: "Prompt utilisateur",
       description: "Question / requête",
       icon: <Workflow className="h-4 w-4 text-primary" />,
-      position: [20, 60]
+      position: [20, 60] as [number, number]
     },
     {
       title: "Retrieval",
       description: "Recherche sémantique",
       icon: <Link className="h-4 w-4 text-primary" />,
-      position: [40, 60]
+      position: [40, 60] as [number, number]
     },
     {
       title: "LLM",
       description: "Génération de contenu",
       icon: <Bot className="h-4 w-4 text-primary" />,
-      position: [60, 60]
+      position: [60, 60] as [number, number]
     },
     {
       title: "Réponse",
       description: "Augmentée par contexte",
       icon: <ArrowRight className="h-4 w-4 text-primary" />,
-      position: [85, 50]
+      position: [85, 50] as [number, number]
     }
   ],
   connections: [
@@ -299,43 +299,43 @@ const enterpriseDiagram = {
       title: "CRM",
       description: "Salesforce",
       icon: <Database className="h-4 w-4 text-blue-500" />,
-      position: [15, 20]
+      position: [15, 20] as [number, number]
     },
     {
       title: "ERP",
       description: "SAP",
       icon: <Settings className="h-4 w-4 text-green-500" />,
-      position: [15, 60]
+      position: [15, 60] as [number, number]
     },
     {
       title: "Plateforme IA",
       description: "OpenAI/Azure",
       icon: <Bot className="h-4 w-4 text-purple-500" />,
-      position: [50, 15]
+      position: [50, 15] as [number, number]
     },
     {
       title: "Automatisation",
       description: "n8n / Make",
       icon: <Workflow className="h-4 w-4 text-primary" />,
-      position: [45, 40]
+      position: [45, 40] as [number, number]
     },
     {
       title: "Base de Connaissances",
       description: "Notion/Confluence",
       icon: <Database className="h-4 w-4 text-orange-500" />,
-      position: [50, 65]
+      position: [50, 65] as [number, number]
     },
     {
       title: "Marketing",
       description: "HubSpot",
       icon: <Zap className="h-4 w-4 text-pink-500" />,
-      position: [75, 25]
+      position: [75, 25] as [number, number]
     },
     {
       title: "Communication",
       description: "Slack/Teams",
       icon: <Link className="h-4 w-4 text-blue-500" />,
-      position: [75, 55]
+      position: [75, 55] as [number, number]
     }
   ],
   connections: [
